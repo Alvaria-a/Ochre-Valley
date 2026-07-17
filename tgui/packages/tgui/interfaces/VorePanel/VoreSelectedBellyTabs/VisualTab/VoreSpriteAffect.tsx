@@ -146,6 +146,7 @@ export const VoreSpriteAffects = (props: {
                           editMode={editMode}
                           action="set_attribute"
                           subAction="b_undergarment_color"
+                          value_of="b_undergarment_color"
                           back_color={undergarment_color}
                           tooltip="Select your undergarment color."
                         />
