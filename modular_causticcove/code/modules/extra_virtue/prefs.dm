@@ -5,7 +5,7 @@
 	var/extravirtue_type
 	S["extravirtue"] >> extravirtue_type
 	var/list/extravirtue_choices = list()
-	var.virtextra
+	var/virtextra
 	S["extravirtuechoices"] >> virtextra
 	extravirtue_choices = virtextra
 
