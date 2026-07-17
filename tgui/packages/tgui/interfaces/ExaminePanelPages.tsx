@@ -3,7 +3,7 @@ import { Box, Button, Image, Section, Stack } from 'tgui-core/components';
 
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import { ExaminePanelData } from './ExaminePanelData';
+import type { ExaminePanelData } from './ExaminePanelData';
 
 export const FlavorTextPage = (props) => {
   const { data } = useBackend<ExaminePanelData>();
@@ -25,21 +25,33 @@ export const FlavorTextPage = (props) => {
     }
   }, [canViewNsfwFlavorText, flavorTextIndex]);
 
-  const flavorHTML = useMemo(() => ({
-    __html: `<span className='Chat'>${flavor_text}</span>`,
-  }), [flavor_text]);
+  const flavorHTML = useMemo(
+    () => ({
+      __html: `<span className='Chat'>${flavor_text}</span>`,
+    }),
+    [flavor_text],
+  );
 
-  const nsfwHTML = useMemo(() => ({
-    __html: `<span className='Chat'>${flavor_text_nsfw}</span>`,
-  }), [flavor_text_nsfw]);
+  const nsfwHTML = useMemo(
+    () => ({
+      __html: `<span className='Chat'>${flavor_text_nsfw}</span>`,
+    }),
+    [flavor_text_nsfw],
+  );
 
-  const oocHTML = useMemo(() => ({
-    __html: `<span className='Chat'>${ooc_notes}</span>`,
-  }), [ooc_notes]);
+  const oocHTML = useMemo(
+    () => ({
+      __html: `<span className='Chat'>${ooc_notes}</span>`,
+    }),
+    [ooc_notes],
+  );
 
-  const oocnsfwHTML = useMemo(() => ({
-    __html: `<span className='Chat'>${ooc_notes_nsfw}</span>`,
-  }), [ooc_notes_nsfw]);
+  const oocnsfwHTML = useMemo(
+    () => ({
+      __html: `<span className='Chat'>${ooc_notes_nsfw}</span>`,
+    }),
+    [ooc_notes_nsfw],
+  );
 
   return (
         <Stack fill>
@@ -49,7 +61,7 @@ export const FlavorTextPage = (props) => {
                     src={resolveAsset(headshot)}
                     width="350px"
                     height="350px"
-                    /> 
+                    />
                 </Stack.Item>
               <Stack.Item grow>
                 <Stack fill>
@@ -117,17 +129,17 @@ export const FlavorTextPage = (props) => {
                   </Button>
                   <Button
                     selected={flavorTextIndex === 'NSFW'}
-                    disabled={!flavor_text_nsfw} // OV edit - Removed || is_naked to allow visibility
+                    disabled={!canViewNsfwFlavorText}
                     bold={flavorTextIndex === 'NSFW'}
                     onClick={() => setFlavorTextIndex('NSFW')}
                     textAlign="center"
                     width="60px"
                   >
                     NSFW
-                  </Button> 
-                </> 
+                  </Button>
+                </>
               }
-            >                  
+            >
               {flavorTextIndex === 'SFW' && (
                 <Box
                 dangerouslySetInnerHTML={flavorHTML}
@@ -137,7 +149,7 @@ export const FlavorTextPage = (props) => {
                 <Box
                 dangerouslySetInnerHTML={nsfwHTML}
                 />
-              )} 
+              )}
             </Section>
           </Stack.Item>
         </Stack>
@@ -147,13 +159,9 @@ export const FlavorTextPage = (props) => {
 
 export const ImageGalleryPage = (props) => {
   const { data } = useBackend<ExaminePanelData>();
-  const {
-    img_gallery,
-    nsfw_img_gallery,
-    // is_naked, // OV edit - commented out 
-  } = data;
+  const { img_gallery, nsfw_img_gallery } = data; //OV Edit - commented out is_naked
   const [galleryIndex, setGalleryIndex] = useState('SFW');
-  const canViewNsfwGallery = nsfw_img_gallery.length > 0; // OV edit - commented out is_naked
+  const canViewNsfwGallery = nsfw_img_gallery.length > 0;
 
   useEffect(() => {
     if (galleryIndex === 'NSFW' && !canViewNsfwGallery) {
@@ -161,52 +169,49 @@ export const ImageGalleryPage = (props) => {
     }
   }, [canViewNsfwGallery, galleryIndex]);
 
-  const activeGallery = galleryIndex === 'NSFW' && canViewNsfwGallery
-    ? nsfw_img_gallery
-    : img_gallery;
-  
+  const activeGallery =
+    galleryIndex === 'NSFW' && canViewNsfwGallery
+      ? nsfw_img_gallery
+      : img_gallery;
+
   return (
-        <Section
-          fill
-          scrollable
-          title="Image Gallery"
-          buttons={
-            <>
-              <Button
-                selected={galleryIndex === 'SFW'}
-                bold={galleryIndex === 'SFW'}
-                onClick={() => setGalleryIndex('SFW')}
-                textAlign="center"
-                width="60px"
-              >
-                SFW
-              </Button>
-              <Button
-                selected={galleryIndex === 'NSFW'}
-                disabled={!canViewNsfwGallery}
-                bold={galleryIndex === 'NSFW'}
-                onClick={() => setGalleryIndex('NSFW')}
-                textAlign="center"
-                width="60px"
-              >
-                NSFW
-              </Button>
-            </>
-          }
-        >
-        <Stack fill justify="space-evenly">
-            {activeGallery.map((val) => (
-              <Stack.Item grow key={val}>
-                  <Section align="center">
-                  <Image
-                    maxHeight="100%"
-                    maxWidth="100%"
-                    src={resolveAsset(val)}
-                  />
-                  </Section>
-              </Stack.Item>
-            ))}
-        </Stack>
-        </Section>
+    <Section
+      fill
+      scrollable
+      title="Image Gallery"
+      buttons={
+        <>
+          <Button
+            selected={galleryIndex === 'SFW'}
+            bold={galleryIndex === 'SFW'}
+            onClick={() => setGalleryIndex('SFW')}
+            textAlign="center"
+            width="60px"
+          >
+            SFW
+          </Button>
+          <Button
+            selected={galleryIndex === 'NSFW'}
+            disabled={!canViewNsfwGallery}
+            bold={galleryIndex === 'NSFW'}
+            onClick={() => setGalleryIndex('NSFW')}
+            textAlign="center"
+            width="60px"
+          >
+            NSFW
+          </Button>
+        </>
+      }
+    >
+      <Stack fill justify="space-evenly">
+        {activeGallery.map((val) => (
+          <Stack.Item grow key={val}>
+            <Section align="center">
+              <Image maxHeight="100%" maxWidth="100%" src={resolveAsset(val)} />
+            </Section>
+          </Stack.Item>
+        ))}
+      </Stack>
+    </Section>
   );
 };

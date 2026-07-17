@@ -165,18 +165,17 @@
 
 	return
 
-//OV EDIT START - Port of Caustic Edit
 /obj/structure/fluff/traveltile/proc/has_access(atom/movable/AM)
 	if(!length(required_jobs) && !length(required_traits))
 		return TRUE
-	
+
 	var/has_job = FALSE
 	var/has_trait = FALSE
 	if(!length(required_jobs))
 		has_job = TRUE
 	if(!length(required_traits))
 		has_trait = TRUE
-	
+
 	if(!has_job && ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		has_job = (H.job in required_jobs)
@@ -185,12 +184,11 @@
 			if(HAS_TRAIT(AM, trait))
 				has_trait = TRUE
 				break
-	
+
 	if(has_job && has_trait)
 		return TRUE
 	else
 		return FALSE
-//OV EDIT END - Port of Caustic Edit
 
 /obj/structure/fluff/traveltile/proc/can_go(atom/movable/AM)
 	if(AM.recent_travel)
@@ -255,7 +253,7 @@
 	required_traits = list(TRAIT_ZURCH) //I'd tie this to trait_outlaw but unfortunately the heresiarch virtue exists so we're making a new trait instead.
 /obj/structure/fluff/traveltile/drow
 	required_traits = list(TRAIT_CAVEDWELLER)
-	
+
 /obj/structure/fluff/traveltile/dungeon
 	name = "gate"
 	desc = "This gate's enveloping darkness is so opressive you dread to step through it."
