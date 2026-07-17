@@ -728,13 +728,13 @@ h2.alert {
 }
 // OC Edit Start
 .spoiler {
-	filter: blur(4px);
-	transition: filter 0.1s ease;
+  filter: blur(4px);
+  transition: filter 0.1s ease;
 }
 .spoiler:hover {
-	filter: none;
+  filter: none;
 }
-  // OC Edit End
+// OC Edit End
 
 .chat_headshot {
   position: relative;
