@@ -34,9 +34,12 @@ export const ExaminePanel = (props) => {
   const hasAnyGalleryImages =
     img_gallery.length > 0 || nsfw_img_gallery.length > 0;
   const hasCharacterAd = !!character_ad?.trim();
-  const characterAdHTML = useMemo(() => ({
-    __html: `<span className='Chat'>${character_ad || ''}</span>`,
-  }), [character_ad]);
+  const characterAdHTML = useMemo(
+    () => ({
+      __html: `<span className='Chat'>${character_ad || ''}</span>`,
+    }),
+    [character_ad],
+  );
 
   useEffect(() => {
     if (showCharacterAd && !hasCharacterAd) {
@@ -89,20 +92,28 @@ export const ExaminePanel = (props) => {
             />
           )}
           {/* // OV Edit Start */}
-      <Button
-      icon="scroll"
-      tooltip={hasCharacterAd ? "View character advertisement" : "No character advertisement set"}
-      tooltipPosition="bottom-start"
-      onClick={() => setShowCharacterAd(true)}
-      disabled={!hasCharacterAd}
-      style={hasCharacterAd ? {
-        boxShadow: '0 0 10px rgba(214, 170, 92, 0.65)',
-        borderColor: 'rgba(214, 170, 92, 0.8)',
-        backgroundColor: 'rgba(87, 45, 22, 0.85)',
-      } : undefined}
-      />
-      {/* // OV Edit End */}
-      <Button
+          <Button
+            icon="scroll"
+            tooltip={
+              hasCharacterAd
+                ? 'View character advertisement'
+                : 'No character advertisement set'
+            }
+            tooltipPosition="bottom-start"
+            onClick={() => setShowCharacterAd(true)}
+            disabled={!hasCharacterAd}
+            style={
+              hasCharacterAd
+                ? {
+                    boxShadow: '0 0 10px rgba(214, 170, 92, 0.65)',
+                    borderColor: 'rgba(214, 170, 92, 0.8)',
+                    backgroundColor: 'rgba(87, 45, 22, 0.85)',
+                  }
+                : undefined
+            }
+          />
+          {/* // OV Edit End */}
+          <Button
             color="green"
             icon="music"
             tooltip="Music player"
@@ -142,11 +153,11 @@ export const ExaminePanel = (props) => {
             )}
             {hasAnyGalleryImages && <Stack.Divider />}
             <Stack.Item
-            grow
-            position="relative"
-            overflowX="hidden"
-            overflowY="auto"
-          >
+              grow
+              position="relative"
+              overflowX="hidden"
+              overflowY="auto"
+            >
               {pageContents}
             </Stack.Item>
           </Stack>
@@ -178,7 +189,11 @@ export const ExaminePanel = (props) => {
                   maxHeight: '36rem',
                 }}
                 buttons={
-                  <Button icon="times" color="red" onClick={() => setShowCharacterAd(false)}>
+                  <Button
+                    icon="times"
+                    color="red"
+                    onClick={() => setShowCharacterAd(false)}
+                  >
                     Close
                   </Button>
                 }

@@ -184,9 +184,16 @@ export class Changelog extends Component {
 
     const header = (
       <Section>
-        <h1 style={{ color: 'red' }}><b>Welcome To Ochre Valley!!!!</b></h1>
+        <h1 style={{ color: 'red' }}>
+          <b>Welcome To Ochre Valley!!!!</b>
+        </h1>
         <p style={{ color: 'red' }}>
-          This is a server is 18+ and made by people who are into vore, for people who are into vore. If you do not know what that is, or it bothers you, this is not the server for you. Harassment or kinkshaming in any regard will not be tolerated, review our rules before playing, and approach the game with a casual attitude; many are here to have fun and ERP. PvP is entirely OPT-IN.
+          This is a server is 18+ and made by people who are into vore, for
+          people who are into vore. If you do not know what that is, or it
+          bothers you, this is not the server for you. Harassment or kinkshaming
+          in any regard will not be tolerated, review our rules before playing,
+          and approach the game with a casual attitude; many are here to have
+          fun and ERP. PvP is entirely OPT-IN.
         </p>
         <p>
           {'Our GitHub can be found '}
@@ -196,7 +203,10 @@ export class Changelog extends Component {
         </p>
         <p>
           {'Check for any new announcements on the discord '}
-          <a href="https://discord.com/channels/1473048818802229523/1473049362719440896">here</a>.
+          <a href="https://discord.com/channels/1473048818802229523/1473049362719440896">
+            here
+          </a>
+          .
         </p>
         {/* {dateDropdown} */}
       </Section>
