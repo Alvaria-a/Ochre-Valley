@@ -54,106 +54,93 @@ export const FlavorTextPage = (props) => {
   );
 
   return (
-        <Stack fill>
-            <Stack fill vertical>
-                <Stack.Item align="center">
-                  <img
-                    src={resolveAsset(headshot)}
-                    width="350px"
-                    height="350px"
-                    />
-                </Stack.Item>
-              <Stack.Item grow>
-                <Stack fill>
-                  <Stack.Item grow width="300px">
-                    <Section
-                      scrollable
-                      fill
-                      title="OOC Notes"
-                      preserveWhitespace
-                      buttons={
-                        <>
-                          <Button
-                            selected={oocNotesIndex === 'SFW'}
-                            bold={oocNotesIndex === 'SFW'}
-                            onClick={() => setOocNotesIndex('SFW')}
-                            textAlign="center"
-                            minWidth="60px"
-                          >
-                            SFW
-                          </Button>
-                          <Button
-                            selected={oocNotesIndex === 'NSFW'}
-                            disabled={!ooc_notes_nsfw}
-                            bold={oocNotesIndex === 'NSFW'}
-                            onClick={() => setOocNotesIndex('NSFW')}
-                            textAlign="center"
-                            minWidth="60px"
-                          >
-                            NSFW
-                          </Button>
-                        </>
-                      }
+    <Stack fill>
+      <Stack fill vertical>
+        <Stack.Item align="center">
+          <img src={resolveAsset(headshot)} width="350px" height="350px" />
+        </Stack.Item>
+        <Stack.Item grow>
+          <Stack fill>
+            <Stack.Item grow width="300px">
+              <Section
+                scrollable
+                fill
+                title="OOC Notes"
+                preserveWhitespace
+                buttons={
+                  <>
+                    <Button
+                      selected={oocNotesIndex === 'SFW'}
+                      bold={oocNotesIndex === 'SFW'}
+                      onClick={() => setOocNotesIndex('SFW')}
+                      textAlign="center"
+                      minWidth="60px"
                     >
-                      {oocNotesIndex === 'SFW' && (
-                    <Box
-                    dangerouslySetInnerHTML={oocHTML}
-                    />
-                    )}
-                      {oocNotesIndex === 'NSFW' && (
-                    <Box
-                    dangerouslySetInnerHTML={oocnsfwHTML}
-                    />
-                    )}
-                    </Section>
-                  </Stack.Item>
-                </Stack>
-              </Stack.Item>
-            </Stack>
-          <Stack.Item grow>
-            <Section
-              scrollable
-              fill
-              preserveWhitespace
-              title="Flavor Text"
-              buttons={
-                <>
-                  <Button
-                    selected={flavorTextIndex === 'SFW'}
-                    bold={flavorTextIndex === 'SFW'}
-                    onClick={() => setFlavorTextIndex('SFW')}
-                    textAlign="center"
-                    width="60px"
-                  >
-                    SFW
-                  </Button>
-                  <Button
-                    selected={flavorTextIndex === 'NSFW'}
-                    disabled={!canViewNsfwFlavorText}
-                    bold={flavorTextIndex === 'NSFW'}
-                    onClick={() => setFlavorTextIndex('NSFW')}
-                    textAlign="center"
-                    width="60px"
-                  >
-                    NSFW
-                  </Button>
-                </>
-              }
-            >
-              {flavorTextIndex === 'SFW' && (
-                <Box
-                dangerouslySetInnerHTML={flavorHTML}
-                />
-              )}
-              {flavorTextIndex === 'NSFW' && (
-                <Box
-                dangerouslySetInnerHTML={nsfwHTML}
-                />
-              )}
-            </Section>
-          </Stack.Item>
-        </Stack>
-
+                      SFW
+                    </Button>
+                    <Button
+                      selected={oocNotesIndex === 'NSFW'}
+                      disabled={!ooc_notes_nsfw}
+                      bold={oocNotesIndex === 'NSFW'}
+                      onClick={() => setOocNotesIndex('NSFW')}
+                      textAlign="center"
+                      minWidth="60px"
+                    >
+                      NSFW
+                    </Button>
+                  </>
+                }
+              >
+                {oocNotesIndex === 'SFW' && (
+                  <Box dangerouslySetInnerHTML={oocHTML} />
+                )}
+                {oocNotesIndex === 'NSFW' && (
+                  <Box dangerouslySetInnerHTML={oocnsfwHTML} />
+                )}
+              </Section>
+            </Stack.Item>
+          </Stack>
+        </Stack.Item>
+      </Stack>
+      <Stack.Item grow>
+        <Section
+          scrollable
+          fill
+          preserveWhitespace
+          title="Flavor Text"
+          buttons={
+            <>
+              <Button
+                selected={flavorTextIndex === 'SFW'}
+                bold={flavorTextIndex === 'SFW'}
+                onClick={() => setFlavorTextIndex('SFW')}
+                textAlign="center"
+                width="60px"
+              >
+                SFW
+              </Button>
+              <Button
+                selected={flavorTextIndex === 'NSFW'}
+                disabled={!canViewNsfwFlavorText}
+                bold={flavorTextIndex === 'NSFW'}
+                onClick={() => setFlavorTextIndex('NSFW')}
+                textAlign="center"
+                width="60px"
+              >
+                NSFW
+              </Button>
+            </>
+          }
+        >
+          {flavorTextIndex === 'SFW' && (
+            <Box dangerouslySetInnerHTML={flavorHTML} />
+          )}
+          {flavorTextIndex === 'NSFW' && (
+            <Box dangerouslySetInnerHTML={nsfwHTML} />
+          )}
+        </Section>
+      </Stack.Item>
+    </Stack>
   );
 };
 
