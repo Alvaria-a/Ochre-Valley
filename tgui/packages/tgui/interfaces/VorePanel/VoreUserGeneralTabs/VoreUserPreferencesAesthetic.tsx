@@ -69,7 +69,6 @@ export const VoreUserPreferencesAesthetic = (props: {
                           entry +
                           "' sprite."
                         }
-                        presets={presets}
                       />
                       <Stack.Item>
                         <VorePanelEditSwitch

@@ -148,7 +148,6 @@ export const VoreSpriteAffects = (props: {
                           subAction="b_undergarment_color"
                           back_color={undergarment_color}
                           tooltip="Select your undergarment color."
-                          presets={presets}
                         />
                       </Stack>
                     </LabeledList.Item>
