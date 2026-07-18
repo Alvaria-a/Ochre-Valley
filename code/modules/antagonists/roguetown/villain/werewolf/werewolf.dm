@@ -15,11 +15,11 @@
 	var/list/inherent_traits = list(
 		TRAIT_IGNORESLOWDOWN,
 		TRAIT_IGNOREDAMAGESLOWDOWN,
-		TRAIT_NOPAIN, 
-		TRAIT_NOPAINSTUN, 
-		TRAIT_CRITICAL_RESISTANCE, 
-		TRAIT_NOFALLDAMAGE1, 
-		TRAIT_KNEESTINGER_IMMUNITY, 
+		TRAIT_NOPAIN,
+		TRAIT_NOPAINSTUN,
+		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_KNEESTINGER_IMMUNITY,
 		TRAIT_SHOCKIMMUNE,
 		TRAIT_SILVER_WEAK,
 		TRAIT_STRENGTH_UNCAPPED,
@@ -170,7 +170,7 @@
 	return ..()
 
 /datum/antagonist/werewolf/lesser/greet()
-	// DO NOT call parent. 
+	// DO NOT call parent.
 	// lesser verevolfs should always be created by alpha bites, which have their own way of informing the user
 	// they are a werewolf. despite this, i still want to provide a new audio cue in the form of [THE CRY].
 	// remove it if it's obstructive. thx.
@@ -189,7 +189,7 @@
 	//No cross species pollination!!!
 	if(mind.has_antag_datum(/datum/antagonist/gnoll))
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED) || HAS_TRAIT(src, TRAIT_IRONMAN) || HAS_TRAIT(src, TRAIT_ROTMAN)) // i don't know if other padding keeps them from turning but just to make sure lmao
+	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED) || HAS_TRAIT(src, TRAIT_IRONMAN) || HAS_TRAIT(src, TRAIT_ROTMAN) || HAS_TRAIT(src, TRAIT_REGROW_LIMBS)) // i don't know if other padding keeps them from turning but just to make sure lmao
 		return FALSE
 	return TRUE
 
