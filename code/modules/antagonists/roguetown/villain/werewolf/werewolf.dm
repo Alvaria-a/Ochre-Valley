@@ -189,7 +189,7 @@
 	//No cross species pollination!!!
 	if(mind.has_antag_datum(/datum/antagonist/gnoll))
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED) || HAS_TRAIT(src, TRAIT_IRONMAN) || HAS_TRAIT(src, TRAIT_ROTMAN) || HAS_TRAIT(src, TRAIT_REGROW_LIMBS)) // i don't know if other padding keeps them from turning but just to make sure lmao
+	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED) || HAS_TRAIT(src, TRAIT_IRONMAN) || HAS_TRAIT(src, TRAIT_ROTMAN) || HAS_TRAIT(src, TRAIT_REGROW_LIMBS)) // i don't know if other padding keeps them from turning but just to make sure lmao //OV EDIT - Excluded Oozes via TRAIT_REGROW_LIMBS
 		return FALSE
 	return TRUE
 
