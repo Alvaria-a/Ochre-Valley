@@ -99,7 +99,7 @@
 				log_runtime(msg)
 			user.temporarilyRemoveItemFromInventory(I = current_item, force = TRUE)
 			qdel(current_item)
-		extended_claw_record[hand_index] = FALSE		
+		extended_claw_record[hand_index] = FALSE
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/claws/proc/clear_claw_entry(datum/source)
@@ -120,3 +120,4 @@
 	invocation_type = INVOCATION_NONE
 	sound = 'sound/vo/mobs/wwolf/roar.ogg'
 	spell_requirements = NONE
+	spell_flags = SPELL_IGNORE_SPELLBLOCK
