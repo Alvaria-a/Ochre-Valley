@@ -159,6 +159,11 @@
 
 	if(applies_post_equipment)
 		apply_character_post_equipment(H)
+
+	// OV Edit Start
+	H.update_sight()
+	// OV Edit End
+
 //======== Massive shitcode, that works at least.
 /datum/advclass/proc/get_vice_limits(mob/living/carbon/human/H)
 	if(length(vice_limits))
@@ -216,10 +221,6 @@
 			//OV ADD END
 	. += get_limited_vice_names(player.prefs.charflaws, get_prefs_vice_limits(player))
 //===
-
-	// OV Edit Start
-	H.update_sight()
-	// OV Edit End
 
 /datum/advclass/proc/post_equip(mob/living/carbon/human/H)
 	addtimer(CALLBACK(H,TYPE_PROC_REF(/mob/living/carbon/human, add_credit), TRUE), 20)
