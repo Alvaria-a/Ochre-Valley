@@ -86,7 +86,7 @@
 
 /datum/component/conjured_minion/proc/check_tether()
 	var/mob/living/M = parent
-	if(QDELETED(M) || dismissing)
+	if(QDELETED(M) || dismissing || isbelly(M.loc) || istype(M.loc, /obj/item/holder)) //OV Edit: Let people eat/hold summons
 		return
 	var/mob/living/summoner = summoner_ref?.resolve()
 	validate_combat_target(M, summoner)

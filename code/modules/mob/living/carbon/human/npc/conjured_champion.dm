@@ -253,8 +253,13 @@
 
 /datum/action/cooldown/spell/apply_prefs/cast()
 	. = ..()
-	if(owner.client)
-		owner.client.prefs.copy_to(owner, TRUE, FALSE)
+	if(owner.client && ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		owner.client.prefs.copy_to(H , TRUE, FALSE)
+		//Dendortouched breaks things
+		for(var/datum/charflaw/cf in H.charflaws)
+			if(istype(cf, /datum/charflaw/dendor_touched))
+				H.charflaws -= cf
 		return TRUE
 	return FALSE
 //OV Edit end
