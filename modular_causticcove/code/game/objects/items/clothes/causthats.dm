@@ -23,7 +23,6 @@
 				/obj/item/natural/hide/cured = 2)
 	tools = list(/obj/item/needle)
 	craftdiff = 6
-	sellprice = 15
 
 /obj/item/clothing/head/roguetown/spellcasterhat/wbonnet
 	name = "Witches Bonnet"
@@ -50,7 +49,6 @@
 				/obj/item/natural/hide/cured = 2)
 	tools = list(/obj/item/needle)
 	craftdiff = 6
-	sellprice = 18
 
 /obj/item/clothing/head/roguetown/grenzelhofthat/floweredAlc
 	name = "Alchemist Cap"
