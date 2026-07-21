@@ -161,7 +161,6 @@
 	list_reagents = list(/datum/reagent/floure = 1)
 	grind_results = list(/datum/reagent/floure = 10)
 	volume = 1
-	sellprice = 3
 
 /obj/item/reagent_containers/powder/rocknut
 	name = "rocknut powder"
@@ -259,7 +258,7 @@
 
 /datum/reagent/allspice
 	name = "allspice"
-	description = "A blend of toasted spices, temptingly aromatic to the senses." 
+	description = "A blend of toasted spices, temptingly aromatic to the senses."
 	color = "#CE8C33"
 	overdose_threshold = 0
 	metabolization_rate = 1
@@ -503,7 +502,7 @@
 	M.sate_addiction(/datum/charflaw/addiction/junkie)
 	..()
 	. = 1
-	
+
 
 /datum/reagent/herozium/on_mob_end_metabolize(mob/living/M)
 	M.clear_fullscreen("herozium")
