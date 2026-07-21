@@ -1257,6 +1257,12 @@
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
+/mob/living/carbon/human/verb/emote_sniff()
+	set name = "Sniff"
+	set category = "Emotes.Noises"
+
+	emote("sniff", intentional = TRUE)
+
 /datum/emote/living/snore
 	key = "snore"
 	key_third_person = "snores"
@@ -1667,7 +1673,7 @@
 
 		switch(key)
 			if("strength")
-				success = living.stat_roll(STAT_STRENGTH, chance_per_point, modifier_sum) 
+				success = living.stat_roll(STAT_STRENGTH, chance_per_point, modifier_sum)
 				chance = living.get_stat(STAT_STRENGTH)
 			if("perception")
 				success = living.stat_roll(STAT_PERCEPTION, chance_per_point, modifier_sum)
