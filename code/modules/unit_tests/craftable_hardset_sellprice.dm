@@ -42,6 +42,12 @@
 		/obj/item/rogueweapon/woodstaff/implement/greater/ruby,
 		/obj/item/rogueweapon/woodstaff/implement/greater/sapphire,
 		/obj/item/runicflask/charged,
+		//OV ADD START - Our Exempt Items
+		/obj/item/reformation_gem,
+		/obj/item/capture_crystal/basic,
+		/obj/item/capture_crystal/great,
+		/obj/item/capture_crystal/ultra,
+		//OV ADD END
 	)
 
 	var/list/offenders = list()
