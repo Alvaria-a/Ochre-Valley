@@ -542,7 +542,7 @@
 /proc/should_wear_masc_clothes(mob/living/carbon/human/H)
 	if(!H.mind)
 		return (H.pronouns == HE_HIM || H.pronouns == THEY_THEM || H.pronouns == IT_ITS)
-	else 
+	else
 		return (H.clothes_pref == CLOTHES_M)
 
 /proc/should_wear_femme_clothes(mob/living/carbon/human/H)
@@ -741,29 +741,12 @@
 			var/advdat = ""
 			var/datum/advclass/subclasspath = adv
 			var/datum/advclass/subclass = SSrole_class_handler.get_advclass_by_name(initial(subclasspath.name))
-			var/found_issue = FALSE
-			if(length(subclass.virtue_limits))
-				for(var/virtuetype in subclass.virtue_limits)
-					if(istype(player.prefs.virtue, virtuetype))
-						advdat += "[player.prefs.virtue.name]<br>"
-						found_issue = TRUE
-					if(istype(player.prefs.virtuetwo, virtuetype))
-						advdat += "[player.prefs.virtuetwo.name]<br>"
-						found_issue = TRUE
-					//OV Add - Extra Virtue
-					if(istype(player.prefs.extravirtue, virtuetype))
-						advdat += "[player.prefs.extravirtue.name]<br>"
-						found_issue = TRUE
-					//OV Add Start - Extra Virtue
-
-			if(length(subclass.vice_limits))
-				for(var/vicetype in subclass.vice_limits)
-					for(var/vice in player.prefs.charflaws)
-						var/datum/charflaw/cf = vice
-						if(istype(vice, vicetype))
-							advdat += "[cf.name]<br>"
-							found_issue = TRUE
-			if(found_issue)
+			if(!subclass)
+				continue
+			var/list/restriction_names = subclass.get_prefs_restriction_names(player)
+			if(length(restriction_names))
+				for(var/restriction_name in restriction_names)
+					advdat += "[restriction_name]<br>"
 				dat += "<font color = '#e4e1e1'><b>[subclass::name]</b></font><br>"
 				dat += advdat
 		var/datum/browser/popup = new(usr, "subclassslots", "<div style='text-align: center'>Subclass Incompatibilities</div>", nwidth = 200, nheight = 300)
@@ -792,13 +775,23 @@
 	for(var/adv in job_subclasses)
 		var/datum/advclass/subclasspath = adv
 		var/datum/advclass/subclass = SSrole_class_handler.get_advclass_by_name(initial(subclasspath.name))
-		if(length(subclass.virtue_limits))
-			for(var/virtuetype in subclass.virtue_limits)
-				if(istype(player.prefs.virtue, virtuetype) || istype(player.prefs.virtuetwo, virtuetype) || istype(player.prefs.extravirtue, virtuetype)) //OV Edit - Extra Virtue
-					return TRUE
+		if(!subclass)
+			continue
+		if(length(subclass.get_prefs_restriction_names(player)))
+			return TRUE
 
-		if(length(subclass.vice_limits))
-			for(var/vicetype in subclass.vice_limits)
-				for(var/vice in player.prefs.charflaws)
-					if(istype(vice, vicetype))
-						return TRUE
+/datum/job/proc/prefs_all_subclasses_restricted(client/player)
+	if(!player?.prefs)
+		return FALSE
+	if(!length(job_subclasses))
+		return FALSE
+	var/checked_subclass = FALSE
+	for(var/adv in job_subclasses)
+		var/datum/advclass/subclasspath = adv
+		var/datum/advclass/subclass = SSrole_class_handler.get_advclass_by_name(initial(subclasspath.name))
+		if(!subclass)
+			continue
+		checked_subclass = TRUE
+		if(!length(subclass.get_prefs_restriction_names(player)))
+			return FALSE
+	return checked_subclass
