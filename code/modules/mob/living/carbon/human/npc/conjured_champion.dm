@@ -259,7 +259,7 @@
 		//Dendortouched breaks things
 		for(var/datum/charflaw/cf in H.charflaws)
 			if(istype(cf, /datum/charflaw/dendor_touched))
-				H.charflaws -= cf
+				H.charflaws.Remove(cf)
 		return TRUE
 	return FALSE
 //OV Edit end
