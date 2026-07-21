@@ -221,7 +221,6 @@
 			//OV ADD END
 	. += get_limited_vice_names(player.prefs.charflaws, get_prefs_vice_limits(player))
 //===
-
 /datum/advclass/proc/post_equip(mob/living/carbon/human/H)
 	addtimer(CALLBACK(H,TYPE_PROC_REF(/mob/living/carbon/human, add_credit), TRUE), 20)
 	if(cmode_music)
