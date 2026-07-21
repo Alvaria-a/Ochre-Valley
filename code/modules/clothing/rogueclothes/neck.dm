@@ -120,7 +120,6 @@
 	body_parts_inherent = NECK
 	armor = ARMOR_LEATHER
 	sewrepair = TRUE
-	sellprice = 10
 	max_integrity = ARMOR_INT_SIDE_HARDLEATHER + ARMOR_INT_SIDE_COVERAGE_BONUS
 	salvage_result = /obj/item/natural/hide/cured
 	salvage_amount = 1
@@ -585,7 +584,6 @@
 	item_state = "reformistcross_g"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
@@ -594,7 +592,6 @@
 	item_state = "psycross_g"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/silver/naledi
 	name = "golden psycross"
@@ -678,7 +675,6 @@
 	desc = "'Doth thee wish to live deliciously? Mortality is but a shackle; and if you wish to break free from its steely grasp, all you need to do.. is put thine faith in me.'"
 	icon_state = "zcross_g"
 	resistance_flags = FIRE_PROOF
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/g/get_examine_highlight_status()
 	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
@@ -707,7 +703,6 @@
 	name = "golden amulet of Matthios"
 	desc = "He was but one flame in the dark. Together, His flock shall outblaze the Tyrant-Sun, and shall live deliciously atop the highest throne."
 	icon_state = "matthios"
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/graggar
 	name = "amulet of Graggar"
@@ -724,7 +719,6 @@
 	name = "golden amulet of Graggar"
 	desc = "Might makes right."
 	icon_state = "graggar_g"
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/graggar/wood
 	name = "wooden amulet of Graggar"
@@ -750,7 +744,6 @@
 	name = "golden amulet of Baotha"
 	desc = "A hollow promise, rendered in gold and glistening with value. It weighs heavy with the memory of sweet wine turned to poison, and the comfort of a sorrow that refuses to fade."
 	icon_state = "baotha"
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/baotha/wood
 	name = "wooden amulet of Baotha"
@@ -771,12 +764,10 @@
 	name = "silver amulet of Ten"
 	desc = "Ward of silver, sigil of eternity; by the Ten, I command thee back to Hell!"
 	icon_state = "undivided_s"
-	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/undivided/g
 	name = "golden amulet of Ten"
 	desc = "The Ten eternal, unified in strength. For centuries, their glistening light has remained stalwart against the darkness."
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/undivided/wood
@@ -797,13 +788,11 @@
 	name = "silver amulet of Astrata"
 	desc = "Let no monster hold comfort in Her brother's shadow."
 	icon_state = "astrata_s"
-	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/astrata/g
 	name = "golden amulet of Astrata"
 	desc = "The sun's blinding glare, adorning the faithful and scorning the faithless."
 	icon_state = "astrata_g"
-	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/astrata/wood
 	name = "wooden amulet of Astrata"
@@ -823,7 +812,6 @@
 	name = "blessed amulet of Noc"
 	desc = "Within the Beyond, where dreams and daemons coalesce, lies the secret to all knowledge; both arcyne and aeternal. Under my ward, I shall guide thee forth to this pedestal."
 	icon_state = "noc"
-	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/noc/bronze
 	name = "bronze amulet of Noc"
@@ -843,7 +831,6 @@
 	name = "golden amulet of Noc"
 	desc = "His sister's radiance would mean nothing without comparison - or more importantly, the capacity to compare at all."
 	icon_state = "noc_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/noc/aalloy
@@ -884,7 +871,6 @@
 	desc = "Fortune favors the bold."
 	icon_state = "abyssor_g"
 	item_state = "abyssor_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
@@ -906,7 +892,6 @@
 	desc = "Nature provides in all avenues, as long as one has the faith to dig it out."
 	icon_state = "dendor_g"
 	item_state = "dendor_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/necra
@@ -928,7 +913,6 @@
 	desc = "No matter if you're a king or a sweeper, all will prance - in due tyme - with the blessed reaper."
 	icon_state = "necra_g"
 	item_state = "necra_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/silver/necra
@@ -955,7 +939,6 @@
 	desc = "My elixirs are far too strong for you, adventurer; they would stagger a hero, much less a vagabond like thineself."
 	icon_state = "pestra_g"
 	item_state = "pestra_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
@@ -977,7 +960,6 @@
 	desc = "No man, whether they be anointed or royal, is above the rite of arbitration."
 	icon_state = "ravox_g"
 	item_state = "ravox_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/ravox/bronze
@@ -1022,7 +1004,6 @@
 	desc = "This is a ☼golden amulet☼. All craftsmanship is of the highest quality. It menaces with spikes of gold."
 	icon_state = "malum_g"
 	item_state = "malum_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/eora
@@ -1044,7 +1025,6 @@
 	desc = "Love wins."
 	icon_state = "eora_g"
 	item_state = "eora_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/xylix
@@ -1068,7 +1048,6 @@
 	desc = "That's all, folks!"
 	icon_state = "xylix_g"
 	item_state = "xylix_g"
-	sellprice = 100
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/roguetown/psicross/xylix/examine(mob/user)
@@ -1149,7 +1128,6 @@
 	desc = "'The horrors persist, but so do I!'"
 	icon_state = "psycross_s"
 	item_state = "psycross_s"
-	sellprice = 50
 	is_silver = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/silver/get_mechanics_examine(mob/user)
@@ -1218,13 +1196,13 @@
 	var/total_sellprice = 0
 	if(isturf(A))
 		for(var/obj/item/I in A.contents)
-			total_sellprice += I.sellprice
+			total_sellprice += I.get_real_price()
 		to_chat(user, span_notice("Everything on the ground is worth [total_sellprice] mammons."))
 	else if(istype(A, /obj/item))
 		var/obj/item/I = A
-		total_sellprice += I.sellprice
+		total_sellprice += I.get_real_price()
 		for(var/obj/item/item in I.contents)
-			total_sellprice += item.sellprice
+			total_sellprice += item.get_real_price()
 		to_chat(user, span_notice("The item and its contents is worth [total_sellprice] mammons."))
 
 /obj/item/clothing/neck/roguetown/shalal
