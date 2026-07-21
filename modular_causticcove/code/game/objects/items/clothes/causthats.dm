@@ -8,7 +8,6 @@
 	icon_state = "dhat"
 	item_state = "dhat"
 	armor = ARMOR_PADDED
-	sellprice = 15
 	worn_x_dimension = 64
 	worn_y_dimension = 68
 	sewrepair = TRUE
@@ -34,7 +33,6 @@
 	icon_state = "witch_bonnet"
 	item_state = "witch_bonnet"
 	armor = ARMOR_PADDED
-	sellprice = 18
 	worn_x_dimension = 64
 	worn_y_dimension = 68
 	sewrepair = TRUE
