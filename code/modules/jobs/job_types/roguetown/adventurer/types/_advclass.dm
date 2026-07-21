@@ -159,6 +159,8 @@
 
 	if(applies_post_equipment)
 		apply_character_post_equipment(H)
+	H.set_advsetup(FALSE)
+	H.mind?.refresh_spell_buttons()
 
 	// OV Edit Start
 	H.update_sight()
