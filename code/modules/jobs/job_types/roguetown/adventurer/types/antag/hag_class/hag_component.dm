@@ -72,10 +72,10 @@
 			// The Hag mind learns about the vessel
 			hag_mob.mind.i_know_person(H)
 			found_any = TRUE
-			to_chat(hag_mob, span_boldnotice("The roots watch a dormant seedling... [H.real_name] is walking the lands this week."))
+			to_chat(hag_mob, span_boldnotice("The roots watch a dormant seedling... [H.real_name] is walking the lands this week. The hag may curse them, but cursing their Wyrd Lux will gain no spite"))
 			if(find_boon_by_type(H.real_name, /datum/hag_boon/changeling))
 				continue
-			grant_boon(H.real_name, /datum/hag_boon/changeling, 0)
+			grant_boon(H.real_name, /datum/hag_boon/changeling, 100)
 		//ov edit end
 	if(found_any)
 		to_chat(hag_mob, span_boldnotice("As your eyes adjust to the emerald gloom, the threads of the Mossmother's older puppets become visible to you..."))
@@ -194,7 +194,12 @@
 
 /datum/component/hag_curio_tracker/proc/transmute_boons_to_curse(true_name, list/boons, curse_path, points)
 	var/list/name_list = boon_registry[true_name]
+	//ov edit- changeling code
+	var/fakepoints = 0
 	for(var/datum/hag_boon/B in boons)
+		if(istype(B, /datum/hag_boon/changeling))
+			fakepoints += B.points
+	//ov edit end
 		name_list -= B
 		qdel(B)
 
@@ -203,11 +208,17 @@
 
 	var/datum/hag_boon/curse_scar/scar = find_boon_by_type(true_name, /datum/hag_boon/curse_scar)
 	if(scar)
-		scar.points += points
+	//ov edit- changeling code
+		scar.points += max(0, points-fakepoints)
+	//ov edit end
 	else
 		var/mob/living/victim = find_target(true_name)
 		if(victim)
 			ADD_TRAIT(victim, TRAIT_CURSE_SCAR, "hag_curse")
+		//ov edit- changeling code
+		if(fakepoints)
+			points = max(0, points-fakepoints)
+		//ov edit- changeling code
 		scar = new /datum/hag_boon/curse_scar(true_name, src, points)
 		name_list += scar
 	check_tier_upgrade()
