@@ -26,7 +26,7 @@
 	extravirtue.on_load()
 
 /datum/preferences/proc/save_extra_virtue(S)
-	WRITE_FILE(S["extravirtue"], extravirtue)
+	WRITE_FILE(S["extravirtue"], extravirtue.type)
 	WRITE_FILE(S["extravirtuechoices"] , extravirtue.picked_choices)
 
 /datum/preferences/proc/get_extra_virtue_htmlpick()
