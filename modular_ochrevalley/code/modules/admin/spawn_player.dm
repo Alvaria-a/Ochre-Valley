@@ -101,8 +101,12 @@
 		for(var/datum/bounty/removing_bounty in GLOB.head_bounties)
 			if(removing_bounty.target == M.real_name)
 				GLOB.head_bounties -= removing_bounty
-	for(var/obj/item/holder/micro/micro in M)
-		M.dropItemToGround(micro, TRUE, TRUE)
+	for(var/item in M.contents)
+		if(istype(item, /obj/item/holder/micro))
+			M.dropItemToGround(micro, TRUE, TRUE)
+		if(istype(item, /obj/belly))
+			for(var/mob/living/L in belly.contents)
+				safe_round_remove(L)
 	if(SSticker.rulermob == M)
 		SSticker.rulermob = null
 	if(SSticker.regentmob == M)

@@ -64,6 +64,11 @@
 			if(istype(content, /obj/item/holder/micro))
 				departing_mob.dropItemToGround(content, TRUE, TRUE)
 			//Caustic Edit End
+			//OV Edit: Recursively remove contents.
+			if(istype(content, /obj/belly))
+				for(var/mob/living/L in content.contents)
+					safe_round_remove(L)
+			//OV Edit End
 		dat_log += "."
 	if(departing_mob.mind)
 		departing_mob.mind.unknow_all_people()
