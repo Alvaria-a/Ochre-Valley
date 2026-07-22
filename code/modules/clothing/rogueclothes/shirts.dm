@@ -715,7 +715,7 @@
 	body_parts_covered = CHEST
 	boobed = FALSE
 	sewrepair = TRUE
-	flags_inv = null
+	flags_inv = HIDEBOOB //OV EDIT
 	slot_flags = ITEM_SLOT_SHIRT
 	salvage_result = /obj/item/natural/fibers
 	salvage_amount = 3
