@@ -110,7 +110,8 @@
 			M.dropItemToGround(item, TRUE, TRUE)
 		if(istype(item, /obj/belly))
 			for(var/mob/living/L in item.contents)
-				safe_round_remove(L)
+				if(L.client) //Let's not make every mob proc this.
+					safe_round_remove(L)
 	dat += "</details>"
 	message_admins(dat)
 	log_admin(copytext(dat_log, 1, -2))

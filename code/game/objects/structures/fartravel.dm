@@ -67,7 +67,8 @@
 			//OV Edit: Recursively remove contents.
 			if(istype(content, /obj/belly))
 				for(var/mob/living/L in content.contents)
-					safe_round_remove(L)
+					if(L.client) //Let's not make every mob proc this.
+						safe_round_remove(L)
 			//OV Edit End
 		dat_log += "."
 	if(departing_mob.mind)
