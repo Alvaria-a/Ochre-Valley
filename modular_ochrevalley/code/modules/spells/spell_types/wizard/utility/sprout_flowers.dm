@@ -44,6 +44,9 @@
 		/turf/open/floor/rogue/grassred,
 		/turf/open/floor/rogue/grasscold,
 		/turf/open/floor/rogue/dirt,
+		/turf/open/floor/rogue/snow,
+		/turf/open/floor/rogue/snowpatchy,
+		/turf/open/floor/rogue/snowrough,
 		)
 
 /datum/action/cooldown/spell/conjure_summon/Grant(mob/grant_to)
