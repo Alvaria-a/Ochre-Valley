@@ -1473,7 +1473,7 @@
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_DEPRAVED, "VEIL")
 	AddComponent(/datum/component/adjustable_clothing, NECK, null, null, "sound/foley/cloth_wipe (1).ogg", null, (UPD_HEAD|UPD_MASK|UPD_NECK))
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT) //OV EDIT - Removable
 
 /obj/item/clothing/neck/roguetown/coif/baotha/dropped(mob/living/carbon/human/user)
 	. = ..()

@@ -592,7 +592,7 @@
 /obj/item/clothing/shoes/roguetown/boots/armor/baotha/Initialize()
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_DEPRAVED, "BOOTS")
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT) //OV EDIT - Removable
 
 /obj/item/clothing/shoes/roguetown/boots/armor/baotha/ComponentInitialize()
 	. = ..()

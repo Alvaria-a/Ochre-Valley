@@ -396,7 +396,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/baotha/Initialize()
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_DEPRAVED, "VESTMENTS")
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT) //OV EDIT - Removable
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/baotha/dropped(mob/living/carbon/human/user)
 	. = ..()
