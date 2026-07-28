@@ -106,6 +106,11 @@
 		//OV Edit Servant option for champion
 		if("servant")
 			outfit_champion(new /datum/outfit/job/roguetown/conjured_servant)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/find_weapon)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/equip_item)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/loot)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/kick_attack)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/generic_resist)
 			def_intent_change(INTENT_DODGE)
 		//OV Edit End
 		else
