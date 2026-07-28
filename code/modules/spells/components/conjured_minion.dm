@@ -158,7 +158,7 @@
 	M.alpha = 170
 	var/col = get_phantom_color()
 	M.add_atom_colour(soften_color(col, 0.55), FIXED_COLOUR_PRIORITY)
-	M.filters += filter(type = "drop_shadow", x = 0, y = 0, size = 2, offset = 0, color = col)
+	M.filters += filter(type = "drop_shadow", x = 0, y = 0, size = 2, offset = 0, color = col, name="conjureglow") //OV Edit: Add name so we can remove it
 
 /datum/component/conjured_minion/proc/soften_color(col, blend = 0.55)
 	var/list/parts = ReadRGB(col)

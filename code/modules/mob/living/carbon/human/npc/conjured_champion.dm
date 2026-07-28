@@ -103,7 +103,7 @@
 			upgrade_ai_controller(/datum/ai_controller/human_npc/archer)
 			outfit_champion(new /datum/outfit/job/roguetown/conjured_champion/doppelsoldner/xbow)
 			def_intent_change(INTENT_DODGE)
-		//OV Edit Servant option for champion
+		//OV Edit Servant option for champion. Gut their psycho tendencies while we're at it
 		if("servant")
 			outfit_champion(new /datum/outfit/job/roguetown/conjured_servant)
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/find_weapon)
@@ -111,6 +111,7 @@
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/loot)
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/kick_attack)
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/generic_resist)
+			filters -= filters["conjureglow"]
 			def_intent_change(INTENT_DODGE)
 		//OV Edit End
 		else
