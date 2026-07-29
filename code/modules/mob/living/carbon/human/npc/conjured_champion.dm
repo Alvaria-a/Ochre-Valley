@@ -111,6 +111,7 @@
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/loot)
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/kick_attack)
 			ai_controller.remove_subtree(/datum/ai_planning_subtree/generic_resist)
+			contract_spawned = FALSE
 			filters -= filters["conjureglow"]
 			def_intent_change(INTENT_DODGE)
 		//OV Edit End
