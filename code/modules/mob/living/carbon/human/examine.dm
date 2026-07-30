@@ -1120,7 +1120,7 @@
 			. += span_redtext("[m3] strange glowing eyes and fangs!")
 
 		//Blackblood Inquisition trauma
-		if(HAS_TRAIT(src, TRAIT_INQUISITION) && HAS_TRAIT(user, TRAIT_BLACKBLOOD) && src != user) // OV Edit - we can examine OURSELVES
+		if((HAS_TRAIT(src, TRAIT_INQUISITION) && HAS_TRAIT(user, TRAIT_BLACKBLOOD)) && src != user)
 			var/mob/living/carbon/carbs = user
 			if(HAS_TRAIT(user, TRAIT_PSYDONIAN_GRIT) || HAS_TRAIT(user, TRAIT_NOMOOD))
 				return
