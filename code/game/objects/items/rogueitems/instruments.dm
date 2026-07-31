@@ -379,7 +379,7 @@
 /obj/item/rogue/instrument/vocals/harpy_vocals
 	name = "harpy's song"
 	desc = "The blessed essence of harpysong. How did you get this... you monster!"
-	icon = 'icons/obj/surgery.dmi'
+	icon = 'modular_ochrevalley/icons/obj/surgery.dmi'
 	icon_state = "harpysong"		//Pulsating heart energy thing.
 	not_held = TRUE
 // OV Edit End

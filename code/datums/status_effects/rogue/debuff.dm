@@ -1049,7 +1049,7 @@
 /obj/effect/flyer_shadow
 	name = "humanoid shadow"
 	desc = "A shadow cast from something flying above."
-	icon = 'icons/effects/effects.dmi'
+	icon = 'modular_ochrevalley/icons/effects/effects.dmi'
 	icon_state = "shadow"
 	anchored = TRUE
 	layer = BELOW_MOB_LAYER
