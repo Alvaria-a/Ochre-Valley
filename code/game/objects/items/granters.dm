@@ -275,10 +275,10 @@ UNDER NO CIRCUMSTANCE SHOULD ANY OF THE BOOKS BE GIVEN OUT INTO SPAWNERS OR TO B
 
 /obj/item/book/granter/spell/bonechill/sizespell/loadout // Loadout specific ones!
 	needLit = FALSE
-	pages_to_mastery = 0
+	pages_to_mastery = 0 //OV Edit: reads faster
 
 /obj/item/book/granter/spell/bonechill/mirror_transform/loadout // Mirror Transform Spell
 	needLit = FALSE
-	pages_to_mastery = 0
+	pages_to_mastery = 0 //OV Edit: reads faster
 
 //Caustic Edit End
