@@ -104,6 +104,8 @@
 		/datum/customizer/bodypart_feature/piercing,
 		/datum/customizer/organ/ears/demihuman,
 		/datum/customizer/organ/horns/demihuman,
+		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/tail/demihuman,
 		/datum/customizer/organ/tail_feature/anthro, //OV EDIT
 		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
