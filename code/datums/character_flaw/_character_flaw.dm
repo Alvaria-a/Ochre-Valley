@@ -481,7 +481,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 	YOU ARE EXPECTED TO DETAIL WHAT YOU WANT FROM YOUR GNOLL ENCOUNTER IN YOUR OOC NOTES \
 	AND HAVE A CHARACTER DIRECTORY ENTRY. PLAY AT YOUR OWN RISK. IT REQUIRES AN EXTRA VICE."
 	//OV edit end
-needs_extra_vice = TRUE
+	needs_extra_vice = TRUE
 	var/logged = FALSE
 
 /datum/charflaw/hunted/flaw_on_life(mob/user)
