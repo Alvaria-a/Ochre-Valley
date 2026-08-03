@@ -129,7 +129,11 @@ const ActivePostingCard = (props: {
       {varieties.length > 1 && (
         <div
           className="ContractLedger__CardRow"
-          style={{ marginTop: 8, flexWrap: 'wrap', justifyContent: 'flex-start' }}
+          style={{
+            marginTop: 8,
+            flexWrap: 'wrap',
+            justifyContent: 'flex-start',
+          }}
         >
           {varieties.map((v) => (
             <Button
