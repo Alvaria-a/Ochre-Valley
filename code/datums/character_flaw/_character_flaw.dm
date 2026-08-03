@@ -475,11 +475,13 @@ GLOBAL_LIST_INIT(averse_factions, list(
 		ADD_TRAIT(H, TRAIT_ARMOR_BREAK, TRAIT_GENERIC)
 /datum/charflaw/hunted
 	name = "Hunted"
+	//OV edit start
 	desc = "Something in my past has made me a target. I'm always looking over my shoulder.	\
 	\nTHIS FLAW HAS ROLEPLAY EXPECTATIONS, YOU MAY BE HUNTED BY GNOLLS. \
 	YOU ARE EXPECTED TO DETAIL WHAT YOU WANT FROM YOUR GNOLL ENCOUNTER IN YOUR OOC NOTES \
 	AND HAVE A CHARACTER DIRECTORY ENTRY. PLAY AT YOUR OWN RISK. IT REQUIRES AN EXTRA VICE."
-	needs_extra_vice = TRUE
+	//OV edit end
+needs_extra_vice = TRUE
 	var/logged = FALSE
 
 /datum/charflaw/hunted/flaw_on_life(mob/user)
