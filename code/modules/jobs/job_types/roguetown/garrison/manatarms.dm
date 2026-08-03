@@ -391,8 +391,8 @@
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/visored/iron
 	neck = /obj/item/clothing/neck/roguetown/bevor/iron
 	mask = /obj/item/clothing/mask/rogue/ragmask/black
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+//	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue //OV EDIT - Moved to Armor Choice
+//	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson //OV Edit - Moved to Armor Choice
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
 	gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted
 	pants = /obj/item/clothing/under/roguetown/brigandinelegs
@@ -402,7 +402,18 @@
 
 	H.adjust_blindness(-3)
 	if(H.mind)
+//OV ADD START - Bailiff Skin Armor
+		var/armor_options = list("Bailiff's Skin Armor", "Light Brigandine Armor")
+		var/armor_choice = input(H, "Choose your armor.", "TAKE UP ARMS") as anything in armor_options
 		H.set_blindness(0)
+		switch(armor_choice)
+			if("Bailiff's Skin Armor")
+				armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/padded/bailiff
+			if("Light Brigandine Armor")
+				armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue //OV EDIT - Moved to Armor Choice
+				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson //OV Edit - Moved to Armor Choice
+//OV ADD END
+
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/rope/chain = 1,
