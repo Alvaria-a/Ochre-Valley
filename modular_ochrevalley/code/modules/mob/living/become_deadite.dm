@@ -28,7 +28,7 @@
 	visible_message(span_warning("[src] begins steadily rotting once again, they will soon raise as a deadite if not interrupted."))
 	log_and_message_admins("[src] is forcing their deadite transformation")
 
-	if(!do_after_dead(src, 3 SECONDS, src))
+	if(!do_after_dead(src, 3 MINUTES, src))
 		to_chat(src, "Your raising from the dead was interrupted.")
 		return
 
