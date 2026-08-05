@@ -330,7 +330,7 @@
 #define TRAIT_LYFE_DRINK "Hemovore"
 #define TRAIT_ARMOR_AVERSE "Armor Averse"
 #define TRAIT_FERAL_MINOR "Less Feral"
-#define TRAIT_FEYCURSED "Changeling"
+#define TRAIT_FEYCURSED "Fey-Cursed Lux"
 //OV File End
 
 // Economic Roles Traits
