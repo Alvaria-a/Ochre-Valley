@@ -216,7 +216,7 @@ Hotkey-Mode: (hotkey-mode must be on)
 	set name = "Commend Someone"
 	commendsomeone()
 
-//OV ADD START - Roleplay Add Maint
+//OV ADD START - Roleplay Ad Maint
 /client/verb/roleplay_ad_view()
 	set category = "OOC"
 	set name = "Roleplay Ad (View)"

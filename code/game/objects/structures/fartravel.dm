@@ -82,6 +82,7 @@
 		SSticker.regentmob = null
 	GLOB.chosen_names -= departing_mob.real_name
 	LAZYREMOVE(GLOB.actors_list, departing_mob.mobid)
+	LAZYREMOVE(GLOB.roleplay_ads, departing_mob.mobid) //OV ADD - Roleplay Ad Maint
 	// Keep insiders' bank balance forfeits to the Crown's Purse on far-travel (silent OOC).
 	// Day 0 is a grace window so roundstart bailouts don't accidentally hand the Crown a
 	// windfall from a player who never had time to act in role. Loose mammon is tallied
