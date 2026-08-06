@@ -12,7 +12,7 @@
 	gender = NEUTER
 	ambushable = FALSE
 
-	mob_size = MOB_SIZE_SMALL
+	mob_size = MOB_SMALL //OV EDIT - MOB_SIZE_SMALL change
 	density = FALSE
 	see_in_dark = FAMILIAR_SEE_IN_DARK
 	lighting_alpha = LIGHTING_PLANE_ALPHA_INVISIBLE

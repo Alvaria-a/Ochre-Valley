@@ -10,7 +10,7 @@
 	dodgetime = 30
 	d_intent = INTENT_DODGE
 	blood_toll_bucket = STATS_KILLED_DROWS
-	outfit = /datum/outfit/job/roguetown/human/species/elf/dark/drowraider/drider_drow
+	drowraider_outfit = /datum/outfit/job/roguetown/human/species/elf/dark/drowraider/drider_drow
 
 /mob/living/carbon/human/species/elf/dark/drowraider/drider_drow/ambush
 	threat_point = THREAT_ELITE
@@ -61,7 +61,7 @@
 
 //LEGENDARY VARIANT FOR GM SPAWN ONLY
 /mob/living/carbon/human/species/elf/dark/drowraider/drider_drow/monstrous
-	outfit = /datum/outfit/job/roguetown/human/species/elf/dark/drowraider/drider_drow/monstrous
+	drowraider_outfit = /datum/outfit/job/roguetown/human/species/elf/dark/drowraider/drider_drow/monstrous
 	d_intent = INTENT_PARRY
 
 /mob/living/carbon/human/species/elf/dark/drowraider/drider_drow/monstrous/after_creation()
