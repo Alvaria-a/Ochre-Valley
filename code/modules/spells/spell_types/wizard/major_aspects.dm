@@ -333,6 +333,9 @@
 		/datum/action/cooldown/spell/conjure_summon/attacker,
 		/datum/action/cooldown/spell/conjure_summon/hordes,
 		/datum/action/cooldown/spell/conjure_summon/peasant_swarm,
+		//OV ADD START
+		/datum/action/cooldown/spell/conjure_summon/tribe,
+		//OV ADD END
 	)
 	mastery_choice_spells = list(
 		/datum/action/cooldown/spell/conjure_summon/peasant_swarm,
