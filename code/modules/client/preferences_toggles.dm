@@ -169,10 +169,14 @@
 	if(prefs)
 		prefs.no_redflash = !prefs.no_redflash
 		prefs.save_preferences()
+		var/mob/living/carbon/C = mob
+		if(istype(C))
+			C.update_damage_hud() // Fixes that the overlay is not removed when toggling if already present.
 		//Caustic Edit
 		to_chat(src, "You [prefs.no_redflash ? "will not" : "will"] see the red flashing effect.")
 		//Caustic Edit End
 
+//OV ADD START - Darkvision
 /client/verb/darkvision_accessibility()
 	set category = "Preferences.Options"
 	set name = "Darkvision Accessibility"
@@ -194,6 +198,7 @@
 	prefs.save_preferences()
 	mob?.update_sight()
 	to_chat(src, "Darkvision accessibility set to [prefs.darkvision_accessibility]%.")
+//OV ADD END
 
 /client/verb/toggle_topexamine()
 	set category = "Preferences.Options"
