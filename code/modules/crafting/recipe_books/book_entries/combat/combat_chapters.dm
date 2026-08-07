@@ -660,7 +660,7 @@
 /datum/book_entry/combat/revival
 	name = "17. Death, Deadite & Revival"
 
-/datum/book_entry/combat/revival/inner_book_html(mob/user)
+/datum/book_entry/combat/revival/inner_book_html(mob/user) //OV EDIT - Line 677
 	return {"
 		<div>
 		<p>Whether you are PVEing or PVPing, dying is a common occurence and an expected part of the game.</p>
@@ -674,7 +674,7 @@
 
 		<p>As a deadite, you are a mindless beast with a hunger for flesh, though as a deadite, you still must follows the escalation rules that is common to the server before initiating an attack. You can victimize strangers or challenge passing by adventurers - with the goal of putting up a proper fight before being promptly restrained and taken back to be revived.</p>
 
-		<p>In general, it is highly frowned upon if not outright disallowed to simply walk back to a revival place and then just lie down without a fight, putting up an earnest fight - which you do not need to put all your efforts into unless you want to, is a minimum requirement.</p>
+		<p>You can walk back to the town to try and get revived on this server. The method to do it yourself is by clicking a cross in the church, although it has hefty debuffs associated. Alternatively, you can let a player cure your rot and then undergo a normal revive for lesser debuffs.</p>
 
 		<p>Becoming a deadite makes you unable to feint or use any special actions or weapons, but make you able to regenerate. You also suffer a crippling STAT debuff.</p>
 
