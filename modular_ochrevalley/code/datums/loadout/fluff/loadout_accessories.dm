@@ -42,3 +42,15 @@
 	// automatically reapply marriage when equipped by correct person
 	if(istype(user) && user.ckey == "tigercat2000" && !user.marriedto)
 		user.marriedto = "Joey Larkens"
+
+//1ceres + DerBlitzkrieg
+/obj/item/clothing/mask/rogue/eyepatch/left/donorblacksteel
+	desc = "An eyepatch capped with a thin layer of Blacksteel, fitted for the left eye."
+	icon_state = "blacksteelpatch"
+	block2add = null
+
+/datum/loadout_item/ochre_fluff/blacksteelpatch
+	name = "blacksteel eyepatch"
+	path = /obj/item/clothing/mask/rogue/eyepatch/left/donorblacksteel
+	ckeywhitelist = list("1ceres", "DerBlitzkrieg")
+	
