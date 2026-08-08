@@ -19,7 +19,7 @@
 		var/encoded_text = url_encode(text)
 		var/encoded_role = url_encode(role)
 		var/encoded_time = url_encode(time)
-		var/constring =  amia_constring() + "noterelay?roundid=[roundid]&target=[encoded_targetkey]&admin=[encoded_adminkey]&text=[encoded_text]&role=[encoded_role]&time=[encoded_time]"
+		var/constring =  amia_constring() + "banrelay?roundid=[roundid]&target=[encoded_targetkey]&admin=[encoded_adminkey]&text=[encoded_text]&role=[encoded_role]&time=[encoded_time]"
 		var/list/response = world.Export(constring)
 		if(!islist(response))
 			log_runtime("Can't reach AMIA")
