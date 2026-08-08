@@ -468,7 +468,7 @@
 	var/adminwho = admins_online.Join(", ")
 	var/kn = key_name(usr)
 	var/kna = key_name_admin(usr)
-	amia_relayban(player_ckey, admin_ckey, reason, roles_to_ban[1] == "Server" ? "server" : "[roles_to_ban.Join(", ")]", isnull(duration) ? "permanently" : "[time_message]") //OV Edit: Ban relay
+	amia_relayban(player_ckey, admin_ckey, reason, roles_to_ban[1] == "Server" ? "server" : "[roles_to_ban.Join(", ")]", isnull(duration) ? "permanent" : "[time_message]") //OV Edit: Ban relay
 	var/special_columns = list(
 		"bantime" = "NOW()",
 		"server_ip" = "INET_ATON(?)",
