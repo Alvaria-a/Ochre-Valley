@@ -2,12 +2,12 @@
 	name = "Adjudicator"
 	tutorial = "Psydonite knights, clad in silvered chainmaille and blessed with the capacity to invoke lesser miracles. You have sworn an oath to be the shield for the weak, the arm of the faithful, the protection of HIS holy places and above all to drive back the darkness of the Archdevil." //OV Edit per Lore Doc
 	allowed_sexes = list(MALE, FEMALE)
-	
+
 	outfit = /datum/outfit/job/roguetown/psydoniantemplar
 	category_tags = list(CTAG_ORTHODOXIST)
 	subclass_languages = list(/datum/language/otavan)
 	cmode_music = 'sound/music/templarofpsydonia.ogg'
-	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_STEELHEARTED, TRAIT_INQUISITION)
+	traits_applied = list(TRAIT_HEAVYARMOR)
 	subclass_stats = list(
 		STATKEY_WIL = 3,
 		STATKEY_CON = 3,
