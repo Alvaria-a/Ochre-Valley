@@ -45,12 +45,15 @@
 
 //1ceres + DerBlitzkrieg
 /obj/item/clothing/mask/rogue/eyepatch/left/donorblacksteel
+	name = "blacksteel eyepatch"
 	desc = "An eyepatch capped with a thin layer of Blacksteel, fitted for the left eye."
+	icon = 'modular_ochrevalley/icons/roguetown/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_ochrevalley/icons/roguetown/clothing/onmob/masks.dmi'
 	icon_state = "blacksteelpatch"
 	block2add = null
 
 /datum/loadout_item/ochre_fluff/blacksteelpatch
-	name = "blacksteel eyepatch"
+	name = "Donator Kit - Blacksteel Eyepatch"
 	path = /obj/item/clothing/mask/rogue/eyepatch/left/donorblacksteel
 	ckeywhitelist = list("1ceres", "DerBlitzkrieg")
 	
