@@ -103,9 +103,16 @@
 			upgrade_ai_controller(/datum/ai_controller/human_npc/archer)
 			outfit_champion(new /datum/outfit/job/roguetown/conjured_champion/doppelsoldner/xbow)
 			def_intent_change(INTENT_DODGE)
-		//OV Edit Servant option for champion
+		//OV Edit Servant option for champion. Gut their psycho tendencies while we're at it
 		if("servant")
 			outfit_champion(new /datum/outfit/job/roguetown/conjured_servant)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/find_weapon)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/equip_item)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/loot)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/kick_attack)
+			ai_controller.remove_subtree(/datum/ai_planning_subtree/generic_resist)
+			contract_spawned = FALSE
+			filters -= filters["conjureglow"]
 			def_intent_change(INTENT_DODGE)
 		//OV Edit End
 		else
@@ -315,8 +322,13 @@
 
 /datum/action/cooldown/spell/apply_prefs/cast()
 	. = ..()
-	if(owner.client)
-		owner.client.prefs.copy_to(owner, TRUE, FALSE)
+	if(owner.client && ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		owner.client.prefs.copy_to(H , TRUE, FALSE)
+		//Dendortouched breaks things
+		for(var/datum/charflaw/cf in H.charflaws)
+			if(istype(cf, /datum/charflaw/dendor_touched))
+				H.charflaws.Remove(cf)
 		return TRUE
 	return FALSE
 //OV Edit end
