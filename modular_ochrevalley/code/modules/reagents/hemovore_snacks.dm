@@ -3,7 +3,7 @@
 //- peasant tier: made with alchemy skilldif 0 on any table using improvised ingredients, gives a little bit of nutrition and a small mood debuff for 5 minutes
 //- burgher tier: made with apprentice alch at an alchemy table using mostly alchemy and raw food ingredients, gives nutrition and no buffs/debuffs
 //- noble tier: made with expert alch at an alchemy table but uses a lot of ingredients found in lavish foods, fills nutrition completely and gives a good snack buff (good meal is still people exclusive)
-// all are revolting to non-hemovores, the noble one specifically is hazardous to actual lyckers/vampires.
+// all are revolting to non-hemovores, the noble one specifically is hazardous to actual lyckers/vampyres.
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor
 	name = "bloody slop"
