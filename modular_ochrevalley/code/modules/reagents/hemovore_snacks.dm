@@ -6,12 +6,18 @@
 // all are revolting to non-hemovores, the noble one specifically is hazardous to actual lyckers/vampires.
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor
+	name = "bloody slop"
+	desc = "A horrible mix of water, salt, and viscera, even a prisoner would at least get hardtack. For those who drink lyfeblood, this may yet be useful."
 	list_reagents = list(/datum/reagent/hemosnack/poor = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/mid
+	name = "alchemical vitae"
+	desc = "A carefully considered mix of reagents brewed by a trained alchemist for those who drink lyfeblood. Ostensibly still disgusting for anyone who does not drink lyfeblood, and only tolerable for those who do."
 	list_reagents = list(/datum/reagent/hemosnack/mid = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/good
+	name = "bloodwine stew"
+	desc = "A refined alchemical solution created by an expert alchemist, it combines the staples of a fine dining experience while satiating the need for lyfesblood. A luxurious meal, for those who drink lyfesblood at least."
 	list_reagents = list(/datum/reagent/hemosnack/good = 30)
 
 /datum/reagent/hemosnack
