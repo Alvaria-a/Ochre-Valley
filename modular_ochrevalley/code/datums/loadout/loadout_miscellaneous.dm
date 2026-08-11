@@ -14,6 +14,6 @@
 	sort_category = "Misc"
 
 /datum/loadout_item/bloodslop
-	name = "Vial of Bloody Slop"
-	path = /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor
-	sort_category = "Misc"
+    name = "Vial of Bloody Slop"
+    path = /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor
+    sort_category = "Misc"
