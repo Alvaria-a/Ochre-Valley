@@ -10,7 +10,7 @@
 
 /datum/loadout_item/item_tf_chalk
 	name = "Consolidation Chalk"
-	path = /obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor
+	path = /obj/item/item_tf_chalk
 	sort_category = "Misc"
 
 /datum/loadout_item/bloodslop
