@@ -905,7 +905,7 @@
 			else
 				. += span_danger("THE HOWL OF A MAD GOD SHAKES YOUR BONES! FLESH SHORN INTO VISCERA SPRAYS THE WALLS! RIP AND TEAR!") // Default 'npc' werewolf examine. Thought it seemed edgy enough.
 
-		if((HAS_TRAIT(user, TRAIT_ANCIENT_HAG) || HAS_TRAIT(user, TRAIT_FEYTOUCHED) || istype(user, /mob/living/simple_animal/pet/familiar/fae)) && HAS_TRAIT(src, TRAIT_FEYCURSED))
+		if((HAS_TRAIT(user, TRAIT_ANCIENT_HAG) || HAS_TRAIT(user, TRAIT_FEYTOUCHED) || istype(user, /mob/living/carbon/human/species/familiar/fae)) && HAS_TRAIT(src, TRAIT_FEYCURSED))
 			. += span_nicegreen("The tapestry of their lux has been altered by fey hands, but they have yet to truly embrace their nature.")
 // OV Edit End
 
