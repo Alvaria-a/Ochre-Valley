@@ -1,0 +1,22 @@
+/datum/crafting_recipe/roguetown/alchemy/hemosnack_poor
+	name = "bloody slop"
+	category = "Table"
+	result = list(/obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/poor = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle/alchemical = 1, /datum/reagent/water = 30, /obj/item/alch/viscera = 2, /obj/item/reagent_containers/powder/salt = 1)
+	craftdiff = 0	//made on a table by the desperate
+
+/datum/crafting_recipe/roguetown/alchemy/hemosnack_mid
+	name = "alchemical vitae"
+	category = "Table"
+	req_table = FALSE
+	result = list(/obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/mid = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle/alchemical = 1, /datum/reagent/medicine/healthpot = 30, /obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/alch/puresalt = 1)
+	craftdiff = 2	//made at an alchemy table by the knowing
+
+/datum/crafting_recipe/roguetown/alchemy/hemosnack_good
+	name = "bloodwine stew"
+	category = "Table"
+	req_table = FALSE
+	result = list(/obj/item/reagent_containers/glass/bottle/alchemical/rogue/hemosnack/good = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle/alchemical = 1, /datum/reagent/consumable/ethanol/jackberrywine = 30, /obj/item/reagent_containers/food/snacks/rogue/peppersteak/ducal = 2, /obj/item/alch/puresalt = 1)
+	craftdiff = 4	//made on an alchemy table by the experts
