@@ -408,7 +408,8 @@
 		H.set_blindness(0)
 		switch(armor_choice)
 			if("Bailiff's Skin Armor")
-				armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/padded/bailiff
+				armor = /obj/item/clothing/suit/roguetown/armor/manual/pushups/barbarian //a leather armor.
+				shirt = /obj/item/clothing/suit/roguetown/armor/manual/resting/barbarian/chest //chest-only leather armor.
 			if("Light Brigandine Armor")
 				armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue //OV EDIT - Moved to Armor Choice
 				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson //OV Edit - Moved to Armor Choice
