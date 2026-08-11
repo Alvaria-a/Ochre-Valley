@@ -29,9 +29,9 @@
 
 /datum/reagent/hemosnack/poor/on_mob_life(mob/living/carbon/M)
 	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
-		M.add_stress(/datum/stressevent/bloodslop)
+		M.add_stress(/datum/stressevent/bloodslop) //wow this viscera and salt in a vial is terrible tasting
 	if(!M.has_stress_event(/datum/stressevent/bloodslop/hemo) && HAS_TRAIT(M, TRAIT_LYFE_DRINK))
-		M.add_stress(/datum/stressevent/bloodslop/hemo)
+		M.add_stress(/datum/stressevent/bloodslop/hemo) //hemovores hate it slightly less
 	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK))
 		M.adjust_nutrition(10)
 		M.adjust_hydration(10)
@@ -60,8 +60,10 @@
 /datum/reagent/hemosnack/good/on_mob_life(mob/living/carbon/M)
 	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
 		M.add_stress(/datum/stressevent/bloodslop)
+	if(HAS_TRAIT(M, TRAIT_VAMPBITE) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+		M.add_stress(/datum/stressevent/badjuiceforvampires) //get garlicked, idiot
 	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK))
 		M.adjust_nutrition(30)
 		M.adjust_hydration(30)
-		M.apply_status_effect(/datum/status_effect/buff/snackbuff)
+		M.apply_status_effect(/datum/status_effect/buff/snackbuff) //still worse than drinking a person
 	..()

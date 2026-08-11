@@ -12,3 +12,8 @@
 	stressadd = 1
 	desc = span_red("This is terrible, but it's better than nothing at least...")
 
+/datum/stressevent/badjuiceforvampires
+	timer = 2 MINUTES
+	stressadd = 5 //worse than eating without a table
+	desc = span_red("GUHHGBG- This wretched imitation is not food! It is poison!")
+
