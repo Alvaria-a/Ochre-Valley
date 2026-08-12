@@ -6,14 +6,13 @@
 /datum/stressevent/bloodslop
 	timer = 2 MINUTES
 	stressadd = 3
-	desc = span_red("Oh that was HORRENDOUS, why would anyone drink this!?")
+	desc = span_red("It's just a horrid slop of bloody meat.")
 
 /datum/stressevent/bloodslop/hemo
 	stressadd = 1
-	desc = span_red("This is terrible, but it's better than nothing at least...")
+	desc = span_red("A bloody mess of a meal but close enough to lyfesblood.")
 
 /datum/stressevent/badjuiceforvampires
 	timer = 2 MINUTES
 	stressadd = 5 //worse than eating without a table
-	desc = span_red("GUHHGBG- This wretched imitation is not food! It is poison!")
-
+	desc = span_red("This vile concoction is an affront to my tongue!")

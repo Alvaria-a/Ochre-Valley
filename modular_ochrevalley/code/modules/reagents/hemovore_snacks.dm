@@ -34,11 +34,11 @@
 	taste_description = "salty giblets"
 
 /datum/reagent/hemosnack/poor/on_mob_life(mob/living/carbon/M)
-	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.add_stress(/datum/stressevent/bloodslop) //wow this viscera and salt in a vial is terrible tasting
-	if(!M.has_stress_event(/datum/stressevent/bloodslop/hemo) && HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(!M.has_stress_event(/datum/stressevent/bloodslop/hemo) && HAS_TRAIT(M, TRAIT_LYFE_DRINK)) //i dont think someone who eats actual raw organs will care much about taste here
 		M.add_stress(/datum/stressevent/bloodslop/hemo) //hemovores hate it slightly less
-	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK) || HAS_TRAIT(M, TRAIT_ORGAN_EATER)) //organ eaters are weirdos who will also probably enjoy this slop
 		M.adjust_nutrition(10)
 		M.adjust_hydration(10)
 	..()
@@ -50,9 +50,9 @@
 	taste_description = "salted steak"
 
 /datum/reagent/hemosnack/mid/on_mob_life(mob/living/carbon/M)
-	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.add_stress(/datum/stressevent/bloodslop)
-	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK) || HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.adjust_nutrition(20)
 		M.adjust_hydration(20)
 	..()
@@ -64,11 +64,11 @@
 	taste_description = "berry sauce drizzled steak with garlic accents"
 
 /datum/reagent/hemosnack/good/on_mob_life(mob/living/carbon/M)
-	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(!M.has_stress_event(/datum/stressevent/bloodslop) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.add_stress(/datum/stressevent/bloodslop)
 	if(HAS_TRAIT(M, TRAIT_VAMPBITE) && !HAS_TRAIT(M, TRAIT_LYFE_DRINK))
 		M.add_stress(/datum/stressevent/badjuiceforvampires) //get garlicked, idiot
-	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK))
+	if(HAS_TRAIT(M, TRAIT_LYFE_DRINK) || HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.adjust_nutrition(30)
 		M.adjust_hydration(30)
 		M.apply_status_effect(/datum/status_effect/buff/snackbuff) //still worse than drinking a person

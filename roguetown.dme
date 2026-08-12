@@ -3715,6 +3715,8 @@
 #include "modular_causticcove\code\modules\dcbot\topichandlers\fetchmanifest.dm"
 #include "modular_causticcove\code\modules\dcbot\topichandlers\fetchplayers.dm"
 #include "modular_causticcove\code\modules\deadite_pac\deadite_pac.dm"
+#include "modular_ochrevalley\code\modules\reagents\hemovore_snacks.dm"
+#include "modular_ochrevalley\code\modules\roguetown\roguecrafting\alchemy\alchemy.dm"
 #include "modular_causticcove\code\modules\extra_virtue\prefs.dm"
 #include "modular_ochrevalley\code\modules\clothing\rogueclothes\armor\regenerating.dm"
 #include "modular_causticcove\code\modules\grazer\stomach.dm"
