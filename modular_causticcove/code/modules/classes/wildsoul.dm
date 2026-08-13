@@ -150,6 +150,8 @@
 	subclass_skills = list( //still can't read lol
 		/datum/skill/misc/athletics = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/arcyne = SKILL_LEVEL_JOURNEYMAN, //OV ADD - allows the use of ferramancy
+		/datum/skill/combat/staves = SKILL_LEVEL_JOURNEYMAN, //OV ADD - Makes sense really
 		/datum/skill/misc/swimming = SKILL_LEVEL_JOURNEYMAN, //gotta be able to ESCAPE
 		/datum/skill/magic/arcane = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_JOURNEYMAN, // Cryptids should be good at hiding
