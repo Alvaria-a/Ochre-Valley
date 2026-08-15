@@ -93,7 +93,7 @@
 				if (!recipient.islatejoin)
 					var/target_z = 0
 					var/mapname = SSmapping.config.map_name
-					if(mapname == "OV Dun World")
+					if(mapname == "OV Dun World") //OV EDIT
 						target_z = 3
 					else if(mapname == "Pilgrim")
 						target_z = 4
