@@ -220,14 +220,14 @@ GLOBAL_LIST_INIT(averse_factions, list(
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/spectacles(H), SLOT_WEAR_MASK)
 	else
 		new /obj/item/clothing/mask/rogue/spectacles(get_turf(H))
-	
+
 	// we don't seem to have a mind when on_mob_creation fires, so set up a timer to check when we probably will
 	addtimer(CALLBACK(src, PROC_REF(apply_reading_skill), H), 5 SECONDS)
 
 /datum/charflaw/badsight/proc/apply_reading_skill(mob/living/carbon/human/H)
 	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 
-/datum/charflaw/proc/get_nearby_humans(mob/user, range, var/include_prey = FALSE) //OV EDIT - Add include_prey argument to check for prey in the user's vore organs
+/datum/charflaw/proc/get_nearby_humans(mob/user, range, include_prey = FALSE) //OV EDIT - Add include_prey argument to check for prey in the user's vore organs
 	. = list()
 	for(var/mob/M in get_hearers_in_view(range, user, RECURSIVE_CONTENTS_CLIENT_MOBS))
 		if(M == user)
@@ -410,7 +410,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 /datum/charflaw/clingy/apply_post_equipment(mob/user)
 	if(user.mind)
 		is_active = TRUE
-	
+
 
 /datum/charflaw/noeyer
 	name = "Cyclops (R)"
@@ -758,7 +758,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 	insane_fool.hallucination = INFINITY
 	ADD_TRAIT(insane_fool, TRAIT_PSYCHOSIS, TRAIT_GENERIC)
 	insane_fool.adjust_triumphs(3)
-	if(insane_fool.patron?.type == /datum/patron/divine/abyssor) 
+	if(insane_fool.patron?.type == /datum/patron/divine/abyssor)
 		insane_fool.grant_language(/datum/language/abyssal)
 
 /datum/charflaw/indebted
