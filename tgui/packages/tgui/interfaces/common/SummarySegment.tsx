@@ -60,9 +60,7 @@ export const SummarySegment = (props: SummarySegmentProps) => {
   return (
     <div style={segmentStyle}>
       {!!props.title && <div style={headingStyle}>{props.title}</div>}
-      {!!props.subtitle && (
-        <div style={subheadingStyle}>{props.subtitle}</div>
-      )}
+      {!!props.subtitle && <div style={subheadingStyle}>{props.subtitle}</div>}
       <div style={bodyStyle}>
         {shown.map((item, i) => (
           <span key={item.label}>

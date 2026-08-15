@@ -84,7 +84,11 @@ const CommerceColumn = (props: { t: TreasurySnapshot }) => {
       <table style={twoColTable}>
         <tbody>
           <Row label="Shortages Ended Early" value={t.shortages_ended} />
-          <Row label="Trade Balance" value={formatSigned(t.trade_balance)} color={signColor(t.trade_balance)} />
+          <Row
+            label="Trade Balance"
+            value={formatSigned(t.trade_balance)}
+            color={signColor(t.trade_balance)}
+          />
           <Row label="Foreign Trade Volume" value={t.foreign_trade_volume} />
         </tbody>
       </table>

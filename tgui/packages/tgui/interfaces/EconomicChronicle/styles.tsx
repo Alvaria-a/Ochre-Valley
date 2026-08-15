@@ -85,7 +85,6 @@ export const compactPageStyle: CSSProperties = {
   lineHeight: 1.3,
 };
 
-
 export const compactHeaderCell: CSSProperties = {
   padding: '2px 6px 2px 0',
   color: INK_SOFT,
@@ -162,6 +161,3 @@ export const Tally = (props: { items: TallyItem[] }) => {
     </table>
   );
 };
-
-
-

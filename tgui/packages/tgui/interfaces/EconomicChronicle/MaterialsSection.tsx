@@ -140,7 +140,10 @@ export const MaterialsSection = (props: Props) => {
           )}
           {present.length > 1 && (
             <div style={subTabBarStyle}>
-              <div style={subTabStyle(cat === null)} onClick={() => setCat(null)}>
+              <div
+                style={subTabStyle(cat === null)}
+                onClick={() => setCat(null)}
+              >
                 All
               </div>
               {present.map((c) => (
@@ -167,7 +170,10 @@ export const MaterialsSection = (props: Props) => {
                   </td>
                 )}
                 {outCols.length > 0 && (
-                  <td style={groupHeaderCell(SEAL_RED)} colSpan={outCols.length}>
+                  <td
+                    style={groupHeaderCell(SEAL_RED)}
+                    colSpan={outCols.length}
+                  >
                     OUTFLOW
                   </td>
                 )}
@@ -237,16 +243,11 @@ export const MaterialsSection = (props: Props) => {
               <tr style={totalRowStyle}>
                 <td style={{ ...compactDataCell, color: SEAL_AMBER }}>Total</td>
                 {ordered.map((col) => (
-                  <td
-                    key={col.code}
-                    style={{ ...numCell, color: SEAL_AMBER }}
-                  >
+                  <td key={col.code} style={{ ...numCell, color: SEAL_AMBER }}>
                     {colTotal(col.code)}
                   </td>
                 ))}
-                <td style={{ ...numCell, color: SEAL_AMBER }}>
-                  {openTotal}
-                </td>
+                <td style={{ ...numCell, color: SEAL_AMBER }}>{openTotal}</td>
                 <td
                   style={{
                     ...numCell,
@@ -262,9 +263,9 @@ export const MaterialsSection = (props: Props) => {
           </table>
           <div style={noteStyle}>
             Ores and ingots share the Metal category. Ores are only accounted
-            for in the import and export flow - smelting one in town records
-            the bar under DOM and the ore under SMT. DOM only counts town
-            smelting and town farming, to avoid overcounting goods that do often not
+            for in the import and export flow - smelting one in town records the
+            bar under DOM and the ore under SMT. DOM only counts town smelting
+            and town farming, to avoid overcounting goods that do often not
             reach town, like butchering or wood.
           </div>
         </>

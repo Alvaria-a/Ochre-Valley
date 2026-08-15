@@ -50,30 +50,36 @@ const amountCell = {
 const ExpenseTable = (props: { groups: CrownExpenseGroup[] }) => (
   <div>
     <table style={twoColTable}>
-    <thead>
-      <tr>
-        <td style={compactHeaderCell}>Expense</td>
-        <td
-          style={{ ...compactHeaderCell, textAlign: 'right', paddingRight: 0 }}
-        >
-          Mammons
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      {props.groups.map((group) => (
-        <Fragment key={group.name}>
-          <tr>
-            <td style={mechanismCell}>{group.name}</td>
-            <td style={{ ...amountCell, ...mechanismCell }}>{group.total}m</td>
-          </tr>
-          {group.rows.map((row) => (
-            <tr key={row.name}>
-              <td style={roleCell}>{row.name}</td>
-              <td style={{ ...amountCell, color: INK }}>{row.amount}m</td>
+      <thead>
+        <tr>
+          <td style={compactHeaderCell}>Expense</td>
+          <td
+            style={{
+              ...compactHeaderCell,
+              textAlign: 'right',
+              paddingRight: 0,
+            }}
+          >
+            Mammons
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        {props.groups.map((group) => (
+          <Fragment key={group.name}>
+            <tr>
+              <td style={mechanismCell}>{group.name}</td>
+              <td style={{ ...amountCell, ...mechanismCell }}>
+                {group.total}m
+              </td>
             </tr>
-          ))}
-        </Fragment>
+            {group.rows.map((row) => (
+              <tr key={row.name}>
+                <td style={roleCell}>{row.name}</td>
+                <td style={{ ...amountCell, color: INK }}>{row.amount}m</td>
+              </tr>
+            ))}
+          </Fragment>
         ))}
       </tbody>
     </table>
@@ -100,10 +106,14 @@ export const CrownExpensesSection = (props: Props) => {
     <div style={compactCardStyle}>
       <SummarySegment
         title="Crown Expenses"
-        items={[{ label: 'Total drawn', value: `${c.total}m`, color: SEAL_RED }]}
+        items={[
+          { label: 'Total drawn', value: `${c.total}m`, color: SEAL_RED },
+        ]}
       />
       {c.groups.length === 0 ? (
-        <div style={emptyStyle}>Nothing was drawn from the Crown&apos;s Purse, yet.</div>
+        <div style={emptyStyle}>
+          Nothing was drawn from the Crown&apos;s Purse, yet.
+        </div>
       ) : right.length === 0 ? (
         <ExpenseTable groups={left} />
       ) : (

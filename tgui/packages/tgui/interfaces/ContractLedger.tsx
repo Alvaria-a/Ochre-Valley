@@ -4,10 +4,10 @@ import type { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { formatRatioPct } from './common/format';
 import { InnkeeperRumorPanel } from './ContractLedgerInnkeeper';
 import { StewardDefensePanel } from './ContractLedgerSteward';
 import { TownerPostingPanel } from './ContractLedgerTowner';
+import { formatRatioPct } from './common/format';
 
 type Contract = {
   ref: string;
