@@ -2,9 +2,9 @@
 /datum/advclass/sojourner
 	name = "Sojourner"
 	tutorial = "Psydonite monks, trained in the Naledian discipline of Automagic - enhancement of one's own body through Arcyne Magick. \
-    Your fists and your will are the one thing that cannot be deprived from you, handy tools when protecting the flock and bringing the teachings of Naledi to the heathens. \
-    Where your fists fall short, your wits prevail. Where your magyck falters, your fists answer. \
-    His will be done." //OV Edit per Lore Doc
+	Your fists and your will are the one thing that cannot be deprived from you, handy tools when protecting the flock and bringing the teachings of Naledi to the heathens. \
+	Where your fists fall short, your wits prevail. Where your magyck falters, your fists answer. \
+	His will be done." //OV Edit per Lore Doc
 	allowed_sexes = list(MALE, FEMALE)
 
 	outfit = /datum/outfit/job/roguetown/sojourner

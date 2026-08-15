@@ -5,14 +5,14 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /proc/parse_spoilers(text) // Free to use. Added here because werewolfs are a bit more of a basic examine system. But I *do* want it so people can be expressive, even if its explicit or otherwise.
-    if(!text)
-        return text
-    var/regex/R = new(@"\|\|(.+?)\|\|", "g")
-    while(R.Find(text))
-        var/match = R.group[1]
-        var/replacement = "<span class='spoiler'>[match]</span>"
-        text = copytext(text, 1, R.index) + replacement + copytext(text, R.next)
-    return text
+	if(!text)
+		return text
+	var/regex/R = new(@"\|\|(.+?)\|\|", "g")
+	while(R.Find(text))
+		var/match = R.group[1]
+		var/replacement = "<span class='spoiler'>[match]</span>"
+		text = copytext(text, 1, R.index) + replacement + copytext(text, R.next)
+	return text
 
 /mob/living/carbon/human/proc/werewolf_changename()
 	set name = "Change Wolf Name"

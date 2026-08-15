@@ -112,7 +112,7 @@
 	icon_state = "scarhead"
 	layer = BODY_LAYER
 
- /// CAUSTIC EDIT start
+// CAUSTIC EDIT start
 /datum/sprite_accessory/face_detail/monstermaw
 	name = "Monster Maw"
 	icon_state = "monstermaw"
@@ -120,7 +120,7 @@
 	color_disabled = FALSE
 	color_keys = 3
 	color_key_names = list("Teeth", "Head", "Upper eye")
- /// CAUSTIC EDIT end
+// CAUSTIC EDIT end
 
 /datum/sprite_accessory/accessory
 	icon = 'icons/mob/sprite_accessory/accessory.dmi'
