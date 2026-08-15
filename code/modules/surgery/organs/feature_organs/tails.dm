@@ -86,7 +86,9 @@
 	name = "goblin tail"
 	accessory_type =	/datum/sprite_accessory/tail/goblin1
 
-/obj/item/organ/tail/harpy // OV Add
+//OV ADD START
+/obj/item/organ/tail/harpy
 	name = "harpy plumage"
 	desc = "Why?"
-	accessory_type =	/datum/sprite_accessory/tail/goblin1
+	accessory_type =	/datum/sprite_accessory/tail/corvid
+//OV ADD END

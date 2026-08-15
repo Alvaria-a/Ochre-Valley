@@ -190,3 +190,11 @@
 	desc = "One of Pestra's more humble and unassuming gifts. This bar has a pleasant jackberry aroma."
 	icon_state = "soap_jackberry"
 	fragrance_type = /datum/pollutant/fragrance/Jackberry
+
+//OV edit - For the admemes
+/obj/item/soap/bath/invisible
+	name = "slippery patch"
+	desc = "It sure is slippery..."
+	icon_state = "nothing_there"
+	anchored = 1
+//OV edit end
