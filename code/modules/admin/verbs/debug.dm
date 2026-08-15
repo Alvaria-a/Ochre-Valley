@@ -1181,7 +1181,7 @@ GLOBAL_LIST_EMPTY(loadout_selected_advclasses)
 		to_chat(usr, span_warning("No valid humanoid mobs found!"))
 		return
 
-	var/source_name = input("Select character to copy from:", "Copy From...") as null|anything in sortList(possible_sources)
+	var/source_name = input(usr,"Select character to copy from:", "Copy From...") as null|anything in sortList(possible_sources)
 	if(!source_name)
 		return
 

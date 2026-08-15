@@ -42,7 +42,7 @@
 	//CC EDIT
 	if (H.mind)
 		var/weapons = list("Greataxe", "Bearded Axe & Kite Shield", "Shortsword & Kite Shield")
-		var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+		var/weapon_choice = input(H,"Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		switch(weapon_choice)
 			if("Greataxe")
 				H.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
