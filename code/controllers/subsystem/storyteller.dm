@@ -782,7 +782,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/ttime = world.time - SSticker.round_start_time
 // OV Edit: No round end votes
 	if(ttime >= GLOB.round_timer && !roundvoteend)
-		to_chat(world, "\n<h1><font color='purple'>Game will end in [ROUND_END_TIME_VERBAL]</font></h1>")
+		to_world("\n<h1><font color='purple'>Game will end in [ROUND_END_TIME_VERBAL]</font></h1>")
 		roundvoteend = TRUE
 		round_ends_at = world.time + ROUND_END_TIME
 
