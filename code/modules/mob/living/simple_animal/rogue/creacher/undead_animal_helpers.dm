@@ -56,15 +56,8 @@ GLOBAL_LIST_INIT(animal_to_undead, list(
 /datum/component/deadite_animal_reanimation
 	var/reanimation_timer
 	var/undead_to_spawn
-	var/attempt_later_reanimate //Caustic Edit - Var to only attempt a loop of the timer this many times
 
-<<<<<<< HEAD
-/datum/component/deadite_animal_reanimation/Initialize()
-	attempt_later_reanimate = 3 //Caustic Edit - Init the loop counter
-
-=======
 /datum/component/deadite_animal_reanimation/Initialize(mapload)
->>>>>>> Azure-Peak/main
 	if(!istype(parent, /mob/living/simple_animal))
 		return COMPONENT_INCOMPATIBLE
 
@@ -94,21 +87,6 @@ GLOBAL_LIST_INIT(animal_to_undead, list(
 
 /datum/component/deadite_animal_reanimation/proc/start_twitching()
 	var/mob/living/simple_animal/mob = parent
-
-	//Caustic Edit - Add a prevention and loop the timer if someone living is nearby
-	if(attempt_later_reanimate > 0)
-		var/client_mobs = get_hearers_in_range(6, mob, SPATIAL_GRID_CONTENTS_TYPE_CLIENTS)
-		if(length(client_mobs))
-			for(var/mob/living/player_mob as anything in client_mobs)
-				if(player_mob.stat == CONSCIOUS)
-					attempt_later_reanimate--
-					if(attempt_later_reanimate >= 0)
-						reanimation_timer = addtimer(CALLBACK(src, PROC_REF(reanimate)), 1.5 MINUTES, TIMER_STOPPABLE)
-					else
-						UnregisterFromParent()
-					return
-	//Caustic Edit End
-
 	if(!prob(get_reanimation_chance()) || QDELETED(mob) || mob.stat != DEAD)
 		UnregisterFromParent()
 		qdel(src)
