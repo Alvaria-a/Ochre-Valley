@@ -180,7 +180,6 @@
 		/datum/body_marking/backspots,
 		/datum/body_marking/front,
 		/datum/body_marking/drake_eyes,
-		/datum/body_marking/spotted,
 		/datum/body_marking/harlequin,
 		/datum/body_marking/harlequinreversed,
 		/datum/body_marking/gradient,
