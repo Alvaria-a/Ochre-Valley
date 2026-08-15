@@ -29,7 +29,7 @@
 /atom/movable //reference to all obj/item/grabbing
 	var/list/grabbedby
 
-/obj/item/grabbing/Initialize()
+/obj/item/grabbing/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 
@@ -196,7 +196,7 @@
 
 	if(user.cmode && !M.cmode)
 		combat_modifier += 0.3
-	
+
 	else if(!user.cmode && M.cmode)
 		combat_modifier -= 0.3
 
@@ -338,7 +338,7 @@
 							pincount = 0
 							qdel(src)
 							break
-						M.Stun(stun_dur - pincount * 2)	
+						M.Stun(stun_dur - pincount * 2)
 						M.Immobilize(stun_dur)	//Made immobile for the whole do_after duration, though
 						user.stamina_add(rand(1,3) + abs(skill_diff) + stun_dur / 1.5)
 						M.visible_message(span_danger("[user] keeps [M] pinned to the ground!"))
@@ -371,7 +371,7 @@
 			var/obj/item/I
 			if(sublimb_grabbed == BODY_ZONE_PRECISE_L_HAND && M.active_hand_index == 1)
 				I = M.get_active_held_item()
-			else 
+			else
 				if(sublimb_grabbed == BODY_ZONE_PRECISE_R_HAND && M.active_hand_index == 2)
 					I = M.get_active_held_item()
 				else

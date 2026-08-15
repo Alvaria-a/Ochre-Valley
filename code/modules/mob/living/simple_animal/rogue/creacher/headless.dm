@@ -61,7 +61,7 @@
 	var/swallow_cooldown_delay = 30 SECONDS
 	capture_difficulty = 2 //OV ADD
 
-/mob/living/simple_animal/hostile/retaliate/rogue/headless/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/headless/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ai_aggro_system)
 	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)

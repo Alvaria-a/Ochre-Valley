@@ -571,7 +571,7 @@
 				human.apply_status_effect(/datum/status_effect/buff/pyre)
 				human.add_stress(/datum/stressevent/astrata_pyre)
 
-/obj/machinery/light/rogue/campfire/miracle_pyre/Initialize()
+/obj/machinery/light/rogue/campfire/miracle_pyre/Initialize(mapload)
 	. = ..()
 	if(lifespan)
 		QDEL_IN(src, lifespan) //delete after it runs out
@@ -804,7 +804,7 @@
 	ispartner = TRUE
 	immolate = TRUE
 
-/datum/component/immolation/Initialize(mob/living/partner_mob, mob/living/carbon/caster_mob, var/holy_skill, var/is_astrata)
+/datum/component/immolation/Initialize(mob/living/partner_mob, mob/living/carbon/caster_mob, holy_skill, is_astrata)
 	if(!isliving(parent) || !iscarbon(partner_mob))
 		return COMPONENT_INCOMPATIBLE
 
@@ -831,7 +831,7 @@
 	START_PROCESSING(SSprocessing, src)
 	RegisterSignal(parent, COMSIG_LIVING_MIRACLE_HEAL_APPLY, PROC_REF(on_heal))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(on_deletion))
-	addtimer(CALLBACK(src, .proc/remove_immolation), duration)
+	addtimer(CALLBACK(src, PROC_REF(remove_immolation)), duration)
 
 	// Apply visual effect
 	var/mob/living/L = parent

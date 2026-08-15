@@ -8,7 +8,7 @@
 			return
 	// OV Edit End
 	var/oldact = act
-	act = lowertext(act)
+	act = LOWER_TEXT(act)
 
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
 		var/static/list/nobreath_blocked = list(
@@ -139,7 +139,7 @@
 	return FALSE
 
 
-/datum/emote/spin/run_emote(mob/user, params ,  type_override, intentional)
+/datum/emote/spin/run_emote(mob/user, params ,	type_override, intentional)
 	. = ..()
 	if(.)
 		user.spin(20, 1)

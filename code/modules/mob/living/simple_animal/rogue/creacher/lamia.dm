@@ -55,7 +55,7 @@
 	var/sneak_cooldown_delay = 30 SECONDS
 	capture_difficulty = 2 //OV ADD
 
-/mob/living/simple_animal/hostile/retaliate/rogue/lamia/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/lamia/Initialize(mapload)
 	. = ..()
 	if(prob(20))
 		gender = MALE

@@ -21,7 +21,7 @@
 	set hidden = 1
 	var/discordurl = CONFIG_GET(string/discordurl)
 	if(discordurl)
-		if(alert("This will open the discord. Are you sure?",,"Yes","No")!="Yes")
+		if(alert(usr, "This will open the discord. Are you sure?",,"Yes","No")!="Yes")
 			return
 		src << link(discordurl)
 	else
@@ -35,7 +35,7 @@
 	set hidden = 1
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
-		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(alert(usr, "This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return
 		src << link(rulesurl)
 	else
@@ -49,7 +49,7 @@
 	set hidden = 1
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(alert(usr, "This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return
 		src << link(githuburl)
 	else
