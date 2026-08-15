@@ -43,7 +43,7 @@
 			src.name = newname
 		to_chat(src, span_notice("Your wolf name is now [newname]."))
 		return TRUE
-	else 
+	else
 		to_chat(src, span_warning("Not allowed to rename! Currently: [W.wolfname]  If there is a mistake, ahelp and ask an admin to set your character's mind > Werewolf antag datum > 'allow_rename' var back to TRUE or 1!"))
 		return FALSE
 

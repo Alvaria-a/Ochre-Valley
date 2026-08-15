@@ -651,7 +651,7 @@
 	qdel(src)*/ //OV Edit End
 
 //OV Add Start - Armor Labels
-/obj/item/clothing/wrists/roguetown/bracers/graggar/Initialize()
+/obj/item/clothing/wrists/roguetown/bracers/graggar/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_HORDE, "ARMOR", "RENDERED ASUNDER")
 //OV Add End

@@ -436,7 +436,7 @@
 /obj/structure/roguemachine/vendor/tower
 	keycontrol = "university"
 
-/obj/structure/roguemachine/vendor/tower/Initialize()
+/obj/structure/roguemachine/vendor/tower/Initialize(mapload)
 	. = ..()
 	for(var/X in list(
 		/obj/item/reformation_gem,
@@ -454,7 +454,7 @@
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 5
 	update_icon()
-	
+
 /obj/structure/roguemachine/vendor/church_bedroomset_one //contains the keys to the church bedrooms, better visually than having them on a table
 	keycontrol = "priest"
 	will_hawk = FALSE
