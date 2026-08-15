@@ -126,7 +126,6 @@
 								recipient.forceMove(spawn_loc)
 								to_chat(recipient, span_notice("As a resident of Azure Peak, you find yourself in the local tavern."))
 
-				//OV Edit End
 #undef NOTABLE_BEAUTY
 #undef NOTABLE_STASH
 #undef NOTABLE_RESIDENCY
