@@ -82,7 +82,7 @@
 		var/atom/target_origin = get_turf(message_origin) || message_origin
 		for(var/mob/living/M in range(target_origin, targetrange))
 		//OV Edit End
-			if(M != user && !M.rogue_sneaking && !(M.name != "Unknown"))
+			if(M != user && !M.rogue_sneaking && (M.name != "Unknown"))
 				mobsadjacent += M
 		//OV Edit: Let held micros be targetable
 		for(var/thing in user.contents)
