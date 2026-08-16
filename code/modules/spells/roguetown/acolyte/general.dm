@@ -629,6 +629,13 @@
 		return FALSE
 
 	var/mob/living/target = cast_on
+
+	//OV edit
+	if(istype(target, /mob/living/simple_animal/hostile/retaliate/rogue/ooze_blob/suffering))
+		target.revive()
+		return TRUE
+	//OV edit end
+
 	if(!target.check_revive(owner))
 		return FALSE
 	var/found = null
