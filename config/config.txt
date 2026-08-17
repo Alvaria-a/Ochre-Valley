@@ -254,7 +254,7 @@ USEBLACKLIST
 # DISCORDURL https://discord.gg/E2ay9BUszE
 
 ## Wiki address
-WIKIURL https://ochrevalley.miraheze.org/wiki/Main_Page
+WIKIURL https://ochrevalley.miraheze.org
 
 ## Rules address
 RULESURL https://ochrevalley.miraheze.org/wiki/Rules
