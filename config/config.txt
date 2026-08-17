@@ -254,10 +254,10 @@ USEBLACKLIST
 # DISCORDURL https://discord.gg/E2ay9BUszE
 
 ## Wiki address
-# WIKIURL https://ochrevalley.miraheze.org/wiki/Main_Page
+WIKIURL https://ochrevalley.miraheze.org/wiki/Main_Page
 
 ## Rules address
-# RULESURL https://wiki.moviesfreepremium.xyz/blackstone/rules
+RULESURL https://ochrevalley.miraheze.org/wiki/Rules
 
 ## Github address
 GITHUBURL https://github.com/Ochre-Valley/Ochre-Valley
