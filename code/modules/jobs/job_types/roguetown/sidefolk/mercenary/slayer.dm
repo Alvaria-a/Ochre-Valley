@@ -63,10 +63,10 @@
 /obj/item/clothing/suit/roguetown/armor/manual/pushups/slayer
 	name = "rough skin"
 	desc = ""
-	allowed_race = list(
+	/*allowed_race = list( //OV EDIT - Removed Race Locks
 		/datum/species/dwarf,
 		/datum/species/dwarf/mountain
-		)
+		)*/
 	armor = ARMOR_MAILLE
 	slot_flags = ITEM_SLOT_ARMOR
 	body_parts_covered = COVERAGE_FULL | COVERAGE_HEAD | NECK //This does not cover eyes/nose/mouth.
