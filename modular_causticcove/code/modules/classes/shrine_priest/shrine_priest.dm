@@ -25,7 +25,8 @@
 /datum/outfit/job/roguetown/adventurer/missionary/proc/try_get_shrinepriest_choice(mob/living/carbon/human/H)
 	var/datum/preferences/prefs = H.client?.prefs
 	var/start_choices = list(CHOICE_NORMALMISSIONARY, CHOICE_SHRINEPRIEST)
-	if(prefs && istype(prefs.virtue_origin, /datum/virtue/origin/kazengun))
+	// If we're Kazengunese and aren't Undivded (Undivided is not a thing in Kazengun; they worship the Twelve, not the Ten!)
+	if(prefs && istype(prefs.virtue_origin, /datum/virtue/origin/kazengun) && !istype(H.patron, /datum/patron/divine/undivided))
 		var/choice = tgui_input_list(H, "How tightly bound to the traditions of my homeland am I? (This only affects my starting outfit.)", "Shrine Priest?", start_choices, CHOICE_NORMALMISSIONARY)
 		return (choice == CHOICE_SHRINEPRIEST)
 	return FALSE
