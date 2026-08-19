@@ -34,7 +34,7 @@
 		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
 	)
 
-	extra_context = "This class has access to tier 1 miracles, and can choose between three combinations of a weapon and bow: Eagle's Beak + Shortbow, Naginata + Shortbow, Hwando + Shortbow, or Naginata + Recurve Bow."
+	extra_context = "This class has access to tier 1 miracles, and can choose between four combinations of a weapon and bow: Eagle's Beak + Shortbow, Naginata + Shortbow, Hwando + Shortbow, or Naginata + Recurve Bow."
 
 /*/datum/outfit/job/roguetown/adventurer/shrine_guardian //OV Edit - All Kazengun Patrons Unlocked
 	allowed_patrons = list(/datum/patron/divine/astrata)*/
