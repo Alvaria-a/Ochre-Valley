@@ -7,7 +7,6 @@
 	allowed_patrons = ALL_KAZENGUN_PATRONS //guardian of the twelve... and saidon but no undivided
 	outfit = /datum/outfit/job/roguetown/mercenary/shrine_guardian
 	subclass_languages = list(/datum/language/kazengunese)
-	class_select_category = CLASS_CAT_KAZENGUN
 	category_tags = list(CTAG_ADVENTURER)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_DODGEEXPERT) // Hit fast, hit hard, but survive attacks by  avoidance. You have spacing tools to avoid getting whacked - use 'em!
 	cmode_music = 'sound/music/combat_kazengite.ogg'
@@ -59,7 +58,7 @@
 		/obj/item/flashlight/flare/torch,
 		/obj/item/needle/thorn/cleric
 		)
-	var/weapons = list("Eagle's Beak + Shortbow","Naginata + Shortbow","Naginata + Recurve Bow") //OV Edit: Added Naginata + Shortbow
+	var/weapons = list("Eagle's Beak + Shortbow","Naginata + Shortbow", "Hwando + Shortbow", "Naginata + Recurve Bow") //OV Edit: Added Naginata + Shortbow
 	if(H.mind)
 		var/weapon_choice = input(H, "Choose your weapons.", "TAKE UP ARMS") as anything in weapons
 		H.set_blindness(0)
