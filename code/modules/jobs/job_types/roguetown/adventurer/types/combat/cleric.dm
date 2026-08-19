@@ -491,13 +491,18 @@
 
 /datum/outfit/job/roguetown/adventurer/missionary/pre_equip(mob/living/carbon/human/H)
 	..()
-	to_chat(H, span_warning("You are a devout worshipper of the divine with a strong connection to your patron god. You've spent years studying scriptures and serving your deity - now you wander into foreign lands, spreading the word of your faith."))
-	backl = /obj/item/storage/backpack/rogue/satchel
-	shirt = /obj/item/clothing/suit/roguetown/armor/vestments_padded
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots
-	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
-	beltr = /obj/item/flashlight/flare/torch/lantern
+	// OV Edit Begin - Let them choose shrine priest flavor if they have Kazengun origin
+	var/shrinepriest_chosen = try_get_shrinepriest_choice(H)
+	if(!shrinepriest_chosen)
+		// OV Note(?) - This block isn't changed from upstream beyond being put into this if statement. Keep this consistent with upstream!
+		to_chat(H, span_warning("You are a devout worshipper of the divine with a strong connection to your patron god. You've spent years studying scriptures and serving your deity - now you wander into foreign lands, spreading the word of your faith."))
+		backl = /obj/item/storage/backpack/rogue/satchel
+		shirt = /obj/item/clothing/suit/roguetown/armor/vestments_padded
+		pants = /obj/item/clothing/under/roguetown/trou/leather
+		shoes = /obj/item/clothing/shoes/roguetown/boots
+		belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
+		beltr = /obj/item/flashlight/flare/torch/lantern
+	// OV Edit End
 	backpack_contents = list(
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch = 1,
@@ -666,3 +671,7 @@
 	neck = apply_cleric_pre_equip(H)
 	if(istype(H.patron, /datum/patron/divine/dendor)) // ONLY missionary gets this for some reason so it's not included in apply_cleric_pre_equip
 		H.grant_language (/datum/language/beast)
+	// OV Edit - Shrine Priest start option. We apply this at the end to override any gear applied above here!
+	if(shrinepriest_chosen)
+		apply_shrine_priest(H)
+	// OV Edit end
