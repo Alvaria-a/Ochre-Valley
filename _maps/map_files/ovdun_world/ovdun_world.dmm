@@ -63599,6 +63599,9 @@
 /obj/effect/decal/cobbleedge{
 	dir = 9
 	},
+/obj/item/reformation_gem,
+/obj/item/reformation_gem,
+/obj/item/reformation_gem,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/manor)
 "lMQ" = (
@@ -102197,9 +102200,8 @@
 /area/rogue/outdoors/town)
 "sUZ" = (
 /obj/structure/table/wood/poor,
-/obj/item/reformation_gem,
-/obj/item/reformation_gem,
-/obj/item/reformation_gem,
+/obj/item/roguemachine/zadcote/hand,
+/obj/item/hand_files,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/manor)
 "sVc" = (
