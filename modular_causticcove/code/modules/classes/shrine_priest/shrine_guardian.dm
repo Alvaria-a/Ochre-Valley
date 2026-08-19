@@ -5,7 +5,7 @@
 	tutorial = SHRINEGUARDIAN_TUTORIAL
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_patrons = ALL_KAZENGUN_PATRONS //guardian of the twelve... and saidon but no undivided
-	outfit = /datum/outfit/job/roguetown/mercenary/shrine_guardian
+	outfit = /datum/outfit/job/roguetown/adventurer/shrine_guardian
 	subclass_languages = list(/datum/language/kazengunese)
 	category_tags = list(CTAG_ADVENTURER)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_DODGEEXPERT) // Hit fast, hit hard, but survive attacks by  avoidance. You have spacing tools to avoid getting whacked - use 'em!
@@ -36,10 +36,10 @@
 
 	extra_context = "This class has access to tier 1 miracles, and can choose between three combinations of a weapon and bow: Eagle's Beak + Shortbow, Naginata + Shortbow, Hwando + Shortbow, or Naginata + Recurve Bow."
 
-/*/datum/outfit/job/roguetown/mercenary/shrine_guardian //OV Edit - All Kazengun Patrons Unlocked
+/*/datum/outfit/job/roguetown/adventurer/shrine_guardian //OV Edit - All Kazengun Patrons Unlocked
 	allowed_patrons = list(/datum/patron/divine/astrata)*/
 
-/datum/outfit/job/roguetown/mercenary/shrine_guardian/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/shrine_guardian/pre_equip(mob/living/carbon/human/H)
 	..()
 	to_chat(H, span_notice(SHRINEGUARDIAN_TUTORIAL))
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
