@@ -14,20 +14,28 @@
 	//OV edit
 	subclass_stats = list(
 		STATKEY_WIL = 1,
-		STATKEY_STR = 1,
+		STATKEY_PER = 1,
+		STATKEY_CON = 1,
 		STATKEY_SPD = 1,
-		// 5 stat weight. Unlike the advent Paladin (7 stat weight), these guys don't even have medium armor, but they do have dodge expert. Aoh more lightweight, mobility-focused, Kazengunese paladin of sorts.
+		// 5 stat weight. Unlike the advent Paladin (7 stat weight), these guys don't even have medium armor, but they do have the strong dodge expert! A more lightweight, mobility-focused, Kazengunese paladin of sorts.
 	)
 	//OV edit end
 	subclass_skills = list(
 		/datum/skill/magic/holy = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/polearms = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/bows = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN
+		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
 	)
+
+	extra_context = "This class has access to tier 1 miracles, and can choose between three combinations of a weapon and bow: Eagle's Beak + Shortbow, Naginata + Shortbow, Hwando + Shortbow, or Naginata + Recurve Bow."
 
 /*/datum/outfit/job/roguetown/mercenary/shrine_guardian //OV Edit - All Kazengun Patrons Unlocked
 	allowed_patrons = list(/datum/patron/divine/astrata)*/
@@ -43,15 +51,13 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator //OV Edit: Fixed pathing for sandals
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata //OV Edit: Moved to wrists slot
 	gloves = /obj/item/clothing/gloves/roguetown/plate/kote //OV Edit: Parity with priest + fashion
 	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/kazengun
 	backl = /obj/item/storage/backpack/rogue/satchel
+	beltr = /obj/item/quiver/arrows
 	backpack_contents = list(
-		/obj/item/flashlight/flare/torch/lantern,
-		/obj/item/needle,
-		/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
-		/obj/item/roguekey/mercenary
+		/obj/item/flashlight/flare/torch,
+		/obj/item/needle/thorn/cleric
 		)
 	var/weapons = list("Eagle's Beak + Shortbow","Naginata + Shortbow","Naginata + Recurve Bow") //OV Edit: Added Naginata + Shortbow
 	if(H.mind)
@@ -59,24 +65,63 @@
 		H.set_blindness(0)
 		switch(weapon_choice)
 			if("Eagle's Beak + Shortbow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_JOURNEYMAN, TRUE)
 				backr = /obj/item/rogueweapon/scabbard/gwstrap
 				r_hand = /obj/item/rogueweapon/eaglebeak
 				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
-				beltr = /obj/item/quiver/arrows
 				//OV Add Start
 			if("Naginata + Shortbow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_JOURNEYMAN, TRUE)
 				backr = /obj/item/rogueweapon/scabbard/gwstrap
 				r_hand = /obj/item/rogueweapon/spear/naginata
 				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
-				beltr = /obj/item/quiver/arrows
+				//OV Add End: Added option for Naginata Maxing on spawn
+			if("Hwando + Shortbow")
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_JOURNEYMAN, TRUE)
+				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
+				r_hand = /obj/item/rogueweapon/sword/sabre/mulyeog
+				beltl = /obj/item/rogueweapon/scabbard/sword/kazengun
 				//OV Add End: Added option for Naginata Maxing on spawn
 			if("Naginata + Recurve Bow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/bows, 4, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_EXPERT, TRUE)
 				backr = /obj/item/rogueweapon/scabbard/gwstrap //OV Add: Added so can holster naginata
 				r_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve //OV Edit: Adjusted for spawn
 				l_hand = /obj/item/rogueweapon/spear/naginata //OV Edit: Adjusted for spawn
-				beltr = /obj/item/quiver/arrows
+
+	switch(H.patron?.type)
+		if(/datum/patron/divine/astrata)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/divine/noc)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+		if(/datum/patron/divine/abyssor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
+		if(/datum/patron/divine/dendor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if(/datum/patron/divine/necra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+		if(/datum/patron/divine/malum)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
+		if(/datum/patron/divine/eora)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+		if(/datum/patron/divine/ravox)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
+		if(/datum/patron/divine/xylix)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/xylix
+		if(/datum/patron/divine/pestra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if(/datum/patron/inhumen/zizo)
+			wrists = /obj/item/clothing/neck/roguetown/psicross
+			H.mind?.special_items["Amulet of Zimiko"] = /obj/item/clothing/neck/roguetown/psicross/inhumen
+		if(/datum/patron/inhumen/baotha)
+			wrists = /obj/item/clothing/neck/roguetown/psicross
+			H.mind?.special_items["Amulet of Baosumi"] = /obj/item/clothing/neck/roguetown/psicross/inhumen/baotha
+		if(/datum/patron/inhumen/matthios)
+			wrists = /obj/item/clothing/neck/roguetown/psicross
+			H.mind?.special_items["Amulet of Matoko"] = /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios
+		if(/datum/patron/inhumen/graggar)
+			wrists = /obj/item/clothing/neck/roguetown/psicross
+			H.mind?.special_items["Amulet of Gaiyuke"] = /obj/item/clothing/neck/roguetown/psicross/inhumen/graggar
+		else
+			wrists = /obj/item/clothing/neck/roguetown/psicross
 
 #undef SHRINEGUARDIAN_TUTORIAL
