@@ -1,8 +1,8 @@
 /obj/structure/skele_portal
 	name = "skeleton portal"
 	desc = "A bright portal torn through the fabric of the world, sounds of rattling bones and skeleton warcries can be heard on the other side. This can't be good."
-	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "shitportal"
+	icon = 'modular_ochrevalley/icons/roguetown/misc/structure.dmi'
+	icon_state = "evilportal"
 	max_integrity = 500 //keep it a bit more intact, you'll need an axe to properly take it down quickly.
 	anchored = TRUE
 	density = FALSE
