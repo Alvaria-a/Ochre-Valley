@@ -47,7 +47,8 @@
 	head = /obj/item/clothing/head/roguetown/mentorhat
 	cloak = /obj/item/clothing/cloak/kazengun //OV Add: Added Kazengun Drip to Kazengun Class
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
+	armor = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/black
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator //OV Edit: Fixed pathing for sandals
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	gloves = /obj/item/clothing/gloves/roguetown/plate/kote //OV Edit: Parity with priest + fashion
