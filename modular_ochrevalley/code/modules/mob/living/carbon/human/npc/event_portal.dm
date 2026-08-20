@@ -44,7 +44,8 @@
 /obj/structure/skele_portal/examine(mob/user) //Ghosts only can examine this.
 	. = ..()
 	if(!isliving(user))
-		. += span_bloody("The skeleton wars beckon! You can click this portal to join as a skeleton if there are bone lives remaining. There are [playerskele] out of [maxplayerskele] bone lives left.")
+		var/bonelives = (maxplayerskele-playerskele)
+		. += span_bloody("The skeleton wars beckon! You can click this portal to join as a skeleton if there are bones remaining. There are [bonelives] bones left.")
 
 
 /obj/structure/skele_portal/Destroy()
