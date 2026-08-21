@@ -1479,11 +1479,11 @@
 	AddComponent(/datum/component/adjustable_clothing, NECK, null, null, "sound/foley/cloth_wipe (1).ogg", null, (UPD_HEAD|UPD_MASK|UPD_NECK))
 	//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT) //OV EDIT - Removable
 
-/obj/item/clothing/neck/roguetown/coif/baotha/dropped(mob/living/carbon/human/user)
+/*/obj/item/clothing/neck/roguetown/coif/baotha/dropped(mob/living/carbon/human/user) //OV EDIT - Armor Removal
 	. = ..()
 	if(QDELETED(src))
 		return
-	qdel(src)
+	qdel(src)*/
 
 /obj/item/clothing/neck/roguetown/coif/baotha/get_examine_highlight_status()
 	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_BAOTHA_ARMOR)
