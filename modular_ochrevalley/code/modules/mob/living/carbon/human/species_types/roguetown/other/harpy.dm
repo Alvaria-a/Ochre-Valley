@@ -171,7 +171,6 @@
 		\t- Cast a visible shadow below them.\n\
 		\t- Can move up or down by using the \"Fly Up / Down\" hotkeys.\n\
 		\t\t<i>(Must be bound in your keybinds.)</i>",
-		"Trying to fly down onto a mob will make the harpy attempt to grab and hold them in their talons.",
 		"Can sing using a unique ability. Requires no hands to use. Cannot be used with bard abilities.",
 		"Have a natural Journeyman skill in music."
 	)

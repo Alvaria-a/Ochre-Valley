@@ -284,6 +284,11 @@ All foods are distributed among various categories. Use common sense.
 				else
 					eater.apply_status_effect(/datum/status_effect/buff/foodhealing, faretype, faretype)
 
+		//OV edit - if they are a hemovore, just skip them because they shouldn't be getting buffs from normal food
+		if(HAS_TRAIT(human_eater, TRAIT_LYFE_DRINK))
+			return
+		//OV edit end
+
 		if(faretype >= FAVORITE_FOOD_MINFARE && ((cuisine & human_eater.favorite_cuisine) || (dish_type & human_eater.favorite_dish)))
 			if(human_eater.add_stress(/datum/stressevent/favourite_food))
 				new /obj/effect/temp_visual/heart(get_turf(human_eater))
