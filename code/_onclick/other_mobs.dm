@@ -137,6 +137,11 @@
 		to_chat(src, span_warning("I can't move this hand."))
 		return
 
+	// OV Edit Start: Dancing
+	if(ov_try_dance_move(A))
+		return
+	// OV Edit End
+
 	if(check_arm_grabbed(used_hand))
 		to_chat(src, span_warning("[pulledby] is restraining my arm!"))
 		return
