@@ -2712,6 +2712,10 @@ GLOBAL_LIST_INIT(sight_trait_signals, build_sight_trait_signals())
 //	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
 
 /mob/living/proc/stop_looking()
+	// OV Edit Start: Allow fully locking client view
+	if(locked_look)
+		return
+	// OV Edit End
 	if(!client)
 		return
 	if(!client.pixel_x && !client.pixel_y && client.perspective == MOB_PERSPECTIVE && client.eye == client.mob)
