@@ -34,7 +34,7 @@
 		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
 	)
 
-	extra_context = "This class has access to tier 1 miracles, and can choose between four combinations of a weapon and bow: Eagle's Beak + Shortbow, Naginata + Shortbow, Hwando + Shortbow, or Naginata + Recurve Bow."
+	extra_context = "This class has access to tier 1 miracles, and can choose between four combinations of a weapon and bow: Naginata + Shortbow, Hwando + Shortbow, Kanabo + Shortbow, or Naginata + Recurve Bow."
 
 /*/datum/outfit/job/roguetown/adventurer/shrine_guardian //OV Edit - All Kazengun Patrons Unlocked
 	allowed_patrons = list(/datum/patron/divine/astrata)*/
@@ -59,15 +59,14 @@
 		/obj/item/flashlight/flare/torch,
 		/obj/item/needle/thorn/cleric
 		)
-	var/weapons = list("Eagle's Beak + Shortbow","Naginata + Shortbow", "Hwando + Shortbow", "Naginata + Recurve Bow") //OV Edit: Added Naginata + Shortbow
+	var/weapons = list("Naginata + Shortbow", "Hwando + Shortbow", "Kanabo + Shortbow", "Naginata + Recurve Bow") //OV Edit: Added Naginata + Shortbow
 	if(H.mind)
 		var/weapon_choice = input(H, "Choose your weapons.", "TAKE UP ARMS") as anything in weapons
 		H.set_blindness(0)
 		switch(weapon_choice)
-			if("Eagle's Beak + Shortbow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_JOURNEYMAN, TRUE)
-				backr = /obj/item/rogueweapon/scabbard/gwstrap
-				r_hand = /obj/item/rogueweapon/eaglebeak
+			if("Kanabo + Shortbow")
+				H.adjust_skillrank_up_to(/datum/skill/combat/maces, SKILL_LEVEL_JOURNEYMAN, TRUE)
+				r_hand = /obj/item/rogueweapon/mace/goden/steel/kanabo
 				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
 				//OV Add Start
 			if("Naginata + Shortbow")
