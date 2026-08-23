@@ -636,3 +636,7 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define ARMOR_MAT_PLATE 1
 #define ARMOR_MAT_LEATHER 2
 #define ARMOR_MAT_CHAINMAIL 3
+
+//OV ADD START
+#define CTAG_ESKELETON		"CAT_ESKELETON"		// Event Fortified Skeleton classes
+//OV ADD END
