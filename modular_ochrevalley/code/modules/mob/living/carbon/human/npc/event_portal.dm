@@ -148,12 +148,12 @@
 	var/current_radius = 1
 	var/max_radius = 4
 	var/fiend_count = 0
-	var/max_fiends = 3
+	var/max_fiends = 7
 	// Holds all the turf data so it can be unconverted.
 	var/list/turf_data = list()
 	var/expansion_timer = 2 MINUTES
 	var/next_expansion_time = 0
-	var/spawn_timer = 30 SECONDS
+	var/spawn_timer = 5 SECONDS
 	var/next_fiend_time = 0
 	var/awakened = FALSE
 	var/converting = FALSE
