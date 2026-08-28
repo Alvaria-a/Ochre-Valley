@@ -1,4 +1,4 @@
-//Vhelsyn cultist faction, and remember any admin/GM reading this file that these guys should be rare!
+//Vheslyn cultist faction, and remember any admin/GM reading this file that these guys should be rare!
 //Many also carry steel gear, and will be valuable to kill if looted before they detonate.
 
 /datum/outfit/job/roguetown/human/northern/infernal_cultist/proc/add_random_cultist_cloak(mob/living/carbon/human/H)
@@ -39,7 +39,7 @@
 	..()
 	AddComponent(/datum/component/ai_aggro_system)
 	SEND_SIGNAL(src, COMSIG_MOB_MODIFY_AGGRO_LINES, GLOB.highwayman_aggro, TRUE)
-	job = "Infernal Cultist"
+	job = "Vheslyn Cultist"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
@@ -185,7 +185,7 @@
 
 /mob/living/carbon/human/species/human/northern/infernal_cultist/soldier/after_creation()
 	..()
-	job = "Infernal Cult Warrior"
+	job = "Vheslyn Cult Warrior"
 	ADD_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 
