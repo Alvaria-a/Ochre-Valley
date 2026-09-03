@@ -596,13 +596,13 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 	head = /obj/item/clothing/head/roguetown/helmet/blacksteel/modern
 	neck = /obj/item/clothing/neck/roguetown/bevor/blacksteel/modern
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/full/blacksteel/modern
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/dark
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/black
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/blacksteel/modern
 	gloves = /obj/item/clothing/gloves/roguetown/plate/blacksteel/modern
 	belt = /obj/item/storage/belt/rogue/leather/battleskirt/black
 	pants = /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/blacksteel/modern
-	cloak = /obj/item/clothing/cloak/tabard/stabard/black
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/tabardblack
 	//Weapons
 	switch(rand(1, 6))
 		if(1)
