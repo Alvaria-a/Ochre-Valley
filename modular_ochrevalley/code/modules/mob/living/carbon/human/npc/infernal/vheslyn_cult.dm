@@ -75,7 +75,7 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 	//Stats
 	H.STASTR = 12
 	H.STASPD = 11
-	H.STACON = 7
+	H.STACON = 6
 	H.STAWIL = 8
 	H.STAPER = 12
 	H.STAINT = 8
@@ -201,10 +201,10 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 	//Stats
 	H.STASTR = 14
 	H.STASPD = 12
-	H.STACON = 9
-	H.STAWIL = 11
+	H.STACON = 8
+	H.STAWIL = 12
 	H.STAPER = 12
-	H.STAINT = 11
+	H.STAINT = 12
 	//Head Gear
 	switch(rand(1, 5))
 		if(1)
@@ -310,7 +310,7 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 	//Stats
 	H.STASTR = 16
 	H.STASPD = 12
-	H.STACON = 12
+	H.STACON = 11
 	H.STAWIL = 14
 	H.STAPER = 14
 	H.STAINT = 14
@@ -558,7 +558,7 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 //Bullshit powerful legendary skill cultists with blacksteel armor.
 //Keep in mind they don't have nodrop and thus are blacksteel loot pinatas for people who can kill them.
 /mob/living/carbon/human/species/human/northern/infernal_cultist/legendary
-	setparrytime = 6
+	setparrytime = 9
 	infernal_cultist_outfit = /datum/outfit/job/roguetown/human/northern/infernal_cult_legendary
 
 /mob/living/carbon/human/species/human/northern/infernal_cultist/legendary/after_creation()
