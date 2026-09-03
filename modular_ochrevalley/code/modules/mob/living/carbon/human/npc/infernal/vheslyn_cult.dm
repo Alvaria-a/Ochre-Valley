@@ -137,18 +137,18 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 			if(4)
 				wrists = /obj/item/clothing/wrists/roguetown/bracers/copper
 	//Leg Gear
-	switch(rand(1, 7))
+	switch(rand(1, 6))
 		if(1)
 			pants = /obj/item/clothing/under/roguetown/splintlegs
 		if(2)
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 		if(3)
 			pants = /obj/item/clothing/under/roguetown/trou
-		if(5)
+		if(4)
 			pants = /obj/item/clothing/under/roguetown/tights/black
-		if(6)
+		if(5)
 			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/kazengun/black
-		if(7)
+		if(6)
 			pants = /obj/item/clothing/under/roguetown/skirt/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	//Weapons
