@@ -602,7 +602,7 @@ GLOBAL_LIST_INIT(vheslyn_cult_aggro, world.file2list("modular_ochrevalley/string
 	belt = /obj/item/storage/belt/rogue/leather/battleskirt/black
 	pants = /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/blacksteel/modern
-	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/tabardblack
+	cloak = /obj/item/clothing/cloak/half
 	//Weapons
 	switch(rand(1, 6))
 		if(1)
