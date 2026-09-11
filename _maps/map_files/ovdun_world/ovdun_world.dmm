@@ -11924,9 +11924,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/magiciantower)
 "coe" = (
-/obj/structure/roguemachine/potionseller/university{
-	keycontrol = "apothecary"
-	},
+/obj/structure/roguemachine/potionseller/university,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/physician)
 "cof" = (
@@ -12264,8 +12262,7 @@
 /area/rogue/under/cave/taricheamanor)
 "crw" = (
 /obj/effect/decal/cobbleedge{
-	dir = 5;
-	pixel_y = 0
+	dir = 5
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/abyssor/inner)
@@ -23383,8 +23380,7 @@
 "evh" = (
 /obj/structure/bars/pipe{
 	dir = 8;
-	pixel_x = 10;
-	pixel_y = 0
+	pixel_x = 10
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/under/town/sewer)
