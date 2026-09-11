@@ -1,0 +1,199 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/indestructible/riveted/boss,
+/area/rogue/indoors/demiplane)
+"b" = (
+/obj/structure/fluff/railing/border/west,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = 22
+	},
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"i" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"m" = (
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"o" = (
+/obj/machinery/light/rogue/oven/south,
+/obj/machinery/light/rogue/hearth,
+/obj/item/cooking/pan,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/demiplane)
+"s" = (
+/obj/structure/table/wood/poor,
+/obj/item/rogueweapon/huntingknife/chefknife{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = -3;
+	pixel_x = -4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"t" = (
+/obj/structure/chair/wood/rogue/chair5{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/demiplane)
+"v" = (
+/obj/structure/roguemachine/withdraw{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"w" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
+	},
+/obj/structure/closet/crate/chest{
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/bucket/pot/teapot/fancy,
+/obj/item/reagent_containers/glass/cup/ceramic/fancy,
+/obj/item/reagent_containers/glass/cup/ceramic/fancy,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/fork,
+/obj/item/kitchen/fork,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/cooking/platter/copper,
+/obj/item/cooking/platter/copper,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"z" = (
+/obj/structure/rack/rogue/shelf/biggest{
+	pixel_x = 3;
+	pixel_y = 32
+	},
+/obj/structure/fermentation_keg/random/water{
+	icon_state = "barrel_tapped_ready";
+	pixel_x = 2;
+	pixel_y = 32
+	},
+/obj/structure/table/wood/poor,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"C" = (
+/obj/structure/table/wood/poor,
+/obj/item/millstone{
+	pixel_y = 15;
+	pixel_x = 10
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+"F" = (
+/obj/structure/bed/rogue/inn/wooldouble,
+/obj/item/bedsheet/rogue/fabric_double,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"I" = (
+/obj/structure/fluff/railing/border,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"O" = (
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/obj/structure/fluff/railing/border/west,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"P" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/closet/crate/drawer,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"R" = (
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/demiplane)
+"U" = (
+/obj/structure/chair/wood/rogue/chair5{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/demiplane)
+"V" = (
+/obj/structure/table/wood/crafted,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/demiplane)
+"X" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
+	},
+/obj/machinery/tanningrack,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/demiplane)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+o
+m
+v
+m
+U
+a
+"}
+(3,1,1) = {"
+a
+z
+m
+m
+m
+V
+a
+"}
+(4,1,1) = {"
+a
+b
+O
+i
+m
+t
+a
+"}
+(5,1,1) = {"
+a
+R
+I
+w
+m
+m
+a
+"}
+(6,1,1) = {"
+a
+F
+P
+X
+C
+s
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+"}
