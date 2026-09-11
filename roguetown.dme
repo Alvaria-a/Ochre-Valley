@@ -10,7 +10,6 @@
 #include "_maps\_basemap.dm"
 #include "_maps\ovdun_world.dm"
 #include "_maps\map_files\ovdun_world\ochre_CentCom.dmm"
-#include "_maps\ochre_valley\remote_sanctuary_zone.dm"
 #include "_maps\ochre_valley\templates\remote_sanctuary\templates.dm"
 #include "_maps\templates\arcyne_fortress.dm"
 #include "code\__byond_version_compat.dm"

@@ -23,6 +23,7 @@
 	droning_sound_dusk = 'sound/music/area/peace.ogg'
 	droning_sound_night = 'sound/music/area/peace.ogg'
 	deathsight_message = "a normally unreachable, remote location with a view of the sky"
+	converted_type = /area/rogue/indoors/remote_sanctuary
 
 /area/rogue/outdoors/remote_sanctuary/mountains
 	icon_state = "mountains"

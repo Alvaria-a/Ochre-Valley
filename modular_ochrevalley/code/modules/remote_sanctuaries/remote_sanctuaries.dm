@@ -30,10 +30,6 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	/// Associated list of template dmm files that players can purchase to claim as their own sanctuaries.
 	var/list/available_templates = list()
 
-/datum/controller/subsystem/remote_sanctuaries/Initialize(start_timeofday)
-#warn REMEMBER TO GET RID OF THIS TEST LINE WHEN YOU PUT UP THE PR
-	return ..()
-
 /datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id)
 	var/obj/effect/landmark/remote_sanctuary_spawn/claimed = get_claimed_sanctuary(claimer.ckey)
 	if(claimed)
