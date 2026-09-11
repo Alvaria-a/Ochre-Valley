@@ -31,28 +31,29 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	var/list/available_templates = list()
 
 /datum/controller/subsystem/remote_sanctuaries/Initialize(start_timeofday)
-	var/spawn_num = 0
-	for(var/obj/effect/landmark/remote_sanctuary_spawn/S in sanctuaries)
-		spawn_num++
-		world << span_notice("WOAH HEY THERE SPAWN #[spawn_num]")
 #warn REMEMBER TO GET RID OF THIS TEST LINE WHEN YOU PUT UP THE PR
-	spawn_sanctuary("ryumi", "cozy_homestead")
 	return ..()
 
 /datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id)
-	spawn_sanctuary(claimer.ckey, sanctuary_id)
-	to_chat(claimer, span_notice("My sanctuary is ready."))
+	var/obj/effect/landmark/remote_sanctuary_spawn/claimed = get_claimed_sanctuary(claimer.ckey)
+	if(claimed)
+		to_chat(claimer, span_red("I've already claimed a sanctuary for this week."))
+		return
+	try
+		spawn_sanctuary(claimer.ckey, sanctuary_id)
+		to_chat(claimer, span_notice("My sanctuary is ready."))
+	catch(var/exception/error)
+		to_chat(claimer, span_alert("My sanctuary could not be created correctly because of an error! Scream at a coder about this:\n'[error]'"))
 
 /datum/controller/subsystem/remote_sanctuaries/proc/spawn_sanctuary(var/owner_ckey, var/sanctuary_id)
 	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[sanctuary_id]
-	//if(!S)
-	//	throw EXCEPTION("UHHHH why do we not have a template at ID \"[sanctuary_id]\"??")
 	var/obj/effect/landmark/remote_sanctuary_spawn/marker = sanctuaries_available[1]
-	//if(!marker)
-	//	throw EXCEPTION("Why is there no marker... :|")
 	var/turf/T = marker.loc
-	//if(!T)
-	//	throw EXCEPTION("Why does the marker not have a turf...")
 	S.load(T, FALSE)
+	sanctuaries_available.Remove(marker)
+	sanctuaries_claimed[owner_ckey] = marker
+	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary at [ADMIN_VERBOSEJMP(T)]")
 
-
+/datum/controller/subsystem/remote_sanctuaries/proc/get_claimed_sanctuary(var/sanctuary_owner_ckey)
+	var/obj/effect/landmark/remote_sanctuary_spawn/claimed = sanctuaries_claimed[sanctuary_owner_ckey]
+	return claimed

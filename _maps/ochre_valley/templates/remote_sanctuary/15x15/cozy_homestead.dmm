@@ -1,166 +1,39 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/closed/indestructible/rock,
-/area/rogue/outdoors/remote_sanctuary)
-"b" = (
-/turf/open/floor/rogue/ruinedwood/spiral,
+"am" = (
+/turf/closed/wall/mineral/rogue/wooddark/end/north,
 /area/rogue/indoors/remote_sanctuary)
-"d" = (
-/obj/structure/flora/roguegrass/water,
-/turf/open/water/cleanshallow,
-/area/rogue/outdoors/remote_sanctuary)
-"e" = (
-/obj/structure/roguemachine/withdraw{
-	pixel_x = -32;
-	pixel_y = 0
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
-"f" = (
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"g" = (
-/obj/effect/spawner/roguemap/stump,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"h" = (
-/obj/machinery/light/rogue/campfire,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"j" = (
-/turf/open/water/river/flow,
-/area/rogue/outdoors/remote_sanctuary)
-"k" = (
-/obj/structure/flora/roguetree/pine,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"l" = (
-/turf/closed/indestructible/riveted/boss,
-/area/rogue/indoors/remote_sanctuary)
-"m" = (
-/obj/structure/fluff/railing/border{
-	dir = 6
-	},
-/obj/structure/fluff/railing/border/west,
-/turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/remote_sanctuary)
-"n" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"o" = (
-/obj/structure/flora/roguetree/pine,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"p" = (
-/obj/machinery/light/rogue/oven/south,
-/obj/machinery/light/rogue/hearth,
-/obj/item/cooking/pan,
-/obj/machinery/light/rogue/candle/l,
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/remote_sanctuary)
-"q" = (
-/obj/effect/spawner/roguemap/stump,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"r" = (
-/turf/open/water/river/flow/east,
-/area/rogue/outdoors/remote_sanctuary)
-"s" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/remote_sanctuary)
-"t" = (
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"u" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"v" = (
-/obj/structure/table/wood/poor,
-/obj/item/millstone{
-	pixel_y = 15;
-	pixel_x = 10
-	},
-/obj/structure/fluff/wallclock/r,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
-"w" = (
-/obj/structure/rack/rogue/shelf/biggest{
-	pixel_x = 3;
-	pixel_y = 32
-	},
-/obj/structure/fermentation_keg/random/water{
-	icon_state = "barrel_tapped_ready";
-	pixel_x = 2;
-	pixel_y = 32
-	},
-/obj/structure/table/wood/poor,
-/obj/item/flint{
-	pixel_x = 9;
-	pixel_y = 1
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
-"x" = (
+"cc" = (
 /obj/structure/flora/roguetree/pine{
 	pixel_y = 16
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"y" = (
-/obj/structure/chair/wood/rogue/chair5{
-	dir = 8
+"dA" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
 	},
-/turf/open/floor/carpet/royalblack,
-/area/rogue/indoors/remote_sanctuary)
-"z" = (
-/obj/item/reagent_containers/food/snacks/crow{
-	dir = 4
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"A" = (
-/obj/structure/stairs{
-	dir = 1
-	},
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"B" = (
+"dP" = (
+/obj/structure/fluff/railing/border/west,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = 22
+	},
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
-"C" = (
-/obj/structure/chair/wood/rogue/chair5{
-	dir = 4
-	},
-/obj/machinery/light/rogue/candle/l,
-/turf/open/floor/carpet/royalblack,
-/area/rogue/indoors/remote_sanctuary)
-"D" = (
-/obj/structure/table/wood/poor,
-/obj/item/rogueweapon/huntingknife/chefknife{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = -3;
-	pixel_x = -4
-	},
-/obj/machinery/light/rogue/candle/r,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
-"E" = (
-/obj/structure/fluff/railing/border,
-/obj/structure/closet/crate/drawer,
-/obj/machinery/light/rogue/candle/r,
-/turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/remote_sanctuary)
-"F" = (
+"dX" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/remote_sanctuary)
+"dZ" = (
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/remote_sanctuary)
+"em" = (
+/obj/structure/flora/roguetree/pine,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"G" = (
+"eD" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
 	icon_state = "borderfall"
@@ -181,35 +54,204 @@
 /obj/item/cooking/platter/copper,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"H" = (
-/obj/structure/bed/rogue/inn/wooldouble,
-/obj/item/bedsheet/rogue/fabric_double,
-/turf/open/floor/rogue/wood/herringbone,
+"eI" = (
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"eN" = (
+/obj/structure/chair/wood/rogue/chair5{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/remote_sanctuary)
-"I" = (
+"eS" = (
+/obj/machinery/light/rogue/campfire,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"gc" = (
+/obj/structure/chair/wood/rogue/chair5{
+	dir = 4
+	},
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/remote_sanctuary)
+"hh" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
-"J" = (
-/obj/structure/fluff/railing/border/west,
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = 22
-	},
-/turf/open/floor/rogue/wood/herringbone,
-/area/rogue/indoors/remote_sanctuary)
-"K" = (
-/obj/structure/bars/tough,
-/turf/open/water/river/flow,
-/area/rogue/outdoors/remote_sanctuary)
-"M" = (
-/obj/effect/decal/cobbleedge{
-	dir = 1;
-	icon_state = "borderfall"
-	},
-/obj/machinery/tanningrack,
+"iD" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"N" = (
+"lh" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/remote_sanctuary/mountains)
+"mK" = (
+/obj/effect/particle_effect/smoke{
+	lifetime = 14400
+	},
+/turf/open/water/river/flow/east,
+/area/rogue/outdoors/remote_sanctuary)
+"nf" = (
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"nT" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"oG" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"qg" = (
+/obj/item/reagent_containers/food/snacks/crow{
+	dir = 4
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"rs" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"tz" = (
+/obj/effect/spawner/roguemap/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"ul" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/closet/crate/drawer,
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/remote_sanctuary)
+"vJ" = (
+/turf/open/floor/rogue/rooftop/green/west,
+/area/rogue/outdoors/remote_sanctuary/mountains)
+"wY" = (
+/obj/structure/table/wood/poor,
+/obj/item/rogueweapon/huntingknife/chefknife{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = -3;
+	pixel_x = -4
+	},
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"zM" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/remote_sanctuary)
+"zS" = (
+/obj/structure/rack/rogue/shelf/biggest{
+	pixel_x = 3;
+	pixel_y = 32
+	},
+/obj/structure/fermentation_keg/random/water{
+	icon_state = "barrel_tapped_ready";
+	pixel_x = 2;
+	pixel_y = 32
+	},
+/obj/structure/table/wood/poor,
+/obj/item/flint{
+	pixel_x = 9;
+	pixel_y = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"AK" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"Bp" = (
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"Cn" = (
+/turf/closed/wall/mineral/rogue/wooddark/end,
+/area/rogue/indoors/remote_sanctuary)
+"CZ" = (
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/remote_sanctuary/mountains)
+"DJ" = (
+/turf/closed/wall/mineral/rogue/wooddark/end/east,
+/area/rogue/indoors/remote_sanctuary)
+"Fl" = (
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/remote_sanctuary)
+"Ga" = (
+/obj/structure/table/wood/poor,
+/obj/item/millstone{
+	pixel_y = 15;
+	pixel_x = 10
+	},
+/obj/structure/fluff/wallclock/r,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"Gm" = (
+/obj/structure/flora/roguetree/pine,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"GJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/obj/structure/fluff/railing/border/west,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/remote_sanctuary)
+"HL" = (
+/obj/effect/spawner/roguemap/stump,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"Ij" = (
+/turf/open/water/river/flow/east,
+/area/rogue/outdoors/remote_sanctuary)
+"IR" = (
+/turf/closed/wall/mineral/rogue/wooddark/slitted,
+/area/rogue/indoors/remote_sanctuary)
+"LC" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"MU" = (
+/obj/structure/roguewindow,
+/obj/structure/curtain/blue,
+/turf/open/floor/rogue/tile/bfloorz,
+/area/rogue/indoors/remote_sanctuary)
+"OL" = (
+/obj/structure/table/wood/crafted,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/remote_sanctuary)
+"Qy" = (
+/obj/machinery/light/rogue/oven/south,
+/obj/machinery/light/rogue/hearth,
+/obj/item/cooking/pan,
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/remote_sanctuary)
+"QS" = (
+/turf/closed/wall/mineral/rogue/wooddark/horizontal,
+/area/rogue/indoors/remote_sanctuary)
+"Rb" = (
+/turf/closed/wall/mineral/rogue/wooddark/vertical,
+/area/rogue/indoors/remote_sanctuary)
+"Rm" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"RB" = (
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/remote_sanctuary)
+"SQ" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"TQ" = (
 /obj/effect/decal/carpet/kover_darkred{
 	dir = 4;
 	pixel_y = -4;
@@ -217,301 +259,796 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"O" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
-"P" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"Q" = (
-/obj/structure/roguewindow,
-/obj/structure/curtain/blue,
-/turf/open/floor/rogue/tile/bfloorz,
-/area/rogue/indoors/remote_sanctuary)
-"R" = (
-/turf/open/water/cleanshallow,
-/area/rogue/outdoors/remote_sanctuary)
-"S" = (
+"UI" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"T" = (
-/obj/structure/flora/roguegrass,
+"Wi" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
-"U" = (
-/obj/structure/bars/tough,
-/turf/open/water/river/flow/east,
+"WT" = (
+/turf/open/water/river/flow,
 /area/rogue/outdoors/remote_sanctuary)
-"V" = (
-/obj/structure/table/wood/crafted,
-/turf/open/floor/carpet/royalblack,
+"Xl" = (
+/obj/structure/roguemachine/withdraw{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"W" = (
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
-"Y" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+"Yf" = (
+/obj/structure/bed/rogue/inn/wooldouble,
+/obj/item/bedsheet/rogue/fabric_double,
+/turf/open/floor/rogue/wood/herringbone,
+/area/rogue/indoors/remote_sanctuary)
+"Za" = (
+/turf/closed/wall/mineral/rogue/wooddark/end/west,
+/area/rogue/indoors/remote_sanctuary)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-U
-a
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
 "}
 (2,1,1) = {"
-a
-F
-F
-k
-F
-F
-t
-f
-W
-q
-R
-R
-j
-r
-a
+dX
+nf
+nf
+Gm
+nf
+nf
+Wi
+SQ
+Bp
+tz
+RB
+RB
+WT
+mK
+dX
 "}
 (3,1,1) = {"
-a
-F
-t
-t
-F
-F
-q
-F
-F
-F
-t
-d
-R
-r
-a
+dX
+nf
+Wi
+Wi
+nf
+nf
+tz
+nf
+nf
+nf
+Wi
+zM
+RB
+Ij
+dX
 "}
 (4,1,1) = {"
-a
-F
-F
-F
-F
-W
-W
-t
-s
-s
-z
-t
-R
-j
-K
+dX
+nf
+nf
+nf
+nf
+Bp
+Bp
+Wi
+dZ
+dZ
+qg
+Wi
+RB
+WT
+dX
 "}
 (5,1,1) = {"
-a
-x
-F
-S
-s
-s
-s
-s
-s
-s
-s
-F
-d
-R
-a
+dX
+cc
+nf
+UI
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+nf
+zM
+RB
+dX
 "}
 (6,1,1) = {"
-a
-F
-W
-P
-F
-s
-t
-u
-F
-W
-s
-F
-d
-R
-a
+dX
+nf
+Bp
+LC
+nf
+dZ
+Wi
+rs
+nf
+Bp
+dZ
+nf
+zM
+RB
+dX
 "}
 (7,1,1) = {"
-a
-F
-l
-l
-l
-O
-Q
-l
-l
-F
-s
-F
-g
-R
-a
+dX
+nf
+IR
+am
+Cn
+Rm
+MU
+Rb
+IR
+nf
+dZ
+nf
+HL
+RB
+dX
 "}
 (8,1,1) = {"
-a
-F
-l
-p
-e
-N
-b
-C
-Q
-t
-s
-s
-F
-t
-a
+dX
+nf
+Za
+Qy
+Xl
+TQ
+iD
+gc
+MU
+Wi
+dZ
+dZ
+nf
+Wi
+dX
 "}
 (9,1,1) = {"
-a
-F
-l
-w
-b
-b
-b
-V
-Q
-t
-s
-s
-t
-W
-a
+dX
+nf
+QS
+zS
+iD
+iD
+iD
+OL
+MU
+Wi
+dZ
+dZ
+Wi
+Bp
+dX
 "}
 (10,1,1) = {"
-a
-W
-l
-J
-m
-A
-b
-y
-Q
-F
-t
-s
-Y
-t
-a
+dX
+Bp
+QS
+dP
+GJ
+oG
+iD
+eN
+MU
+nf
+Wi
+dZ
+AK
+Wi
+dX
 "}
 (11,1,1) = {"
-a
-F
-l
-B
-I
-G
-b
-b
-l
-F
-W
-t
-h
-t
-a
+dX
+nf
+QS
+Fl
+hh
+eD
+iD
+iD
+Za
+nf
+Bp
+Wi
+eS
+Wi
+dX
 "}
 (12,1,1) = {"
-a
-F
-l
-H
-E
-M
-v
-D
-l
-n
-F
-t
-Y
-F
-a
+dX
+nf
+DJ
+Yf
+ul
+dA
+Ga
+wY
+DJ
+nT
+nf
+Wi
+AK
+nf
+dX
 "}
 (13,1,1) = {"
-a
-t
-l
-l
-l
-l
-l
-l
-l
-F
-t
-F
-F
-F
-a
+dX
+Wi
+IR
+am
+Rb
+Rb
+Rb
+Cn
+IR
+nf
+Wi
+nf
+nf
+nf
+dX
 "}
 (14,1,1) = {"
-a
-F
-W
-F
-T
-t
-F
-F
-F
-F
-F
-F
-t
-o
-a
+dX
+nf
+Bp
+nf
+eI
+Wi
+nf
+nf
+nf
+nf
+nf
+nf
+Wi
+em
+dX
 "}
 (15,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+dX
+"}
+
+(1,1,2) = {"
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+"}
+(2,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(3,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(4,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(5,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(6,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(7,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(8,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(9,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(10,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(11,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(12,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(13,1,2) = {"
+lh
+CZ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+vJ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(14,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(15,1,2) = {"
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+"}
+
+(1,1,3) = {"
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+"}
+(2,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(3,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(4,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(5,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(6,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(7,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(8,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(9,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(10,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(11,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(12,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(13,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(14,1,3) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(15,1,3) = {"
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
+lh
 "}
