@@ -9,9 +9,6 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/remote_sanctuary)
-"d" = (
-/turf/open/floor/rogue/rooftop/green/north,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "e" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -33,9 +30,6 @@
 /obj/structure/bed/rogue/bedroll,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
-"l" = (
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "m" = (
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/remote_sanctuary/cave)
@@ -70,9 +64,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"v" = (
-/turf/open/floor/rogue/rooftop/green,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "w" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
@@ -87,9 +78,6 @@
 /obj/machinery/light/rogue/campfire/longlived,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
-"B" = (
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "D" = (
 /obj/structure/flora/roguegrass/swampweed,
 /turf/open/floor/rogue/grass,
@@ -130,9 +118,6 @@
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"N" = (
-/turf/open/floor/rogue/rooftop/green/west,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "O" = (
 /obj/item/rogueweapon/pick,
 /obj/structure/closet/crate/chest/old_crate,
@@ -697,260 +682,4 @@ i
 i
 i
 i
-"}
-
-(1,1,3) = {"
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-"}
-(2,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(3,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(4,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(5,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(6,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(7,1,3) = {"
-l
-B
-B
-B
-B
-B
-d
-N
-N
-v
-B
-B
-B
-B
-l
-"}
-(8,1,3) = {"
-l
-B
-B
-B
-B
-B
-d
-N
-N
-v
-B
-B
-B
-B
-l
-"}
-(9,1,3) = {"
-l
-B
-B
-B
-B
-B
-d
-N
-N
-v
-B
-B
-B
-B
-l
-"}
-(10,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(11,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(12,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(13,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(14,1,3) = {"
-l
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-B
-l
-"}
-(15,1,3) = {"
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
 "}
