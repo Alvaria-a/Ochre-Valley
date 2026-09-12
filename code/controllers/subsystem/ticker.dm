@@ -143,7 +143,7 @@ SUBSYSTEM_DEF(ticker)
 			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.config.map_name]! (Round ID: [GLOB.round_id])"), CONFIG_GET(string/chat_announce_new_game))
 			newround()
 			#warn REMEMBER TO GET RID OF THIS TEST LINE WHEN YOU PUT UP THE PR
-			SSremote_sanctuaries.spawn_sanctuary("ryumi", "cozy_homestead")
+			SSremote_sanctuaries.spawn_sanctuary("ryumi", "shitty_cave")
 			current_state = GAME_STATE_PREGAME
 			//Everyone who wants to be an observer is now spawned
 			create_observers()
