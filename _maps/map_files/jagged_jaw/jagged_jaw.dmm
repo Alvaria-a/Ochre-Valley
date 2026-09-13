@@ -29152,6 +29152,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/beach/grim)
+"dAK" = (
+/obj/structure/respawn_portal/permanent{
+	name = "vore reformation portal - Beach"
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/beach/south/grim)
 "dAM" = (
 /obj/effect/decal/edge_corner{
 	color = "#3f3f3f"
@@ -51992,6 +51998,13 @@
 /obj/structure/flora/roguegrass/bush/westleach,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town/grim)
+"grV" = (
+/obj/structure/hotspring,
+/obj/structure/respawn_portal/permanent{
+	name = "vore reformation portal - Eoran Pond"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/eora/grim)
 "grZ" = (
 /obj/effect/decal/edge{
 	dir = 1;
@@ -186426,6 +186439,12 @@
 /obj/machinery/light/rogue/candle,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/tavern/grim)
+"wGw" = (
+/obj/structure/respawn_portal/permanent{
+	name = "vore reformation portal - Druid's Grove"
+	},
+/turf/open/water/pond,
+/area/rogue/druidsgrove/grim)
 "wGx" = (
 /obj/structure/boatbell{
 	alpha = 0
@@ -365255,7 +365274,7 @@ pHG
 pYh
 gnz
 gnz
-wVt
+dAK
 wVt
 wVt
 wVt
@@ -477096,7 +477115,7 @@ iLY
 iLY
 iLY
 iLY
-iLY
+wGw
 iLY
 iLY
 iLY
@@ -696329,7 +696348,7 @@ eOj
 rUJ
 aiL
 cNF
-aiL
+grV
 rWL
 sCa
 gmq
