@@ -15,6 +15,9 @@ endmap
 map roguetest
 endmap
 
+map dun_manor
+endmap
+
 map jagged_jaw
 	votable
 endmap
