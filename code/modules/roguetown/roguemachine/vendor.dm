@@ -631,7 +631,7 @@
 	keycontrol = "mage"
 	will_hawk = FALSE
 
-/obj/structure/roguemachine/vendor/collegekeys_two/Initialize(maplaod) //OV EDIT
+/obj/structure/roguemachine/vendor/collegekeys_two/Initialize(mapload) //OV EDIT
 	. = ..()
 
 	for (var/X in list(/obj/item/roguekey/apprentice, /obj/item/roguekey/apprentice/two))
