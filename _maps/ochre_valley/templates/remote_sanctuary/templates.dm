@@ -17,3 +17,10 @@
 	sanctuary_id = "shitty_cave"
 	description = "One of the many recently discovered caves along the distant mountains. Barely any accommodations whatsoever, but with decent natural resources at one's disposal, an industrious owner could turn it into something special... with some effort."
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/shitty_cave.dmm"
+
+/datum/map_template/remote_sanctuary/kazengun_retreat
+	name = "Kazengun Retreat"
+	sanctuary_id = "kazengun_retreat"
+	price = 600 // This one is PARTICULARLY extravagant so it's a bit more pricey
+	description = "Azurian architects consulted with the builders of Kazengun for direction while constructing this unique home next to a natural hot spring bubbling at the side of one of the local mountainsides. Comes with a kitchen, vomitorium, two bedrooms, and of course hot spring, as well as a couple ."
+	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/kazengun_retreat.dmm"
