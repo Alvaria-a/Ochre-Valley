@@ -1,4 +1,0 @@
-author: "SatinIsle"
-delete-after: True
-changes:
-  - bugfix: "Disabled, at least temporarily, the unique death function for Oozes that turns them into a weak blob form. It used to work fine, but now it breaks regularly letting people insta revive or trapping them in purgatory. I'm not sure why, but at least until I figure it out, it should be disabled."
