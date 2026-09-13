@@ -2,7 +2,7 @@
 	"file": "roguetown.dme",
 	"scannable_directory": "code/",
 	"subdirectories": true,
-	"excluded_files": ["_maps/ovdun_world.dm"],
+	"excluded_files": [],
 	"forbidden_includes": [
 		"code/modules/events/raids/goblin.dm",
 		"code/modules/events/raids/skeleton.dm",
