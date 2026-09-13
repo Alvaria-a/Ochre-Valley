@@ -18,7 +18,7 @@ endmap
 map dun_manor
 endmap
 
-map jagged_jaw
+map ovjagged_jaw
 	votable
 endmap
 
