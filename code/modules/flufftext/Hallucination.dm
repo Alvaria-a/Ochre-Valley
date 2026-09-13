@@ -1086,11 +1086,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 	var/lang = carbon.get_default_language()
 	var/picked_message = pick_list(HAL_LINES_FILE, "voices")
-	var/composed = obj.compose_message(obj, carbon.get_default_language(), picked_message)
+	var/composed = obj.compose_message(obj, carbon.get_default_language(), picked_message, , list(SPAN_GEN)) //OV EDIT
 
 	carbon.Hear(composed, obj, lang, picked_message)
 	spawn(1)
-		target.playsound_local(get_turf(obj), 'sound/misc/talk.ogg', 100, FALSE, pressure_affected = FALSE)
+		carbon.playsound_local(get_turf(obj), 'sound/misc/talk.ogg', 100, FALSE, -1) //OV EDIT
 
 	if(prob(20))
 		//OV EDIT START
