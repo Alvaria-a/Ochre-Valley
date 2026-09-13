@@ -22,5 +22,11 @@
 	name = "Kazengun Retreat"
 	sanctuary_id = "kazengun_retreat"
 	price = 600 // This one is PARTICULARLY extravagant so it's a bit more pricey
-	description = "Azurian architects consulted with the builders of Kazengun for direction while constructing this unique home next to a natural hot spring bubbling at the side of one of the local mountainsides. Comes with a kitchen, vomitorium, two bedrooms, and of course hot spring, as well as a couple ."
+	description = "Azurian architects consulted with the builders of Kazengun for direction while constructing this unique home next to a natural hot spring bubbling at the side of one of the local mountainsides. Comes with a kitchen, vomitorium, two bedrooms, and of course hot spring, as well as a couple."
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/kazengun_retreat.dmm"
+
+/datum/map_template/remote_sanctuary/arena
+	name = "Arena"
+	sanctuary_id = "fight_zone"
+	description = "By the demand of eccentric and wealthy Ravoxians, private arenas have been constructed, and this is one of them. A small colosseum, complete with a small kitchen and vomitrium, as well as some basic accommodations for an infirmary, as well as a couple viewpoints for spectators."
+	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/fight_zone.dmm"
