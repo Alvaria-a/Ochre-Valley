@@ -2,7 +2,7 @@
 	"file": "roguetown.dme",
 	"scannable_directory": "_maps/",
 	"subdirectories": true,
-	"excluded_files": ["jagged_jaw.dm", "ovdun_world.dm"],
+	"excluded_files": ["_maps/jagged_jaw.dm", "_maps/ovdun_world.dm"],
 	"forbidden_includes": [
 		"_maps/cove_world.dm",
 		"_maps/dun_world.dm",
