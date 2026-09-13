@@ -56583,6 +56583,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church/chapel/grim)
+"gVW" = (
+/obj/effect/landmark/start/wildsoullate,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave/grimspyre)
 "gVZ" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -622847,7 +622851,7 @@ tnn
 tnn
 nBZ
 mbL
-qsP
+gVW
 qsP
 qsP
 qsP
@@ -623229,7 +623233,7 @@ tnn
 tnn
 nBZ
 mbL
-qsP
+gVW
 qsP
 hOO
 qsP
@@ -623611,7 +623615,7 @@ tnn
 tnn
 nBZ
 mbL
-qsP
+gVW
 qsP
 qsP
 qsP
@@ -623993,7 +623997,7 @@ tnn
 tnn
 nBZ
 mbL
-qsP
+gVW
 qsP
 qsP
 qsP
