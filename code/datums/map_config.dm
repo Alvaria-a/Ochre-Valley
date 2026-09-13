@@ -5,7 +5,7 @@
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/dun_world.json"
+	var/config_filename = "_maps/ovdun_world.json" //OV EDIT
 	var/defaulted = TRUE	// set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -13,9 +13,9 @@
 	var/votable = FALSE
 
 	// Config actually from the JSON - should default to Dun World
-	var/map_name = "Dun World"
-	var/map_path = "map_files/dun_world"
-	var/map_file = "dun_world.dmm"
+	var/map_name = "OV Dun World" //OV EDIT
+	var/map_path = "map_files/ovdun_world" //OV EDIT
+	var/map_file = "ovdun_world.dmm" //OV EDIT
 
 	var/traits = null
 	var/space_ruin_levels = 7
