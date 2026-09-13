@@ -551,7 +551,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.next_hallucination = world.time + rand(100, 300)
 
 	QDEL_IN(src, 5) //Garuntee talk sound plays...
-	//OV EDIT END
 
 /datum/hallucination/message
 
@@ -580,7 +579,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			for(var/i in 1 to 5) //increase the odds
 				message_pool.Add("<span class='notice'>[other] puts the [pick(\
 					"killersice","crimson fang","severed head","crown of Azure Peak","master's rod",\
-					"master key","vault key", "steward's key", "ritual dagger","spellbook","decrepit zcross"\ //OV EDIT
+					"master key","vault key", "steward's key", "ritual dagger","spellbook","decrepit zcross"\
 					)] into [equipped_backpack].</span>")
 
 		message_pool.Add("<B>[other]</B> [pick("laughs at [target.first_name()]'s ugly outfit","stares at [target.first_name()]","charges aggressively towards [target.first_name()]","is wondering why [target.first_name()] isn't wearing any pants...")].")
