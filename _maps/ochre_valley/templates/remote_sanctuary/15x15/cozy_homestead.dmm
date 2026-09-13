@@ -284,6 +284,13 @@
 "Za" = (
 /turf/closed/wall/mineral/rogue/wooddark/end/west,
 /area/rogue/indoors/remote_sanctuary)
+"Zy" = (
+/obj/structure/roguemachine/musicbox/tavern{
+	pixel_y = 12
+	},
+/obj/structure/table/wood/poor,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 
 (1,1,1) = {"
 dX
@@ -463,7 +470,7 @@ Fl
 hh
 eD
 iD
-iD
+Zy
 Za
 nf
 Bp
