@@ -4,7 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\dun_world\ovdun_world.dmm" //OV EDIT
+		#include "map_files\ovdun_world\ovdun_world.dmm" //OV EDIT
 		#include "map_files\roguetest\roguetest.dmm"
 		#include "map_files\otherz\wretch_coast.dmm"
 
