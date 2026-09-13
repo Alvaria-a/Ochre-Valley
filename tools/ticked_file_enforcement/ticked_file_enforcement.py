@@ -32,8 +32,9 @@ def post_error(string):
         print(f"::error file={file_reference},line=1,title=Ticked File Enforcement::{string}")
 
 for excluded_file in excluded_files:
-    if not os.path.isfile(excluded_file):
-        post_error(f"Excluded file {excluded_file} does not exist, please remove it!")
+    full_file_path = scannable_directory + excluded_file
+    if not os.path.isfile(full_file_path):
+        post_error(f"Excluded file {full_file_path} does not exist, please remove it!")
         sys.exit(1)
 
 file_extensions = ("dm", "dmf")
