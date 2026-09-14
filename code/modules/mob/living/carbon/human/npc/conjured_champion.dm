@@ -28,7 +28,7 @@
 			ADD_TRAIT(held_item, TRAIT_NODROP, TRAIT_GENERIC)
 	else //Make the initial fit qdel when dropped.
 		for(var/obj/item/equipped_item in get_equipped_items() + held_items)
-			gear.item_flags |= DROPDEL
+			equipped_item.item_flags |= DROPDEL
 	//OV Edit End
 
 /mob/living/carbon/human/species/human/northern/conjured_champion/Destroy()
