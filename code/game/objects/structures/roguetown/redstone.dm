@@ -147,6 +147,8 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 /obj/structure/lever/get_mechanics_examine(mob/user)
 	. = ..()
 	. += span_info("Left-click the lever to actuate whatever might be connected to it. The time needed to complete this action scales with your character's Strength.")
+	. += span_info("A skilled Engineer could use a wrench to link this to a device.")
+	. += span_info("The Master of the Guild of Craft can unlink devices from each other by using their special wrench.")
 
 /obj/structure/lever/attack_hand(mob/user)
 	if(isliving(user))
@@ -274,6 +276,11 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	anchored = TRUE
 	redstone_structure = TRUE
 
+/obj/structure/pressure_plate/get_mechanics_examine(mob/user)
+	. = ..()
+	. += span_info("A skilled Engineer could use a wrench to link this to a device.")
+	. += span_info("The Master of the Guild of Craft can unlink devices from each other by using their special wrench.")
+
 /obj/structure/pressure_plate/Crossed(atom/movable/AM)
 	. = ..()
 	if(!anchored)
@@ -344,7 +351,6 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	var/triggered = FALSE
 
 /obj/structure/pressure_plate/once/Crossed(atom/movable/AM)
-	. = ..()
 	if(triggered)
 		return
 	if(!anchored)
@@ -780,6 +786,11 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/FTMET_A1.ogg','sound/foley/footsteps/FTMET_A2.ogg','sound/foley/footsteps/FTMET_A3.ogg','sound/foley/footsteps/FTMET_A4.ogg'), 100)
 	return ..()
 */
+/obj/structure/floordoor/get_mechanics_examine(mob/user)
+	. = ..()
+	. += span_info("A skilled Engineer could use a wrench to link this to a device.")
+	. += span_info("The Master of the Guild of Craft can unlink devices from each other by using their special wrench.")
+
 /obj/structure/floordoor/obj_break(damage_flag)
 	set_is_platform(FALSE)
 	obj_flags &= ~BLOCK_Z_IN_UP

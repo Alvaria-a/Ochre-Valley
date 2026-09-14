@@ -2,7 +2,7 @@
 	name = "Bow-Hunter"
 	tutorial = "You are a hunter. With your bow you hunt the fauna of the glade, skinning what you kill and cooking any meat left over. The job is dangerous but important in the circulation of clothing and light armor."
 	allowed_sexes = list(MALE, FEMALE)
-	forbidden_races = list(RACES_DESPISED)
+	//forbidden_races = list(RACES_DESPISED) //OV EDIT - Races allowed
 
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 	traits_applied = list(TRAIT_OUTDOORSMAN, TRAIT_SURVIVAL_EXPERT, TRAIT_MASTERFUL_HUNTER)
@@ -64,13 +64,13 @@
 		SStreasury.grant_savings(ECONOMIC_LOWER_CLASS, H)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/huntersyell)
-		var/weapons = list("Recurve Bow","Crossbow")
+		var/weapons = list("Bow","Crossbow")
 		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		H.set_blindness(0)
 		switch(weapon_choice)
-			if("Recurve Bow")
+			if("Bow")
 				H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_EXPERT, TRUE)
-				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 				beltl = /obj/item/quiver/arrows
 			if("Crossbow")
 				H.adjust_skillrank_up_to(/datum/skill/combat/crossbows, SKILL_LEVEL_EXPERT, TRUE)
