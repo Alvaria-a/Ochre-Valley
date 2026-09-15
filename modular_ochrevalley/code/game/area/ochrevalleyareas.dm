@@ -6,6 +6,10 @@
 	droning_sound_night = 'sound/music/area/peace.ogg'
 	deathsight_message = "a normally unreachable, remote location that cannot see the sky"
 
+/area/rogue/indoors/remote_sanctuary/running_water_sounds
+	spookysounds = AMB_CAVEWATER
+	spookynight = AMB_CAVEWATER
+
 /area/rogue/indoors/remote_sanctuary/cave
 	name = "Remote Sanctuary"
 	icon_state = "cave"
