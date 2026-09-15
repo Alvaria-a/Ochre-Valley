@@ -1505,6 +1505,9 @@
     - spellcheck:
         A misspell in the description of the psydonic chestplate has been
         fixed
+  Alvaria-a:
+    - rscadd: An admin spawn only Vheslynite cult NPC faction.
+    - rscadd: Vheslynite aggro lines, written by Crowbarlamb/Yecrowbarman.
   Athena148:
     - rscdel: Strength affecting voice pitch
   BurpleBineapple:
@@ -1565,8 +1568,19 @@
         lowers range and firestack on ignition. gives it a 0.5s chargeup. increases
         CD to 15s.
     - bugfix: conjured glued-on items no longer stay glued and ash appropriately
+  SatinIsle:
+    - qol:
+        Stopped digestion deaths from triggering mood nukes of squires or knights
+        that have a bond with the dead person.
+    - bugfix:
+        Disabled, at least temporarily, the unique death function for Oozes that
+        turns them into a weak blob form. It used to work fine, but now it breaks regularly
+        letting people insta revive or trapping them in purgatory. I'm not sure why,
+        but at least until I figure it out, it should be disabled.
   SaundMinah:
     - bugfix: changed code to be able to transform the right helmet.
+  SomeDeviant:
+    - rscadd: Added massive pile of stuff from AP 8.26.26 to 9.13.26
   WeNeedMorePhoron:
     - rscadd: Duration of Sahir's phase has been doubled.
   crunchypretzels:
@@ -1593,20 +1607,6 @@
   voidwytch:
     - bugfix: high society cloak issue
     - bugfix: velvet dress two electric boogaloo rename
-  Alvaria-a:
-    - rscadd: An admin spawn only Vheslynite cult NPC faction.
-    - rscadd: Vheslynite aggro lines, written by Crowbarlamb/Yecrowbarman.
-  SatinIsle:
-    - qol:
-        Stopped digestion deaths from triggering mood nukes of squires or knights
-        that have a bond with the dead person.
-    - bugfix:
-        Disabled, at least temporarily, the unique death function for Oozes that
-        turns them into a weak blob form. It used to work fine, but now it breaks regularly
-        letting people insta revive or trapping them in purgatory. I'm not sure why,
-        but at least until I figure it out, it should be disabled.
-  SomeDeviant:
-    - rscadd: Added massive pile of stuff from AP 8.26.26 to 9.13.26
 2026-09-14:
   KatTheFox:
     - bugfix:
@@ -1712,3 +1712,7 @@
     - bugfix: fixed hag having ability to become roundstart ww
     - bugfix: athletics skill description is no longer psyop
     - bugfix: fixed nodrop items from conjured summons
+  NickBelmont:
+    - server: Manifest relay now gives current map
+  SomeDeviant:
+    - rscadd: Added new AP Sync 9.13.26
