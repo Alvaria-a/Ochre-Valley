@@ -6,13 +6,13 @@
 	},
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "aU" = (
 /turf/open/water/river/flow/east,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "bq" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "br" = (
 /obj/structure/table/wood/poor,
 /obj/structure/rack/rogue/shelf,
@@ -25,7 +25,7 @@
 	pixel_x = 10
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "bP" = (
 /obj/structure/table/wood/poor,
 /obj/item/millstone{
@@ -39,31 +39,31 @@
 /obj/structure/rack/rogue/shelf,
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "bR" = (
 /obj/structure/stairs/stone{
 	dir = 1
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "bS" = (
 /obj/structure/fluff/railing/border/west,
 /obj/machinery/light/rogue/torchholder/c,
 /obj/structure/fluff/grindwheel,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "ca" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f"
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "cd" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "ce" = (
 /obj/structure/chair/bench/church/smallbench,
 /obj/effect/decal/edge{
@@ -90,40 +90,46 @@
 	pixel_x = -9
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "dQ" = (
 /obj/structure/fermentation_keg/random/water,
 /obj/effect/decal/cobbleedge{
 	dir = 6
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "eh" = (
 /obj/structure/ritualcircle/graggar{
 	icon_state = "graggar_active"
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "fD" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"fQ" = (
+/turf/closed/wall/mineral/rogue/stonebrick{
+	damage_deflection = 99999999;
+	max_integrity = 10000000
+	},
+/area/rogue/indoors/remote_sanctuary)
 "gb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5;
 	pixel_x = -9
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "gc" = (
 /obj/structure/fluff/railing/border/east,
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "gR" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f"
@@ -151,7 +157,7 @@
 "iM" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "jC" = (
 /obj/structure/stairs/stone{
 	dir = 1
@@ -163,7 +169,7 @@
 	damage_deflection = 99999999;
 	max_integrity = 10000000
 	},
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "li" = (
 /obj/structure/chair/bench/church/smallbench,
 /obj/structure/fluff/railing/border/north,
@@ -172,7 +178,7 @@
 	},
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "lI" = (
 /obj/structure/chair/wood/rogue,
 /obj/effect/decal/edge{
@@ -183,7 +189,7 @@
 "lX" = (
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "mG" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/blocks,
@@ -209,7 +215,7 @@
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "oX" = (
 /obj/effect/decal/cobbleedge{
 	dir = 4
@@ -223,7 +229,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "pc" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -254,14 +260,14 @@
 	pixel_y = -13
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "sr" = (
 /obj/structure/roguemachine/withdraw{
 	pixel_x = 32;
 	pixel_y = 0
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "sY" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
@@ -276,10 +282,10 @@
 /obj/structure/bars,
 /obj/effect/solid_invisible_barrier,
 /turf/open/water/river/flow/north,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "vH" = (
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "wG" = (
 /obj/structure/table/wood,
 /obj/item/clothing/ring/duelist{
@@ -291,14 +297,14 @@
 	pixel_x = 7
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "xF" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/stonebrick{
 	damage_deflection = 99999999;
 	max_integrity = 10000000
 	},
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "xG" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/rogueweapon/mace/wsword,
@@ -306,7 +312,7 @@
 /obj/item/rogueweapon/mace/woodclub,
 /obj/item/rogueweapon/mace/woodclub,
 /turf/open/floor/rogue/concrete,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "yO" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/transparent/openspace,
@@ -316,21 +322,28 @@
 /turf/closed/indestructible/riveted/boss/see_through{
 	name = "reinforced window"
 	},
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "zZ" = (
 /obj/structure/chair/bench/church/smallbench,
 /obj/effect/decal/cobbleedge{
 	dir = 4
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "AD" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8
 	},
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
+"BP" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "BU" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -347,11 +360,11 @@
 	dir = 10
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "CM" = (
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/blocks/flipped,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "Dg" = (
 /obj/structure/fluff/railing/border/north,
 /obj/machinery/light/rogue/torchholder/l,
@@ -364,7 +377,7 @@
 	pixel_x = -7
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "Dt" = (
 /obj/structure/table/wood/poor,
 /obj/item/storage/belt/rogue/surgery_bag/improv{
@@ -373,15 +386,15 @@
 	},
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "DR" = (
-/obj/machinery/light/rogue/torchholder/l,
-/turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Er" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "FA" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/blocks,
@@ -393,14 +406,14 @@
 	color = "#3f3f3f"
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Gf" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/rope/chain,
 /obj/item/rope/chain,
 /obj/item/rope/chain,
 /turf/open/floor/rogue/concrete,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "GT" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks/flipped,
@@ -427,7 +440,7 @@
 	pixel_x = 12
 	},
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "Iv" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/stonebrick{
@@ -438,14 +451,14 @@
 "Iw" = (
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Jt" = (
 /obj/structure/fluff/railing/border/east,
 /obj/effect/decal/cobbleedge{
 	dir = 8
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Ju" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
@@ -460,16 +473,20 @@
 "JX" = (
 /obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "Mm" = (
 /turf/open/water/cleanshallow,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "NU" = (
 /obj/structure/ritualcircle/ravox{
 	icon_state = "ravox_active"
 	},
 /turf/open/floor/rogue/blocks/flipped,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
+"ON" = (
+/obj/structure/mineral_door/bars,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/remote_sanctuary)
 "Qv" = (
 /obj/machinery/light/rogue/candle{
 	pixel_y = -32
@@ -479,10 +496,13 @@
 "SC" = (
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"SD" = (
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/remote_sanctuary)
 "TP" = (
 /turf/open/water/river/flow/north,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Ub" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8;
@@ -496,7 +516,7 @@
 "Ue" = (
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "UL" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -504,27 +524,34 @@
 /obj/machinery/light/rogue/torchholder/c,
 /obj/structure/table/wood/poor,
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"WD" = (
+/obj/structure/fluff/walldeco/customflag,
+/turf/closed/wall/mineral/rogue/stonebrick{
+	damage_deflection = 99999999;
+	max_integrity = 10000000
+	},
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "WF" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/cobble,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "Xm" = (
 /obj/structure/table/wood/poor,
 /obj/structure/rack/rogue/shelf,
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 "XS" = (
 /obj/structure/bars,
 /obj/effect/solid_invisible_barrier,
 /turf/open/water/river/flow/east,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Ym" = (
 /obj/effect/decal/cobbleedge{
 	dir = 4
 	},
 /turf/open/floor/rogue/cobble/mossy,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Zt" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/transparent/openspace,
@@ -542,7 +569,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
-/area/rogue/indoors/remote_sanctuary/cave)
+/area/rogue/indoors/remote_sanctuary)
 
 (1,1,1) = {"
 lf
@@ -550,7 +577,7 @@ XS
 lf
 lf
 lf
-lf
+DR
 lf
 qb
 qb
@@ -566,9 +593,9 @@ lf
 aU
 Mm
 lf
-bR
-DR
-xF
+BP
+vH
+WD
 pc
 is
 Hb
@@ -602,7 +629,7 @@ iM
 vH
 cd
 dv
-xF
+WD
 pc
 Hb
 Hb
@@ -732,10 +759,10 @@ Qv
 qb
 "}
 (12,1,1) = {"
-lf
+fQ
 dQ
 Dr
-vH
+SD
 Hl
 Dt
 xF
@@ -749,13 +776,13 @@ Hb
 qb
 "}
 (13,1,1) = {"
-lf
+fQ
 AD
-vH
-vH
-vH
-vH
-Iw
+SD
+SD
+SD
+SD
+ON
 jC
 Hb
 Hb
@@ -766,7 +793,7 @@ Hb
 qb
 "}
 (14,1,1) = {"
-lf
+fQ
 WF
 WF
 al
@@ -783,13 +810,13 @@ ZL
 qb
 "}
 (15,1,1) = {"
-lf
-lf
-lf
-lf
-lf
-lf
-lf
+fQ
+fQ
+fQ
+fQ
+fQ
+fQ
+fQ
 qb
 qb
 qb
@@ -937,11 +964,11 @@ sY
 nV
 "}
 (9,1,2) = {"
-lf
-lf
-lf
+fQ
+fQ
+fQ
 CM
-lf
+fQ
 nd
 lI
 Zt
@@ -954,11 +981,11 @@ sY
 nV
 "}
 (10,1,2) = {"
-lf
+fQ
 br
 JX
 bq
-lf
+fQ
 hs
 gR
 Zt
@@ -971,12 +998,12 @@ sY
 nV
 "}
 (11,1,2) = {"
-lf
+fQ
 Xm
 bq
 bq
-lf
-lf
+fQ
+fQ
 xF
 yO
 sY
@@ -988,13 +1015,13 @@ sY
 nV
 "}
 (12,1,2) = {"
-lf
+fQ
 ZW
 bq
 bq
-lf
+fQ
 NU
-lf
+fQ
 sY
 sY
 sY
@@ -1005,13 +1032,13 @@ sY
 nV
 "}
 (13,1,2) = {"
-lf
+fQ
 Xm
 bq
 Ue
-lf
-lf
-lf
+fQ
+fQ
+fQ
 sY
 sY
 sY
@@ -1022,13 +1049,13 @@ sY
 nV
 "}
 (14,1,2) = {"
-lf
+fQ
 bP
 sr
 oN
-lf
+fQ
 eh
-lf
+fQ
 sY
 sY
 sY
@@ -1039,13 +1066,13 @@ sY
 nV
 "}
 (15,1,2) = {"
-lf
-lf
-lf
-lf
-lf
-lf
-lf
+fQ
+fQ
+fQ
+fQ
+fQ
+fQ
+fQ
 nV
 nV
 nV

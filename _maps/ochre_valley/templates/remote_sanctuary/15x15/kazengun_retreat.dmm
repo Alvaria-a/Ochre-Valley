@@ -80,31 +80,31 @@
 "gd" = (
 /obj/machinery/light/rogue/torchholder/hotspring/standing,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "gv" = (
 /obj/structure/chair/hotspring_bench/left,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "gy" = (
 /obj/structure/table/wood/large_table/south_west,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/remote_sanctuary)
 "hr" = (
 /turf/open/floor/rogue/rooftop,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/mountains)
 "ir" = (
 /obj/structure/hotspring,
 /obj/effect/lily_petal/three{
 	icon_state = "lilypetals2"
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "iF" = (
 /obj/structure/flora/ausbushes/leafybush{
 	pixel_x = 7
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "ju" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -131,14 +131,14 @@
 /area/rogue/indoors/remote_sanctuary)
 "kV" = (
 /turf/open/transparent/openspace,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/mountains)
 "lb" = (
 /obj/item/reagent_containers/glass/bucket{
 	pixel_y = -6;
 	pixel_x = -10
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "lu" = (
 /obj/structure/hotspring/border/five,
 /obj/machinery/light/rogue/torchholder/hotspring{
@@ -146,7 +146,7 @@
 	pixel_x = 12
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "mn" = (
 /obj/structure/fluff/walldeco/rpainting/forest{
 	pixel_y = 31
@@ -262,7 +262,7 @@
 	pixel_x = 14
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "qc" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
@@ -292,7 +292,7 @@
 "si" = (
 /obj/structure/hotspring/border/twelve,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "sl" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/ruinedwood/platform,
@@ -316,7 +316,7 @@
 	pixel_y = -13
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "sV" = (
 /obj/structure/fluff/railing/border/north,
 /obj/machinery/light/rogue/candle/l,
@@ -359,7 +359,11 @@
 "wa" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
+"wY" = (
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/outdoors/exposed)
 "yb" = (
 /obj/structure/table/wood/poor/alt_alt{
 	color = "#C4A484"
@@ -372,11 +376,11 @@
 "yo" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "yE" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "yQ" = (
 /obj/structure/fluff/pillow{
 	dir = 1
@@ -430,7 +434,7 @@
 /obj/structure/hotspring/border/five,
 /obj/machinery/light/rogue/candle/floorcandle/pink,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Ax" = (
 /obj/structure/hotspring/border/twelve,
 /obj/structure/flora/roguegrass/water{
@@ -438,7 +442,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "BG" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/twig,
@@ -457,7 +461,7 @@
 "BP" = (
 /obj/structure/hotspring/border/seven,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "BT" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/north,
@@ -470,11 +474,11 @@
 /area/rogue/indoors/remote_sanctuary)
 "Cx" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "CK" = (
 /obj/structure/hotspring/border/fourteen,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "CO" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1;
@@ -515,7 +519,7 @@
 /obj/structure/hotspring/border/three,
 /obj/structure/flora/hotspring_rocks/grassy,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Gm" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/rogue/ruinedwood/herringbone,
@@ -523,7 +527,7 @@
 "Hu" = (
 /obj/structure/hotspring/border/thirteen,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "HJ" = (
 /obj/machinery/light/rogue/candle/r,
 /obj/structure/fluff/clock,
@@ -543,7 +547,7 @@
 "IA" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Kk" = (
 /obj/structure/table/wood/large_table/south_east,
 /turf/open/floor/carpet/red,
@@ -579,7 +583,7 @@
 "Lv" = (
 /obj/structure/hotspring,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "LA" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -681,7 +685,7 @@
 /area/rogue/indoors/remote_sanctuary)
 "Oo" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/mountains)
 "Or" = (
 /obj/structure/table/wood/poor/alt_alt{
 	color = "#C4A484"
@@ -700,12 +704,12 @@
 	pixel_x = -11
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Pv" = (
 /obj/structure/hotspring/border/five,
 /obj/machinery/light/rogue/candle/floorcandle/alt/pink,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "PJ" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -716,7 +720,7 @@
 /area/rogue/indoors/remote_sanctuary)
 "Qd" = (
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Qg" = (
 /obj/machinery/light/rogue/campfire/fireplace,
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -739,7 +743,7 @@
 "QJ" = (
 /obj/structure/chair/hotspring_bench/right,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Rm" = (
 /obj/structure/table/wood/poor/alt_alt{
 	color = "#C4A484"
@@ -781,14 +785,14 @@
 "Tt" = (
 /obj/machinery/tanningrack,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "TM" = (
 /obj/structure/hotspring/border/two,
 /obj/machinery/light/rogue/candle/floorcandle/pink{
 	pixel_y = -11
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "TN" = (
 /obj/structure/fluff/railing/corner/south_west,
 /obj/machinery/light/rogue/candle,
@@ -805,7 +809,7 @@
 	pixel_x = -54
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "Vc" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -843,11 +847,11 @@
 	pixel_y = 11
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "VD" = (
 /obj/structure/hotspring/border/nine,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "VR" = (
 /obj/structure/stairs{
 	dir = 4
@@ -864,7 +868,7 @@
 "Ws" = (
 /obj/structure/well,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "WB" = (
 /obj/effect/decal/carpet/square{
 	pixel_y = -5;
@@ -899,14 +903,14 @@
 "Zs" = (
 /obj/structure/hotspring/border/eleven,
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "ZH" = (
 /obj/structure/hotspring,
 /obj/effect/lily_petal/three{
 	icon_state = "lilypetals1"
 	},
 /turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed)
 "ZL" = (
 /obj/effect/decal/edge_corner{
 	color = "#3f3f3f";
@@ -937,8 +941,8 @@ kQ
 kQ
 Cx
 Cx
-Cx
-Cx
+wY
+wY
 Cx
 "}
 (2,1,1) = {"

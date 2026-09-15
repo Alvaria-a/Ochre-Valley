@@ -6,9 +6,13 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/remote_sanctuary)
 "c" = (
-/obj/structure/flora/newtree,
+/obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/remote_sanctuary)
+"d" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/remote_sanctuary/cave)
 "e" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -23,11 +27,23 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/remote_sanctuary)
+"g" = (
+/obj/structure/flora/roguetree/pine/dead,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "i" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/remote_sanctuary)
 "j" = (
 /obj/structure/bed/rogue/bedroll,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/remote_sanctuary/cave)
+"k" = (
+/obj/structure/flora/roguetree/burnt,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"l" = (
+/obj/item/natural/stone,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
 "m" = (
@@ -57,12 +73,19 @@
 "r" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/remote_sanctuary)
+"s" = (
+/obj/structure/flora/roguetree/pine/dead,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "t" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
 "u" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"v" = (
+/turf/closed/basic,
 /area/rogue/outdoors/remote_sanctuary)
 "w" = (
 /turf/open/floor/rogue/dirt/road,
@@ -78,6 +101,18 @@
 /obj/machinery/light/rogue/campfire/longlived,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
+"A" = (
+/obj/structure/flora/roguetree/pine,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"B" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/remote_sanctuary/cave)
+"C" = (
+/obj/effect/spawner/roguemap/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "D" = (
 /obj/structure/flora/roguegrass/swampweed,
 /turf/open/floor/rogue/grass,
@@ -88,6 +123,10 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/remote_sanctuary)
+"F" = (
+/obj/structure/flora/roguetree/wise,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "G" = (
 /turf/open/floor/rogue/dirt,
@@ -117,6 +156,10 @@
 "M" = (
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"N" = (
+/obj/item/grown/log/tree/stick,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
 "O" = (
 /obj/item/rogueweapon/pick,
@@ -148,8 +191,8 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/remote_sanctuary/cave)
 "W" = (
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/dirt,
+/obj/item/grown/log/tree/stick,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "X" = (
 /turf/closed/mineral/random/rogue/high,
@@ -319,8 +362,8 @@ H
 w
 w
 J
-V
-V
+B
+d
 X
 X
 a
@@ -346,16 +389,16 @@ a
 a
 X
 X
-V
+d
 V
 G
 z
-w
+l
 w
 w
 G
-V
-V
+B
+d
 X
 a
 "}
@@ -364,7 +407,7 @@ a
 X
 X
 V
-V
+B
 V
 G
 w
@@ -383,11 +426,11 @@ X
 V
 G
 V
+d
 V
+B
 V
-V
-V
-V
+d
 X
 X
 X
@@ -435,10 +478,10 @@ i
 i
 i
 i
-i
-i
-i
-i
+v
+v
+v
+v
 i
 i
 i
@@ -468,13 +511,13 @@ M
 x
 n
 f
-U
+C
 t
 K
 K
 t
 U
-t
+s
 U
 M
 i
@@ -487,11 +530,11 @@ q
 e
 U
 U
-W
+b
 K
 t
 U
-t
+N
 I
 M
 i
@@ -503,7 +546,7 @@ L
 E
 Y
 U
-t
+N
 K
 K
 U
@@ -533,9 +576,9 @@ i
 (7,1,2) = {"
 i
 c
+A
 U
-U
-U
+W
 U
 Q
 P
@@ -558,7 +601,7 @@ Q
 r
 r
 Q
-U
+k
 u
 U
 M
@@ -568,7 +611,7 @@ i
 i
 M
 U
-U
+F
 U
 U
 Q
@@ -592,7 +635,7 @@ U
 U
 U
 U
-U
+W
 D
 t
 M
@@ -603,7 +646,7 @@ i
 M
 t
 t
-U
+C
 U
 t
 p
@@ -611,7 +654,7 @@ T
 U
 U
 U
-U
+C
 M
 i
 "}
@@ -628,7 +671,7 @@ U
 U
 p
 t
-U
+W
 c
 i
 "}
@@ -640,9 +683,9 @@ t
 t
 u
 U
-U
+g
 u
-U
+C
 U
 I
 U

@@ -7,7 +7,11 @@
 	pixel_y = 16
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
+"cu" = (
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/outdoors/exposed/town)
 "dA" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -25,14 +29,14 @@
 /area/rogue/indoors/remote_sanctuary)
 "dX" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "dZ" = (
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "em" = (
 /obj/structure/flora/roguetree/pine,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "eD" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -57,7 +61,7 @@
 "eI" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "eN" = (
 /obj/structure/chair/wood/rogue/chair5{
 	dir = 8
@@ -67,7 +71,7 @@
 "eS" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "gc" = (
 /obj/structure/chair/wood/rogue/chair5{
 	dir = 4
@@ -84,21 +88,21 @@
 /area/rogue/indoors/remote_sanctuary)
 "lh" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/town/roofs/grim)
 "mK" = (
 /obj/effect/particle_effect/smoke{
 	lifetime = 14400
 	},
 /turf/open/water/river/flow/east,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "nf" = (
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "nT" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "oG" = (
 /obj/structure/stairs{
 	dir = 1
@@ -110,15 +114,15 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "rs" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "tz" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "ul" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/closet/crate/drawer,
@@ -127,7 +131,7 @@
 /area/rogue/indoors/remote_sanctuary)
 "vJ" = (
 /turf/open/floor/rogue/rooftop/green/west,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/town/roofs/grim)
 "wY" = (
 /obj/structure/table/wood/poor,
 /obj/item/rogueweapon/huntingknife/chefknife{
@@ -144,7 +148,7 @@
 "zM" = (
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/cleanshallow,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "zS" = (
 /obj/structure/rack/rogue/shelf/biggest{
 	pixel_x = 3;
@@ -165,17 +169,17 @@
 "AK" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "Bp" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "Cn" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors/remote_sanctuary)
 "CZ" = (
 /turf/open/transparent/openspace,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/outdoors/town/roofs/grim)
 "DJ" = (
 /turf/closed/wall/mineral/rogue/wooddark/end/east,
 /area/rogue/indoors/remote_sanctuary)
@@ -194,7 +198,7 @@
 "Gm" = (
 /obj/structure/flora/roguetree/pine,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "GJ" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -205,17 +209,17 @@
 "HL" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "Ij" = (
 /turf/open/water/river/flow/east,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "IR" = (
 /turf/closed/wall/mineral/rogue/wooddark/slitted,
 /area/rogue/indoors/remote_sanctuary)
 "LC" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "MU" = (
 /obj/structure/roguewindow,
 /obj/structure/curtain/blue,
@@ -246,11 +250,11 @@
 /area/rogue/indoors/remote_sanctuary)
 "RB" = (
 /turf/open/water/cleanshallow,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "SQ" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "TQ" = (
 /obj/effect/decal/carpet/kover_darkred{
 	dir = 4;
@@ -262,13 +266,13 @@
 "UI" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "Wi" = (
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "WT" = (
 /turf/open/water/river/flow,
-/area/rogue/outdoors/remote_sanctuary)
+/area/rogue/outdoors/exposed/town)
 "Xl" = (
 /obj/structure/roguemachine/withdraw{
 	pixel_x = -32;
@@ -426,7 +430,7 @@ dZ
 dZ
 nf
 Wi
-dX
+cu
 "}
 (9,1,1) = {"
 dX
@@ -443,7 +447,7 @@ dZ
 dZ
 Wi
 Bp
-dX
+cu
 "}
 (10,1,1) = {"
 dX
@@ -460,7 +464,7 @@ Wi
 dZ
 AK
 Wi
-dX
+cu
 "}
 (11,1,1) = {"
 dX
