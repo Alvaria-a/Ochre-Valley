@@ -9,7 +9,7 @@
 		{ "Down": true }
 	],
 	"other_z": ["_maps/map_files/otherz/wretch_coast.json",
-		"_maps/ochre_valley/remote_sanctuary_zone.json"],
+		"_maps/map_files/otherz/remote_sanctuary_zone.json"],
 	"space_empty_levels": 0,
 	"space_ruin_levels": 0,
 	"shuttles": {

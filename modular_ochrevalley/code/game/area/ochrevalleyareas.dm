@@ -21,13 +21,6 @@
 	deathsight_message = "a normally unreachable, remote location in a cave"
 
 // Outdoor areas
-//
-// You might be wondering why I'm not using these despite them being defined.
-// That's because they are fucking cursed and for some reason they are visible in testing no matter what I do.
-// Make them a child of /area/rogue/outdoors/exposed? Visible in testing.
-// Remove all variables to see if it's a var doing it I'm not aware of? Visible in testing.
-// The indoor areas above this are properly invisible. It's just these SPECIFIC areas that are visible for some reason.
-// If someone more attuned to the eldritch energies of Byond than I figures out how to un-curse these areas, I'd be very happy.
 
 /area/rogue/outdoors/remote_sanctuary
 	name = "Remote Sanctuary"
