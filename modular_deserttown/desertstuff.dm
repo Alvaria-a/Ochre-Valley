@@ -16,7 +16,7 @@
 	ignoredensity = TRUE
 
 /obj/structure/drape/zybantine
-	name = "zybantine drape"
+	name = "ranesheni drape" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	desc = "Made from prestigious fabric, a display of wealth."
 	icon = 'modular_deserttown/icons/drapes.dmi'
 	icon_state = "zybantinedrape1"
@@ -46,7 +46,7 @@
 	icon_state = "desertcushion2"
 
 /obj/item/cushion/zybantine
-	name = "zybantine cushion"
+	name = "ranesheni cushion" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	icon = 'modular_deserttown/icons/cushions.dmi'
 	icon_state = "zybantinecushion"
 
@@ -63,7 +63,7 @@
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/sewing/zybcushionfancy
-	name = "zybantine cushion"
+	name = "ranesheni cushion" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	result = list(/obj/item/cushion/zybantine)
 	reqs = list(/obj/item/natural/silk = 2)
 	craftdiff = 4
@@ -764,12 +764,12 @@
 ////chairs
 
 /obj/structure/chair/wood/zybantine
-	name = "zybantine chair"
+	name = "ranesheni chair" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	icon = 'modular_deserttown/icons/chairs.dmi'
 	icon_state = "zybantinechair"
 
 /obj/structure/chair/wood/rogue/throne/zybantine
-	name = "zybantine throne"
+	name = "ranesheni throne" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	icon_state = "zybantinethrone"
 	icon = 'modular_deserttown/icons/throne.dmi'
 	pixel_x = -16
@@ -799,14 +799,14 @@
 
 
 /obj/structure/chair/zybantine_sofa/right
-	name = "zybantine sofa"
+	name = "ranesheni sofa" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	icon_state = "zybantinesofa_right"
 	icon = 'modular_deserttown/icons/chairs.dmi'
 	buildstackamount = 1
 	item_chair = null
 
 /obj/structure/chair/zybantine_sofa/left
-	name = "zybantine sofa"
+	name = "ranesheni sofa" // OV Edit: Replaced "Zybantine" with "Ranesheni"
 	icon_state = "zybantinesofa_left"
 	icon = 'modular_deserttown/icons/chairs.dmi'
 	buildstackamount = 1
