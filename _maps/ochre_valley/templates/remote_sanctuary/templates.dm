@@ -22,7 +22,7 @@
 	name = "Kazengun Retreat"
 	sanctuary_id = "kazengun_retreat"
 	price = 600 // This one is PARTICULARLY extravagant so it's a bit more pricey
-	description = "Azurian architects consulted with the builders of Kazengun for direction while constructing this unique home next to a natural hot spring bubbling at the side of one of the local mountainsides. Comes with a kitchen, vomitorium, two bedrooms, and of course hot spring, as well as a couple."
+	description = "Azurian architects consulted with the builders of Kazengun for direction while constructing this unique home next to a natural hot spring bubbling at the side of one of the local mountainsides. Comes with a kitchen, vomitorium, two bedrooms, and of course hot spring that dominates its exterior."
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/kazengun_retreat.dmm"
 
 /datum/map_template/remote_sanctuary/arena
