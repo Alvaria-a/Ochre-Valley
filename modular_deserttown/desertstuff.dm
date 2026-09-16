@@ -674,6 +674,7 @@
 /obj/structure/quicksand/user_buckle_mob(mob/living/buckled_mob, mob/living/user)
 	return
 
+/* OV Remove
 /datum/crafting_recipe/roguetown/quicksand
 	name = "quicksand pit"
 	result = /obj/structure/quicksand
@@ -690,7 +691,7 @@
 	if(!istype(T, /turf/open/floor/rogue/dunes))
 		return
 	return TRUE
-
+*/
 
 ////decorative templestuff
 
