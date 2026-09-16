@@ -24,8 +24,8 @@
 						/turf/open/floor/rogue/grassred,
 						/turf/open/floor/rogue/grassyel,
 						/turf/open/floor/rogue/grasscold,
-						/turf/open/floor/rogue/grassgrey,
-						/turf/open/floor/rogue/grasspurple,
+//						/turf/open/floor/rogue/grassgrey,  // OV Remove
+//						/turf/open/floor/rogue/grasspurple,  // OV Remove
 						/turf/open/floor/rogue/snowpatchy,
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snowrough,)
@@ -226,8 +226,8 @@
 						/turf/open/floor/rogue/grassred,
 						/turf/open/floor/rogue/grassyel,
 						/turf/open/floor/rogue/grasscold,
-						/turf/open/floor/rogue/grassgrey,
-						/turf/open/floor/rogue/grasspurple,
+//						/turf/open/floor/rogue/grassgrey, // OV Remove
+//						/turf/open/floor/rogue/grasspurple, // OV Remove
 						/turf/open/floor/rogue/snowpatchy,
 						/turf/open/floor/rogue/snow,
 						/turf/open/floor/rogue/snowrough,

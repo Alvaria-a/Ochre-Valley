@@ -75,7 +75,7 @@
 
 /obj/structure/fermentation_keg/sandpot
 	name = "sand pot"
-	desc = "A common clay pot used for storing and sometimes fermenting fluids. Favoured over wooden barrels in the desert of Zybantium due to the relative scarcity of wood."
+	desc = "A common clay pot used for storing and sometimes fermenting fluids. Favoured over wooden barrels in the deserts due to the relative scarcity of wood." // OV Edit: Removed reference to Zybantium
 	icon = 'modular_deserttown/icons/pots.dmi'
 	icon_state = "sandpot1"
 
@@ -871,7 +871,7 @@
 
 /obj/structure/flora/roguegrass/bush/desertshrub
 	name = "treelet"
-	desc = "A rounded bush-like tree or perhaps tree-like bush native to Zybantium. A valuable source of wood in the sparse desert."
+	desc = "A rounded bush-like tree or perhaps tree-like bush native to Raneshen. A valuable source of wood in the sparse desert." // OV Edit: Zybantium renamed to Raneshen
 	icon = 'modular_deserttown/icons/flora.dmi'
 	icon_state = "bushshrub1"
 	attacked_sound = 'sound/misc/woodhit.ogg'
@@ -949,6 +949,7 @@
 
 //weapons
 
+/* OV Remove
 /obj/item/rogueweapon/shield/iron/zybantine
 	name = "brass shield"
 	desc = "A sturdy shield of Zybantium make."
@@ -965,7 +966,7 @@
 	desc = "A mysterious golden staff shaped like a snake. You could swear its staring at you"
 	icon = 'modular_deserttown/icons/items/desertweapons64.dmi'
 	icon_state = "snakestaff"
-
+*/
 
 // /obj/item/rogueweapon/sword/long/kriegmesser/zybantine
 // 	name = "heavy scimitar"

@@ -10,14 +10,16 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "l" = (
-/turf/closed/basic,
+/obj/machinery/light/rogue/campfire,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "E" = (
 /obj/effect/landmark/remote_sanctuary_spawn,
 /turf/closed/basic,
 /area/rogue)
 "I" = (
-/turf/closed/basic,
+/obj/machinery/light/rogue/campfire,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 
 (1,1,1) = {"
