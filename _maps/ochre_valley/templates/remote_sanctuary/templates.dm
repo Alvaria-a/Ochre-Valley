@@ -9,7 +9,7 @@
 /datum/map_template/remote_sanctuary/cozy_homestead
 	name = "Mountain Cabin"
 	sanctuary_id = "cozy_homestead"
-	description = "A quiet little cabin at the side of a stream along the mountains neighboring Ochre Valley. Has a kitchen and vomitorium."
+	description = "A quiet little cabin for two to share along the northern mountains of Grenzelhoft neighboring Ochre Valley. Sparkling mountain waters streaming down from above bear errant fish perfect for catching. For resources that cannot be easily sourced by the land, a vomitorium has been placed on the bottom floor of the cabin."
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/cozy_homestead.dmm"
 
 /datum/map_template/remote_sanctuary/shitty_cave
