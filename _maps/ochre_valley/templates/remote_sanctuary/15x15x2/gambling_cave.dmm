@@ -451,7 +451,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/remote_sanctuary/cave)
 "sh" = (
-/obj/structure/stairs/fancy/r,
 /obj/structure/stairs/fancy/r{
 	dir = 1
 	},
@@ -1045,7 +1044,6 @@
 	},
 /area/rogue/indoors/remote_sanctuary)
 "Zq" = (
-/obj/structure/stairs/fancy/l,
 /obj/structure/stairs/fancy/l{
 	dir = 1
 	},

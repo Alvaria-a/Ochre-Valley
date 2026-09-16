@@ -202,15 +202,6 @@
 	icon_state = "tilegreywhite"
 	},
 /area/rogue/indoors/remote_sanctuary)
-"gM" = (
-/obj/effect/decal/cobbleedge{
-	dir = 1;
-	icon_state = "borderfall";
-	pixel_y = 9
-	},
-/obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/tile/brownbrick,
-/area/rogue/indoors/remote_sanctuary)
 "gV" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -280,6 +271,16 @@
 /obj/machinery/light/rogue/candle/weak/r,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/remote_sanctuary)
+"kh" = (
+/obj/item/cushion/desert2,
+/obj/effect/decal/cobbleedge{
+	dir = 8;
+	icon_state = "borderfall";
+	pixel_x = -9
+	},
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/remote_sanctuary)
 "kp" = (
 /turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/outdoors/remote_sanctuary/mountains)
@@ -320,7 +321,7 @@
 "lJ" = (
 /obj/structure/fermentation_keg/sandpot/wine{
 	icon_state = "sandpot2";
-	name = "sweetly sour-toned sand pot"
+	name = "sweet smelling sand pot"
 	},
 /obj/effect/decal/cobbleedge{
 	dir = 8;
@@ -367,6 +368,15 @@
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tilegreywhite"
 	},
+/area/rogue/indoors/remote_sanctuary)
+"mE" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 9
+	},
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/remote_sanctuary)
 "mQ" = (
 /obj/effect/decal/cobbleedge{
@@ -564,15 +574,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/outdoors/remote_sanctuary/mountains)
-"qI" = (
-/obj/effect/decal/cobbleedge{
-	dir = 4;
-	icon_state = "borderfall";
-	pixel_x = 9
-	},
-/obj/machinery/light/rogue/candle/weak/r,
-/turf/open/floor/rogue/tile/brownbrick,
-/area/rogue/indoors/remote_sanctuary)
 "rk" = (
 /obj/machinery/light/rogue/candle/l,
 /obj/structure/table/wood/poor,
@@ -594,10 +595,6 @@
 	icon_state = "tilegreeny"
 	},
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
-"ry" = (
-/obj/machinery/light/rogue/candle/weak/r,
-/turf/open/floor/carpet/purple,
-/area/rogue/indoors/remote_sanctuary)
 "rz" = (
 /obj/structure/table/wood/long_table/mid/alt,
 /obj/structure/rack/rogue/shelf,
@@ -1187,14 +1184,8 @@
 	},
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "JP" = (
-/obj/item/cushion/desert2,
-/obj/effect/decal/cobbleedge{
-	dir = 8;
-	icon_state = "borderfall";
-	pixel_x = -9
-	},
-/obj/machinery/light/rogue/candle/l,
-/turf/open/floor/carpet/royalblack,
+/obj/machinery/light/rogue/candle/weak/r,
+/turf/open/floor/carpet/purple,
 /area/rogue/indoors/remote_sanctuary)
 "JU" = (
 /obj/structure/fluff/railing/border/north,
@@ -1592,6 +1583,15 @@
 	pixel_y = -3
 	},
 /turf/open/floor/carpet/stellar,
+/area/rogue/indoors/remote_sanctuary)
+"YF" = (
+/obj/effect/decal/cobbleedge{
+	dir = 4;
+	icon_state = "borderfall";
+	pixel_x = 9
+	},
+/obj/machinery/light/rogue/candle/weak/r,
+/turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/remote_sanctuary)
 "YG" = (
 /obj/machinery/light/rogue/candle/r,
@@ -2266,7 +2266,7 @@ fc
 nz
 kG
 kB
-qI
+YF
 Do
 yZ
 yZ
@@ -2284,7 +2284,7 @@ kp
 "}
 (10,1,2) = {"
 Do
-gM
+mE
 YP
 Vu
 Lm
@@ -2359,7 +2359,7 @@ VV
 Do
 dY
 mx
-JP
+kh
 Wf
 yp
 yp
@@ -2489,7 +2489,7 @@ Do
 Do
 Ec
 gx
-ry
+JP
 Gb
 uY
 Do

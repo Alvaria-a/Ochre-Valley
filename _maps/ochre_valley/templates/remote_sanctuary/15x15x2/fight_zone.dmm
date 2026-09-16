@@ -462,14 +462,6 @@
 "Ju" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/remote_sanctuary/mountains)
-"JW" = (
-/obj/structure/chair/bench/church/smallbench,
-/obj/structure/chair/bench/church/smallbench,
-/obj/effect/decal/edge{
-	color = "#3f3f3f"
-	},
-/turf/open/floor/rogue/blocks/flipped,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "JX" = (
 /obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/blocks/stonered/tiny,
@@ -902,7 +894,7 @@ hs
 Ju
 hs
 Ju
-JW
+ce
 Zt
 sY
 sY
