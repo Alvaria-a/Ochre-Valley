@@ -13,7 +13,7 @@
 /datum/intent/shoot/arquebus
     chargedrain = 0
 
-/datum/intent/shoot/prewarning()
+/datum/intent/shoot/arquebus/prewarning()
 	if(masteritem && mastermob)
 		mastermob.visible_message(span_warning("[mastermob] aims [masteritem]!"))
 		playsound(mastermob, pick('sound/foley/equip/rummaging-01.ogg'), 100, FALSE)
@@ -53,6 +53,8 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus/get_npc_chargetime(mob/living/user)
 	var/newtime = max(20, reloadtime - (user.get_skill_level(ranged_skill) * 2))
+	if(chambered)
+		newtime *= chambered.charge_time_mult
 	return (max(0, newtime) + ARCHER_NPC_MIN_AIM_TIME + ARCHER_NPC_NOCK_TIME) * ARCHER_NPC_ROF_PENALTY
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus/
@@ -100,6 +102,7 @@
 	pickup_sound = 'modular_causticcove/sound/sheath_sounds/draw_from_holster.ogg'
 	var/spread_num = 10
 	damfactor = 1.2
+	accfactor = 1.1
 	var/range = 30
 	var/onehanded = FALSE
 	var/reloaded = FALSE
@@ -208,6 +211,26 @@
 	if(!.)
 		return
 	pay_release_drain(user)
+	if(!onehanded)
+		return
+
+	// Safe dual-wield handling
+	var/obj/item/other_hand = user.get_inactive_held_item()
+	if(!istype(other_hand, /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus))
+		return
+
+	var/obj/item/gun/ballistic/revolver/grenadelauncher/arquebus/alt_gbow = other_hand
+	if(!alt_gbow.onehanded)
+		return
+	if(!alt_gbow.chambered)
+		return
+	if(!HAS_TRAIT(user, TRAIT_DUALWIELDER))
+		return
+
+	// Fire off-hand crossbow at reduced accuracy
+	alt_gbow.accfactor /= 2
+	alt_gbow.process_fire(target, user, FALSE)
+	alt_gbow.accfactor = initial(alt_gbow.accfactor)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus/attack_self(mob/living/user)
 	if(twohands_required)
