@@ -36,3 +36,12 @@
 	sanctuary_id = "gambling_cave"
 	description = "Bandits, raiders, assassins, and criminals alike are oft known for building secret domiciles hidden from Astrata's inquisitorial gaze. Some such places grow in such popularity amongst heretics and criminals that they are given surprisingly impressive accommodations for what their ultimate purpose was. This used to be one of them. The heretical symbols have been rent from the walls, the unholy iconography peeled away so finely that one could never tell they were ever there, the traps removed, all threats cleaned and cleared out. These halls, once dedicated to Evyl, have since been entirely renovated and put to greater use: private use by the Tennites its original architects conspired against. What greater way to demoralize the worshipers of the Inhumen, after all, than to not merely destroy their hiding places, but comb away their original intents so finely that no trace of their deeds could be found by even the sharpest of eyes?"
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/15x15/gambling_cave.dmm"
+
+/datum/map_template/remote_sanctuary/naledi_home
+	name = "Naledi Dar al-Iman"
+	sanctuary_id = "naledi_home"
+	// This one is comically luxurious AND is in a very unique location.
+	// It's also nicer than some noble houses. It NEEDS to be expensive as fuck.
+	price = 1000
+	description = "Far, far to the south, the grassy plains, mountains, and valleys with which we are familiar give way to a sea of sands bathed in the purest rays of both Astrata and Noc every dae and nite. Much of these lands are inhospitable and dangerous in their own right, but to its people, the dunes of Naledi are home. And what a home have they made it! Extravagant and colorful is the make of their homes and decor, for their access to exceedingly vast sources of gold has created a uniquely extravagant style of decorating their households. In collaboration with land owners in the oasis towns of Naledi has this home been prepared for the discerning prospective home-owner. A kitchen stocked with silverware of gold, a lavish bathroom, two bedrooms, a study, a living and dining room, a garden - this place truly has it all, and more. In this "
+	mappath = "_maps/ochre_valley/templates/remote_sanctuary/20x20/naledi_home.dmm"
