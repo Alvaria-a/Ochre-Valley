@@ -1,5 +1,5 @@
 // Overrides files in code/game/objects/items/rogueweapons/ranged so we can balance these how we want to.
-#define MIN_OVBULLET_RANGE		1
+#define MIN_OVBULLET_RANGE		2
 #define MAX_OVBULLET_RANGE		12 //Siegebow Range
 #define DAM_FALLOFF_OVBULLET	0.75
 
