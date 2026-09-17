@@ -12,10 +12,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
-"bl" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
 "cc" = (
 /obj/structure/flora/roguetree/pine{
 	pixel_y = 16
@@ -26,12 +22,6 @@
 /obj/structure/far_travel,
 /turf/closed/basic,
 /area/rogue/outdoors/remote_sanctuary)
-"cD" = (
-/obj/structure/fluff/walldeco/psybanner/tennite{
-	pixel_y = 32
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
 "dA" = (
 /obj/structure/closet/crate/chest{
 	pixel_y = 5
@@ -139,6 +129,10 @@
 /obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"pv" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/remote_sanctuary)
 "qg" = (
 /obj/item/reagent_containers/food/snacks/crow{
 	dir = 4
@@ -170,6 +164,12 @@
 /obj/machinery/tanningrack,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"uT" = (
+/obj/structure/fluff/walldeco/psybanner/tennite{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "vk" = (
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -179,10 +179,6 @@
 /obj/structure/table/wood/crafted,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
-"vU" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
 "wY" = (
 /obj/structure/table/wood/poor,
 /obj/item/rogueweapon/huntingknife/chefknife{
@@ -306,6 +302,10 @@
 	damage_deflection = 10000000
 	},
 /area/rogue/indoors/remote_sanctuary)
+"Hu" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "HL" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt/road,
@@ -591,7 +591,7 @@ cu
 dX
 Bp
 QS
-cD
+uT
 iD
 iD
 iD
@@ -618,7 +618,7 @@ nf
 eS
 nf
 Wi
-bl
+pv
 dX
 "}
 (12,1,1) = {"
@@ -632,7 +632,7 @@ Ga
 wY
 DJ
 nT
-vU
+Hu
 Wi
 Bp
 nf

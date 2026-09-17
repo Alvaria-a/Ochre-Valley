@@ -123,6 +123,10 @@
 	dir = 4
 	},
 /area/rogue/indoors/remote_sanctuary)
+"kr" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/remote_sanctuary)
 "kQ" = (
 /turf/closed/wall/mineral/rogue/decowood/vert{
 	max_integrity = 99999999;
@@ -852,10 +856,6 @@
 /obj/structure/hotspring/border/nine,
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/remote_sanctuary)
-"VK" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/grasscold,
-/area/rogue/outdoors/remote_sanctuary)
 "VR" = (
 /obj/structure/stairs{
 	dir = 4
@@ -963,7 +963,7 @@ VW
 Tt
 Ws
 Qd
-VK
+kr
 Cx
 "}
 (3,1,1) = {"

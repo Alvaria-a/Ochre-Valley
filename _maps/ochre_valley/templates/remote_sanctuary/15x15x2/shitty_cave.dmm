@@ -31,10 +31,6 @@
 /obj/structure/flora/roguetree/pine/dead,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"h" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
 "i" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/remote_sanctuary)
@@ -101,6 +97,10 @@
 	dir = 6
 	},
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/remote_sanctuary)
+"y" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/remote_sanctuary)
 "z" = (
 /obj/machinery/light/rogue/campfire/longlived,
@@ -503,7 +503,7 @@ U
 t
 K
 b
-h
+y
 U
 M
 M

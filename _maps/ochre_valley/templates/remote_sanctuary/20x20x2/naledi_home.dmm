@@ -316,13 +316,6 @@
 	},
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/remote_sanctuary)
-"lz" = (
-/obj/effect/decal/duneedge{
-	dir = 8
-	},
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/citybrick/citybrick2,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "lJ" = (
 /obj/structure/fermentation_keg/sandpot/wine{
 	icon_state = "sandpot2";
@@ -1637,6 +1630,13 @@
 	icon_state = "tilegreyblu"
 	},
 /area/rogue/indoors/remote_sanctuary)
+"Zn" = (
+/obj/effect/decal/duneedge{
+	dir = 8
+	},
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "ZA" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -1927,7 +1927,7 @@ QK
 QK
 Eq
 fn
-lz
+Zn
 mm
 "}
 (14,1,1) = {"

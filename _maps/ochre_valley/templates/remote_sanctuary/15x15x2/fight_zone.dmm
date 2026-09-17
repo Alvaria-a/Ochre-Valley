@@ -116,6 +116,13 @@
 	max_integrity = 10000000
 	},
 /area/rogue/indoors/remote_sanctuary)
+"ga" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 5
+	},
+/turf/open/floor/rogue/blocks/flipped,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "gb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5;
@@ -243,10 +250,6 @@
 	max_integrity = 10000000
 	},
 /area/rogue/outdoors/remote_sanctuary)
-"ql" = (
-/obj/structure/far_travel,
-/turf/closed/basic,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "rt" = (
 /obj/structure/chair/wood/rogue,
 /obj/effect/decal/edge{
@@ -365,6 +368,10 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"CB" = (
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "CM" = (
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/blocks/flipped,
@@ -392,7 +399,10 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/remote_sanctuary)
 "DR" = (
-/obj/item/roguemachine/keymaster/exit,
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 1
+	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "Er" = (
@@ -420,6 +430,11 @@
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "GT" = (
 /obj/machinery/light/rogue/torchholder/c,
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 4;
+	pixel_x = 2
+	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "Hb" = (
@@ -473,6 +488,10 @@
 "Mm" = (
 /turf/open/water/cleanshallow,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"Nz" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "NU" = (
 /obj/structure/ritualcircle/ravox{
 	icon_state = "ravox_active"
@@ -876,7 +895,7 @@ sY
 nV
 "}
 (4,1,2) = {"
-ql
+CB
 Ju
 Ju
 gS
@@ -893,7 +912,7 @@ sY
 nV
 "}
 (5,1,2) = {"
-ql
+CB
 Ju
 hs
 Ju
@@ -910,7 +929,7 @@ sY
 nV
 "}
 (6,1,2) = {"
-ql
+CB
 hs
 Ju
 Ju
@@ -929,7 +948,7 @@ nV
 (7,1,2) = {"
 nV
 GT
-hs
+ga
 Ju
 Ju
 hs
@@ -945,8 +964,8 @@ nV
 "}
 (8,1,2) = {"
 Iv
+Nz
 DR
-hs
 hs
 hs
 Ju

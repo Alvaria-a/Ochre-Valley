@@ -18,6 +18,13 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/remote_sanctuary)
+"aG" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "aH" = (
 /obj/structure/fluff/railing/border/west,
 /turf/open/floor/rogue/cobble,
@@ -256,6 +263,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone_clear,
 /area/rogue/indoors/remote_sanctuary)
+"jC" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "jT" = (
 /obj/machinery/light/rogue/candle/blue{
 	pixel_y = -32
@@ -448,6 +462,17 @@
 /area/rogue/indoors/remote_sanctuary)
 "ra" = (
 /obj/structure/fluff/railing/corner/south_west,
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"rx" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 1
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "rL" = (
@@ -649,6 +674,13 @@
 /obj/structure/ritualcircle/xylix,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/remote_sanctuary)
+"Bo" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "BE" = (
 /obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/carpet,
@@ -703,6 +735,16 @@
 /area/rogue/indoors/remote_sanctuary)
 "EC" = (
 /turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors/remote_sanctuary)
+"Fo" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/remote_sanctuary/cave)
+"FB" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "FK" = (
 /obj/structure/fluff/railing/border,
@@ -761,6 +803,13 @@
 /obj/structure/table/wood/poor,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/remote_sanctuary)
+"HN" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 10
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "HT" = (
 /turf/closed/basic,
 /area/rogue/indoors/remote_sanctuary/cave)
@@ -798,6 +847,12 @@
 /area/rogue/indoors/remote_sanctuary)
 "JF" = (
 /turf/open/floor/rogue/tile/brick,
+/area/rogue/indoors/remote_sanctuary)
+"JS" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "JT" = (
 /turf/closed/wall/mineral/rogue/decostone/end/north{
@@ -869,6 +924,13 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/carpet,
+/area/rogue/indoors/remote_sanctuary)
+"Ob" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "Ol" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1021,10 +1083,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone_clear,
 /area/rogue/indoors/remote_sanctuary)
-"XX" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/remote_sanctuary/cave)
 "XZ" = (
 /obj/structure/table/wood/long_table,
 /obj/structure/rack/rogue/shelf/biggest{
@@ -1042,7 +1100,6 @@
 /area/rogue/indoors/remote_sanctuary)
 "YO" = (
 /obj/structure/fermentation_keg/redwine,
-/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "YR" = (
@@ -1424,7 +1481,7 @@ TR
 Jc
 Jc
 Jc
-XX
+Fo
 Je
 Je
 Je
@@ -1490,8 +1547,8 @@ Us
 Us
 UQ
 Ja
-Ol
-Ol
+Ob
+FB
 Xc
 HI
 nz
@@ -1507,8 +1564,8 @@ Us
 Us
 UQ
 Ja
-Ol
-Ol
+rx
+JS
 pJ
 tV
 yp
@@ -1524,12 +1581,12 @@ Us
 Us
 UQ
 Ja
-Ol
-Ol
-Ol
+rx
+HN
+iw
 ra
 iw
-iw
+FB
 Dx
 "}
 (12,1,2) = {"
@@ -1541,12 +1598,12 @@ Us
 Us
 UQ
 Ja
+rx
 Ol
 Ol
 Ol
 Ol
-Ol
-Ol
+JS
 Dx
 "}
 (13,1,2) = {"
@@ -1558,12 +1615,12 @@ Us
 Us
 UQ
 Ja
-Ol
-Ol
-Ol
-Ol
-Ol
-Ol
+aG
+Bo
+Bo
+Bo
+Bo
+jC
 Dx
 "}
 (14,1,2) = {"
