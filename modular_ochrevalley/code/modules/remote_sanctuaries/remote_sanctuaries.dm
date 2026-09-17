@@ -1,3 +1,5 @@
+#define REMOTE_SANCTUARY_MAX_Z 2
+
 /obj/effect/landmark/remote_sanctuary_spawn
 	name = "remote sanctuary spawn"
 	icon_state = "x3"
@@ -27,6 +29,8 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	var/list/sanctuaries_claimed = list()
 	/// Markers of sanctuaries that have not yet been claimed by a player.
 	var/list/markers_available = list()
+	/// Markers of sanctuaries that have been claimed by a player. Associated list; key is the ckey of the claimer, value is a reference to the marker the sanctuary used to spawn itself.
+	var/list/markers_claimed = list()
 
 /datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id)
 	var/datum/map_template/remote_sanctuary/claimed = get_claimed_sanctuary(claimer.ckey)
@@ -36,6 +40,7 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	try
 		var/datum/map_template/remote_sanctuary/S = spawn_sanctuary(claimer.ckey, sanctuary_id)
 		to_chat(claimer, span_notice("My sanctuary is ready."))
+		message_admins("[ADMIN_LOOKUPFLW(claimer)] has claimed and spawned a remote sanctuary \"[S.name]\" at [ADMIN_VERBOSEJMP(T)]")
 		return S
 	catch(var/exception/error)
 		to_chat(claimer, span_alert("My sanctuary could not be created correctly because of an error! Scream at a coder about this:\n'[error]'"))
@@ -48,9 +53,31 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	S.load(T, FALSE)
 	markers_available.Remove(marker)
 	sanctuaries_claimed[owner_ckey] = S
-	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary at [ADMIN_VERBOSEJMP(T)]")
+	markers_claimed[owner_ckey] = marker
+	var/max_z = REMOTE_SANCTUARY_MAX_Z - 1
+	// We search specifically in the inner area of the sanctuary
+	// because realistically there should never be anything of note on the very edges of the template maps!
+	for(var/s_z in min(T.z, T.z + max_z) to max(T.z, T.z + max_z))
+		for(var/s_x in min(T.x+1, T.x + S.width-1) to max(T.x+1, T.x + S.width-2))
+			for(var/s_y in min(T.y+1, T.y + S.height-1) to max(T.y+1, T.y + S.height-2))
+				var/turf/s_t = locate(s_x, s_y, s_z)
+				// Find every door and closet within our sanctuary's area
+				// and assign it a lock that the user's sanctuary key will be able to lock/unlock
+				var/obj/structure/mineral_door/D = locate() in s_t
+				if(D)
+					D.lockid = "sanctuary_[owner_ckey]"
+					D.lockhash = GLOB.lockids[D.lockid]
+				var/obj/structure/closet/C = locate() in s_t
+				if(C)
+					C.lockid = "sanctuary_[owner_ckey]"
+					C.lockhash = GLOB.lockids[D.lockid]
+	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" at [ADMIN_VERBOSEJMP(T)]")
 	return S
 
 /datum/controller/subsystem/remote_sanctuaries/proc/get_claimed_sanctuary(var/sanctuary_owner_ckey)
-	var/datum/map_template/remote_sanctuary/claimed = sanctuaries_claimed[sanctuary_owner_ckey]
-	return claimed
+	return sanctuaries_claimed[sanctuary_owner_ckey]
+
+/datum/controller/subsystem/remote_sanctuaries/proc/get_claimed_sanctuary_marker(var/sanctuary_owner_ckey)
+	return markers_claimed[sanctuary_owner_ckey]
+
+#undef REMOTE_SANCTUARY_MAX_Z

@@ -255,9 +255,7 @@
 /obj/effect/decal/duneedge{
 	dir = 4
 	},
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4
-	},
+/obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/remote_sanctuary)
 "jQ" = (
@@ -318,6 +316,13 @@
 	},
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/remote_sanctuary)
+"lz" = (
+/obj/effect/decal/duneedge{
+	dir = 8
+	},
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/citybrick/citybrick2,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "lJ" = (
 /obj/structure/fermentation_keg/sandpot/wine{
 	icon_state = "sandpot2";
@@ -478,9 +483,7 @@
 /obj/effect/decal/duneedge{
 	dir = 4
 	},
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 1
-	},
+/obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "oX" = (
@@ -1119,13 +1122,6 @@
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/rogue/lightpath,
 /area/rogue/outdoors/remote_sanctuary/mountains)
-"GP" = (
-/obj/effect/decal/duneedge{
-	dir = 8
-	},
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/citybrick/citybrick2,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "Hb" = (
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/fabric_double,
@@ -1266,9 +1262,7 @@
 	},
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "LY" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 1
-	},
+/obj/structure/mineral_door/wood/fancywood,
 /obj/effect/decal/duneedge{
 	dir = 1
 	},
@@ -1933,7 +1927,7 @@ QK
 QK
 Eq
 fn
-GP
+lz
 mm
 "}
 (14,1,1) = {"

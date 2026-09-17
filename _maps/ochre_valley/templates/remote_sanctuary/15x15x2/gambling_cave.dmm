@@ -650,9 +650,7 @@
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/remote_sanctuary)
 "BE" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4
-	},
+/obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/remote_sanctuary)
 "BI" = (
@@ -945,7 +943,7 @@
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/remote_sanctuary)
 "SE" = (
-/obj/structure/mineral_door/wood,
+/obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "TG" = (
@@ -982,10 +980,6 @@
 	max_integrity = 9999999
 	},
 /area/rogue/indoors/remote_sanctuary)
-"Vm" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/remote_sanctuary/cave)
 "Vn" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -1027,6 +1021,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone_clear,
 /area/rogue/indoors/remote_sanctuary)
+"XX" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/remote_sanctuary/cave)
 "XZ" = (
 /obj/structure/table/wood/long_table,
 /obj/structure/rack/rogue/shelf/biggest{
@@ -1426,7 +1424,7 @@ TR
 Jc
 Jc
 Jc
-Vm
+XX
 Je
 Je
 Je

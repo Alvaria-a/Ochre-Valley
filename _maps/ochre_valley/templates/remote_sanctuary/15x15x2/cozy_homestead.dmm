@@ -12,6 +12,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
+"bl" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "cc" = (
 /obj/structure/flora/roguetree/pine{
 	pixel_y = 16
@@ -22,6 +26,12 @@
 /obj/structure/far_travel,
 /turf/closed/basic,
 /area/rogue/outdoors/remote_sanctuary)
+"cD" = (
+/obj/structure/fluff/walldeco/psybanner/tennite{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "dA" = (
 /obj/structure/closet/crate/chest{
 	pixel_y = 5
@@ -120,10 +130,6 @@
 "nf" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
-"nz" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/remote_sanctuary)
 "nT" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/light/rogue/torchholder/c,
@@ -173,6 +179,10 @@
 /obj/structure/table/wood/crafted,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"vU" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "wY" = (
 /obj/structure/table/wood/poor,
 /obj/item/rogueweapon/huntingknife/chefknife{
@@ -337,9 +347,7 @@
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/remote_sanctuary)
 "Rm" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4
-	},
+/obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "RB" = (
@@ -389,16 +397,6 @@
 "Wi" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
-"Wy" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/remote_sanctuary)
-"WQ" = (
-/obj/structure/fluff/walldeco/psybanner/tennite{
-	pixel_y = 32
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/remote_sanctuary)
 "WT" = (
 /turf/open/water/river/flow/north,
 /area/rogue/outdoors/remote_sanctuary)
@@ -593,7 +591,7 @@ cu
 dX
 Bp
 QS
-WQ
+cD
 iD
 iD
 iD
@@ -620,7 +618,7 @@ nf
 eS
 nf
 Wi
-Wy
+bl
 dX
 "}
 (12,1,1) = {"
@@ -634,7 +632,7 @@ Ga
 wY
 DJ
 nT
-nz
+vU
 Wi
 Bp
 nf

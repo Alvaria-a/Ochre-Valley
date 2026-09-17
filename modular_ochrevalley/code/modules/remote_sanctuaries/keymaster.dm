@@ -21,6 +21,7 @@
 		regurgitate_key(user)
 
 /obj/item/roguemachine/keymaster/proc/purchase_sanctuary(mob/living/carbon/human/user, sanctuary_id)
+	regurgitate_key(user)
 	var/datum/map_template/remote_sanctuary/S = SSremote_sanctuaries.claim_sanctuary(user, sanctuary_id)
 	say(pick(S.purchase_lines))
 	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
@@ -28,7 +29,7 @@
 
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
-	var/obj/item/roguekey/remote_sanctuary/key = new(null, user.ckey)
+	var/obj/item/roguekey/remote_sanctuary/key = new(null, user)
 	user.put_in_hands(key)
 	playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 
@@ -45,7 +46,8 @@
 	/// Ckey of the player whose sanctuary this key leads to.
 	var/sanctuary_owner_ckey
 
-/obj/item/roguekey/remote_sanctuary/Initialize(mapload, owner_ckey)
-	sanctuary_owner_ckey = owner_ckey
-	lockid = "sanctuary_[owner_ckey]"
+/obj/item/roguekey/remote_sanctuary/Initialize(mapload, mob/living/carbon/human/owner)
+	sanctuary_owner_ckey = owner.ckey
+	lockid = "sanctuary_[owner.ckey]"
+	aura_color = owner.voice_color
 	. = ..(mapload)
