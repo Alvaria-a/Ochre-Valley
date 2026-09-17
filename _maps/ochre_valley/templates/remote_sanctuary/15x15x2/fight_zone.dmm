@@ -10,6 +10,10 @@
 "aU" = (
 /turf/open/water/river/flow/east,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"bm" = (
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "bq" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/remote_sanctuary)
@@ -116,13 +120,6 @@
 	max_integrity = 10000000
 	},
 /area/rogue/indoors/remote_sanctuary)
-"ga" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 5
-	},
-/turf/open/floor/rogue/blocks/flipped,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "gb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5;
@@ -257,6 +254,13 @@
 	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
+"sn" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 5
+	},
+/turf/open/floor/rogue/blocks/flipped,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "so" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9;
@@ -344,6 +348,17 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary)
+"BJ" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 8;
+	pixel_x = 14
+	},
+/obj/machinery/light/rogue/lanternpost{
+	dir = 4;
+	name = "THE EVIL AND INTIMIDATING LANTERN POST THAT YOU SHOULD NOT BE ABLE TO SEE"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "BP" = (
 /obj/structure/stairs/stone{
 	dir = 1
@@ -368,10 +383,6 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
-"CB" = (
-/obj/structure/far_travel,
-/turf/closed/basic,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "CM" = (
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/blocks/flipped,
@@ -471,6 +482,10 @@
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"II" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/concrete,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "Jt" = (
 /obj/structure/fluff/railing/border/east,
 /obj/effect/decal/cobbleedge{
@@ -488,10 +503,6 @@
 "Mm" = (
 /turf/open/water/cleanshallow,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
-"Nz" = (
-/obj/item/roguemachine/keymaster/exit,
-/turf/open/floor/rogue/concrete,
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "NU" = (
 /obj/structure/ritualcircle/ravox{
 	icon_state = "ravox_active"
@@ -717,7 +728,7 @@ zQ
 BU
 cu
 cu
-cu
+BJ
 cu
 cu
 Ub
@@ -758,13 +769,13 @@ Hb
 qb
 "}
 (11,1,1) = {"
-lf
-lf
-lf
-Iw
-lf
-lf
-lf
+fQ
+fQ
+fQ
+ON
+fQ
+fQ
+fQ
 pc
 Hb
 Hb
@@ -895,7 +906,7 @@ sY
 nV
 "}
 (4,1,2) = {"
-CB
+bm
 Ju
 Ju
 gS
@@ -912,7 +923,7 @@ sY
 nV
 "}
 (5,1,2) = {"
-CB
+bm
 Ju
 hs
 Ju
@@ -929,7 +940,7 @@ sY
 nV
 "}
 (6,1,2) = {"
-CB
+bm
 hs
 Ju
 Ju
@@ -948,7 +959,7 @@ nV
 (7,1,2) = {"
 nV
 GT
-ga
+sn
 Ju
 Ju
 hs
@@ -964,7 +975,7 @@ nV
 "}
 (8,1,2) = {"
 Iv
-Nz
+II
 DR
 hs
 hs
