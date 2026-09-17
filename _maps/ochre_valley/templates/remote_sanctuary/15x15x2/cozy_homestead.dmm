@@ -7,6 +7,9 @@
 /obj/effect/decal/wood/herringbone2{
 	dir = 8
 	},
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_y = -21
+	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
 "cc" = (
@@ -115,6 +118,10 @@
 /turf/open/water/river/flow/east,
 /area/rogue/outdoors/remote_sanctuary)
 "nf" = (
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"nz" = (
+/obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "nT" = (
@@ -382,6 +389,16 @@
 "Wi" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
+"Wy" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
+"WQ" = (
+/obj/structure/fluff/walldeco/psybanner/tennite{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
 "WT" = (
 /turf/open/water/river/flow/north,
 /area/rogue/outdoors/remote_sanctuary)
@@ -576,17 +593,17 @@ cu
 dX
 Bp
 QS
-iD
+WQ
 iD
 iD
 iD
 eN
 MU
 nf
-Wi
-dZ
 AK
-Wi
+dZ
+nf
+nf
 cu
 "}
 (11,1,1) = {"
@@ -600,10 +617,10 @@ iD
 Zy
 Za
 nf
-Bp
-Wi
 eS
+nf
 Wi
+Wy
 dX
 "}
 (12,1,1) = {"
@@ -617,9 +634,9 @@ Ga
 wY
 DJ
 nT
-nf
+nz
 Wi
-AK
+Bp
 nf
 dX
 "}

@@ -543,6 +543,29 @@
 /obj/item/dream_material/dream_star,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"op" = (
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors)
 "or" = (
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors)
@@ -755,7 +778,6 @@
 "tj" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /turf/open/floor/rogue/tile/harem,
@@ -1652,6 +1674,12 @@
 "RC" = (
 /obj/item/rogueweapon/stoneaxe,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors)
+"RI" = (
+/obj/item/roguemachine/keymaster{
+	stored_money = 1000
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "Sc" = (
 /obj/machinery/gear_painter,
@@ -3494,7 +3522,7 @@ mL
 Ns
 xy
 yK
-yK
+op
 yK
 yK
 ud
@@ -3546,7 +3574,7 @@ xy
 xy
 xy
 rT
-rT
+RI
 yK
 yK
 rT

@@ -31,6 +31,10 @@
 /obj/structure/flora/roguetree/pine/dead,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
+"h" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "i" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/remote_sanctuary)
@@ -85,6 +89,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "v" = (
+/obj/structure/far_travel,
 /turf/closed/basic,
 /area/rogue/outdoors/remote_sanctuary)
 "w" = (
@@ -478,10 +483,10 @@ i
 i
 i
 i
+i
 v
 v
-v
-v
+i
 i
 i
 i
@@ -498,7 +503,7 @@ U
 t
 K
 b
-t
+h
 U
 M
 M
@@ -517,7 +522,7 @@ K
 K
 t
 U
-s
+t
 U
 M
 i
@@ -534,7 +539,7 @@ b
 K
 t
 U
-N
+s
 I
 M
 i

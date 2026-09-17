@@ -12,6 +12,10 @@
 	dir = 4
 	},
 /obj/structure/table/wood/long_table/east,
+/obj/item/book/rogue/cardgame{
+	pixel_x = -4;
+	pixel_y = -4
+	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/remote_sanctuary)
 "aH" = (
@@ -564,6 +568,9 @@
 /obj/structure/roguemachine/musicbox{
 	pixel_y = 12
 	},
+/obj/item/clothing/neck/roguetown/psicross/xylix{
+	pixel_y = -10
+	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/remote_sanctuary)
 "zb" = (
@@ -975,6 +982,10 @@
 	max_integrity = 9999999
 	},
 /area/rogue/indoors/remote_sanctuary)
+"Vm" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/remote_sanctuary/cave)
 "Vn" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -1415,7 +1426,7 @@ TR
 Jc
 Jc
 Jc
-Jc
+Vm
 Je
 Je
 Je

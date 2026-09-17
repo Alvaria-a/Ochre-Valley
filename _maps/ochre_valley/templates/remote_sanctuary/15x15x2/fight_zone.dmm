@@ -243,6 +243,10 @@
 	max_integrity = 10000000
 	},
 /area/rogue/outdoors/remote_sanctuary)
+"ql" = (
+/obj/structure/far_travel,
+/turf/closed/basic,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "rt" = (
 /obj/structure/chair/wood/rogue,
 /obj/effect/decal/edge{
@@ -388,9 +392,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/remote_sanctuary)
 "DR" = (
-/obj/structure/far_travel,
-/turf/closed/basic,
-/area/rogue/indoors/remote_sanctuary/running_water_sounds)
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/blocks/flipped,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "Er" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/cobble,
@@ -515,6 +519,7 @@
 	},
 /obj/machinery/light/rogue/torchholder/c,
 /obj/structure/table/wood/poor,
+/obj/item/clothing/neck/roguetown/psicross/ravox/bronze,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "WD" = (
@@ -569,7 +574,7 @@ XS
 lf
 lf
 lf
-DR
+lf
 lf
 qb
 qb
@@ -871,7 +876,7 @@ sY
 nV
 "}
 (4,1,2) = {"
-nV
+ql
 Ju
 Ju
 gS
@@ -888,7 +893,7 @@ sY
 nV
 "}
 (5,1,2) = {"
-nV
+ql
 Ju
 hs
 Ju
@@ -905,7 +910,7 @@ sY
 nV
 "}
 (6,1,2) = {"
-nV
+ql
 hs
 Ju
 Ju
@@ -940,7 +945,7 @@ nV
 "}
 (8,1,2) = {"
 Iv
-hs
+DR
 hs
 hs
 hs

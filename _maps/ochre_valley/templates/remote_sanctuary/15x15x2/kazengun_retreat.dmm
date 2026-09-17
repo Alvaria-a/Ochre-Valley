@@ -852,6 +852,10 @@
 /obj/structure/hotspring/border/nine,
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/remote_sanctuary)
+"VK" = (
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/remote_sanctuary)
 "VR" = (
 /obj/structure/stairs{
 	dir = 4
@@ -942,7 +946,7 @@ kQ
 Cx
 Cx
 wY
-wY
+Cx
 Cx
 "}
 (2,1,1) = {"
@@ -959,7 +963,7 @@ VW
 Tt
 Ws
 Qd
-Qd
+VK
 Cx
 "}
 (3,1,1) = {"

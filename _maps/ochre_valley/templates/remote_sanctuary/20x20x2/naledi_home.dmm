@@ -1119,6 +1119,13 @@
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/rogue/lightpath,
 /area/rogue/outdoors/remote_sanctuary/mountains)
+"GP" = (
+/obj/effect/decal/duneedge{
+	dir = 8
+	},
+/obj/item/roguemachine/keymaster/exit,
+/turf/open/floor/rogue/citybrick/citybrick2,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "Hb" = (
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/fabric_double,
@@ -1926,7 +1933,7 @@ QK
 QK
 Eq
 fn
-fn
+GP
 mm
 "}
 (14,1,1) = {"
