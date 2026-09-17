@@ -67,6 +67,7 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	S.load(T, FALSE)
 	// We search specifically in the inner area of the sanctuary
 	// because realistically there should never be anything of note on the very edges of the template maps!
+	// (I am also so very sorry for this.)
 	for(var/s_z in min(T.z, T.z + max_z) to max(T.z, T.z + max_z))
 		for(var/s_x in min(T.x+1, T.x + S.width-1) to max(T.x+1, T.x + S.width-2))
 			for(var/s_y in min(T.y+1, T.y + S.height-1) to max(T.y+1, T.y + S.height-2))
@@ -77,13 +78,15 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 				if(D)
 					D.lockid = "sanctuary_[owner_ckey]"
 					D.lockhash = GLOB.lockids[D.lockid]
-				var/obj/structure/closet/C = locate() in s_t
-				if(C)
-					C.lockid = "sanctuary_[owner_ckey]"
-					C.lockhash = GLOB.lockids[D.lockid]
-				// If we don't already have an exit configured, look for one and set our exit to it!
-				if(!data.sanctuary_exit)
-					data = locate() in s_t
+				// Trying my best to ensure we locate() as few times as possible here...
+				if(!D)
+					var/obj/structure/closet/C = locate() in s_t
+					if(C)
+						C.lockid = "sanctuary_[owner_ckey]"
+						C.lockhash = GLOB.lockids[D.lockid]
+				// If we don't already have an exit configured, look for one and set our exit to it if it's there!
+				if(!D && !C && !data.sanctuary_exit)
+					data.sanctuary_exit = locate() in s_t
 	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" at [ADMIN_VERBOSEJMP(T)]")
 	return data
 
