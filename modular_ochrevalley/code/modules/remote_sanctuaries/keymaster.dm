@@ -22,8 +22,8 @@
 
 /obj/item/roguemachine/keymaster/proc/purchase_sanctuary(mob/living/carbon/human/user, sanctuary_id)
 	regurgitate_key(user)
-	var/datum/map_template/remote_sanctuary/S = SSremote_sanctuaries.claim_sanctuary(user, sanctuary_id)
-	say(pick(S.purchase_lines))
+	var/datum/sanctuary_data/data = SSremote_sanctuaries.claim_sanctuary(user, sanctuary_id)
+	say(pick(data.used_template.purchase_lines))
 	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 
 
