@@ -41,7 +41,6 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 		return null
 	try
 		var/datum/sanctuary_data/data = spawn_sanctuary(claimer.ckey, sanctuary_id, is_using_wretch_keymaster, claimer.voice_color, claimer.real_name)
-		to_chat(claimer, span_notice("My sanctuary is ready."))
 		message_admins("[ADMIN_LOOKUPFLW(claimer)] has claimed and spawned a remote sanctuary \"[data.used_template.name]\" at [ADMIN_VERBOSEJMP(data.min_turf)]")
 		return data
 	catch(var/exception/error)

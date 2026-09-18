@@ -38,10 +38,22 @@
 	. = ..()
 	if(!user)
 		return
-	if(!SSremote_sanctuaries.get_claimed_sanctuary(user.ckey))
+	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
+	if(!D)
 		purchase_sanctuary(user, "naledi_home")
+	else if(D.spare_keys_remaining > 0)
+		D.spare_keys_remaining--
+		var/obj/item/roguekey/remote_sanctuary/K = regurgitate_key(user)
+		playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
+		user.put_in_hands(K)
 	else
-		regurgitate_key(user)
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+		if(for_wretches)
+			say("NO MORE... I REFUSE TO COUGH UP ANY MORE SPARE KEYS FOR YOU.")
+		else
+			say("MINE APOLOGIES, DISCERNER, BUT I CANST NOT PROVIDE THEE WITH ANY MORE SPARE KEYS!!")
+
+
 
 /obj/item/roguemachine/keymaster/Initialize(mapload)
 	. = ..()
@@ -54,7 +66,9 @@
 	. = ..()
 	var/obj/item/roguekey/remote_sanctuary/K = I
 	if(K)
-		key_act(user, K.sanctuary_owner_ckey)
+		user.visible_message(span_notice("\The [user] sticks the pronged teeth of [K] against [src]. Its glassy surface begins to glow and swirl..."), span_notice("I stick the pronged teeth of [K] against [src]. Its glassy surface begins to glow and swirl..."))
+		if(do_after(user, 5 SECONDS, target = src))
+			key_act(user, K.sanctuary_owner_ckey)
 
 /obj/item/roguemachine/keymaster/proc/purchase_sanctuary(mob/living/carbon/human/user, sanctuary_id)
 	// We first spawn the key in nullspace to ensure that a lockhash with its ID exists before
@@ -72,35 +86,39 @@
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
 	var/obj/item/roguekey/remote_sanctuary/key = new(null, user)
-	playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
-	user.put_in_hands(key)
 	return key
 
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(sanctuary_owner_ckey)
 	if(for_wretches && !D.is_wretch_made())
-		keymaster_say("THAT KEY WASN'T MANUFACTURED BY ME. I CAN'T ACCESS ITS SANCTUARY, FOOL. SHOW IT TO THE OTHER, LOUDER, MORE ANNOYING ORB IN TOWN.")
+		say("THAT KEY WASN'T MANUFACTURED BY ME. I CAN'T ACCESS ITS SANCTUARY, FOOL. SHOW IT TO THE OTHER, LOUDER, MORE ANNOYING ORB IN TOWN.")
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 		return
 	if(!for_wretches && D.is_wretch_made())
-		keymaster_say("HUH!! I DOTH NOT RECOGNIZE THIS KEY!! MINE APOLOGIES, BUT I CANNOT TAKE THEE TO YONDER SANCTUARY THIS KEY ART FOR!! HOW VERY STRANGE...")
+		say("HUH!! I DOTH NOT RECOGNIZE THIS KEY!! MINE APOLOGIES, BUT I CANNOT TAKE THEE TO YONDER SANCTUARY THIS KEY ART FOR!! HOW VERY STRANGE...")
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 		return
 	var/portal_attempt = SSremote_sanctuaries.try_create_portals(sanctuary_owner_ckey)
 	if(isnum(portal_attempt))
 		switch(portal_attempt)
 			if(SANCTUARY_PORTAL_SUCCESSFUL)
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 				if(for_wretches)
 					keymaster_say(pick(portal_lines_wretches))
 				else
 					keymaster_say(pick(portal_lines))
 			if(SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS)
-				keymaster_say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
+				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 			if(SANCTUARY_PORTAL_ERROR_MOBSINWAY)
-				keymaster_say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
+				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 			if(SANCTUARY_PORTAL_ERROR_PORTALSALREADYEXIST)
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 				if(for_wretches)
-					keymaster_say("THERE'S ALREADY AN OPEN PORTAL LEADING TO THAT SANCTUARY. IT'S RIGHT HERE NEXT TO US, FOOL.")
+					say("THERE'S ALREADY AN OPEN PORTAL LEADING TO THAT SANCTUARY. IT'S RIGHT HERE NEXT TO US, FOOL.")
 				else
-					keymaster_say("UH. SIRE, THERE ART ALREADY A PORTAL TO THAT SANCTUARY NEXT TO US!!")
+					say("UH. SIRE, THERE ART ALREADY A PORTAL TO THAT SANCTUARY NEXT TO US!!")
 
 /obj/item/roguemachine/keymaster/proc/keymaster_say(var/line)
 	var/soundfile = pick('sound/misc/machinetalk.ogg', 'sound/misc/machinelong.ogg')
@@ -130,10 +148,24 @@
 	desc = "A marvel of magicks automated by artifice. I cannot see the other side, but wherever it will take me, I can be sure I will be traveling for miles in but a single step..."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "underworldportal"
+	travel_message = span_blue("The magickal gateway requires a mote to carry me to my destination...")
+	light_inner_range = 4
+	light_outer_range = 5
+	light_color = "#79ecfc"
+	light_on = TRUE
 
 /obj/structure/fluff/traveltile/sanctuary_portal/Initialize(mapload)
 	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(expire)), 1 MINUTES)
+	if(loc)
+		playsound(loc, 'sound/misc/portalactivate.ogg', 100, TRUE, -1)
+		visible_message(span_blue("\The [src] appears in a brilliant cerulean flash!"))
+
+/obj/structure/fluff/traveltile/sanctuary_portal/perform_travel(obj/structure/fluff/traveltile/T, mob/living/L)
+	playsound(loc, 'sound/misc/portalenter.ogg', 100, TRUE, -1)
+	L.visible_message(span_notice("\The [L] enters \the [src] and vanishes inside in a single step."), span_blue("I feel a violent and sudden pull at the core of my being. By the time I am standing on stable ground again, I feel as though I have been falling for ages... Or was it only a fraction of a second?"))
+	T.visible_message(span_notice("\The [L] emerges from the shimmering portal!"))
+	playsound(T, 'sound/misc/portalenter.ogg', 100, TRUE, -1)
+	. = ..()
 
 /obj/structure/fluff/traveltile/sanctuary_portal/proc/expire()
 	visible_message("\The [src] dissolves into cerulean sparks that waver and fizzle out like dying embers.")

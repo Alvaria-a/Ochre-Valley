@@ -19,6 +19,8 @@
 	var/obj/structure/fluff/traveltile/sanctuary_portal/portal_to_sanctuary
 	var/owner_voice_color
 	var/owner_real_name
+	/// How many more spare keys the KEYMASTER will be able to regurgitate for this sanctuary's owner.
+	var/spare_keys_remaining = 5
 
 /// Returns whether or not this sanctuary was created in the wretch coast.
 /datum/sanctuary_data/proc/is_wretch_made()
