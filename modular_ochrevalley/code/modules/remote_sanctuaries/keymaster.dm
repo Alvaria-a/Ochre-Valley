@@ -65,9 +65,9 @@
 	user.put_in_hands(key)
 	playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 	if(for_wretches)
-		say(pick(data.used_template.purchase_lines_wretch))
+		keymaster_say(pick(data.used_template.purchase_lines_wretch))
 	else
-		say(pick(data.used_template.purchase_lines))
+		keymaster_say(pick(data.used_template.purchase_lines))
 
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
@@ -77,23 +77,35 @@
 	return key
 
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
+	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(sanctuary_owner_ckey)
+	if(for_wretches && !D.is_wretch_made())
+		keymaster_say("THAT KEY WASN'T MANUFACTURED BY ME. I CAN'T ACCESS ITS SANCTUARY, FOOL. SHOW IT TO THE OTHER, LOUDER, MORE ANNOYING ORB IN TOWN.")
+		return
+	if(!for_wretches && D.is_wretch_made())
+		keymaster_say("HUH!! I DOTH NOT RECOGNIZE THIS KEY!! MINE APOLOGIES, BUT I CANNOT TAKE THEE TO YONDER SANCTUARY THIS KEY ART FOR!! HOW VERY STRANGE...")
+		return
 	var/portal_attempt = SSremote_sanctuaries.try_create_portals(sanctuary_owner_ckey)
 	if(isnum(portal_attempt))
 		switch(portal_attempt)
 			if(SANCTUARY_PORTAL_SUCCESSFUL)
 				if(for_wretches)
-					say(pick(portal_lines_wretches))
+					keymaster_say(pick(portal_lines_wretches))
 				else
-					say(pick(portal_lines))
+					keymaster_say(pick(portal_lines))
 			if(SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS)
-				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
+				keymaster_say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
 			if(SANCTUARY_PORTAL_ERROR_MOBSINWAY)
-				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
+				keymaster_say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
 			if(SANCTUARY_PORTAL_ERROR_PORTALSALREADYEXIST)
 				if(for_wretches)
-					say("THERE'S ALREADY AN OPEN PORTAL LEADING TO THAT SANCTUARY. IT'S RIGHT HERE NEXT TO US, FOOL.")
+					keymaster_say("THERE'S ALREADY AN OPEN PORTAL LEADING TO THAT SANCTUARY. IT'S RIGHT HERE NEXT TO US, FOOL.")
 				else
-					say("UH. SIRE, THERE ART ALREADY A PORTAL TO THAT SANCTUARY NEXT TO US!!")
+					keymaster_say("UH. SIRE, THERE ART ALREADY A PORTAL TO THAT SANCTUARY NEXT TO US!!")
+
+/obj/item/roguemachine/keymaster/proc/keymaster_say(var/line)
+	var/soundfile = pick('sound/misc/machinetalk.ogg', 'sound/misc/machinelong.ogg')
+	playsound(loc, soundfile, 100, TRUE, -1)
+	say(line)
 
 /// This variant just exists to specify that it's meant to be the OTHER keymaster located in the wretch coast
 /obj/item/roguemachine/keymaster/wretch_coast
