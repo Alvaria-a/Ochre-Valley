@@ -124,7 +124,7 @@
 	},
 /area/rogue/indoors/remote_sanctuary)
 "kr" = (
-/obj/item/roguemachine/keymaster/exit,
+/obj/item/roguemachine/keymaster_exit,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/remote_sanctuary)
 "kQ" = (

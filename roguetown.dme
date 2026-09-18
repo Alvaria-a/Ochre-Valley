@@ -3741,6 +3741,7 @@
 #include "modular\Neu_Food\code\recipes\cooking_recipes_base.dm"
 #include "modular\Neu_Food\code\recipes\corn_recipes.dm"
 #include "modular_deserttown\desertwalls.dm"
+#include "modular_ochrevalley\code\__DEFINES\remote_sanctuary_defines.dm"
 #include "modular\Neu_Food\code\recipes\deepfried_recipes.dm"
 #include "modular\Neu_Food\code\recipes\dough_recipes.dm"
 #include "modular\Neu_Food\code\recipes\drying_recipes.dm"

@@ -1,5 +1,3 @@
-#define REMOTE_SANCTUARY_MAX_HEIGHT 2
-
 /obj/effect/landmark/remote_sanctuary_spawn
 	name = "remote sanctuary spawn"
 	icon_state = "x3"
@@ -31,14 +29,18 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	var/list/markers_available = list()
 	/// Markers of sanctuaries that have been claimed by a player. Associated list; key is the ckey of the claimer, value is a reference to the marker the sanctuary used to spawn itself.
 	var/list/markers_claimed = list()
+	// There should ONLY EVER be ONE keymaster in the town and wretch coast! If there isn't, SOMEONE HAS FUCKED UP
+	var/obj/item/roguemachine/keymaster/keymaster_town = null
+	var/obj/item/roguemachine/keymaster/keymaster_wretchcoast = null
+	var/portal_disappear_message = "dissolves into cerulean sparks that waver and fizzle out like dying embers."
 
-/datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id)
+/datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id, var/is_using_wretch_keymaster)
 	var/datum/map_template/remote_sanctuary/claimed = get_claimed_sanctuary(claimer.ckey)
 	if(claimed)
 		to_chat(claimer, span_red("I've already claimed a sanctuary for this week."))
 		return null
 	try
-		var/datum/sanctuary_data/data = spawn_sanctuary(claimer.ckey, sanctuary_id)
+		var/datum/sanctuary_data/data = spawn_sanctuary(claimer.ckey, sanctuary_id, is_using_wretch_keymaster, claimer.voice_color, claimer.real_name)
 		to_chat(claimer, span_notice("My sanctuary is ready."))
 		message_admins("[ADMIN_LOOKUPFLW(claimer)] has claimed and spawned a remote sanctuary \"[data.used_template.name]\" at [ADMIN_VERBOSEJMP(data.min_turf)]")
 		return data
@@ -46,7 +48,7 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 		to_chat(claimer, span_alert("My sanctuary could not be created correctly because of an error! Scream at a coder about this:\n'[error]'"))
 		return null
 
-/datum/controller/subsystem/remote_sanctuaries/proc/spawn_sanctuary(var/owner_ckey, var/sanctuary_id)
+/datum/controller/subsystem/remote_sanctuaries/proc/spawn_sanctuary(var/owner_ckey, var/sanctuary_id, var/is_using_wretch_keymaster, var/owner_voice_color, var/owner_real_name)
 	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[sanctuary_id]
 	var/obj/effect/landmark/remote_sanctuary_spawn/marker = markers_available[1]
 	var/turf/T = marker.loc
@@ -60,9 +62,15 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	data.max_y = T.y + S.height - 1
 	data.max_z = T.z + max_z
 	data.used_template = S
+	data.owner_voice_color = owner_voice_color
+	data.owner_real_name = owner_real_name
 	markers_available.Remove(marker)
 	sanctuaries_claimed[owner_ckey] = data
 	markers_claimed[owner_ckey] = marker
+	if(is_using_wretch_keymaster)
+		data.sanctuary_return_point = keymaster_wretchcoast
+	else
+		data.sanctuary_return_point = keymaster_town
 
 	S.load(T, FALSE)
 	// We search specifically in the inner area of the sanctuary
@@ -79,14 +87,17 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 					D.lockid = "sanctuary_[owner_ckey]"
 					D.lockhash = GLOB.lockids[D.lockid]
 				// Trying my best to ensure we locate() as few times as possible here...
+				var/obj/structure/closet/C = null
 				if(!D)
-					var/obj/structure/closet/C = locate() in s_t
+					C = locate() in s_t
 					if(C)
 						C.lockid = "sanctuary_[owner_ckey]"
-						C.lockhash = GLOB.lockids[D.lockid]
+						C.lockhash = GLOB.lockids[C.lockid]
 				// If we don't already have an exit configured, look for one and set our exit to it if it's there!
 				if(!D && !C && !data.sanctuary_exit)
 					data.sanctuary_exit = locate() in s_t
+					if(data.sanctuary_exit)
+						data.sanctuary_exit.data = data
 	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" at [ADMIN_VERBOSEJMP(T)]")
 	return data
 
@@ -94,4 +105,87 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 /datum/controller/subsystem/remote_sanctuaries/proc/get_claimed_sanctuary(var/sanctuary_owner_ckey)
 	return sanctuaries_claimed[sanctuary_owner_ckey]
 
-#undef REMOTE_SANCTUARY_MAX_HEIGHT
+/// Creates a portal leading to and from a ckey's sanctuary.
+///
+/// - `sanctuary_owner_ckey`: Owner of the sanctuary we are making one of the portals for. The portal will be made at their sanctuary's exit (see `/datum/sanctuary_data.sanctuary_exit`).
+///
+/// #### Returns:
+/// A value telling the success (or an error state) of the attempt to create the portals (see `modular_ochrevalley\code\__DEFINES\remote_sanctuary_defines.dm`).
+/datum/controller/subsystem/remote_sanctuaries/proc/try_create_portals(var/sanctuary_owner_ckey)
+	var/datum/sanctuary_data/D = get_claimed_sanctuary(sanctuary_owner_ckey)
+	if (D.portal_to_gameworld || D.portal_to_sanctuary)
+		return SANCTUARY_PORTAL_ERROR_PORTALSALREADYEXIST
+	// Look for a viable (non-obstructed) location around both KEYMASTERs and make a portal at them.
+	// If either return an error (a number and not a list,) return it.
+	var/try_get_return_point_turfs  = get_portal_viable_turfs(D.sanctuary_return_point.loc)
+	if(!islist(try_get_return_point_turfs))
+		return try_get_return_point_turfs
+	var/list/retrun_point_viable_turfs = try_get_return_point_turfs
+
+	var/try_get_exit_turfs  = get_portal_viable_turfs(D.sanctuary_exit.loc)
+	if(!islist(try_get_exit_turfs))
+		return try_get_exit_turfs
+	var/list/exit_viable_turfs = try_get_exit_turfs
+
+	var/obj/structure/fluff/traveltile/sanctuary_portal/return_portal = new(pick(retrun_point_viable_turfs))
+	var/obj/structure/fluff/traveltile/sanctuary_portal/exit_portal = new(pick(exit_viable_turfs))
+
+	return_portal.filters += filter(type="outline", color="[D.owner_voice_color]40", size=2)
+	return_portal.name = "[return_portal.name] ([D.owner_real_name])"
+	return_portal.aportalid = "sanctuary_return_[sanctuary_owner_ckey]"
+	return_portal.aportalgoesto = "sanctuary_exit_[sanctuary_owner_ckey]"
+	D.portal_to_gameworld = return_portal
+
+	exit_portal.filters += filter(type="outline", color="[D.owner_voice_color]40", size=2)
+	exit_portal.name = "[exit_portal.name] ([D.owner_real_name])"
+	exit_portal.aportalid = "sanctuary_exit_[sanctuary_owner_ckey]"
+	exit_portal.aportalgoesto = "sanctuary_return_[sanctuary_owner_ckey]"
+	D.portal_to_sanctuary = exit_portal
+
+	addtimer(CALLBACK(src, PROC_REF(delete_portals), D), 1 MINUTES)
+
+	return SANCTUARY_PORTAL_SUCCESSFUL
+
+/datum/controller/subsystem/remote_sanctuaries/proc/delete_portals(datum/sanctuary_data/data)
+	var/obj/structure/fluff/traveltile/sanctuary_portal/gw = data.portal_to_gameworld
+	if(gw)
+		gw.visible_message(span_notice("\The [gw] [portal_disappear_message]"))
+		qdel(gw)
+		data.portal_to_gameworld = null
+	var/obj/structure/fluff/traveltile/sanctuary_portal/sanc = data.portal_to_sanctuary
+	if(sanc)
+		sanc.visible_message(span_notice("\The [sanc] [portal_disappear_message]"))
+		qdel(sanc)
+		data.portal_to_sanctuary = null
+
+/// If successful in finding a space to spawn a portal, this returns a list of viable turfs to spawn a portal onto (as list).
+///
+/// If it is NOT successful, this instead returns an error detailing what happened (see `modular_ochrevalley\code\__DEFINES\remote_sanctuary_defines.dm`).
+/datum/controller/subsystem/remote_sanctuaries/proc/get_portal_viable_turfs(turf/center)
+	var/list/gameworld_portal_turfs = RANGE_TURFS(2, center)
+	var/list/non_obstructed_turfs = list()
+	for(var/turf/T in gameworld_portal_turfs)
+		var/is_viable = TRUE
+		if(T.density)
+			continue
+		for(var/atom/A in T.contents)
+			if(A.density)
+				is_viable = FALSE
+				break
+		if(is_viable)
+			non_obstructed_turfs.Add(T)
+	// If no viable turfs remain by this point, they're obstructed! Report this back!
+	if(!non_obstructed_turfs.len)
+		return SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS
+	// Now check for living mobs in those turfs. We don't want to spawn portals on top of a mob, after all!
+	var/list/mobless_turfs = list()
+	for(var/turf/T in non_obstructed_turfs)
+		var/mob/living/M = locate() in T
+		if(M)
+			continue
+		mobless_turfs.Add(T)
+	if(!mobless_turfs.len)
+		return SANCTUARY_PORTAL_ERROR_MOBSINWAY
+
+	// If we reached this point then we have viable spots to spawn portals on!
+	return mobless_turfs

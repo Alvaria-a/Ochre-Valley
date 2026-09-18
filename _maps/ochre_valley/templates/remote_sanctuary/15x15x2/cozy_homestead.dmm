@@ -130,7 +130,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "pv" = (
-/obj/item/roguemachine/keymaster/exit,
+/obj/item/roguemachine/keymaster_exit,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/remote_sanctuary)
 "qg" = (
