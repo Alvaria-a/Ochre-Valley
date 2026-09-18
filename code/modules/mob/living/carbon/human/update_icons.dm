@@ -2044,73 +2044,6 @@ generate/load female uniform sprites matching all previously decided variables
 	var/datum/body_build/build = GLOB.body_builds[get_body_build()]
 	return build ? build.offset_features : dna.species.offset_features
 
-/// The body build this character is rendering on (a BODY_BUILD_* value), or null if their species offers no
-/// builds and is drawn on its own limbs_icon_m/limbs_icon_f. Falls back to the species' default build whenever
-/// features["body_build"] is missing or names a build this species doesn't offer, so mobs that never went
-/// through character creation — NPCs, spawned humans, old savefiles — render on their species' native shape.
-/mob/living/carbon/proc/get_body_build()
-	var/datum/species/S = dna?.species
-	if(!S || !length(S.allowed_body_builds))
-		return null
-	var/build = dna.features?["body_build"]
-	if(S.is_body_build_valid(build, gender))
-		return build
-	return S.get_default_body_build(gender)
-
-/// Pixel nudge for a body marking on the given zone, from this character's build. Zero when the build lists no
-/// entry for that zone, or when the character is on no build at all.
-/mob/living/carbon/proc/get_marking_offset(zone)
-	var/datum/body_build/build = GLOB.body_builds[get_body_build()]
-	return build ? (build.marking_offsets?[zone] || 0) : 0
-
-/// Whether worn clothing should use its bulky (masculine) cut rather than its slim (feminine) one. The build
-/// decides it outright where a species offers builds — that's what separates the two silhouettes, and it's why
-/// a slim male wears the feminine cut exactly as elves always have. Species without builds fall back to
-/// use_f/use_m, which force one cut species-wide, and otherwise to plain gender.
-/mob/living/carbon/proc/is_bulky_body()
-	var/datum/body_build/build = GLOB.body_builds[get_body_build()]
-	if(build)
-		return build.bulky_cut
-	if(!dna?.species)
-		return (gender == MALE)
-	if(dna.species.use_f)
-		return FALSE
-	if(dna.species.use_m)
-		return TRUE
-	return (gender == MALE)
-
-/// Whether OFFSET_X (rather than OFFSET_X_F) should be used for pixel adjustments on worn clothing, held items,
-/// and body accessories (hair, horns, etc). This is a different question from is_bulky_body(): the offset keys
-/// track the body's own proportions, so they follow gender and never use_f/use_m — a male elf reads the
-/// masculine keys despite wearing feminine-cut clothes. The bulky build is the one exception, since its female
-/// body is pixel-identical to its male one and so shares the masculine keys.
-/mob/living/carbon/proc/is_bulky_offset()
-	var/datum/body_build/build = GLOB.body_builds[get_body_build()]
-	if(build?.bulky_cut)
-		return TRUE
-	return (gender == MALE)
-
-/// The offset table to read OFFSET_X/OFFSET_X_F pixel adjustments from. Offsets belong to the silhouette being
-/// drawn rather than to the species, so a character on a build reads that build's shared table and lines up
-/// with everyone else wearing the same body. Only species offering no builds fall back to their own
-/// offset_features.
-/// Shifts `appearance` by this character's pixel offset for one slot, reading the offset table once. Picks
-/// between the masculine and feminine key to match the body being drawn (see is_bulky_offset); pass a single
-/// key when the caller has already resolved which one applies. A no-op when the table has no entry for it.
-/mob/living/carbon/human/proc/apply_offset(mutable_appearance/appearance, masc_key, fem_key)
-	var/key = masc_key
-	if(fem_key && !is_bulky_offset())
-		key = fem_key
-	var/list/offset = get_offset_features()[key]
-	if(!offset)
-		return
-	appearance.pixel_x += offset[1]
-	appearance.pixel_y += offset[2]
-
-/mob/living/carbon/human/proc/get_offset_features()
-	var/datum/body_build/build = GLOB.body_builds[get_body_build()]
-	return build ? build.offset_features : dna.species.offset_features
-
 /mob/living/carbon/proc/has_boobed_overlay()
 	var/obj/item/organ/breasts/boobs = getorganslot(ORGAN_SLOT_BREASTS)
 	if(!boobs)
@@ -2118,5 +2051,3 @@ generate/load female uniform sprites matching all previously decided variables
 	if(boobs.breast_size == 0)
 		return FALSE
 	return TRUE
-
-

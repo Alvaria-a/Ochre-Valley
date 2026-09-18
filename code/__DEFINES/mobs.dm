@@ -376,6 +376,7 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
+	OFFSET_TAUR = list(-16,0), OFFSET_TAUR_F = list(-16,0), \
 	)
 
 // Offset table for the slim build, tuned for the shared mem.dmi/fm.dmi silhouette. The masculine keys come
@@ -393,6 +394,7 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
+	OFFSET_TAUR = list(-16,0), OFFSET_TAUR_F = list(-16,0), \
 	)
 
 // Offset table for the elven build: the slim table raised a pixel, except on the legs. A raised body lifts
@@ -410,6 +412,7 @@
 	OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,0), OFFSET_NECK_F = list(0,0), \
 	OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,0), OFFSET_SHIRT_F = list(0,1), \
 	OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,0), \
+	OFFSET_TAUR = list(-16,0), OFFSET_TAUR_F = list(-16,0), \
 	)
 
 //MINOR TWEAKS/MISC
