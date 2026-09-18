@@ -149,7 +149,6 @@ There are several things that need to be remembered:
 	//OV Edit End
 		if(dna.species.update_damage_overlays(src))
 			return
-
 	remove_overlay(DAMAGE_LAYER)
 	remove_overlay(LEG_DAMAGE_LAYER)
 	remove_overlay(ARM_DAMAGE_LAYER)
