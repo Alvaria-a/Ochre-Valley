@@ -25,6 +25,10 @@
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
+"r" = (
+/obj/item/roguemachine/keymaster/wretch_coast,
+/turf/open/floor/rogue/concrete/bronze,
+/area/rogue/outdoors/remote_sanctuary)
 "E" = (
 /obj/effect/landmark/remote_sanctuary_spawn,
 /turf/closed/basic,
@@ -53,6 +57,10 @@
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "N" = (
 /obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"T" = (
+/obj/machinery/light/rogue/firebowl/church,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "Z" = (
@@ -2081,10 +2089,10 @@ a
 a
 a
 a
-Z
-Z
-Z
-Z
+N
+N
+N
+N
 Z
 Z
 Z
@@ -2339,10 +2347,10 @@ a
 a
 a
 a
-Z
 N
-Z
-Z
+N
+N
+N
 Z
 Z
 N
@@ -2597,8 +2605,8 @@ a
 a
 a
 a
-Z
-Z
+T
+r
 Z
 Z
 Z
@@ -2855,10 +2863,10 @@ a
 a
 a
 a
-Z
-Z
-Z
-Z
+N
+N
+N
+N
 Z
 Z
 Z

@@ -63,6 +63,7 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	data.used_template = S
 	data.owner_voice_color = owner_voice_color
 	data.owner_real_name = owner_real_name
+	data.owner_ckey = owner_ckey
 	markers_available.Remove(marker)
 	sanctuaries_claimed[owner_ckey] = data
 	markers_claimed[owner_ckey] = marker

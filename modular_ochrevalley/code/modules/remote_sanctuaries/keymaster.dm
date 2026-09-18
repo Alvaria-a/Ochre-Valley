@@ -91,11 +91,11 @@
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(sanctuary_owner_ckey)
 	if(for_wretches && !D.is_wretch_made())
-		say("THAT KEY WASN'T MANUFACTURED BY ME. I CAN'T ACCESS ITS SANCTUARY, FOOL. SHOW IT TO THE OTHER, LOUDER, MORE ANNOYING ORB IN TOWN.")
+		say("THAT KEY WASN'T FORGED BY ME. I CAN'T ACCESS ITS SANCTUARY, FOOL. SHOW IT TO THE OTHER, LOUDER, MORE ANNOYING ORB IN TOWN.")
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 		return
 	if(!for_wretches && D.is_wretch_made())
-		say("HUH!! I DOTH NOT RECOGNIZE THIS KEY!! MINE APOLOGIES, BUT I CANNOT TAKE THEE TO YONDER SANCTUARY THIS KEY ART FOR!! HOW VERY STRANGE...")
+		say("HUH!! I DOTH NOT RECOGNIZE THIS KEY!! MINE APOLOGIES, BUT I CANNOT TAKE THEE TO A SANCTUARY WHOSE KEY I DID NOT FORGE!!")
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 		return
 	var/portal_attempt = SSremote_sanctuaries.try_create_portals(sanctuary_owner_ckey)
@@ -142,6 +142,54 @@
 	w_class = WEIGHT_CLASS_GIGANTIC
 	/// Data of the sanctuary we belong to.
 	var/datum/sanctuary_data/data
+	var/list/portal_lines = list(
+		"I HOPE THOU HATH ENJOYED THY STAY!!",
+		"THE PORTAL BACK HATH OPENED!!",
+		"A GATEWAY FROM WHENCE THOU CAME!",
+		"PRITHEE, TREAD CAREFULLY THROUGH YONDER PORTAL!!",
+	)
+	var/list/portal_lines_wretches = list(
+		"LEAVING SO SOON? ALRIGHT THEN.",
+		"NO REST FOR THE WICKED. YOUR PORTAL IS READY.",
+		"GO ON, THEN. GET BACK OUT THERE.",
+		"UGH, PLEASE GO THROUGH QUICK. HATE HEARING WHAT THE ME ON THE OTHER SIDE IS THINKING.",
+	)
+
+/obj/item/roguemachine/keymaster_exit/attack_hand(mob/user)
+	. = ..()
+	to_chat(user, span_notice("I put a hand to the KEYMASTER..."))
+	if(!do_after(user, 5 SECONDS, target = src))
+		return
+	var/portal_attempt = SSremote_sanctuaries.try_create_portals(data.owner_ckey)
+	if(isnum(portal_attempt))
+		switch(portal_attempt)
+			if(SANCTUARY_PORTAL_SUCCESSFUL)
+				playsound(loc, 'sound/misc/machinetalk.ogg', 100, TRUE, -1)
+				if(data.is_wretch_made())
+					say(pick(portal_lines_wretches))
+				else
+					say(pick(portal_lines))
+			if(SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS)
+				say("AN ISSUE ARISES: THE WAE BACK HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+			if(SANCTUARY_PORTAL_ERROR_MOBSINWAY)
+				say("AN ISSUE ARISES: THE WAE BACK HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+			if(SANCTUARY_PORTAL_ERROR_PORTALSALREADYEXIST)
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+				if(data.is_wretch_made())
+					say("THERE'S ALREADY AN OPEN PORTAL LEADING BACK. IT'S RIGHT HERE NEXT TO US, FOOL.")
+				else
+					say("UH. SIRE, THERE ART ALREADY A PORTAL BACK NEXT TO US!!")
+
+/obj/item/roguemachine/keymaster_exit/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/roguekey/remote_sanctuary))
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+		if(data.is_wretch_made())
+			say("YOU DO NOT NEED TO USE A KEY TO HEAD BACK, FOOL. JUST PLACE YOUR EMPTY HAND UPON MY ORB.")
+		else
+			say("OH, THOU DOTH NOT REQUIRE A KEY TO RETURN!! JUST PLACE THY EMPTY HAND UPON MINE ORB!!")
 
 /obj/structure/fluff/traveltile/sanctuary_portal
 	name = "sanctuary portal"

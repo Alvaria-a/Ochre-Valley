@@ -168,6 +168,13 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
+"kr" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 9
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "lf" = (
 /turf/closed/wall/mineral/rogue/stonebrick{
 	damage_deflection = 99999999;
@@ -254,6 +261,14 @@
 	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
+"ru" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 4;
+	pixel_x = 2
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "sn" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
@@ -309,6 +324,13 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
+"xd" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 10
+	},
+/turf/open/floor/rogue/blocks/flipped,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "xF" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/rogue/stonebrick{
@@ -348,6 +370,13 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary)
+"AR" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/remote_sanctuary/mountains)
 "BJ" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8;
@@ -412,7 +441,7 @@
 "DR" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
-	dir = 1
+	dir = 6
 	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
@@ -441,11 +470,6 @@
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "GT" = (
 /obj/machinery/light/rogue/torchholder/c,
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 4;
-	pixel_x = 2
-	},
 /turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "Hb" = (
@@ -494,6 +518,13 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "Ju" = (
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/remote_sanctuary/mountains)
+"JS" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 1
+	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "JX" = (
@@ -925,9 +956,9 @@ nV
 (5,1,2) = {"
 bm
 Ju
-hs
-Ju
-hs
+DR
+ru
+sn
 Ju
 ce
 Zt
@@ -942,9 +973,9 @@ nV
 (6,1,2) = {"
 bm
 hs
-Ju
-Ju
-Ju
+gR
+II
+JS
 Ju
 ce
 Zt
@@ -959,9 +990,9 @@ nV
 (7,1,2) = {"
 nV
 GT
-sn
-Ju
-Ju
+xd
+AR
+kr
 hs
 rt
 Zt
@@ -975,8 +1006,8 @@ nV
 "}
 (8,1,2) = {"
 Iv
-II
-DR
+hs
+hs
 hs
 hs
 Ju
