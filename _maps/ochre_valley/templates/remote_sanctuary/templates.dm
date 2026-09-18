@@ -11,6 +11,12 @@
 		"THY LAND ART PREPARED, DISCERNER! COME AND MEET THY DESTINY!!",
 		"DISCERNER, I PRONOUNCE THEE KEY AND SPOUSE!! HAVE THY HONEYMOON IN THY NEWLY PURCHASED LAND!!",
 	)
+	/// Alternative list of lines that the KEYMASTER in the wretch coast will yell upon purchasing this sanctuary.
+	var/list/purchase_lines_wretch = list(
+		"FOR YOU, A LAND \"RECLAIMED\".",
+		"ANOTHER LAND PURCHASED. IT TOOK US A WHILE TO TAKE THIS LAND FROM THEM WITHOUT THEM NOTICING. MAKE GOOD USE OF IT.",
+		"YOU WANT *ANOTHER* HIDEOUT? THIS ISN'T GOOD ENOUGH FOR YOU? GREEDY, GREEDY... ALRIGHT, HERE'S YOUR KEY.",
+	)
 
 /datum/map_template/remote_sanctuary/cozy_homestead
 	name = "Mountain Cabin"
@@ -35,6 +41,10 @@
 		"A BOUNTIFUL UNTAPPED LAND AWAITS THEE, DISCERNER!!",
 		"A SPOOKY CHOICE, DISCERNER!! THE NOISES I OFT HEAR FROM YONDER CAVE GIVE ME THE WILLIES!!",
 	)
+	purchase_lines_wretch = list(
+		"HAHAH, REALLY? YOU BOUGHT A CAVE AS YOUR CHOICE OF LAND? ALRIGHT, IT'S YOUR MAMMON. TAKE YOUR KEY.",
+		"ANOTHER LAND PURCHASED. THIS ONE WAS ACTUALLY PRETTY EASY FOR US TO TAKE FROM THEM. PROBABLY WHY IT'S AS CHEAP AS IT IS... COMPARED TO THE OTHERS, ANYWAY.",
+	)
 
 /datum/map_template/remote_sanctuary/kazengun_retreat
 	name = "Kazengun Retreat"
@@ -47,6 +57,10 @@
 		"IF I KNEW BUT A SINGLE WORD OF KAZENGUNESE, DISCERNER, I WOULDST SPEAK IT NOW TO CONGRATULATE THEE ON THY EXCELLENT PURCHASE!!",
 		"AN EXCELLENT CHOICE, DISCERNER!! I WISH THE STEAM FROM THE HOT SPRINGS THERE DIDN'T FOG UP MINE ORB SO I COULD SEE IT BETTER!!",
 	)
+	purchase_lines_wretch = list(
+		"THANKS FOR YOUR PATRONAGE. YOU'D BETTER NOT GET THIS ONE TOO MESSY; I LIKE THIS ONE. NOT LIKE I COULD STOP YOU ANYWAY.",
+		"A SLICE OF KAZENGUN, JUST FOR YOU, HUH? QUITE THE SPLURGE... TAKE YOUR KEY",
+	)
 
 /datum/map_template/remote_sanctuary/arena
 	name = "Arena"
@@ -57,6 +71,9 @@
 		"GLORY AND HONOR AWAIT THEE IN THY NEWLY PURCHASED LAND, DISCERNER!!",
 		"A SPECTACULAR PURCHASE, DISCERNER! I LOVE THE CONCESSIONS STAND OVER YONDER! I LOVE PRETENDING I CAN EAT THEIR GRENZELBUNS!!",
 		"REMEMBER TO BATTLE RESPONSIBLY IN THY NEWLY PURCHASED LAND, DISCERNER! PRITHEE, REMEMBER TO YIELD IN DUELS! I BEG OF THEE, PLEASE PLEASE PLEASE!!",
+	)
+	purchase_lines_wretch = list(
+		"THANKS FOR YOUR PATRONAGE. THIS ONE WAS SURPRISINGLY EASY FOR US TO TAKE FROM THEM. TOOK FOREVER TO WASH THE VISCERA OFF MY ORB THERE AFTER THEIR LITTLE \"DUEL.\"",
 	)
 
 /datum/map_template/remote_sanctuary/gambling_cave
@@ -70,6 +87,10 @@
 		"XYLIX SMILES UPON THY PURCHASE, DISCERNER!! USE THE LUCKY XYLIX'S FORTUNE IN THERE, I HATH HEARD IT WINS MORE OFTEN!!", // This is a lie btw but they don't need to know that
 		"LET'S GO GAMBLING, DISCERNER!!",
 	)
+	purchase_lines_wretch = list(
+		"HAHAHAHAH... GOOD PURCHASE. YOU READ THAT DESCRIPTION TOO, RIGHT? GODS, THE IRONY IS RICH, ISN'T IT?",
+		"THANKS FOR YOUR PATRONAGE. THE BEST PART ABOUT THIS ONE IS THAT THEY STILL DON'T KNOW ABOUT OUR LITTLE \"RECLAMATION\" OF IT.",
+	)
 
 /datum/map_template/remote_sanctuary/naledi_home
 	name = "Naledi Dar al-Iman"
@@ -78,8 +99,12 @@
 	// It's also nicer than some noble houses. It NEEDS to be expensive as fuck.
 	price = 1000
 	description = "Far, far to the south, the grassy plains, mountains, and valleys with which we are familiar give way to a sea of sands bathed in the purest rays of both Astrata and Noc every dae and nite. Much of these lands are inhospitable and dangerous in their own right, but to its people, the dunes of Naledi are home. And what a home have they made it! Extravagant and colorful is the make of their homes and decor, for their access to exceedingly vast sources of gold has created a uniquely extravagant style of decorating their households. In collaboration with land owners in the oasis towns of Naledi has this home been prepared for the discerning prospective home-owner. A kitchen stocked with silverware of gold, a lavish bathroom, two bedrooms, a study, a living and dining room, a garden - this place truly has it all, and more."
+	mappath = "_maps/ochre_valley/templates/remote_sanctuary/20x20x2/naledi_home.dmm"
 	purchase_lines = list(
 		"ONLY THE FINEST OF LANDS FIT THE FINEST OF LAND-OWNERS, DISCERNER! CONGRATULATIONS!!",
 		"OOH, I LOVE THIS PLACE, DISCERNER!! GOLD EVERYWHERE!! I WISH THEY MADE MINE STAND OVER THERE OUT OF GOLD, TOO!!",
 	)
-	mappath = "_maps/ochre_valley/templates/remote_sanctuary/20x20x2/naledi_home.dmm"
+	purchase_lines_wretch = list(
+		"... GREAT GOOGLY MOOGLY, YOU ACTUALLY HAD THE COIN FOR THAT ONE? I UH, GOT NOTHING. I'M ACTUALLY IMPRESSED. TAKE YOUR KEY.",
+		"GOOD PURCHASE. BE GLAD NOBODY WILL BE CHECKING THIS ONE FOR A WHILE.",
+	)

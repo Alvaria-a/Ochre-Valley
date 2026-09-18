@@ -16,6 +16,23 @@
 	var/list/stored_money
 	/// Is this KEYMASTER intended to be used by wretches (AKA it SHOULD be in the wretch coast)?
 	var/for_wretches = FALSE
+	/// A list of lines that the KEYMASTER will yell when it successfully creates a portal.
+	var/list/portal_lines = list(
+		"THY PORTAL ART READY! PRITHEE, TAKE BUT ONE STEP WITHIN TO TRAVEL FAR BEYOND!!",
+		"I HATH RENT A GATEWAY FOR THEE! THY DESTINATION AWAITS!!",
+		"FOR THEE, YONDER PORTAL!! THY TRAVEL, STREAMLINED!! THE DISTANCE BETWEEN ME'S CUT FROM MILES TO INCHES IN ONE CLEAVE!!",
+		"THE ME OF THERE HAS SPOKEN WITH THE ME OF HERE!! WE HATH AGREED TO YIELD TO THEE A PORTAL!!",
+		"FOR THEE; A DOOR WHERE THERE WAS MOTES AGO AIR!! ON ITS OTHER SIDE; SANCTUARY!!",
+		"A PORTAL HATH BEEN OPENED FOR THEE!! WAHOO!!"
+	)
+	/// An alternative list of lines that the wretch coast variant of the KEYMASTER will yell when it successfully creates a portal.
+	var/list/portal_lines_wretches = list(
+		"HERE IS YOUR PORTAL. GET IN BEFORE I HAVE TO LISTEN TO THE ME ON THE OTHER SIDE PRATTLE FURTHER.",
+		"YEP, THAT KEY SEEMS GOOD ENOUGH TO ME. HERE'S YOUR PORTAL. BRING YOUR FRIENDS. OR DON'T.",
+		"I CAN CLEAVE THROUGH DISTANCE ITSELF, CREATING A MAGICK DISTORTION OF THE SPACE BETWEEN THE ME OF HERE AND THE ME OF THERE. I AM A MARVEL OF ARTIFICING. AND THIS IS HOW I AM BEING USED. JOY. ANYWAYS, YOUR PORTAL IS READY.",
+		"A GATEWAY OPENS. MAYBE IT'S FOR THE SANCTUARY OF THE KEY YOU USED. MAYBE IT'S ME TAKING YOU SOMEWHERE DIFFERENT ALTOGETHER. YOU DON'T KNOW FOR SURE UNLESS YOU STEP THROUGH. HA HA. I AM JUST KIDDING; IT LEADS TO THE PROPER SANCTUARY. PROBABLY.",
+		"PORTAL. ONE MINUTE. DON'T FEEL LIKE SAYING MORE.",
+	)
 
 /obj/item/roguemachine/keymaster/attack_hand(mob/living/carbon/human/user)
 	. = ..()
@@ -47,7 +64,10 @@
 	var/datum/sanctuary_data/data = SSremote_sanctuaries.claim_sanctuary(user, sanctuary_id, for_wretches)
 	user.put_in_hands(key)
 	playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
-	say(pick(data.used_template.purchase_lines))
+	if(for_wretches)
+		say(pick(data.used_template.purchase_lines_wretch))
+	else
+		say(pick(data.used_template.purchase_lines))
 
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
@@ -58,17 +78,22 @@
 
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
 	var/portal_attempt = SSremote_sanctuaries.try_create_portals(sanctuary_owner_ckey)
-	to_chat(user, span_notice("Portal attempt returned: [portal_attempt]"))
 	if(isnum(portal_attempt))
 		switch(portal_attempt)
 			if(SANCTUARY_PORTAL_SUCCESSFUL)
-				say("THY PORTAL ART READY! PRITHEE, TAKE BUT ONE STEP WITHIN TO TRAVEL MILES BEYOND!!")
+				if(for_wretches)
+					say(pick(portal_lines_wretches))
+				else
+					say(pick(portal_lines))
 			if(SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS)
-				say("AN ISSUE ARISES: THE SANCTUARY HAS TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
+				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY OBSTRUCTIONS AROUND MINE ORB ON THE OTHER SIDE! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THE SPACE IS CLEARED!! MINE APOLOGIES!!")
 			if(SANCTUARY_PORTAL_ERROR_MOBSINWAY)
-				say("AN ISSUE ARISES: THE SANCTUARY HAS TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
+				say("AN ISSUE ARISES: THE SANCTUARY HATH TOO MANY LIVING MEATBAGS IN THE WAY! I CANST NOT CONJURE A PORTAL FOR THEE UNTIL THEY MOVE!! WAIT UNTIL THEY MOVE AND TRY AGAIN!!")
 			if(SANCTUARY_PORTAL_ERROR_PORTALSALREADYEXIST)
-				say("UH. SIRE, THERE ART ALREADY A PORTAL TO YONDER SANCTUARY NEXT TO US!!")
+				if(for_wretches)
+					say("THERE'S ALREADY AN OPEN PORTAL LEADING TO THAT SANCTUARY. IT'S RIGHT HERE NEXT TO US, FOOL.")
+				else
+					say("UH. SIRE, THERE ART ALREADY A PORTAL TO THAT SANCTUARY NEXT TO US!!")
 
 /// This variant just exists to specify that it's meant to be the OTHER keymaster located in the wretch coast
 /obj/item/roguemachine/keymaster/wretch_coast
