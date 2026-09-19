@@ -36,6 +36,14 @@
 		"PORTAL. ONE MINUTE. DON'T FEEL LIKE SAYING MORE.",
 	)
 
+/obj/item/roguemachine/keymaster/get_mechanics_examine(mob/user)
+	. = ..()
+	. += span_info(span_blue("These can be used to purchase remote sanctuaries - <b>EXPENSIVE</b>, private residences in far-off lands that are accessed via portals."))
+	. += span_info(span_blue("LEFT CLICK with an empty hand to browse through a selection of remote sanctuaries."))
+	. += span_info(span_blue("LEFT CLICK on it with a remote sanctuary key to open a portal to the sanctuary it belongs to. The portal will linger for one minute and cannot be prematurely closed."))
+	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain obtain spare keys to it."))
+	. += span_info(span_blue("Money inserted into the KEYMASTER is stored on a per-player basis: That means multiple people can use the machine at once without having to worry about accidentally using someone else's money. This also means money inserted into it cannot be withdrawn by anyone else but the player who put it in."))
+
 /obj/item/roguemachine/keymaster/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -346,7 +354,7 @@
 
 /obj/item/roguekey/remote_sanctuary/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_blue("Use this on the KEYMASTER to create a portal that will allow you to enter the remote sanctuary it was made for.")
-	. += span_blue("This key will also work as a regular key does for any and all doors, chests, and closets within the sanctuary it was made for.")
+	. += span_info(span_blue("Use this on the KEYMASTER to create a portal that will allow you to enter the remote sanctuary it was made for."))
+	. += span_info(span_blue("This key will also work as a regular key does for any and all doors, chests, and closets within the sanctuary it was made for."))
 
 #undef KEYMASTER_DESC
