@@ -1946,3 +1946,5 @@
     - bugfix: Burn wounds should now take longer to sew the more severe the wound is.
   mumblemancer:
     - rscadd: jesters can now flip thru their Japes
+  SomeDeviant:
+    - bugfix: fixed config
