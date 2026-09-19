@@ -12,8 +12,10 @@
 	w_class = WEIGHT_CLASS_GIGANTIC
 	/// Associated list of which ckeys have how much money stored here, storing money on a per-client basis. This allows multiple players to use the KEYMASTER without worrying about overlapping money from others.
 	///
-	/// Key is the player's ckey, value is the amount of mammon stored by that player
-	var/list/stored_money
+	/// Key is the player's ckey, value is the amount of mammon stored by that player.
+	var/list/stored_money = list()
+	/// Assocaited list. key is the player's ckey, value is the ID of the sanctuary the player had last selected.
+	var/list/selected_sanctaury = list()
 	/// Is this KEYMASTER intended to be used by wretches (AKA it SHOULD be in the wretch coast)?
 	var/for_wretches = FALSE
 	/// A list of lines that the KEYMASTER will yell when it successfully creates a portal.
@@ -34,17 +36,33 @@
 		"PORTAL. ONE MINUTE. DON'T FEEL LIKE SAYING MORE.",
 	)
 
-/obj/item/roguemachine/keymaster/attack_hand(mob/living/carbon/human/user)
+/obj/item/roguemachine/keymaster/attack_hand(mob/user)
 	. = ..()
-	if(!user)
+	if(.)
+		return
+	if(!ishuman(user))
+		return
+	user.changeNext_move(CLICK_CD_INTENTCAP)
+	ui_interact(user)
+
+/obj/item/roguemachine/keymaster/attack_right(mob/user)
+	. = ..()
+	if(!.)
+		return
+	if(!user || !ishuman(user))
 		return
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
 	if(!D)
-		purchase_sanctuary(user, "naledi_home")
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+		if(for_wretches)
+			say("IS THIS A JOKE? PURCHASE A SANCTUARY FIRST BEFORE TRYING TO GET A SPARE KEY, FOOL.")
+		else
+			say("MINE APOLOGIES, I CANST NOT PROVIDE THEE WITH A SPARE SANCTUARY KEY UNTIL THOU FIRST PURCHASE A SANCTUARY!!")
 	else if(D.spare_keys_remaining > 0)
 		D.spare_keys_remaining--
 		var/obj/item/roguekey/remote_sanctuary/K = regurgitate_key(user)
 		playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
+		balloon_alert(user, "[D.spare_keys_remaining] spare keys left...")
 		user.put_in_hands(K)
 	else
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
@@ -66,9 +84,101 @@
 	. = ..()
 	var/obj/item/roguekey/remote_sanctuary/K = I
 	if(K)
-		user.visible_message(span_notice("\The [user] sticks the pronged teeth of [K] against [src]. Its glassy surface begins to glow and swirl..."), span_notice("I stick the pronged teeth of [K] against [src]. Its glassy surface begins to glow and swirl..."))
+		user.visible_message(span_notice("\The [user] sticks the pronged teeth of [K] against the KEYMASTER. Its glassy surface begins to glow and swirl..."), span_notice("I stick the pronged teeth of [K] against the KEYMASTER. Its glassy surface begins to glow and swirl. The artificed metal begins to tremble in my grasp..."))
+		playsound(src, 'sound/foley/equip/rummaging-02.ogg', 100, FALSE)
 		if(do_after(user, 5 SECONDS, target = src))
 			key_act(user, K.sanctuary_owner_ckey)
+	var/obj/item/roguecoin/C
+	if(C && user.ckey && ishuman(user))
+		if(istype(C, /obj/item/roguecoin/aalloy) || istype(C, /obj/item/roguecoin/inqcoin))
+			return
+		var/coins_value = C.quantity * C.sellprice
+		var/our_value = stored_money[user.ckey] ? stored_money[user.ckey] : 0
+		our_value += coins_value
+		stored_money[user.ckey] = our_value
+		qdel(C)
+		playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
+		update_user_ui(user)
+
+/obj/item/roguemachine/keymaster/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+		ui = new(user, src, "Keymaster", name)
+		ui.open()
+		ui.set_autoupdate(FALSE)
+
+/obj/item/roguemachine/keymaster/ui_static_data(mob/user)
+	var/list/data = list()
+	data["can_read"] = (ishuman(user) && user.can_read(src, TRUE)) ? TRUE : FALSE
+	data["user_ckey"] = user.ckey
+	var/list/available_sanctuaries = list()
+	for(var/datum/map_template/remote_sanctuary/S in SSmapping.remote_sanctuary_templates)
+		available_sanctuaries += get_sanctuary_payload(S.id)
+	data["available_sanctuaries_data"]
+	return data
+
+/obj/item/roguemachine/keymaster/ui_data(mob/user)
+	var/list/data = list()
+	data["stored_money"] = stored_money[user.ckey] ? stored_money[user.ckey] : 0
+	data["selected_sanctuary_id"] = selected_sanctaury[user.ckey] ? selected_sanctaury[user.ckey] : "cozy_homestead"
+	data["selected_sanctuary_data"] = get_sanctuary_payload(data["selected_sanctuary_id"])
+	return data
+
+/obj/item/roguemachine/keymaster/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if(!ishuman(usr))
+		return
+	var/select = params["selected_id"]
+	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[select]
+	if(!S)
+		return
+	switch(action)
+		if("select_sanctuary")
+			selected_sanctaury[usr.ckey] = S.id
+			update_user_ui(usr)
+			return FALSE
+		if("purchase_sanctuary")
+			var/our_monies = stored_money[usr.ckey]
+			if(isnum(our_monies) && our_monies >= S.price)
+				purchase_sanctuary(usr, S.id)
+				our_monies -= S.price
+				stored_money[usr.ckey] = our_monies
+				update_user_ui(usr)
+			return FALSE
+		if("refund_money")
+
+
+/obj/item/roguemachine/keymaster/proc/update_user_ui(mob/user)
+	var/datum/tgui/ui = SStgui.get_open_ui(user, src)
+	ui?.send_update()
+
+/obj/item/roguemachine/keymaster/proc/refund_money(mob/user)
+	if(!user?.ckey)
+		return
+	var/our_monies = stored_money[user.ckey]
+	if(!our_monies || our_monies <= 0)
+		return
+	stored_money[user.ckey] = 0
+	budget2change(our_monies, user)
+	playsound(loc, 'sound/misc/coindispense.ogg', 100, FALSE, -1)
+
+/obj/item/roguemachine/keymaster/proc/get_sanctuary_payload(sanctuary_id)
+	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[sanctuary_id]
+	if(!S)
+		return null
+	var/list/data = list(list(
+		"name" = S.name,
+		"id" = S.sanctuary_id,
+		"description" = S.description,
+		"width" = S.width,
+		"height" = S.height,
+		"floors" = S.floors,
+		"price" = S.price,
+	))
+	return data
 
 /obj/item/roguemachine/keymaster/proc/purchase_sanctuary(mob/living/carbon/human/user, sanctuary_id)
 	// We first spawn the key in nullspace to ensure that a lockhash with its ID exists before
@@ -85,8 +195,7 @@
 
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
-	var/obj/item/roguekey/remote_sanctuary/key = new(null, user)
-	return key
+	return new /obj/item/roguekey/remote_sanctuary(null, user)
 
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(sanctuary_owner_ckey)
