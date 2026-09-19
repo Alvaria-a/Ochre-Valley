@@ -16,7 +16,7 @@
 /area/rogue/indoors/remote_sanctuary)
 "cL" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "cO" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8;
@@ -58,7 +58,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "eG" = (
 /obj/effect/decal/cobbleedge{
 	dir = 4;
@@ -471,14 +471,7 @@
 /obj/item/herbseed/valeriana,
 /obj/item/herbseed/wyldweed,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
-"oK" = (
-/obj/effect/decal/duneedge{
-	dir = 4
-	},
-/obj/structure/mineral_door/wood/fancywood,
-/turf/open/floor/rogue/tile/brownbrick,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "oX" = (
 /obj/structure/table/wood/large_table/south_east,
 /obj/item/clothing/mask/rogue/lordmask/naledi/lesser{
@@ -564,7 +557,7 @@
 /obj/item/rogueweapon/pitchfork,
 /obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "qG" = (
 /obj/structure/flora/roguegrass/bush/desert,
 /obj/structure/flora/roguegrass,
@@ -818,12 +811,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/outdoors/remote_sanctuary/mountains)
-"ya" = (
-/turf/closed/wall/mineral/rogue/sandbrick{
-	max_integrity = 9999999;
-	damage_deflection = 100000
-	},
-/area/rogue/outdoors/remote_sanctuary/mountains)
 "yb" = (
 /obj/structure/globe,
 /obj/effect/decal/cobbleedge{
@@ -924,7 +911,7 @@
 /obj/item/rogueweapon/sickle,
 /obj/item/rogueweapon/thresher,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "Am" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -1199,7 +1186,7 @@
 /obj/item/seeds/onion,
 /obj/item/seeds/coffee,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "Kd" = (
 /turf/open/floor/rogue/citybrick/citybrick1,
 /area/rogue/outdoors/remote_sanctuary/mountains)
@@ -1616,7 +1603,7 @@
 "YV" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/remote_sanctuary/mountains)
+/area/rogue/indoors/remote_sanctuary)
 "Zb" = (
 /obj/structure/fluff/walldeco/moon{
 	pixel_y = 32
@@ -1645,10 +1632,10 @@
 /area/rogue/indoors/remote_sanctuary)
 
 (1,1,1) = {"
-ya
-ya
-ya
-ya
+Do
+Do
+Do
+Do
 mm
 mm
 mm
@@ -1667,10 +1654,10 @@ mm
 mm
 "}
 (2,1,1) = {"
-ya
+Do
 Ab
 pO
-ya
+Do
 rD
 yB
 Ey
@@ -1689,10 +1676,10 @@ Oe
 mm
 "}
 (3,1,1) = {"
-ya
+Do
 YV
 cL
-oK
+jj
 yZ
 ga
 Ey
@@ -1711,10 +1698,10 @@ yg
 mm
 "}
 (4,1,1) = {"
-ya
+Do
 eE
 cL
-ya
+Do
 ld
 Ey
 Ey
@@ -1733,10 +1720,10 @@ Sb
 mm
 "}
 (5,1,1) = {"
-ya
+Do
 oB
 JW
-ya
+Do
 yB
 Ey
 Ey
