@@ -2,20 +2,29 @@
 	var/sanctuary_id
 	/// Description used in the shop to describe this shelter's contents
 	var/description
+	/// Text used in the shop UI just beneath the sanctuary's title. Keep it brief and flavorful as this will be put on the sanctuary's select button.
+	var/subtitle
 	/// Cost in mammons to purchase this remote sanctuary from the shop.
-	/// Owning one of these is a VERY luxurious opportunity, so keep them pricy!
+	///
+	/// Owning a private sanctuary, even if it's not a good one, is a VERY luxurious opportunity, so keep them pricy!
 	var/price = 500
-	/// List of lines that the KEYMASTER will yell upon purchasing this sanctuary.
+	/// List of lines that the KEYMASTER will randomly yell upon purchasing this sanctuary.
+	///
+	/// The town KEYMASTER speaks in a vaguely Shakespearean manner, ALWAYS yells in allcaps outside of very rare circumstances, and exclusively refers to buyers as "DISCERNER".
 	var/list/purchase_lines = list(
 		"A LAND FOR THEE, DISCERNER!!",
 		"THY LAND ART PREPARED, DISCERNER! COME AND MEET THY DESTINY!!",
 		"DISCERNER, I PRONOUNCE THEE KEY AND SPOUSE!! HAVE THY HONEYMOON IN THY NEWLY PURCHASED LAND!!",
 	)
-	/// Alternative list of lines that the KEYMASTER in the wretch coast will yell upon purchasing this sanctuary.
+	/// Alternative list of lines that the KEYMASTER in the wretch coast will randomly say upon purchasing this sanctuary.
+	///
+	/// The wretch KEYMASTER is more informal, does not ever yell, but still speaks in allcaps. It also likes to be a bit mean to everyone, including buyers.
+	///
+	/// Also, keep in mind when writing lines that most if not all lands purchased at the wretch KEYMASTER are sanctuaries that have been sneakily hijacked by the shady (and intentionally nondescript) organization that the wretch KEYMASTER serves for the purpose of being resold. It'll sometimes bluntly mention how easy or tough it was to "reclaim" a sanctuary.
 	var/list/purchase_lines_wretch = list(
 		"FOR YOU, A LAND \"RECLAIMED\".",
 		"ANOTHER LAND PURCHASED. IT TOOK US A WHILE TO TAKE THIS LAND FROM THEM WITHOUT THEM NOTICING. MAKE GOOD USE OF IT.",
-		"YOU WANT *ANOTHER* HIDEOUT? THIS ISN'T GOOD ENOUGH FOR YOU? GREEDY, GREEDY... ALRIGHT, HERE'S YOUR KEY.",
+		"YOU WANT *ANOTHER* HIDEOUT? THIS ONE YOU'RE IN NOW ISN'T GOOD ENOUGH FOR YOU? GREEDY, GREEDY... ALRIGHT, HERE'S YOUR KEY.",
 	)
 
 /datum/map_template/remote_sanctuary/cozy_homestead
@@ -28,6 +37,7 @@
 		"THOU HATH CHOSEN WELL, DISCERNER! THIS ONE IS FAR AWAY FROM THE RUSTWOODS, I PROMISE!!",
 		"A MOST VAST AND ROTUND LAND AWAITS THEE, DISCERNER!!"
 	)
+	subtitle = "Close to the clouds do we forge our home..."
 
 /datum/map_template/remote_sanctuary/shitty_cave
 	name = "Barren Cave"
@@ -45,6 +55,7 @@
 		"HAHAH, REALLY? YOU BOUGHT A CAVE AS YOUR CHOICE OF LAND? ALRIGHT, IT'S YOUR MAMMON. TAKE YOUR KEY.",
 		"ANOTHER LAND PURCHASED. THIS ONE WAS ACTUALLY PRETTY EASY FOR US TO TAKE FROM THEM. PROBABLY WHY IT'S AS CHEAP AS IT IS... COMPARED TO THE OTHERS, ANYWAY.",
 	)
+	subtitle = "For the luxuriously industrious..."
 
 /datum/map_template/remote_sanctuary/kazengun_retreat
 	name = "Kazengun Retreat"
@@ -61,6 +72,7 @@
 		"THANKS FOR YOUR PATRONAGE. YOU'D BETTER NOT GET THIS ONE TOO MESSY; I LIKE THIS ONE. NOT LIKE I COULD STOP YOU ANYWAY.",
 		"A SLICE OF KAZENGUN, JUST FOR YOU, HUH? QUITE THE SPLURGE... TAKE YOUR KEY",
 	)
+	subtitle = "Fine homes far awae replicated with Azurian flair..."
 
 /datum/map_template/remote_sanctuary/arena
 	name = "Arena"
@@ -75,6 +87,7 @@
 	purchase_lines_wretch = list(
 		"THANKS FOR YOUR PATRONAGE. THIS ONE WAS SURPRISINGLY EASY FOR US TO TAKE FROM THEM. TOOK FOREVER TO WASH THE VISCERA OFF MY ORB THERE AFTER THEIR LITTLE \"DUEL.\"",
 	)
+	subtitle = "Honor. Glory. And Grenzelbuns on the side..."
 
 /datum/map_template/remote_sanctuary/gambling_cave
 	name = "Renovated Gambling Den"
@@ -91,9 +104,10 @@
 		"HAHAHAHAH... GOOD PURCHASE. YOU READ THAT DESCRIPTION TOO, RIGHT? GODS, THE IRONY IS RICH, ISN'T IT?",
 		"THANKS FOR YOUR PATRONAGE. THE BEST PART ABOUT THIS ONE IS THAT THEY STILL DON'T KNOW ABOUT OUR LITTLE \"RECLAMATION\" OF IT.",
 	)
+	subtitle = "The Laughing God reclaims its blessed games..."
 
 /datum/map_template/remote_sanctuary/naledi_home
-	name = "Naledi Dar al-Iman"
+	name = "Naledi House of Hearth"
 	sanctuary_id = "naledi_home"
 	// This one is comically luxurious AND is in a very unique location.
 	// It's also nicer than some noble houses. It NEEDS to be expensive as fuck.
@@ -103,10 +117,12 @@
 	purchase_lines = list(
 		"OOH, I LOVE THIS PLACE, DISCERNER!! GOLD EVERYWHERE!! I WISH THEY MADE MINE STAND OVER THERE OUT OF GOLD, TOO!!",
 		"THY BOUNTIFUL COIN SHALT BE WELL-SPENT, DISCERNER!! I LOVE HOW COLORFUL AND BRIGHT NALEDI HOMES ARE!!",
-		"A FINE HOME THOU SHALT HAVE, DISCERNER, FOR PARADISE AWAITS!!"
+		"A FINE HOME THOU SHALT HAVE, WEALTHY DISCERNER, FOR PARADISE AWAITS!!",
+		"A WONDROUS CHOICE, DISCERNER!! ALSO. Uh. I-if a sandstorm kicks up... prithee, put on one of the masks over yonder. The Naledians leave those out to help protect visitors from the, um... Dj-Djinn the storms oft bring.",
 	)
 	purchase_lines_wretch = list(
 		"... GREAT GOOGLY MOOGLY, YOU ACTUALLY HAD THE COIN FOR THAT ONE? I UH, GOT NOTHING. I'M ACTUALLY IMPRESSED. TAKE YOUR KEY.",
 		"GOOD PURCHASE. BE GLAD NO NALEDIAN OFFICIALS YET KNOW ABOUT OUR HIJACKING OF THEIR LITTLE \"COLLABORATION\". IT'S A GOOD THING THEY'RE SO... TRUSTING, ISN'T IT?",
 		"THANKS FOR YOUR PATRONAGE. IF A SANDSTORM KICKS UP OVER THERE, PUT ON ONE OF THE MASKS YOU'LL FIND ON THE TABLE THERE. I DON'T RECOMMEND THAT TO KEEP THE SAND OUT OF YOUR MOUTH; NO, IT'S TO KEEP THE ONCOMING DJINN OUT."
 	)
+	subtitle = "Rest thy weary mind for but a mote, REPENTER..."

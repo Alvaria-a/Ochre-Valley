@@ -54,9 +54,6 @@
 	ui_interact(user)
 
 /obj/item/roguemachine/keymaster/attack_right(mob/user)
-	. = ..()
-	if(!.)
-		return
 	if(!user || !ishuman(user))
 		return
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
@@ -119,10 +116,9 @@
 /obj/item/roguemachine/keymaster/ui_static_data(mob/user)
 	var/list/data = list()
 	data["can_read"] = (ishuman(user) && user.can_read(src, TRUE)) ? TRUE : FALSE
-	data["user_ckey"] = user.ckey
 	var/list/available_sanctuaries = list()
-	for(var/datum/map_template/remote_sanctuary/S in SSmapping.remote_sanctuary_templates)
-		available_sanctuaries += get_sanctuary_payload(S.id)
+	for(var/a_key, a_val in SSmapping.remote_sanctuary_templates)
+		available_sanctuaries += get_sanctuary_payload(a_key)
 	data["available_sanctuaries_data"] = available_sanctuaries
 	return data
 
@@ -130,7 +126,6 @@
 	var/list/data = list()
 	data["stored_money"] = stored_money[user.ckey] || 0
 	data["selected_sanctuary_id"] = selected_sanctaury[user.ckey] || "cozy_homestead"
-	data["selected_sanctuary_data"] = get_sanctuary_payload(data["selected_sanctuary_id"])
 	return data
 
 /obj/item/roguemachine/keymaster/ui_act(action, params)
@@ -188,6 +183,7 @@
 		"height" = S.height,
 		"floors" = S.floors,
 		"price" = S.price,
+		"subtitle" = S.subtitle,
 	))
 	return data
 
