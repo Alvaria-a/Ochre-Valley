@@ -13,9 +13,9 @@
 	/// Associated list of which ckeys have how much money stored here, storing money on a per-client basis. This allows multiple players to use the KEYMASTER without worrying about overlapping money from others.
 	///
 	/// Key is the player's ckey, value is the amount of mammon stored by that player.
-	var/list/stored_money = list()
+	var/list/stored_money = alist()
 	/// Assocaited list. key is the player's ckey, value is the ID of the sanctuary the player had last selected.
-	var/list/selected_sanctaury = list()
+	var/list/selected_sanctaury = alist()
 	/// Is this KEYMASTER intended to be used by wretches (AKA it SHOULD be in the wretch coast)?
 	var/for_wretches = FALSE
 	/// A list of lines that the KEYMASTER will yell when it successfully creates a portal.
@@ -38,10 +38,10 @@
 
 /obj/item/roguemachine/keymaster/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info(span_blue("These can be used to purchase remote sanctuaries - <b>EXPENSIVE</b>, private residences in far-off lands that are accessed via portals."))
+	. += span_info(span_blue("These can be used to purchase remote sanctuaries: <b>EXPENSIVE</b>, private residences in far-off lands that are accessed via portals."))
 	. += span_info(span_blue("LEFT CLICK with an empty hand to browse through a selection of remote sanctuaries."))
 	. += span_info(span_blue("LEFT CLICK on it with a remote sanctuary key to open a portal to the sanctuary it belongs to. The portal will linger for one minute and cannot be prematurely closed."))
-	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain obtain spare keys to it."))
+	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain spare keys to it."))
 	. += span_info(span_blue("Money inserted into the KEYMASTER is stored on a per-player basis: That means multiple people can use the machine at once without having to worry about accidentally using someone else's money. This also means money inserted into it cannot be withdrawn by anyone else but the player who put it in."))
 
 /obj/item/roguemachine/keymaster/attack_hand(mob/user)
@@ -90,21 +90,21 @@
 
 /obj/item/roguemachine/keymaster/attackby(obj/item/I, mob/user, params)
 	. = ..()
-	var/obj/item/roguekey/remote_sanctuary/K = I
-	if(K)
+	if(!user)
+		return
+	if(!ishuman(user))
+		return
+	if(istype(I, /obj/item/roguecoin/aalloy) || istype(I, /obj/item/roguecoin/inqcoin))
+		return
+	if(istype(I, /obj/item/roguekey/remote_sanctuary))
+		var/obj/item/roguekey/remote_sanctuary/K = I
 		user.visible_message(span_notice("\The [user] sticks the pronged teeth of [K] against the KEYMASTER. Its glassy surface begins to glow and swirl..."), span_notice("I stick the pronged teeth of [K] against the KEYMASTER. Its glassy surface begins to glow and swirl. The artificed metal begins to tremble in my grasp..."))
 		playsound(src, 'sound/foley/equip/rummaging-02.ogg', 100, FALSE)
 		if(do_after(user, 5 SECONDS, target = src))
 			key_act(user, K.sanctuary_owner_ckey)
-	var/obj/item/roguecoin/C
-	if(C && user.ckey && ishuman(user))
-		if(istype(C, /obj/item/roguecoin/aalloy) || istype(C, /obj/item/roguecoin/inqcoin))
-			return
-		var/coins_value = C.quantity * C.sellprice
-		var/our_value = stored_money[user.ckey] ? stored_money[user.ckey] : 0
-		our_value += coins_value
-		stored_money[user.ckey] = our_value
-		qdel(C)
+	if(istype(I, /obj/item/roguecoin))
+		stored_money[user.ckey] = (stored_money[user.ckey] || 0) + I.get_real_price()
+		qdel(I)
 		playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 		update_user_ui(user)
 
@@ -123,13 +123,13 @@
 	var/list/available_sanctuaries = list()
 	for(var/datum/map_template/remote_sanctuary/S in SSmapping.remote_sanctuary_templates)
 		available_sanctuaries += get_sanctuary_payload(S.id)
-	data["available_sanctuaries_data"]
+	data["available_sanctuaries_data"] = available_sanctuaries
 	return data
 
 /obj/item/roguemachine/keymaster/ui_data(mob/user)
 	var/list/data = list()
-	data["stored_money"] = stored_money[user.ckey] ? stored_money[user.ckey] : 0
-	data["selected_sanctuary_id"] = selected_sanctaury[user.ckey] ? selected_sanctaury[user.ckey] : "cozy_homestead"
+	data["stored_money"] = stored_money[user.ckey] || 0
+	data["selected_sanctuary_id"] = selected_sanctaury[user.ckey] || "cozy_homestead"
 	data["selected_sanctuary_data"] = get_sanctuary_payload(data["selected_sanctuary_id"])
 	return data
 
@@ -157,6 +157,9 @@
 				update_user_ui(usr)
 			return FALSE
 		if("refund_money")
+			refund_money(usr)
+			update_user_ui(usr)
+			return FALSE
 
 
 /obj/item/roguemachine/keymaster/proc/update_user_ui(mob/user)
