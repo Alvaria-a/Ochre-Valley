@@ -1360,3 +1360,6 @@
   zRainbowcat:
   - bugfix: athletics skill description is no longer psyop
   - bugfix: fixed nodrop items from conjured summons
+2026-09-19:
+  SomeDeviant:
+  - bugfix: fixed config
