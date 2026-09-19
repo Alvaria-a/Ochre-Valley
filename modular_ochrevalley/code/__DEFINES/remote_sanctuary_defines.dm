@@ -1,5 +1,3 @@
-#define REMOTE_SANCTUARY_MAX_HEIGHT 2
-
 // Sanctuary portal creation returns
 /// The sanctuary portals were created without issue
 #define SANCTUARY_PORTAL_SUCCESSFUL 1

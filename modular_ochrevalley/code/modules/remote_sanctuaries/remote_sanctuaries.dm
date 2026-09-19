@@ -52,14 +52,13 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	var/obj/effect/landmark/remote_sanctuary_spawn/marker = markers_available[1]
 	var/turf/T = marker.loc
 	var/datum/sanctuary_data/data = new()
-	var/max_z = REMOTE_SANCTUARY_MAX_HEIGHT - 1
 	data.min_x = T.x
 	data.mix_y = T.y
 	data.min_z = T.z
 	data.min_turf = T
-	data.max_x = T.x + S.width - 1
-	data.max_y = T.y + S.height - 1
-	data.max_z = T.z + max_z
+	data.max_x = T.x + S.width
+	data.max_y = T.y + S.height
+	data.max_z = T.z + S.floors
 	data.used_template = S
 	data.owner_voice_color = owner_voice_color
 	data.owner_real_name = owner_real_name
@@ -75,10 +74,12 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	S.load(T, FALSE)
 	// We search specifically in the inner area of the sanctuary
 	// because realistically there should never be anything of note on the very edges of the template maps!
-	// (I am also so very sorry for this.)
-	for(var/s_z in min(T.z, T.z + max_z) to max(T.z, T.z + max_z))
-		for(var/s_x in min(T.x+1, T.x + S.width-1) to max(T.x+1, T.x + S.width-2))
-			for(var/s_y in min(T.y+1, T.y + S.height-1) to max(T.y+1, T.y + S.height-2))
+
+	// Side note: I am also so very sorry for this messy messy process.
+	// I genuinely could not think of a cleaner way to accomplish this.
+	for(var/s_z in min(T.z, T.z + S.floors) to max(T.z, T.z + S.floors))
+		for(var/s_x in min(T.x+1, T.x + S.width-2) to max(T.x+1, T.x + S.width-2))
+			for(var/s_y in min(T.y+1, T.y + S.height-2) to max(T.y+1, T.y + S.height-2))
 				var/turf/s_t = locate(s_x, s_y, s_z)
 				// Find every door and closet within our sanctuary's area
 				// and assign it a lock that the user's sanctuary key will be able to lock/unlock
@@ -93,7 +94,8 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 					if(C)
 						C.lockid = "sanctuary_[owner_ckey]"
 						C.lockhash = GLOB.lockids[C.lockid]
-				// If we don't already have an exit configured, look for one and set our exit to it if it's there!
+				// If we don't already have an exit configured,
+				// look for one and set our exit to it if it's there!
 				if(!D && !C && !data.sanctuary_exit)
 					data.sanctuary_exit = locate() in s_t
 					if(data.sanctuary_exit)
