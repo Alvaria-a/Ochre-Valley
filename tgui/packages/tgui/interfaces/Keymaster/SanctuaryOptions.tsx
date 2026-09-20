@@ -1,34 +1,15 @@
+// OV FILE
 import {
-  badgeStyle,
-  cardStyle,
-  compactButtonStyle,
-  fieldLabelStyle,
-  fieldRowStyle,
-  fieldValueStyle,
-  FONT_BODY,
   FONT_HEAD,
   FONT_SMALL,
-  INK,
   INK_FAINT,
   INK_SOFT,
   inkButtonStyle,
-  inkInputStyle,
-  pageStyle,
   PARCHMENT,
   PARCHMENT_DEEP,
-  PARCHMENT_SHADOW,
-  SEAL_AMBER,
-  SEAL_RED,
-  sectionHeaderStyle,
-  subtitleStyle,
-  tabStyle,
-  titleStyle,
 } from '../common/parchment';
-import { useState } from 'react';
-import { Button, Divider, Input, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
-import { Window } from 'tgui/layouts';
-import { SanctuaryData, Data } from './types';
-import { useBackend } from 'tgui/backend';
+import { Button, Stack } from 'tgui-core/components';
+import { SanctuaryData } from './types';
 
 export const SanctuaryOptions = (props: {
   can_read: boolean;

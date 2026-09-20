@@ -1,25 +1,14 @@
+// OV FILE
 import {
   cardStyle,
-  fieldLabelStyle,
-  fieldRowStyle,
-  fieldValueStyle,
-  INK_FAINT,
-  INK_SOFT,
   inkButtonStyle,
   pageStyle,
-  PARCHMENT,
   rulerStyle,
   SEAL_AMBER,
-  SEAL_RED,
   sectionHeaderStyle,
-  subtitleStyle,
-  titleStyle,
 } from '../common/parchment';
-import { useState } from 'react';
-import { Box, Button, Divider, Input, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
-import { Window } from 'tgui/layouts';
-import { SanctuaryData, Data } from './types';
-import { useBackend } from 'tgui/backend';
+import { Box, Button, Stack } from 'tgui-core/components';
+import { SanctuaryData } from './types';
 
 export const SanctuaryInfoAndBuy = (props: {
   can_read: boolean;

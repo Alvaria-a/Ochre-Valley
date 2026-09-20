@@ -1,5 +1,4 @@
-import { CSSProperties } from "react";
-
+// OV FILE
 export type SanctuaryData = {
 	name: string;
   id: string;
