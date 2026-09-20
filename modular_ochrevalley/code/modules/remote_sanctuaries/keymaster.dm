@@ -242,7 +242,7 @@
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
 	if(!D)
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
-		if(for_wretches)
+		if(D.is_wretch_made())
 			say("IS THIS A JOKE? PURCHASE A SANCTUARY FIRST BEFORE TRYING TO GET A SPARE KEY, FOOL.")
 		else
 			say("MINE APOLOGIES, I CANST NOT PROVIDE THEE WITH A SPARE SANCTUARY KEY UNTIL THOU FIRST PURCHASE A SANCTUARY!!")
@@ -254,7 +254,7 @@
 		user.put_in_hands(K)
 	else
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
-		if(for_wretches)
+		if(D.is_wretch_made())
 			say("NO MORE... I REFUSE TO COUGH UP ANY MORE SPARE KEYS FOR YOU.")
 		else
 			say("MINE APOLOGIES, DISCERNER, BUT I CANST NOT PROVIDE THEE WITH ANY MORE SPARE KEYS!!")
@@ -365,7 +365,7 @@
 
 /obj/item/roguemachine/keymaster_exit/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info(span_blue("Left click this with an empty hand to create a portal that will take you back to [realm_name]."))
+	. += span_info(span_blue("Left click this with an empty hand to create a portal that will take you back to [SSticker.realm_name]."))
 	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain a spare key to your sanctuary."))
 
 /obj/item/roguemachine/keymaster_exit/attack_right(mob/user)
