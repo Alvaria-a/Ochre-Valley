@@ -19,6 +19,8 @@
 	var/list/selected_sanctaury = alist()
 	/// A list of ckeys detailing which players we are currently generating a sanctuary for.
 	var/list/generating_for = list()
+	/// A list of ckeys detailing which players are seeing the CONFIRM prompt.
+	var/list/showing_confirm_prompt_for = list()
 	/// Is this KEYMASTER intended to be used by wretches (AKA it SHOULD be in the wretch coast)?
 	var/for_wretches = FALSE
 	/// A list of lines that the KEYMASTER will yell when it successfully creates a portal.
@@ -43,8 +45,8 @@
 	. = ..()
 	. += span_info(span_blue("These can be used to purchase remote sanctuaries: <b>EXPENSIVE</b>, private residences in far-off lands that are accessed via portals."))
 	. += span_info(span_blue("LEFT CLICK with an empty hand to browse through a selection of remote sanctuaries."))
-	. += span_info(span_blue("LEFT CLICK on it with a remote sanctuary key to open a portal to the sanctuary it belongs to. The portal will linger for one minute and cannot be prematurely closed."))
-	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain spare keys to it."))
+	. += span_info(span_blue("LEFT CLICK on it with a remote sanctuary key to open a portal to the sanctuary that the key was forged for. The portal will linger for one minute and cannot be prematurely closed."))
+	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain a spare key to your sanctuary."))
 	. += span_info(span_blue("Money inserted into the KEYMASTER is stored on a per-player basis: That means multiple people can use the machine at once without having to worry about accidentally using someone else's money. This also means money inserted into it cannot be withdrawn by anyone else but the player who put it in."))
 
 /obj/item/roguemachine/keymaster/attack_hand(mob/user)
@@ -57,29 +59,8 @@
 	ui_interact(user)
 
 /obj/item/roguemachine/keymaster/attack_right(mob/user)
-	if(!user || !ishuman(user))
-		return
-	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
-	if(!D)
-		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
-		if(for_wretches)
-			say("IS THIS A JOKE? PURCHASE A SANCTUARY FIRST BEFORE TRYING TO GET A SPARE KEY, FOOL.")
-		else
-			say("MINE APOLOGIES, I CANST NOT PROVIDE THEE WITH A SPARE SANCTUARY KEY UNTIL THOU FIRST PURCHASE A SANCTUARY!!")
-	else if(D.spare_keys_remaining > 0)
-		D.spare_keys_remaining--
-		var/obj/item/roguekey/remote_sanctuary/K = regurgitate_key(user)
-		playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
-		balloon_alert(user, "[D.spare_keys_remaining] spare keys left...")
-		user.put_in_hands(K)
-	else
-		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
-		if(for_wretches)
-			say("NO MORE... I REFUSE TO COUGH UP ANY MORE SPARE KEYS FOR YOU.")
-		else
-			say("MINE APOLOGIES, DISCERNER, BUT I CANST NOT PROVIDE THEE WITH ANY MORE SPARE KEYS!!")
-
-
+	. = ..()
+	handle_spare_keys(user)
 
 /obj/item/roguemachine/keymaster/Initialize(mapload)
 	. = ..()
@@ -142,6 +123,7 @@
 	data["selected_sanctuary"] = sanctuary_data
 	data["is_generating_for_us"] = (user.ckey in generating_for)
 	data["already_owns_sanctuary"] = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey) ? TRUE : FALSE
+	data["is_showing_confirm_option"] = (user.ckey in showing_confirm_prompt_for)
 	return data
 
 /obj/item/roguemachine/keymaster/ui_act(action, params)
@@ -162,6 +144,7 @@
 			if(!new_select)
 				return
 			selected_sanctaury[usr.ckey] = new_select.sanctuary_id
+			showing_confirm_prompt_for.Remove(usr.ckey)
 			update_user_ui(usr)
 			return FALSE
 		if("purchase_sanctuary")
@@ -172,10 +155,18 @@
 				purchase_sanctuary(usr, S.sanctuary_id)
 				our_monies -= S.price
 				stored_money[usr.ckey] = our_monies
+				showing_confirm_prompt_for.Remove(usr.ckey)
 				update_user_ui(usr)
 			return FALSE
 		if("refund_money")
 			refund_money(usr)
+			showing_confirm_prompt_for.Remove(usr.ckey)
+			update_user_ui(usr)
+			return FALSE
+		if("open_confirm_choice")
+			if(usr.ckey in showing_confirm_prompt_for)
+				return
+			showing_confirm_prompt_for.Add(usr.ckey)
 			update_user_ui(usr)
 			return FALSE
 
@@ -238,11 +229,35 @@
 		keymaster_say(pick(data.used_template.purchase_lines_wretch))
 	else
 		keymaster_say(pick(data.used_template.purchase_lines))
-	to_chat(user, span_notice("\The [src] has completed its archaic, arcane task. I can now retreive my key."))
+	to_chat(user, span_notice("\The [src] has completed its archaic, arcane task. I can now retreive my key from it."))
 
-/// Dispenses a key to the user
-/obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
+/// Dispenses a remote sanctuary key to the user
+/obj/item/roguemachine/proc/regurgitate_key(mob/living/carbon/human/user)
 	return new /obj/item/roguekey/remote_sanctuary(null, user)
+
+/// Dispenses a remote sanctuary key to the user
+/obj/item/roguemachine/proc/handle_spare_keys(mob/user)
+	if(!user || !ishuman(user))
+		return
+	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey)
+	if(!D)
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+		if(for_wretches)
+			say("IS THIS A JOKE? PURCHASE A SANCTUARY FIRST BEFORE TRYING TO GET A SPARE KEY, FOOL.")
+		else
+			say("MINE APOLOGIES, I CANST NOT PROVIDE THEE WITH A SPARE SANCTUARY KEY UNTIL THOU FIRST PURCHASE A SANCTUARY!!")
+	else if(D.spare_keys_remaining > 0)
+		D.spare_keys_remaining--
+		var/obj/item/roguekey/remote_sanctuary/K = regurgitate_key(user)
+		playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
+		balloon_alert(user, "[D.spare_keys_remaining] spare keys left...")
+		user.put_in_hands(K)
+	else
+		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+		if(for_wretches)
+			say("NO MORE... I REFUSE TO COUGH UP ANY MORE SPARE KEYS FOR YOU.")
+		else
+			say("MINE APOLOGIES, DISCERNER, BUT I CANST NOT PROVIDE THEE WITH ANY MORE SPARE KEYS!!")
 
 /obj/item/roguemachine/keymaster/proc/key_act(mob/living/carbon/human/user, sanctuary_owner_ckey)
 	var/datum/sanctuary_data/D = SSremote_sanctuaries.get_claimed_sanctuary(sanctuary_owner_ckey)
@@ -347,6 +362,16 @@
 			say("YOU DO NOT NEED TO USE A KEY TO HEAD BACK, FOOL. JUST PLACE YOUR EMPTY HAND UPON MY ORB.")
 		else
 			say("OH, THOU DOTH NOT REQUIRE A KEY TO RETURN!! JUST PLACE THY EMPTY HAND UPON MINE ORB!!")
+
+/obj/item/roguemachine/keymaster_exit/get_mechanics_examine(mob/user)
+	. = ..()
+	. += span_info(span_blue("Left click this with an empty hand to create a portal that will take you back to [realm_name]."))
+	. += span_info(span_blue("If you already own a remote sanctuary, you can RIGHT CLICK the KEYMASTER with an empty hand to obtain a spare key to your sanctuary."))
+
+/obj/item/roguemachine/keymaster_exit/attack_right(mob/user)
+	. = ..()
+	handle_spare_keys(user)
+
 
 /obj/structure/fluff/traveltile/sanctuary_portal
 	name = "sanctuary portal"
