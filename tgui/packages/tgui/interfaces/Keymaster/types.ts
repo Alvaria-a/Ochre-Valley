@@ -17,4 +17,5 @@ export type Data = {
   selected_sanctuary: SanctuaryData;
   already_owns_sanctuary: boolean;
   is_generating_for_us: boolean;
+  is_showing_confirm_option: boolean;
 }

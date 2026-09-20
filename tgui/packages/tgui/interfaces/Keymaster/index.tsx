@@ -20,7 +20,7 @@ export const Keymaster = (props: {
 }) => {
   const { act, data } = useBackend<Data>();
   const can_read = !!data.can_read;
-  const { stored_money, selected_sanctuary: selected_sanctuary, already_owns_sanctuary, is_generating_for_us } = data;
+  const { stored_money, selected_sanctuary: selected_sanctuary, already_owns_sanctuary, is_generating_for_us, is_showing_confirm_option } = data;
   const sortedSanctuaries = data.available_sanctuaries_data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
   return (
     <Window width={820} height={760} theme="parchment">
@@ -59,6 +59,8 @@ export const Keymaster = (props: {
               selected_sanctuary={selected_sanctuary}
               already_owns_sanctuary={already_owns_sanctuary}
               is_generating_for_us={is_generating_for_us}
+              is_showing_confirm_option={is_showing_confirm_option}
+              onShowConfirmPrompt={() => act('open_confirm_choice')}
             />
           </Stack.Item>
         </Stack>

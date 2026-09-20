@@ -17,8 +17,17 @@ export const SanctuaryInfoAndBuy = (props: {
   onBuySanctuary: () => void;
   already_owns_sanctuary: boolean;
   is_generating_for_us: boolean;
+  is_showing_confirm_option: boolean;
+  onShowConfirmPrompt: () => void;
 }) => {
-  const { selected_sanctuary: selected_sanctuary_data, stored_money, onBuySanctuary, already_owns_sanctuary, is_generating_for_us } = props;
+  const { selected_sanctuary: selected_sanctuary_data,
+    stored_money,
+    onBuySanctuary,
+    already_owns_sanctuary,
+    is_generating_for_us,
+    is_showing_confirm_option,
+    onShowConfirmPrompt
+  } = props;
   const tooExpensive: boolean = selected_sanctuary_data.price > stored_money
   return (
     <Stack vertical fill scrollable>
@@ -39,16 +48,19 @@ export const SanctuaryInfoAndBuy = (props: {
       </Stack.Item>
       <Stack.Item>
         <Button
-          style={inkButtonStyle({disabled: is_generating_for_us || already_owns_sanctuary || tooExpensive})}
+          style={inkButtonStyle({
+            disabled: is_generating_for_us || already_owns_sanctuary || tooExpensive,
+            color: is_showing_confirm_option ? "#b13834" : undefined})}
           fluid
-          onClick={() => onBuySanctuary()}
+          onClick={is_showing_confirm_option ? () => onBuySanctuary() : () => onShowConfirmPrompt()}
           disabled={tooExpensive || is_generating_for_us || already_owns_sanctuary}
           m={1}
         >
           {is_generating_for_us ? "FORGING THY SANCTUARY KEYS, WAIT A MOTE..."
           : already_owns_sanctuary ? "SORRY, ONLY ONE SANCTUARY PER CUSTOMER"
           : tooExpensive ? "CANNOT PURCHASE (INSERT MORE COIN, DISCERNER)"
-          : "PURCHASE THIS SANCTUARY"}
+          : is_showing_confirm_option? "CONFIRM PURCHASE? (ONE SANCTUARY PER BUYER PER WEEK)"
+          : "PURCHASE THIS REMOTE SANCTUARY"}
         </Button>
       </Stack.Item>
     </Stack>
