@@ -5,41 +5,63 @@ import {
   fieldValueStyle,
   INK_FAINT,
   INK_SOFT,
+  inkButtonStyle,
   pageStyle,
   PARCHMENT,
+  rulerStyle,
+  SEAL_AMBER,
   SEAL_RED,
   sectionHeaderStyle,
   subtitleStyle,
   titleStyle,
 } from '../common/parchment';
 import { useState } from 'react';
-import { Button, Divider, Input, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
+import { Box, Button, Divider, Input, Section, Stack, Tabs, Tooltip } from 'tgui-core/components';
 import { Window } from 'tgui/layouts';
 import { SanctuaryData, Data } from './types';
 import { useBackend } from 'tgui/backend';
 
 export const SanctuaryInfoAndBuy = (props: {
   can_read: boolean;
-  sortedSanctuaries: SanctuaryData[];
   stored_money: number;
-  selected_sanctuary_id: string;
-  onSelectSanctuary: (sanctuary_id: string) => void;
+  selected_sanctuary: SanctuaryData;
   onBuySanctuary: () => void;
+  already_owns_sanctuary: boolean;
+  is_generating_for_us: boolean;
 }) => {
+  const { selected_sanctuary: selected_sanctuary_data, stored_money, onBuySanctuary, already_owns_sanctuary, is_generating_for_us } = props;
+  const tooExpensive: boolean = selected_sanctuary_data.price > stored_money
   return (
-    <Stack fill>
-      <Stack vertical fill zebra>
-        <Stack.Item>
-          <div style={cardStyle}>
-            LONG-WINDED AHH DESCRIPTION FOR HOME HERE
+    <Stack vertical fill scrollable>
+      <Stack.Item basis={"60%"}>
+        <Box style={cardStyle} height={"100%"} width={"100%"}>
+          <div style={sectionHeaderStyle}>
+            {selected_sanctuary_data.name}
           </div>
-        </Stack.Item>
-        <Stack.Item>
-          <Button>
-            BUY THIS HOME SIRE
-          </Button>
-        </Stack.Item>
-      </Stack>
+          <div style={pageStyle}>
+            {selected_sanctuary_data.description}<br/>
+            <hr style={rulerStyle} />
+            <b>COST:{' '}</b>
+            <span style={{ color: SEAL_AMBER, fontWeight: 'bold' }}>
+              {selected_sanctuary_data.price}m
+            </span>
+          </div>
+        </Box>
+      </Stack.Item>
+      <Stack.Item>
+        <Button
+          style={inkButtonStyle({disabled: is_generating_for_us || already_owns_sanctuary || tooExpensive})}
+          fluid
+          onClick={() => onBuySanctuary()}
+          disabled={tooExpensive || is_generating_for_us || already_owns_sanctuary}
+          m={1}
+        >
+          {is_generating_for_us ? "FORGING THY SANCTUARY KEYS, WAIT A MOTE..."
+          : already_owns_sanctuary ? "SORRY, ONLY ONE SANCTUARY PER CUSTOMER"
+          : tooExpensive ? "CANNOT PURCHASE (INSERT MORE COIN, DISCERNER)"
+          : "PURCHASE THIS SANCTUARY"}
+        </Button>
+      </Stack.Item>
     </Stack>
   )
 }

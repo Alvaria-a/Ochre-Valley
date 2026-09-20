@@ -15,13 +15,7 @@ export type Data = {
   can_read: boolean;
   available_sanctuaries_data: SanctuaryData[];
   stored_money: number;
-  selected_sanctuary_id: string;
+  selected_sanctuary: SanctuaryData;
+  already_owns_sanctuary: boolean;
+  is_generating_for_us: boolean;
 }
-
-export const subTabBarStyle: CSSProperties = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '4px',
-  justifyContent: 'left',
-  margin: '6px 0',
-};

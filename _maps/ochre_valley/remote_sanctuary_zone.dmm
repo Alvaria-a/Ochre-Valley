@@ -10,11 +10,12 @@
 /turf/open/transparent/openspace,
 /area/rogue)
 "h" = (
-/obj/item/roguecoin/gold/pile,
-/obj/item/roguecoin/gold/pile,
-/obj/item/roguecoin/gold/pile,
-/obj/item/roguecoin/gold/pile,
-/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/aspirantpile,
+/obj/item/roguecoin/gold/aspirantpile,
+/obj/item/roguecoin/gold/aspirantpile,
+/obj/item/roguecoin/gold/aspirantpile,
+/obj/item/roguecoin/gold/aspirantpile,
+/obj/item/roguecoin/gold/aspirantpile,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "k" = (

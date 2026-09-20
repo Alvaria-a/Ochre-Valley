@@ -10,12 +10,15 @@
 	max_integrity = 0
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_GIGANTIC
+	bigboy = TRUE
 	/// Associated list of which ckeys have how much money stored here, storing money on a per-client basis. This allows multiple players to use the KEYMASTER without worrying about overlapping money from others.
 	///
 	/// Key is the player's ckey, value is the amount of mammon stored by that player.
 	var/list/stored_money = alist()
-	/// Assocaited list. key is the player's ckey, value is the ID of the sanctuary the player had last selected.
+	/// Associated list. key is the player's ckey, value is the ID of the sanctuary the player had last selected.
 	var/list/selected_sanctaury = alist()
+	/// A list of ckeys detailing which players we are currently generating a sanctuary for.
+	var/list/generating_for = list()
 	/// Is this KEYMASTER intended to be used by wretches (AKA it SHOULD be in the wretch coast)?
 	var/for_wretches = FALSE
 	/// A list of lines that the KEYMASTER will yell when it successfully creates a portal.
@@ -124,8 +127,21 @@
 
 /obj/item/roguemachine/keymaster/ui_data(mob/user)
 	var/list/data = list()
+	var/list/sanctuary_data = list()
+	var/datum/map_template/remote_sanctuary/S = get_currently_selected_sanctuary(user)
+	if(S)
+		sanctuary_data["name"] = S.name
+		sanctuary_data["id"] = S.sanctuary_id
+		sanctuary_data["description"] = S.description
+		sanctuary_data["width"] = S.width
+		sanctuary_data["height"] = S.height
+		sanctuary_data["floors"] = S.floors
+		sanctuary_data["price"] = S.price
+		sanctuary_data["subtitle"] = S.subtitle
 	data["stored_money"] = stored_money[user.ckey] || 0
-	data["selected_sanctuary_id"] = selected_sanctaury[user.ckey] || "cozy_homestead"
+	data["selected_sanctuary"] = sanctuary_data
+	data["is_generating_for_us"] = (user.ckey in generating_for)
+	data["already_owns_sanctuary"] = SSremote_sanctuaries.get_claimed_sanctuary(user.ckey) ? TRUE : FALSE
 	return data
 
 /obj/item/roguemachine/keymaster/ui_act(action, params)
@@ -134,19 +150,26 @@
 		return
 	if(!ishuman(usr))
 		return
-	var/select = params["selected_id"]
-	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[select]
+	var/datum/map_template/remote_sanctuary/S = get_currently_selected_sanctuary(usr)
 	if(!S)
 		return
 	switch(action)
 		if("select_sanctuary")
-			selected_sanctaury[usr.ckey] = S.id
+			var/selected_id = params["selected_id"]
+			if(!selected_id || !istext(selected_id) || !length(selected_id))
+				return
+			var/datum/map_template/remote_sanctuary/new_select = SSmapping.remote_sanctuary_templates[selected_id]
+			if(!new_select)
+				return
+			selected_sanctaury[usr.ckey] = new_select.sanctuary_id
 			update_user_ui(usr)
 			return FALSE
 		if("purchase_sanctuary")
 			var/our_monies = stored_money[usr.ckey]
 			if(isnum(our_monies) && our_monies >= S.price)
-				purchase_sanctuary(usr, S.id)
+				if(usr.ckey in generating_for || SSremote_sanctuaries.get_claimed_sanctuary(usr.ckey))
+					return
+				purchase_sanctuary(usr, S.sanctuary_id)
 				our_monies -= S.price
 				stored_money[usr.ckey] = our_monies
 				update_user_ui(usr)
@@ -156,6 +179,12 @@
 			update_user_ui(usr)
 			return FALSE
 
+// Please do not drag around the funny machine
+/obj/item/roguemachine/keymaster/MouseDrop(atom/over)
+	return
+
+/obj/item/roguemachine/keymaster/proc/get_currently_selected_sanctuary(mob/user)
+	return SSmapping.remote_sanctuary_templates[selected_sanctaury[user.ckey] || "cozy_homestead"]
 
 /obj/item/roguemachine/keymaster/proc/update_user_ui(mob/user)
 	var/datum/tgui/ui = SStgui.get_open_ui(user, src)
@@ -191,14 +220,25 @@
 	// We first spawn the key in nullspace to ensure that a lockhash with its ID exists before
 	// the player's sanctuary is generated. This way all the lockable things in there will be
 	// usable with the key!
+	to_chat(user, span_notice("\The [src] begins to whirr and CLANK loudly. I'll need to wait a mote..."))
+	generating_for.Add(user.ckey)
+	// Update so the UI tells the user their key is being made
+	update_user_ui(user)
+	balloon_alert_to_viewers("<font color='[GLOW_COLOR_ARCANE]'>*WHIRR, CLANK*</font>")
 	var/obj/item/roguekey/remote_sanctuary/key = regurgitate_key(user)
 	var/datum/sanctuary_data/data = SSremote_sanctuaries.claim_sanctuary(user, sanctuary_id, for_wretches)
+	qdel(key)
+	generating_for.Remove(user.ckey)
+	// Update again to account for the fact that they're now a land owner
+	update_user_ui(user)
+	balloon_alert_to_viewers("*<font color='[GLOW_COLOR_ARCANE]'>*FWOOSH!*</font>*")
 	user.put_in_hands(key)
-	playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
+	playsound(loc, 'sound/magic/swap.ogg', 100, TRUE, -1)
 	if(for_wretches)
 		keymaster_say(pick(data.used_template.purchase_lines_wretch))
 	else
 		keymaster_say(pick(data.used_template.purchase_lines))
+	to_chat(user, span_notice("\The [src] has completed its archaic, arcane task. I can now retreive my key."))
 
 /// Dispenses a key to the user
 /obj/item/roguemachine/keymaster/proc/regurgitate_key(mob/living/carbon/human/user)
@@ -256,6 +296,7 @@
 	max_integrity = 0
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_GIGANTIC
+	bigboy = TRUE
 	/// Data of the sanctuary we belong to.
 	var/datum/sanctuary_data/data
 	var/list/portal_lines = list(

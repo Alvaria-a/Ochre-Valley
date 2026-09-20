@@ -11,6 +11,7 @@ import {
   SEAL_AMBER,
   SEAL_RED,
   sectionHeaderStyle,
+  stickyLeftCellStyle,
   subtitleStyle,
   tabBarStyle,
   titleStyle,
@@ -30,58 +31,48 @@ export const Keymaster = (props: {
 }) => {
   const { act, data } = useBackend<Data>();
   const can_read = !!data.can_read;
-  const { stored_money, selected_sanctuary_id } = data;
+  const { stored_money, selected_sanctuary: selected_sanctuary, already_owns_sanctuary, is_generating_for_us } = data;
   const sortedSanctuaries = data.available_sanctuaries_data.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
   return (
-    <Window width={780} height={620} theme="parchment">
+    <Window width={820} height={760} theme="parchment">
       <Window.Content>
-        <div style={pageStyle}>
-          <Stack vertical fill>
-            <Stack.Item grow>
-              <div style={titleStyle}>THE KEYMASTER</div>
-              <div style={subtitleStyle}>
-                Thy balance:{' '}
-                <span style={{ color: SEAL_AMBER, fontWeight: 'bold' }}>
-                  {stored_money}m
-                </span>
-                {' '}
-                <Button icon="coins" onClick={() => {act('refund_money')}}>
-                  Refund
-                </Button>
-              </div>
-            </Stack.Item>
-            <hr style={rulerStyle} />
-              <Box style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '4px',
-                justifyContent: 'left',
-                margin: '6px 0',
-              }}>
-                <SanctuaryOptions
-                  can_read={can_read}
-                  sortedSanctuaries={sortedSanctuaries}
-                  selected_sanctuary_id={selected_sanctuary_id}
-                />
-              </Box>
-            <Box style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '4px',
-                justifyContent: 'right',
-                margin: '6px 0',
-              }}>
-                <SanctuaryInfoAndBuy
-                  can_read={can_read}
-                  sortedSanctuaries={sortedSanctuaries}
-                  stored_money={stored_money}
-                  selected_sanctuary_id={selected_sanctuary_id}
-                  onSelectSanctuary= {(sanctuary_id: string) => {act('select_sanctuary', { selected_id: sanctuary_id })}}
-                  onBuySanctuary={() => {act('purchase_sanctuary')}}
-                />
+        <Box m={2}>
+          <div style={titleStyle}>THE KEYMASTER</div>
+          <div style={subtitleStyle}>
+            Thy balance:{' '}
+            <span style={{ color: SEAL_AMBER, fontWeight: 'bold' }}>
+              {stored_money}m
+            </span>
+            {' '}
+            <Button icon="coins" onClick={() => {act('refund_money')}}>
+              Refund
+            </Button>
+          </div>
+        </Box>
+        <hr style={rulerStyle} />
+        <div style={subtitleStyle}>FOR THEE, COIN-SAVVY DISCERNER, WE OFFER THESE LANDS FAR:</div>
+        <Stack fill height="100%">
+          <Stack.Item basis="40%" m={2} mr={0} >
+            <Box height="78%" style={cardStyle} align>
+              <SanctuaryOptions
+                can_read={can_read}
+                sortedSanctuaries={sortedSanctuaries}
+                selected_sanctuary={selected_sanctuary}
+                onSelectSanctuary= {(sanctuary_id: string) => {act('select_sanctuary', { selected_id: sanctuary_id })}}
+              />
             </Box>
-          </Stack>
-        </div>
+          </Stack.Item>
+          <Stack.Item basis="60%" m={2} ml={0}>
+            <SanctuaryInfoAndBuy
+              can_read={can_read}
+              stored_money={stored_money}
+              onBuySanctuary={() => act('purchase_sanctuary')}
+              selected_sanctuary={selected_sanctuary}
+              already_owns_sanctuary={already_owns_sanctuary}
+              is_generating_for_us={is_generating_for_us}
+            />
+          </Stack.Item>
+        </Stack>
       </Window.Content>
     </Window>
   );
