@@ -9,6 +9,7 @@
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
 #include "_maps\map_files\ovdun_world\ochre_CentCom.dmm"
+#include "_maps\ochre_valley\templates\map_edit_operations\templates.dm"
 #include "_maps\ochre_valley\templates\remote_sanctuary\templates.dm"
 #include "_maps\templates\arcyne_fortress.dm"
 #include "code\__byond_version_compat.dm"
@@ -3745,6 +3746,9 @@
 #include "modular\Neu_Food\code\recipes\deepfried_recipes.dm"
 #include "modular\Neu_Food\code\recipes\dough_recipes.dm"
 #include "modular\Neu_Food\code\recipes\drying_recipes.dm"
+#include "modular_ochrevalley\code\modules\map_edit_deployments\map_edit_deployments.dm"
+#include "modular_ochrevalley\code\modules\map_edit_deployments\map_edit_operation.dm"
+#include "modular_ochrevalley\code\modules\map_edit_deployments\edit_operations\deploy_keymasters.dm"
 #include "modular\Neu_Food\code\recipes\egg_recipes.dm"
 #include "modular\Neu_Food\code\recipes\fish_recipes.dm"
 #include "modular\Neu_Food\code\recipes\meat_meal_recipes.dm"
