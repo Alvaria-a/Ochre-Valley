@@ -791,6 +791,8 @@
 	walking_stick = TRUE
 	wdefense = 6
 	special = /datum/special_intent/polearm_backstep
+	twirly = SKILL_LEVEL_EXPERT // safely twirling like, a halberd, is going to be harder than a blunt staff //OV ADD
+	twirl_speed = 6 //OV ADD
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
