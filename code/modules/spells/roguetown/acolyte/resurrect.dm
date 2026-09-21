@@ -152,7 +152,7 @@
 	revert_cast()
 	return FALSE
 
-/*/obj/effect/proc_holder/spell/invoked/resurrect/proc/deathmark(mob/living/victim) //OV Edit - Commented Out
+/*/proc/deathmark(mob/living/victim) //OV Edit - Commented Out
 	if(victim.stat != DEAD)
 		victim.apply_status_effect(/datum/status_effect/debuff/permadeath) //The deathmark in question. This temporarily adds unrevivability to the target; die again while it's active, and your story'll be over.. for now.
 		victim.play_permadeath_indicator()
