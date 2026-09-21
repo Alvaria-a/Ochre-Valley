@@ -34,6 +34,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP
+	area_sniff_message = "You smell ancient bones and pine wood."
 
 /area/rogue/indoors/shelter/mountains/decap
 	name = "Mount Decapitation"
@@ -46,6 +47,7 @@
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	deathsight_message = "a twisted tangle of soaring peaks"
 	detail_text = DETAIL_TEXT_DECAP_TARICHEA
+	area_sniff_message = "You smell ancient bones and pine wood planks."
 
 /area/rogue/outdoors/mountains/decap/stepbelow
 	name = "Tarichea - Valley of Loss"
@@ -80,6 +82,7 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_TARICHEA
+	area_sniff_message = "You smell sulfur."
 
 /area/rogue/outdoors/mountains/decap/gunduzirak
 	name = "Gundu Zirak"
@@ -99,6 +102,7 @@
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_GUNDU_ZIRAK
+	area_sniff_message = "You smell old grudges and copper flakes."
 
 /area/rogue/outdoors/mountains/decap/gunduzirak/bossarena
 	name = "Baronness Boss Arena"
@@ -121,6 +125,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_DRAGONDEN
+	area_sniff_message = "You smell drakynn."
 
 /area/rogue/under/cave/dragonden/can_craft_here()
 	return FALSE
@@ -137,6 +142,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_GOBLIN_FORTRESS
+	area_sniff_message = "You smell vile daemonspawn."
 
 /area/rogue/under/cave/scarymaze
 	name = "Necran Labyrinth"
@@ -150,6 +156,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_NECRAN_LABYRINTH
+	area_sniff_message = "You smell death and black roses."
 
 /area/rogue/outdoors/mountains/decap/minotaurfort
 	name = "Ancient Dwarven Forge"
@@ -164,6 +171,7 @@
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_MINOTAUR_FORTRESS
+	area_sniff_message = "You smell beef."
 
 /area/rogue/outdoors/mountains/decap/minotaurfort/can_craft_here()
 	return FALSE
@@ -181,6 +189,7 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	area_sniff_message = "You smell sweaty men, women, and pine wood."
 
 /area/rogue/indoors/shelter/mountains/decap/banditcamp
 	name = "Bandit Camp"
@@ -195,6 +204,7 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
 	threat_region = DETAIL_TEXT_DECAP
+	area_sniff_message = "You smell sweat men, women, and pine wood."
 
 /area/rogue/under/cave/minotaurcave
 	name = "Minotaur Cave"
@@ -207,6 +217,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP
+	area_sniff_message = "You smell beef and undergrowth."
 
 /area/rogue/under/cave/taricheamanor
 	name = "Manor of Tarichea"
@@ -219,6 +230,7 @@
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	detail_text = DETAIL_TEXT_DECAP_TARICHEA
+	area_sniff_message = "You smell stone floors and sulfur."
 //PILGRIM
 
 /area/rogue/outdoors/mountains/decap/grim
