@@ -282,7 +282,7 @@
 	target.apply_status_effect(/datum/status_effect/debuff/revived)	//Temp debuff on revive, your stats get hit temporarily. Doubly so if having rotted.
 	//Due to an increased cost and cooldown, these revival types heal quite a bit.
 	target.apply_status_effect(/datum/status_effect/buff/healing, 14)
-	addtimer(CALLBACK(target, GLOBAL_PROC_REF(deathmark), target), 5 MINUTES)
+	//addtimer(CALLBACK(target, GLOBAL_PROC_REF(deathmark), target), 5 MINUTES) //OV EDIT - Disabled
 	return TRUE
 
 //For now this is just artifical lux. But this may make the user/receiver indebted to eora eventually.
