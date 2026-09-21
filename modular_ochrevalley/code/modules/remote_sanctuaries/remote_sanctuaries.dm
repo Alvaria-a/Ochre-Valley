@@ -63,6 +63,9 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 
 /datum/controller/subsystem/remote_sanctuaries/proc/spawn_sanctuary(var/owner_ckey, var/sanctuary_id, var/is_using_wretch_keymaster, var/owner_voice_color, var/owner_real_name)
 	var/datum/map_template/remote_sanctuary/S = SSmapping.remote_sanctuary_templates[sanctuary_id]
+	if(!length(markers_available))
+		throw EXCEPTION("We couldn't find any landmarks to spawn a sanctuary at! Either there are no remaining non-claimed landmarks to spawn a sanctuary at (very unlikely,) or the z-level the remote sanctuaries require to work was never spawned (much more likely)!")
+		return null
 	var/obj/effect/landmark/remote_sanctuary_spawn/marker = markers_available[1]
 	var/turf/T = marker.loc
 	var/datum/sanctuary_data/data = new()
