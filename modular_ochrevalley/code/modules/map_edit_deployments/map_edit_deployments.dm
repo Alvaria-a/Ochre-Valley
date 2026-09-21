@@ -20,4 +20,10 @@ SUBSYSTEM_DEF(map_edit_deployments)
 
 /datum/controller/subsystem/map_edit_deployments/proc/deploy_edits()
 	for(var/datum/map_edit_operation/op in deployment_operations)
-		op.deploy(SSmapping.config)
+		var/success = op.deploy(SSmapping.config)
+		if(!success)
+			var/msg = "OV MAP EDIT DEPLOYMENT ERROR: [op.name] reported back as failing to complete its deployment!"
+			#ifdef LOCALTEST
+			to_world(span_boldannounce("[msg]"))
+			#endif
+			log_world(msg)
