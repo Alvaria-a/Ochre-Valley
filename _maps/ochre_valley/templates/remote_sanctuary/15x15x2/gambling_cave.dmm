@@ -184,15 +184,24 @@
 /obj/structure/table/wood/long_table/mid/alt,
 /obj/structure/fluff/walldeco/bigpainting,
 /obj/item/roguecoin/aalloy/pile/rich{
-	pixel_y = 11
+	pixel_y = 14;
+	pixel_x = 10
 	},
 /obj/item/roguecoin/aalloy/pile/rich{
 	pixel_y = 7;
-	pixel_x = -12
+	pixel_x = 18
 	},
 /obj/item/roguecoin/aalloy/pile/rich{
-	pixel_y = 7;
-	pixel_x = 11
+	pixel_y = 14;
+	pixel_x = -7
+	},
+/obj/item/roguecoin/aalloy/pile/rich{
+	pixel_y = 5;
+	pixel_x = -1
+	},
+/obj/item/roguecoin/aalloy/pile/rich{
+	pixel_y = 5;
+	pixel_x = -18
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/remote_sanctuary/bath)
@@ -450,10 +459,6 @@
 /obj/structure/table/wood/long_table/right,
 /obj/machinery/light/rogue/candle/floorcandle/alt/pink{
 	pixel_x = 2
-	},
-/obj/item/storage/pill_bottle/dice{
-	pixel_y = -8;
-	pixel_x = 3
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/remote_sanctuary/bath)

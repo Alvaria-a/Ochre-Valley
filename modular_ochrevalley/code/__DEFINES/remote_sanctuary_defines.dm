@@ -7,3 +7,5 @@
 #define SANCTUARY_PORTAL_ERROR_MOBSINWAY 3
 /// There were no turfs available around one or both of the KEYMASTERs due to none of the turfs being non-obstructed (i.e. dense objects, dense turfs, etc.)
 #define SANCTUARY_PORTAL_ERROR_OBSTRUCTEDTURFS 4
+/// There were no turfs available around one or both of the KEYMASTERs due to none of the turfs being safe (i.e. traps and spikes in the way)
+#define SANCTUARY_PORTAL_ERROR_DANGEROUSTURFS 5

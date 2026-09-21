@@ -112,7 +112,9 @@
 	// This one is comically luxurious AND is in a very unique location.
 	// It's also nicer than some noble houses. It NEEDS to be expensive as fuck.
 	price = 1000
-	description = "Far, far to the south, the grassy plains, mountains, and valleys with which we are familiar give way to a sea of sands bathed in the purest rays of both Astrata and Noc every dae and nite. Much of these lands are inhospitable and dangerous in their own right, but to its people, the dunes of Naledi are home. And what a home have they made it! Extravagant and colorful is the make of their homes and decor, for their access to exceedingly vast sources of gold has created a uniquely lavish style of decorating their households. In collaboration with land owners in the oasis towns of Naledi has this home been prepared for the discerning prospective home-owner. A kitchen stocked with silverware of gold, a lavish bathroom, two bedrooms, a study, a living and dining room, a garden - this place truly has it all, and more."
+	description = "Far, far to the south, the grassy plains, mountains, and valleys with which we are familiar give way to a sea of sands bathed in the purest rays of both Astrata and Noc every dae and nite. Much of these lands are inhospitable and dangerous in their own right, but to its people, the dunes of Naledi are home.\n\
+	\n\
+	And what a home have they made it! Extravagant and colorful is the make of their homes and decor, for their access to exceedingly vast sources of gold has created a uniquely lavish style of decorating their households. In collaboration with land owners in the oasis towns of Naledi has this home been prepared for the discerning prospective home-owner. A kitchen stocked with silverware of gold, a lavish bathroom, two bedrooms, a study, a living and dining room, a garden - this place truly has it all, and more."
 	mappath = "_maps/ochre_valley/templates/remote_sanctuary/20x20x2/naledi_home.dmm"
 	purchase_lines = list(
 		"OOH, I LOVE THIS PLACE, DISCERNER!! GOLD EVERYWHERE!! I WISH THEY MADE MINE STAND OVER THERE OUT OF GOLD, TOO!!",

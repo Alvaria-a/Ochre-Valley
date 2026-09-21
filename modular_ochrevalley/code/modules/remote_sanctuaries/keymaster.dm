@@ -1,4 +1,5 @@
 #define KEYMASTER_DESC "A queer device that allows one to purchase and access expensive private residences in far off locations. It's a little too enthusiastic - and LOUD - about serving its function."
+#define KEYMASTER_PORTAL_DISCLAIMER "Remote sanctuaries are private sleep rooms akin to inn rooms. You may potentially stumble into a scene. Remote sanctuaries are also not to be abused as a means to escape IC consequences."
 
 /obj/item/roguemachine/keymaster
 	name = "KEYMASTER"
@@ -329,7 +330,7 @@
 
 /obj/item/roguemachine/keymaster_exit/attack_hand(mob/user)
 	. = ..()
-	to_chat(user, span_notice("I put a hand to the KEYMASTER..."))
+	to_chat(user, span_notice("I place my hand upon the KEYMASTER..."))
 	if(!do_after(user, 5 SECONDS, target = src))
 		return
 	var/portal_attempt = SSremote_sanctuaries.try_create_portals(data.owner_ckey)
@@ -353,15 +354,21 @@
 					say("THERE'S ALREADY AN OPEN PORTAL LEADING BACK. IT'S RIGHT HERE NEXT TO US, FOOL.")
 				else
 					say("UH. SIRE, THERE ART ALREADY A PORTAL BACK NEXT TO US!!")
+			if(SANCTUARY_PORTAL_ERROR_DANGEROUSTURFS)
+				playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
+				if(data.is_wretch_made())
+					say("I CANNOT MAKE THE PORTAL. THE ONLY UNOBSTRUCTED PLACES I CAN CREATE PORTALS AROUND ONE OR BOTH ME'S ARE TOO DANGEROUS. I'M NOT MAKING PORTALS ON TOP OF DEATH TRAPS.")
+				else
+					say("AN ISSUE ARISES: THE ONLY UNOBSTRUCTED PLACES I CAN CREATE PORTALS AROUND ONE OR BOTH ME'S ARE TOO DANGEROUS!! I SHAN'T MAKE THE PORTALS FOR THY SAFETY UNTIL THE DANGERS ARE CLEARED!!")
 
 /obj/item/roguemachine/keymaster_exit/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(istype(I, /obj/item/roguekey/remote_sanctuary))
 		playsound(loc, 'sound/misc/machineno.ogg', 100, TRUE, -1)
 		if(data.is_wretch_made())
-			say("YOU DO NOT NEED TO USE A KEY TO HEAD BACK, FOOL. JUST PLACE YOUR EMPTY HAND UPON MY ORB.")
+			say("YOU DO NOT NEED TO USE A KEY TO RETURN TO [uppertext(SSticker.realm_name)], FOOL. JUST PLACE YOUR EMPTY HAND UPON MY ORB.")
 		else
-			say("OH, THOU DOTH NOT REQUIRE A KEY TO RETURN!! JUST PLACE THY EMPTY HAND UPON MINE ORB!!")
+			say("OH, THOU NEED NOT USE A KEY TO RETURN TO [uppertext(SSticker.realm_name)]!! JUST PLACE THY EMPTY HAND UPON MINE ORB!!")
 
 /obj/item/roguemachine/keymaster_exit/get_mechanics_examine(mob/user)
 	. = ..()
@@ -383,12 +390,39 @@
 	light_outer_range = 5
 	light_color = "#79ecfc"
 	light_on = TRUE
+	var/shows_disclaimer = FALSE
 
-/obj/structure/fluff/traveltile/sanctuary_portal/Initialize(mapload)
-	. = ..()
+/// Alerts `user` that this travel tile may take them to the middle of a scene due to the intention of remote sanctuaries.
+///
+/// #### Returns:
+/// `TRUE` if they click "I Understand" on the popup while still in range of the portal. `FALSE` in all other cases.
+/obj/structure/fluff/traveltile/proc/is_mob_okay_with_the_sex(mob/user)
+	if(tgui_alert(user, KEYMASTER_PORTAL_DISCLAIMER, "DISCLAIMER", list("Get Me Outta Here", "I Understand")) != "I Understand")
+		return FALSE
+	// The portal could despawn by the time they accept the popup so...
+	if(!src?.loc)
+		return FALSE
+	// Make sure they're still in a legal range to access the portal by this point
+	var/list/turfs_in_range = RANGE_TURFS(1, src.loc)
+	for(var/turf/T in turfs_in_range)
+		if(user in T.contents)
+			return TRUE
+	// If we didn't find them, they aren't in a legal spot to use the portal, bye-bye
+	return FALSE
+
+
+/obj/structure/fluff/traveltile/proc/shows_remote_sanctuary_disclaimer()
+	return FALSE
+
+/obj/structure/fluff/traveltile/sanctuary_portal/shows_remote_sanctuary_disclaimer()
+	return shows_disclaimer
+
+/obj/structure/fluff/traveltile/sanctuary_portal/Initialize(mapload, shows_disclaimer)
+	src.shows_disclaimer = shows_disclaimer
 	if(loc)
 		playsound(loc, 'sound/misc/portalactivate.ogg', 100, TRUE, -1)
 		visible_message(span_blue("\The [src] appears in a brilliant cerulean flash!"))
+	. = ..(mapload)
 
 /obj/structure/fluff/traveltile/sanctuary_portal/perform_travel(obj/structure/fluff/traveltile/T, mob/living/L)
 	playsound(loc, 'sound/misc/portalenter.ogg', 100, TRUE, -1)
@@ -423,3 +457,4 @@
 	. += span_info(span_blue("This key will also work as a regular key does for any and all doors, chests, and closets within the sanctuary it was made for."))
 
 #undef KEYMASTER_DESC
+#undef KEYMASTER_PORTAL_DISCLAIMER

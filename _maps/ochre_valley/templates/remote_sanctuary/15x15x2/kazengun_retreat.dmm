@@ -1,4 +1,30 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ap" = (
+/obj/structure/table/wood/large_table/south_west,
+/obj/item/candle/yellow{
+	pixel_y = 19;
+	pixel_x = 11
+	},
+/obj/item/candle/yellow{
+	pixel_y = 15;
+	pixel_x = 11
+	},
+/obj/item/candle/yellow{
+	pixel_y = 11;
+	pixel_x = 11
+	},
+/obj/item/candle/yellow{
+	pixel_y = 7;
+	pixel_x = 11
+	},
+/obj/item/candle/yellow{
+	pixel_y = 3;
+	pixel_x = 11
+	},
+/turf/open/floor/rogue/twig{
+	dir = 4
+	},
+/area/rogue/indoors/remote_sanctuary)
 "aT" = (
 /obj/structure/table/wood/large_table/north_west,
 /obj/machinery/light/rogue/candle/floorcandle{
@@ -12,6 +38,7 @@
 "ba" = (
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
+/obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/remote_sanctuary)
 "dL" = (
@@ -105,6 +132,14 @@
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/remote_sanctuary)
+"ji" = (
+/obj/structure/stairs{
+	dir = 4
+	},
+/obj/structure/fluff/railing/border,
+/obj/machinery/light/rogue/candle,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/remote_sanctuary)
 "ju" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -187,11 +222,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/remote_sanctuary)
 "nB" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 1;
-	pixel_y = 2
-	},
+/obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/twig{
 	dir = 4
 	},
@@ -202,6 +233,12 @@
 /area/rogue/indoors/remote_sanctuary)
 "ob" = (
 /turf/open/transparent/openspace,
+/area/rogue/indoors/remote_sanctuary)
+"oK" = (
+/obj/structure/ritualcircle/astrata{
+	icon_state = "astrata_active"
+	},
+/turf/open/floor/rogue/ruinedwood/platform,
 /area/rogue/indoors/remote_sanctuary)
 "oO" = (
 /obj/structure/table/wood/poor/alt_alt{
@@ -285,8 +322,8 @@
 	color = "#3f3f3f";
 	dir = 1
 	},
-/obj/item/storage/pill_bottle/dice{
-	pixel_x = -9
+/obj/item/storage/pill_bottle/dice/farkle{
+	pixel_x = -4
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/remote_sanctuary)
@@ -343,6 +380,7 @@
 /obj/structure/fluff/walldeco/psybanner/astrata{
 	pixel_y = 30
 	},
+/obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/twig{
 	dir = 4
 	},
@@ -352,13 +390,14 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "vU" = (
-/obj/effect/decal/edge{
+/obj/effect/decal/edge_corner{
 	color = "#3f3f3f";
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
-/obj/structure/mineral_door/wood/fancywood,
-/turf/open/floor/rogue/twig,
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/twig{
+	dir = 4
+	},
 /area/rogue/indoors/remote_sanctuary)
 "wa" = (
 /obj/structure/flora/roguegrass,
@@ -554,6 +593,9 @@
 /area/rogue/outdoors/remote_sanctuary)
 "Kk" = (
 /obj/structure/table/wood/large_table/south_east,
+/obj/item/storage/pill_bottle/dice/hazard{
+	pixel_y = 14
+	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/remote_sanctuary)
 "Ko" = (
@@ -569,12 +611,13 @@
 	},
 /area/rogue/indoors/remote_sanctuary)
 "Lg" = (
-/obj/structure/table/wood/large_table/south_west,
-/obj/item/storage/fancy/candle_box,
-/turf/open/floor/rogue/twig{
-	dir = 4
+/obj/structure/flora/roguegrass,
+/obj/machinery/light/rogue/torchholder/hotspring{
+	pixel_x = 18;
+	pixel_y = -6
 	},
-/area/rogue/indoors/remote_sanctuary)
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/remote_sanctuary)
 "Li" = (
 /obj/machinery/light/rogue/candle,
 /obj/structure/closet/crate/roguecloset/inn,
@@ -776,11 +819,19 @@
 "RL" = (
 /obj/structure/bed/rogue/inn/wooldouble,
 /obj/item/bedsheet/rogue/double_pelt,
+/obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
 "RO" = (
 /obj/machinery/light/rogue/candle,
 /turf/open/floor/rogue/twig,
+/area/rogue/indoors/remote_sanctuary)
+"Sc" = (
+/obj/structure/chair/stool/rogue,
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/twig{
+	dir = 4
+	},
 /area/rogue/indoors/remote_sanctuary)
 "SZ" = (
 /obj/structure/mineral_door/wood/fancywood,
@@ -798,8 +849,8 @@
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/remote_sanctuary)
 "TN" = (
-/obj/structure/fluff/railing/corner/south_west,
 /obj/machinery/light/rogue/candle,
+/obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/rogue/twig{
 	dir = 4
 	},
@@ -868,6 +919,12 @@
 /obj/structure/fluff/railing/border/east,
 /obj/structure/roguewindow/harem3,
 /turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/remote_sanctuary)
+"Wi" = (
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/twig{
+	dir = 4
+	},
 /area/rogue/indoors/remote_sanctuary)
 "Ws" = (
 /obj/structure/well,
@@ -955,7 +1012,7 @@ zl
 sV
 YA
 Rm
-fO
+Sc
 Ec
 sq
 Xd
@@ -980,7 +1037,7 @@ TY
 Qd
 lb
 Qd
-wa
+Lg
 Cx
 "}
 (4,1,1) = {"
@@ -1072,7 +1129,7 @@ Cx
 kQ
 tO
 Ec
-Ec
+Wi
 zr
 up
 DT
@@ -1104,9 +1161,9 @@ Cx
 "}
 (11,1,1) = {"
 kQ
-VR
-aT
-Lg
+ji
+Ec
+Ec
 LA
 ZQ
 TY
@@ -1122,8 +1179,8 @@ Cx
 (12,1,1) = {"
 kQ
 kQ
-kQ
-kQ
+aT
+ap
 Vc
 za
 VW
@@ -1138,10 +1195,10 @@ Cx
 "}
 (13,1,1) = {"
 kQ
-oV
+kQ
+kQ
+Li
 Ec
-vU
-nB
 Ec
 kQ
 QJ
@@ -1155,9 +1212,9 @@ Cx
 "}
 (14,1,1) = {"
 kQ
-Li
-Ec
+oK
 kQ
+oV
 Ec
 HJ
 kQ
@@ -1208,7 +1265,7 @@ Oo
 (2,1,2) = {"
 kQ
 yS
-sZ
+vU
 CO
 jW
 Cv
@@ -1276,7 +1333,7 @@ Oo
 (6,1,2) = {"
 kQ
 Za
-sZ
+vU
 RF
 Xd
 dL
@@ -1412,10 +1469,10 @@ Oo
 (14,1,2) = {"
 kQ
 mn
-Ec
+nB
 DX
-oa
 Xd
+oa
 kQ
 kV
 kV

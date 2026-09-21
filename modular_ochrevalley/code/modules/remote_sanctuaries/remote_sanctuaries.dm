@@ -34,6 +34,20 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	var/obj/item/roguemachine/keymaster/keymaster_wretchcoast = null
 	var/portal_disappear_message = "dissolves into cerulean sparks that waver and fizzle out like dying embers."
 
+	/// Turfs that the we will avoid spawning portals onto
+	var/list/dangerous_turf_types = list(
+		/turf/open/lava,
+		/turf/open/transparent/openspace
+	)
+
+	/// Objects that the we will avoid spawning portals onto the turfs of
+	var/list/dangerous_object_types = list(
+		/obj/structure/glowshroom,
+		/obj/item/restraints/legcuffs/beartrap,
+		/obj/machinery/light/rogue/campfire
+
+	)
+
 /datum/controller/subsystem/remote_sanctuaries/proc/claim_sanctuary(var/mob/living/carbon/human/claimer, var/sanctuary_id, var/is_using_wretch_keymaster)
 	var/datum/map_template/remote_sanctuary/claimed = get_claimed_sanctuary(claimer.ckey)
 	if(claimed)
@@ -41,10 +55,10 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 		return null
 	try
 		var/datum/sanctuary_data/data = spawn_sanctuary(claimer.ckey, sanctuary_id, is_using_wretch_keymaster, claimer.voice_color, claimer.real_name)
-		message_admins("[ADMIN_LOOKUPFLW(claimer)] has claimed and spawned a remote sanctuary \"[data.used_template.name]\" at [ADMIN_VERBOSEJMP(data.min_turf)]")
+		message_admins("[ADMIN_LOOKUPFLW(claimer)] has claimed and spawned a remote sanctuary \"[data.used_template.name]\" costing [data.used_template.price] mammons at [ADMIN_VERBOSEJMP(data.min_turf)]")
 		return data
 	catch(var/exception/error)
-		to_chat(claimer, span_alert("My sanctuary could not be created correctly because of an error! Scream at a coder about this:\n'[error]'"))
+		to_chat(claimer, span_alert("My sanctuary could not be created correctly because of an error! Scream at a developer about this:\n'[error.file], line [error.line]: [error]'"))
 		return null
 
 /datum/controller/subsystem/remote_sanctuaries/proc/spawn_sanctuary(var/owner_ckey, var/sanctuary_id, var/is_using_wretch_keymaster, var/owner_voice_color, var/owner_real_name)
@@ -100,7 +114,7 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 					data.sanctuary_exit = locate() in s_t
 					if(data.sanctuary_exit)
 						data.sanctuary_exit.data = data
-	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" at [ADMIN_VERBOSEJMP(T)]")
+	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" costing [data.used_template.price] mammons at [ADMIN_VERBOSEJMP(T)]")
 	return data
 
 /// Returns the data of the remote sanctuary of the ckey (See `/datum/sanctuary_data`). Returns null if the ckey hasn't claimed one yet.
@@ -129,8 +143,8 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 		return try_get_exit_turfs
 	var/list/exit_viable_turfs = try_get_exit_turfs
 
-	var/obj/structure/fluff/traveltile/sanctuary_portal/return_portal = new(pick(retrun_point_viable_turfs))
-	var/obj/structure/fluff/traveltile/sanctuary_portal/exit_portal = new(pick(exit_viable_turfs))
+	var/obj/structure/fluff/traveltile/sanctuary_portal/return_portal = new(pick(retrun_point_viable_turfs), TRUE) // Only the portal leading in shows the remote sanctuary disclaimer
+	var/obj/structure/fluff/traveltile/sanctuary_portal/exit_portal = new(pick(exit_viable_turfs), FALSE)
 
 	return_portal.filters += filter(type="outline", color="[D.owner_voice_color]40", size=2)
 	return_portal.name = "[return_portal.name] ([D.owner_real_name])"
@@ -164,7 +178,10 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 ///
 /// If it is NOT successful, this instead returns an error detailing what happened (see `modular_ochrevalley\code\__DEFINES\remote_sanctuary_defines.dm`).
 /datum/controller/subsystem/remote_sanctuaries/proc/get_portal_viable_turfs(turf/center)
-	var/list/gameworld_portal_turfs = RANGE_TURFS(2, center)
+	//var/list/gameworld_portal_turfs = RANGE_TURFS(2, center)
+	var/list/gameworld_portal_turfs = list()
+	for(var/turf/T in view(2, center))
+		gameworld_portal_turfs.Add(T)
 	var/list/non_obstructed_turfs = list()
 	for(var/turf/T in gameworld_portal_turfs)
 		var/is_viable = TRUE
@@ -189,5 +206,26 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 	if(!mobless_turfs.len)
 		return SANCTUARY_PORTAL_ERROR_MOBSINWAY
 
+	// Finally, check for turfs that don't have any immediate hazards on them
+	var/list/safe_turfs = list()
+	for(var/turf/T in mobless_turfs)
+		var/is_safe = TRUE
+		for(var/turf_type in dangerous_turf_types)
+			if(istype(T, turf_type))
+				is_safe = FALSE
+				break
+		if(!is_safe)
+			continue
+		for(var/object_type in dangerous_object_types)
+			var/obj/the_danger = locate(object_type) in T
+			if(the_danger)
+				is_safe = FALSE
+				break
+		if(!is_safe)
+			continue
+		safe_turfs.Add(T)
+	if(!safe_turfs.len)
+		return SANCTUARY_PORTAL_ERROR_DANGEROUSTURFS
+
 	// If we reached this point then we have viable spots to spawn portals on!
-	return mobless_turfs
+	return safe_turfs
