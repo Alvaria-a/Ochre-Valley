@@ -318,9 +318,6 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cave/inhumen)
-"bm" = (
-/turf/closed/wall/mineral/rogue/stone,
-/area/rogue/outdoors/woods/wretch_lair)
 "bn" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/candle/yellow,
@@ -1877,13 +1874,6 @@
 /obj/machinery/light/rogue/candle/blue/l,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/vampire_manor)
-"ib" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 6
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cave/inhumen)
 "id" = (
 /obj/effect/decal/remains/human,
 /obj/structure/fluff/railing/border/west,
@@ -2745,13 +2735,6 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_manor)
-"lo" = (
-/obj/item/roguemachine/keymaster/wretch_coast,
-/obj/effect/decal/cobbleedge{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/under/cave/inhumen)
 "lq" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9;
@@ -3217,12 +3200,6 @@
 "ny" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods/vampire_lair)
-"nz" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f"
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cave/inhumen)
 "nA" = (
 /obj/structure/closet/crate/drawer,
 /obj/machinery/light/rogue/candle/l,
@@ -3338,16 +3315,6 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/vampire_manor)
-"og" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
 "oi" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -4028,14 +3995,6 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_manor)
-"qJ" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 8
-	},
-/obj/machinery/light/rogue/torchholder/l,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "qK" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/tile/masonic,
@@ -4512,13 +4471,6 @@
 /obj/structure/fluff/statue/knight/r,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/banditcamp)
-"st" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "sv" = (
 /obj/structure/fluff/pillow/magenta,
 /obj/effect/landmark/start/wretch{
@@ -4611,9 +4563,6 @@
 /obj/item/cooking/platter,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/banditcamp)
-"sJ" = (
-/turf/open/floor/rogue/rooftop/green/north,
-/area/rogue/under/cave/inhumen)
 "sK" = (
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/rogue/cobble,
@@ -5991,14 +5940,6 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
-"yX" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 4
-	},
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/under/cave/inhumen)
 "yY" = (
 /obj/structure/closet/crate/chest,
 /obj/machinery/light/rogue/candle/l,
@@ -6053,13 +5994,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/vampire_manor)
-"zg" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 1
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "zh" = (
 /obj/structure/fluff/railing/fence{
 	dir = 1
@@ -6933,13 +6867,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cave/inhumen)
-"Cw" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 5
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cave/inhumen)
 "Cy" = (
 /obj/machinery/light/rogue/candle/l,
 /obj/structure/closet/crate/chest/crate,
@@ -7658,13 +7585,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/woods/wretch_lair)
-"FO" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 1
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "FP" = (
 /obj/effect/landmark/start/wretch{
 	dir = 4
@@ -8227,14 +8147,6 @@
 /obj/item/recipe_book/engineering,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/vampire_manor)
-"Iy" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 8
-	},
-/obj/structure/roguemachine/atm,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "IA" = (
 /obj/item/natural/stone,
 /obj/item/natural/stone,
@@ -9462,12 +9374,6 @@
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/banditcamp)
-"Nh" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f"
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
 "Nj" = (
 /obj/structure/fluff/railing/border/north,
 /obj/effect/decal/cleanable/debris/stony,
@@ -9660,12 +9566,6 @@
 	},
 /obj/item/storage/belt/rogue/surgery_bag/full,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave/inhumen)
-"Oa" = (
-/obj/effect/decal/cobbleedge{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cave/inhumen)
 "Ob" = (
 /obj/structure/chair/bench/couch/r,
@@ -10268,16 +10168,6 @@
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/banditcamp)
-"QZ" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 9
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
 "Ra" = (
 /obj/structure/bed/rogue/shit,
 /obj/item/clothing/neck/roguetown/psicross/noc,
@@ -10466,13 +10356,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/vampire_manor)
-"RW" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 10
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cave/inhumen)
 "RY" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/dirt/road,
@@ -10657,20 +10540,6 @@
 /obj/structure/fluff/statue/knight/interior/r,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/vampire_manor)
-"SQ" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 4
-	},
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"SR" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f"
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/under/cave/inhumen)
 "SS" = (
 /obj/effect/decal/cleanable/debris/stony,
 /obj/structure/chair/bench/church/mid{
@@ -12058,12 +11927,6 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/tile,
 /area/rogue/under/cave/inhumen)
-"Yy" = (
-/obj/effect/decal/cobbleedge{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
 "Yz" = (
 /obj/structure/fluff/railing/border/west{
 	dir = 1
@@ -36412,8 +36275,8 @@ ap
 Ry
 Ry
 Ry
-Xm
-Xm
+wC
+wC
 Xm
 Xm
 Xm
@@ -36543,8 +36406,8 @@ ap
 Ry
 Ry
 Xm
-Xm
-Xm
+wC
+wC
 Xm
 Xm
 Xm
@@ -36672,11 +36535,11 @@ ap
 ap
 Ry
 Ry
-bm
-Iy
-st
-Nh
-UM
+Xm
+Xm
+Xm
+Xm
+IL
 rQ
 Ev
 Ev
@@ -36802,11 +36665,11 @@ ap
 ap
 Ry
 Ry
-qJ
-QZ
-mp
-RW
-nz
+Ry
+Xm
+Xm
+IL
+IL
 Xm
 Ev
 Ev
@@ -36932,11 +36795,11 @@ ap
 ap
 ap
 Ry
-FO
-Yy
-lo
-iY
-SR
+Ry
+Xm
+IL
+IL
+IL
 Xm
 Ev
 Ev
@@ -37062,11 +36925,11 @@ ap
 ap
 ap
 Ry
-zg
-Cw
-Oa
-ib
-SQ
+Ry
+IL
+IL
+IL
+Xm
 Xm
 Ev
 Ev
@@ -37192,12 +37055,12 @@ ap
 ap
 ap
 ap
-bm
-zg
-yX
-og
-bm
+Ry
 Xm
+IL
+Xm
+Xm
+wC
 Ev
 Ev
 Ev
@@ -37326,8 +37189,8 @@ Ry
 Ry
 Xm
 Xm
-Xm
-Xm
+wC
+wC
 Ev
 Ev
 Ev
@@ -53833,11 +53696,11 @@ ap
 ap
 ap
 ap
-jS
-jS
-jS
-jS
-sJ
+ap
+ap
+ap
+ap
+IL
 ap
 ap
 ap
@@ -53963,11 +53826,11 @@ ap
 ap
 ap
 ap
-jS
-jS
-jS
-sJ
-sJ
+ap
+ap
+ap
+IL
+IL
 ap
 ap
 ap
@@ -54093,11 +53956,11 @@ ap
 ap
 ap
 ap
-jS
-jS
-sJ
-sJ
-sJ
+ap
+ap
+IL
+IL
+IL
 ap
 ap
 ap
@@ -54223,11 +54086,11 @@ ap
 ap
 ap
 ap
-jS
-sJ
-sJ
-sJ
-jS
+ap
+IL
+IL
+IL
+ap
 ap
 ap
 ap
@@ -54353,11 +54216,11 @@ ap
 ap
 ap
 ap
-jS
-jS
-sJ
-jS
-jS
+ap
+ap
+IL
+ap
+ap
 ap
 ap
 ap
