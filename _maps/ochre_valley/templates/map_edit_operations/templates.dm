@@ -1,9 +1,14 @@
-/datum/map_template/keymaster_town
-	name = "OV Map Edit - Keymaster Stand Town"
-	id = "keymaster_stand_town"
-	mappath = "_maps/ochre_valley/templates/map_edit_operations/deploy_keymasters/keymaster_stand_town.dmm"
+/datum/map_template/keymaster_town_dun
+	name = "OV Map Edit - Keymaster Stand (Dun World)"
+	id = "keymaster_stand_town_dun"
+	mappath = "_maps/ochre_valley/templates/map_edit_operations/deploy_keymasters/keymaster_stand_town_dun.dmm"
+
+/datum/map_template/keymaster_town_pilgrim
+	name = "OV Map Edit - Keymaster Stand (Pilgrim)"
+	id = "keymaster_stand_town_jagged"
+	mappath = "_maps/ochre_valley/templates/map_edit_operations/deploy_keymasters/keymaster_stand_town_jagged.dmm"
 
 /datum/map_template/keymaster_wretch
-	name = "OV Map Edit - Keymaster Stand Wretch"
+	name = "OV Map Edit - Keymaster Stand (Wretch Coast)"
 	id = "keymaster_stand_wretch"
 	mappath = "_maps/ochre_valley/templates/map_edit_operations/deploy_keymasters/keymaster_stand_wretch.dmm"

@@ -1,33 +1,48 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/effect/decal/edge_corner{
+/obj/effect/decal/edge{
 	color = "#3f3f3f";
-	dir = 1
+	dir = 6
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods/wretch_lair)
-"c" = (
+"b" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
-	dir = 4
+	dir = 10
 	},
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/cobble/mossy,
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods/wretch_lair)
-"i" = (
+"e" = (
 /obj/item/roguemachine/keymaster/wretch_coast,
 /obj/effect/decal/cobbleedge{
 	dir = 8
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
+"g" = (
+/turf/open/floor/rogue/rooftop/green/north,
+/area/rogue/outdoors/woods/wretch_lair)
 "j" = (
 /obj/effect/decal/cobbleedge{
-	dir = 6
+	dir = 4
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "l" = (
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/obj/effect/decal/edge{
+	color = "#3f3f3f"
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/woods/wretch_lair)
+"m" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5
 	},
@@ -40,173 +55,157 @@
 "n" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"s" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
 	dir = 5
 	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"u" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 10
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"v" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 6
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"w" = (
-/obj/effect/decal/edge{
-	color = "#3f3f3f";
-	dir = 9
-	},
-/obj/effect/decal/cobbleedge{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
-"z" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 4
-	},
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"B" = (
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"F" = (
-/turf/open/floor/rogue/rooftop/green/north,
-/area/rogue/outdoors/woods/wretch_lair)
-"H" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f"
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"L" = (
 /obj/effect/decal/edge{
 	color = "#3f3f3f";
 	dir = 1
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods/wretch_lair)
-"P" = (
+"p" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cave/inhumen)
+"r" = (
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/woods/wretch_lair)
+"s" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods/wretch_lair)
+"t" = (
 /obj/effect/decal/cobbleedge{
-	dir = 8
+	dir = 9
 	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
-"S" = (
-/obj/effect/decal/cobbleedge{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobble/mossy,
-/area/rogue/outdoors/woods/wretch_lair)
-"U" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 8
-	},
-/obj/machinery/light/rogue/torchholder/l,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"W" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/woods/wretch_lair)
-"Y" = (
 /obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 1
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/woods/wretch_lair)
+"A" = (
+/obj/effect/decal/edge_corner{
 	color = "#3f3f3f"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods/wretch_lair)
-"Z" = (
-/turf/closed/wall/mineral/rogue/stone,
+"B" = (
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/woods/wretch_lair)
+"C" = (
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/woods/wretch_lair)
+"H" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 1
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/woods/wretch_lair)
+"L" = (
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 4
+	},
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/woods/wretch_lair)
+"R" = (
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/outdoors/woods/wretch_lair)
+"Y" = (
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 4
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 
 (1,1,1) = {"
-Z
-W
-n
-H
-Z
+p
+p
+p
+p
+p
 "}
 (2,1,1) = {"
-U
-w
-j
-u
-H
+p
+C
+R
+b
+A
 "}
 (3,1,1) = {"
-L
-P
-i
+p
+t
+e
 B
-Y
+l
 "}
 (4,1,1) = {"
+p
+n
+j
 a
-s
-S
-v
-z
+L
 "}
 (5,1,1) = {"
-Z
-a
-c
-l
-Z
+s
+H
+Y
+m
+r
 "}
 
 (1,1,2) = {"
-F
-F
-F
-F
-F
+p
+p
+p
+p
+p
 "}
 (2,1,2) = {"
-F
-F
-F
-F
-F
+p
+p
+p
+p
+g
 "}
 (3,1,2) = {"
-F
-F
-F
-F
-F
+p
+p
+p
+g
+g
 "}
 (4,1,2) = {"
-F
-F
-F
-F
-F
+p
+g
+g
+g
+g
 "}
 (5,1,2) = {"
-F
-F
-F
-F
-F
+g
+g
+g
+g
+g
 "}
