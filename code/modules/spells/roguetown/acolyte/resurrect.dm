@@ -146,7 +146,7 @@
 			target.apply_status_effect(debuff_type)	//Temp debuff on revive, your stats get hit temporarily. Doubly so if having rotted.
 		//Due to an increased cost and cooldown, these revival types heal quite a bit.
 		target.apply_status_effect(/datum/status_effect/buff/healing, 14)
-		//addtimer(CALLBACK(src, PROC_REF(deathmark), target), 5 MINUTES) //OV Edit - Commented Out
+		//addtimer(CALLBACK(src, GLOBAL_PROC_REF(deathmark), target), 5 MINUTES) //OV Edit - Commented Out
 		consume_items(target)
 		return TRUE
 	revert_cast()
