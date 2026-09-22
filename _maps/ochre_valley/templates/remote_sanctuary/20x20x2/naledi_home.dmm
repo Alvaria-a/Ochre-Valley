@@ -1134,6 +1134,13 @@
 /area/rogue/indoors/remote_sanctuary)
 "IQ" = (
 /obj/structure/table/wood/large_table/south_west,
+/obj/item/clothing/mask/rogue/lordmask/naledi/lesser{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/clothing/mask/rogue/lordmask/naledi/lesser{
+	pixel_x = 8
+	},
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/remote_sanctuary)
 "Ja" = (
@@ -1380,11 +1387,10 @@
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/outdoors/remote_sanctuary/mountains)
 "RR" = (
-/obj/structure/roguemachine/goldface/public/toys{
-	pixel_x = -32
-	},
-/turf/open/floor/rogue/deserttile{
-	icon_state = "tilegreeny"
+/obj/structure/roguemachine/goldface/public/toys,
+/turf/closed/wall/mineral/rogue/sandbrick{
+	max_integrity = 9999999;
+	damage_deflection = 100000
 	},
 /area/rogue/indoors/remote_sanctuary/running_water_sounds)
 "RZ" = (
@@ -1944,7 +1950,7 @@ tQ
 tQ
 tQ
 Sd
-tQ
+RR
 Do
 nY
 wE
@@ -1966,7 +1972,7 @@ tQ
 Cp
 Wm
 Am
-RR
+rx
 Do
 sD
 Rv
