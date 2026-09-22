@@ -4,6 +4,7 @@
 	var/list/town_templates_to_use = alist(
 		"map_files/ovdun_world" = list("keymaster_stand_town_dun", 106, 88, 2), //X 106, Y 88, Z 2
 		"map_files/jagged_jaw" = list("keymaster_stand_town_jagged", 178, 183, 3), // x 178, Y 183, Z 3
+		"map_files/roguetest" = list("keymaster_stand_roguetest", 14, 46, 1), // x 14, Y 46, Z 1
 	)
 	var/wretch_coast_template = "keymaster_stand_wretch"
 	var/wretch_deploy_x = 9
@@ -26,6 +27,17 @@
 
 /datum/map_edit_operation/deploy_keymasters/deploy(datum/map_config/config)
 	. = ..()
+	// Look for the wretch coast's z-level and do the same!
+	// This is gonna be a dumb approach to find it because there's no identifying characteristics for it
+	// Beyond the unique name. But HEY, IT WORKS!!
+	var/wretch_z = 1
+	var/wretch_coast_found = FALSE
+	for(var/A in SSmapping.z_list)
+		var/datum/space_level/S = A
+		if(S.name == "Wretch Coast")
+			wretch_z = S.z_value
+			wretch_coast_found = TRUE
+			break
 	// Get the bottommost z-level of the current map
 	var/town_z = SSmapping.levels_by_trait(ZTRAIT_STATION)[1]
 	// Now where we go on the town is going to depend on what town map we're on...
@@ -50,26 +62,18 @@
 		if(!M.load(target))
 			return FALSE
 
-	// With that done, look for the wretch coast's z-level and do the same!
-	var/datum/map_template/M = SSmapping.map_templates[wretch_coast_template]
-	if(!M)
-		return FALSE
-	// This is gonna be a dumb approach to find it because there's no identifying characteristics for it
-	// Beyond the unique name. But HEY, IT WORKS!!
-	var/wretch_z = 1
-	for(var/A in SSmapping.z_list)
-		var/datum/space_level/S = A
-		if(S.name == "Wretch Coast")
-			wretch_z = S.z_value
-			break
-	var/min_x = wretch_deploy_x
-	var/min_y = wretch_deploy_y
-	var/max_x = wretch_deploy_x + M.width - 1
-	var/max_y = wretch_deploy_y + M.height - 1
-	var/our_z = wretch_z + wretch_deploy_z - 1
+	if(wretch_coast_found)
+		var/datum/map_template/M = SSmapping.map_templates[wretch_coast_template]
+		if(!M)
+			return FALSE
+		var/min_x = wretch_deploy_x
+		var/min_y = wretch_deploy_y
+		var/max_x = wretch_deploy_x + M.width - 1
+		var/max_y = wretch_deploy_y + M.height - 1
+		var/our_z = wretch_z + wretch_deploy_z - 1
 
-	clear_area(min_x, min_y, max_x, max_y, our_z)
-	if(!M.load(locate(min_x, min_y, our_z)))
-		return FALSE
+		clear_area(min_x, min_y, max_x, max_y, our_z)
+		if(!M.load(locate(min_x, min_y, our_z)))
+			return FALSE
 
 	return TRUE
