@@ -172,6 +172,9 @@
 /area/rogue/indoors/remote_sanctuary)
 "vk" = (
 /obj/machinery/light/rogue/candle/r,
+/obj/structure/stairs{
+	dir = 4
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "vJ" = (
@@ -382,7 +385,6 @@
 /area/rogue/indoors/remote_sanctuary)
 "Uh" = (
 /obj/structure/chair/wood/rogue/chair5,
-/obj/structure/fluff/wallclock/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "UI" = (

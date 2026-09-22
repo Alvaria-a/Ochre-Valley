@@ -4,7 +4,10 @@
 	color = "#3f3f3f";
 	dir = 6
 	},
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cobbleedge{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "b" = (
 /obj/effect/decal/edge{
@@ -29,7 +32,8 @@
 /area/rogue/outdoors/woods/wretch_lair)
 "j" = (
 /obj/effect/decal/cobbleedge{
-	dir = 4
+	dir = 4;
+	pixel_x = -9
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
@@ -43,10 +47,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "m" = (
-/obj/effect/decal/cobbleedge{
-	dir = 5
-	},
-/obj/effect/decal/edge_corner{
+/obj/effect/decal/edge{
 	color = "#3f3f3f";
 	dir = 4
 	},
@@ -61,13 +62,31 @@
 	color = "#3f3f3f";
 	dir = 1
 	},
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cobbleedge{
+	dir = 6;
+	pixel_x = -9;
+	pixel_y = -5
+	},
+/obj/structure/flora/roguegrass{
+	pixel_x = 8
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "p" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cave/inhumen)
 "r" = (
-/turf/closed/wall/mineral/rogue/stone,
+/obj/machinery/light/rogue/torchholder/r,
+/obj/effect/decal/edge_corner{
+	color = "#3f3f3f";
+	dir = 4
+	},
+/obj/effect/decal/cobbleedge{
+	pixel_x = -8;
+	pixel_y = 13;
+	dir = 6
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "s" = (
 /obj/structure/fluff/railing/fence{
@@ -109,14 +128,21 @@
 	color = "#3f3f3f";
 	dir = 1
 	},
-/turf/open/floor/rogue/cobble,
+/obj/effect/decal/cobbleedge{
+	dir = 10;
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "L" = (
-/obj/effect/decal/edge_corner{
-	color = "#3f3f3f";
-	dir = 4
+/obj/effect/decal/edge{
+	color = "#3f3f3f"
 	},
-/obj/machinery/light/rogue/torchholder/r,
+/obj/effect/decal/cobbleedge{
+	pixel_x = -8;
+	pixel_y = 13
+	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "R" = (
@@ -169,8 +195,8 @@ L
 (5,1,1) = {"
 s
 H
-Y
 m
+Y
 r
 "}
 
