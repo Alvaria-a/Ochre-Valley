@@ -98,6 +98,8 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 		for(var/s_x in min(T.x+1, T.x + S.width-2) to max(T.x+1, T.x + S.width-2))
 			for(var/s_y in min(T.y+1, T.y + S.height-2) to max(T.y+1, T.y + S.height-2))
 				var/turf/s_t = locate(s_x, s_y, s_z)
+				if(!s_t)
+					throw EXCEPTION("We attempted to generate a sanctuary in an impossible location! WUH OH")
 				// Find every door and closet within our sanctuary's area
 				// and assign it a lock that the user's sanctuary key will be able to lock/unlock
 				var/obj/structure/mineral_door/D = locate() in s_t
@@ -117,6 +119,11 @@ SUBSYSTEM_DEF(remote_sanctuaries)
 					data.sanctuary_exit = locate() in s_t
 					if(data.sanctuary_exit)
 						data.sanctuary_exit.data = data
+				// Look for any and all items in the sanctuary.
+				// Make them worthless by making them "special".
+				// No, you will not be flipping sanctuaries for profits.
+				for(var/atom/movable/A in s_t.contents)
+					A.special_item = TRUE
 	log_admin("[key_name(owner_ckey)] has claimed and spawned a remote sanctuary \"[S.name]\" costing [data.used_template.price] mammons at [ADMIN_VERBOSEJMP(T)]")
 	return data
 
