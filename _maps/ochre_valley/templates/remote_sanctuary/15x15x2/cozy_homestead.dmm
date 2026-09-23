@@ -12,6 +12,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
+"bj" = (
+/obj/structure/flora/roguegrass/bush/wall/tall,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "cc" = (
 /obj/structure/flora/roguetree/pine{
 	pixel_y = 16
@@ -21,6 +25,11 @@
 "cu" = (
 /obj/structure/far_travel,
 /turf/closed/basic,
+/area/rogue/outdoors/remote_sanctuary)
+"cO" = (
+/obj/structure/chair/stool/rogue,
+/obj/item/fishingrod,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
 "dA" = (
 /obj/structure/closet/crate/chest{
@@ -51,14 +60,16 @@
 "dZ" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/remote_sanctuary)
+"ek" = (
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "em" = (
-/obj/structure/flora/roguetree/pine,
+/obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "eD" = (
-/obj/item/fishingrod,
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/grass,
+/turf/open/water/river/flow/west,
 /area/rogue/outdoors/remote_sanctuary)
 "eI" = (
 /obj/structure/flora/roguegrass,
@@ -122,7 +133,6 @@
 /area/rogue/outdoors/remote_sanctuary)
 "nT" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "oG" = (
@@ -147,13 +157,17 @@
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/remote_sanctuary)
 "rs" = (
-/obj/machinery/light/rogue/torchholder/r,
+/obj/structure/flora/ausbushes/reedbush,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
 "sS" = (
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"sU" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/river/flow/north,
+/area/rogue/outdoors/remote_sanctuary)
 "tz" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/grass,
@@ -164,6 +178,14 @@
 /obj/machinery/tanningrack,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"uR" = (
+/obj/structure/flora/roguegrass/water{
+	pixel_y = -1;
+	dir = 4;
+	pixel_x = -4
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/remote_sanctuary)
 "uT" = (
 /obj/structure/fluff/walldeco/psybanner/tennite{
 	pixel_y = 32
@@ -195,6 +217,20 @@
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"yu" = (
+/obj/effect/particle_effect/smoke{
+	lifetime = 14400
+	},
+/turf/open/water/river/flow/north,
+/area/rogue/outdoors/remote_sanctuary)
+"yz" = (
+/obj/structure/flora/roguegrass/water{
+	pixel_y = -1;
+	dir = 1;
+	pixel_x = -4
+	},
+/turf/open/water/river/flow/north,
+/area/rogue/outdoors/remote_sanctuary)
 "zD" = (
 /obj/machinery/light/rogue/candle/l,
 /turf/open/transparent/openspace,
@@ -279,7 +315,7 @@
 /area/rogue/indoors/remote_sanctuary)
 "FZ" = (
 /obj/structure/closet/crate/chest/wicker/bait,
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
 "Ga" = (
 /obj/structure/table/wood/poor,
@@ -291,8 +327,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
 "Gm" = (
-/obj/structure/flora/roguetree/pine,
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/remote_sanctuary)
 "GJ" = (
 /obj/structure/roguewindow/harem3,
@@ -306,7 +341,7 @@
 	},
 /area/rogue/indoors/remote_sanctuary)
 "Hu" = (
-/obj/structure/chair/stool/rogue,
+/obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "HL" = (
@@ -346,6 +381,10 @@
 "QS" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors/remote_sanctuary)
+"QV" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
 "Rb" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/remote_sanctuary)
@@ -353,11 +392,23 @@
 /obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"Rv" = (
+/obj/structure/flora/roguegrass/water{
+	pixel_y = -1;
+	dir = 4;
+	pixel_x = 14
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/remote_sanctuary)
 "RB" = (
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/remote_sanctuary)
 "SQ" = (
 /obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/remote_sanctuary)
+"Tx" = (
+/obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/remote_sanctuary)
 "TD" = (
@@ -396,6 +447,10 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/remote_sanctuary)
+"Wc" = (
+/obj/structure/flora/roguegrass/bush/wall,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/remote_sanctuary)
 "Wi" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/remote_sanctuary)
@@ -452,88 +507,118 @@ dX
 dX
 dX
 dX
+dX
+dX
+dX
+dX
+dX
 "}
 (2,1,1) = {"
 dX
-nf
-nf
+WT
+WT
+RB
+RB
+RB
+Rv
+RB
+RB
+RB
 Gm
-nf
-nf
 Wi
 SQ
 Bp
 tz
-RB
+Ij
 WT
-WT
+yu
 mK
 dX
 "}
 (3,1,1) = {"
 dX
-nf
-Wi
-Wi
-nf
-nf
-tz
-nf
-nf
-nf
-Wi
-zM
 WT
+WT
+WT
+WT
+sU
+WT
+WT
+WT
+WT
+RB
+RB
+zM
+RB
+RB
 Ij
+sU
+WT
+mK
 dX
 "}
 (4,1,1) = {"
 dX
 nf
+UI
 nf
-nf
-nf
-Bp
-Bp
-Wi
-dZ
-dZ
-qg
-Wi
 RB
-Ij
+RB
+RB
+RB
+RB
+eD
+yz
+WT
+WT
+WT
+WT
+WT
+WT
+WT
+mK
 dX
 "}
 (5,1,1) = {"
 dX
 cc
 nf
-UI
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-eD
-zM
+tz
+Wi
+Wi
+Wi
+QV
+uR
 RB
+RB
+RB
+RB
+RB
+WT
+eD
+WT
+WT
+WT
 dX
 "}
 (6,1,1) = {"
 dX
 nf
+nf
+nf
+nf
+nf
+nf
 Bp
-LC
+Wi
 nf
 dZ
 Wi
 rs
 nf
-Bp
-dZ
-nf
+eI
+cO
+Wi
 zM
 RB
 dX
@@ -541,15 +626,20 @@ dX
 (7,1,1) = {"
 dX
 nf
-IR
-am
-Cn
-Rm
-MU
-Rb
-IR
+nf
+AK
+nf
+nf
+nf
+nf
+nf
 nf
 dZ
+dZ
+nf
+nf
+nf
+Wi
 FZ
 HL
 RB
@@ -558,13 +648,18 @@ dX
 (8,1,1) = {"
 dX
 nf
-Za
-Qy
-Xl
-TQ
-iD
-gc
-MU
+nf
+eS
+nf
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+nf
+nf
 Wi
 dZ
 dZ
@@ -575,14 +670,19 @@ cu
 (9,1,1) = {"
 dX
 nf
-QS
-zS
-iD
-iD
-iD
-OL
-MU
-Wi
+nf
+AK
+nf
+nf
+Bp
+nf
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
 dZ
 dZ
 Wi
@@ -592,15 +692,20 @@ cu
 (10,1,1) = {"
 dX
 Bp
-QS
-uT
-iD
-iD
-iD
-eN
-MU
 nf
-AK
+nf
+nT
+nf
+nf
+nf
+UI
+dZ
+dZ
+dZ
+qg
+nf
+nf
+Wi
 dZ
 nf
 nf
@@ -609,15 +714,20 @@ cu
 (11,1,1) = {"
 dX
 nf
-QS
-Fl
-hh
-iD
-iD
-Zy
-Za
+tz
 nf
-eS
+nf
+nf
+Wi
+nf
+tz
+nf
+dZ
+Wi
+Wi
+nf
+nf
+Wi
 nf
 Wi
 pv
@@ -626,15 +736,20 @@ dX
 (12,1,1) = {"
 dX
 nf
-DJ
-IR
-ul
-dA
-Ga
-wY
-DJ
+Wi
+nf
+cc
+nf
+nf
+LC
+nf
+nf
+dZ
+Wi
+Wi
+LC
 nT
-Hu
+Wi
 Wi
 Bp
 nf
@@ -642,13 +757,18 @@ dX
 "}
 (13,1,1) = {"
 dX
-Wi
+nf
+nf
+nf
+nf
+nf
+nf
 IR
 am
-Rb
-Rb
-Rb
 Cn
+Rm
+MU
+Rb
 IR
 nf
 Wi
@@ -659,22 +779,142 @@ dX
 "}
 (14,1,1) = {"
 dX
+tz
 nf
-Bp
+em
+eI
+ek
+nf
+Za
+Qy
+Xl
+TQ
+iD
+gc
+MU
+nf
+nf
 nf
 eI
-Wi
 nf
-nf
-nf
-nf
-nf
-nf
-Wi
-em
 dX
 "}
 (15,1,1) = {"
+dX
+Hu
+nf
+Wi
+nf
+nf
+nf
+QS
+zS
+iD
+iD
+iD
+OL
+MU
+nf
+Bp
+nf
+nf
+nf
+dX
+"}
+(16,1,1) = {"
+dX
+Wc
+nf
+nf
+nf
+UI
+nf
+QS
+uT
+iD
+iD
+iD
+eN
+MU
+nf
+Wi
+nf
+nf
+Wi
+dX
+"}
+(17,1,1) = {"
+dX
+bj
+Bp
+Hu
+nf
+nf
+nf
+QS
+Fl
+hh
+iD
+iD
+Zy
+Za
+nf
+nf
+nf
+nf
+Bp
+dX
+"}
+(18,1,1) = {"
+dX
+Tx
+nf
+nf
+Wi
+Hu
+nf
+DJ
+IR
+ul
+dA
+Ga
+wY
+DJ
+nf
+Bp
+nf
+nT
+nf
+dX
+"}
+(19,1,1) = {"
+dX
+bj
+bj
+bj
+Tx
+Tx
+bj
+IR
+am
+Rb
+Rb
+Rb
+Cn
+IR
+nf
+nf
+Wi
+nf
+nf
+dX
+"}
+(20,1,1) = {"
+dX
+dX
+dX
+dX
+dX
 dX
 dX
 dX
@@ -708,9 +948,19 @@ lh
 lh
 lh
 lh
+lh
+lh
+lh
+lh
+lh
 "}
 (2,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 CZ
 CZ
@@ -741,10 +991,20 @@ CZ
 CZ
 CZ
 CZ
+CZ
+CZ
+CZ
+CZ
+CZ
 lh
 "}
 (4,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 CZ
 CZ
@@ -775,10 +1035,152 @@ CZ
 CZ
 CZ
 CZ
+CZ
+CZ
+CZ
+CZ
+CZ
 lh
 "}
 (6,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(7,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(8,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(9,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(10,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(11,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+CZ
+lh
+"}
+(12,1,2) = {"
+lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 IR
 am
@@ -794,8 +1196,13 @@ CZ
 CZ
 lh
 "}
-(7,1,2) = {"
+(13,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 Za
 DJ
 Fg
@@ -811,8 +1218,13 @@ CZ
 CZ
 lh
 "}
-(8,1,2) = {"
+(14,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 QS
 HS
 TF
@@ -828,8 +1240,13 @@ CZ
 CZ
 lh
 "}
-(9,1,2) = {"
+(15,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 DJ
 Za
 am
@@ -845,8 +1262,13 @@ CZ
 CZ
 lh
 "}
-(10,1,2) = {"
+(16,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 QS
 zD
@@ -862,8 +1284,13 @@ CZ
 CZ
 lh
 "}
-(11,1,2) = {"
+(17,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 QS
 kh
@@ -879,8 +1306,13 @@ CZ
 CZ
 lh
 "}
-(12,1,2) = {"
+(18,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 DJ
 vk
@@ -896,8 +1328,13 @@ CZ
 CZ
 lh
 "}
-(13,1,2) = {"
+(19,1,2) = {"
 lh
+CZ
+CZ
+CZ
+CZ
+CZ
 CZ
 IR
 am
@@ -913,24 +1350,12 @@ CZ
 CZ
 lh
 "}
-(14,1,2) = {"
+(20,1,2) = {"
 lh
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
-CZ
 lh
-"}
-(15,1,2) = {"
+lh
+lh
+lh
 lh
 lh
 lh

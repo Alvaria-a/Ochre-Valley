@@ -27,7 +27,7 @@
 
 /datum/map_edit_operation/deploy_keymasters/deploy(datum/map_config/config)
 	. = ..()
-	// Look for the wretch coast's z-level and do the same!
+	// Look for the wretch coast's z-level!
 	// This is gonna be a dumb approach to find it because there's no identifying characteristics for it
 	// Beyond the unique name. But HEY, IT WORKS!!
 	var/wretch_z = 1
