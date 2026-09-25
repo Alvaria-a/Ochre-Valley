@@ -87,7 +87,6 @@
 	STALUC = owner.current.STALUC
 
 /datum/antagonist/lich/proc/set_stats()
-	// OV Edit Start
 	owner.current.STASTR = src.STASTR
 	owner.current.STAPER = src.STAPER
 	owner.current.STACON = src.STACON
@@ -95,8 +94,6 @@
 	owner.current.STASPD = src.STASPD
 	owner.current.STAWIL = src.STAWIL
 	owner.current.STALUC = src.STALUC
-	owner.current.update_sight()
-	// OV Edit End
 
 /datum/antagonist/lich/proc/skele_look()
 	var/mob/living/carbon/human/L = owner.current

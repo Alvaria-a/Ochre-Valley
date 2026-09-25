@@ -288,7 +288,7 @@ GLOBAL_LIST_INIT(goblin_pyromancer_aggro, list(
 		QDEL_NULL(eyes)
 	eyes = new /obj/item/organ/eyes/night_vision/nightmare
 	eyes.Insert(src)
-	src.underwear = "Nude"
+	src.underwear = null //OV EDIT
 	for(var/datum/charflaw/cf in charflaws)
 		charflaws.Remove(cf)
 		QDEL_NULL(cf)

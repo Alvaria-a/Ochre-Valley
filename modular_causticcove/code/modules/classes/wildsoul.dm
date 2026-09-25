@@ -11,7 +11,7 @@
 	outfit = null
 	outfit_female = null
 
-	obsfuscated_job = TRUE
+	obfuscated_job = TRUE
 
 	show_in_credits = FALSE
 	min_pq = 1 //OV Edit - Trying to make this less of a newb trap by making you play literally anything else first before you try Vagabond+
@@ -82,7 +82,8 @@
 	gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/rogueweapon/huntingknife/stoneknife
-	armor = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/wildsoul/dense //OV EDIT
+	armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/overskin/fullbody/wildsoul/heavy //OV EDIT
+	shirt = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/chestskin/wildsoul/heavy //OV EDIT
 	give_feral_eyes(H)
 
 /datum/advclass/wildsoul/mantid
@@ -125,12 +126,13 @@
 	..()
 	H.adjust_blindness(-3)
 	head = /obj/item/clothing/head/roguetown/roguehood
-	suit = /obj/item/clothing/suit/roguetown/shirt/rags
+	l_hand = /obj/item/clothing/suit/roguetown/shirt/rags
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/rogueweapon/huntingknife
 	beltr = /obj/item/quiver/arrows
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
-	armor = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/wildsoul	//OV EDIT
+	armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/overskin/fullbody/wildsoul //OV EDIT
+	shirt = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/chestskin/wildsoul //OV EDIT
 	give_feral_eyes(H)
 
 /datum/advclass/wildsoul/lampternfly //OV Edit AP Merge 4.5.26 - RE-ENABLED

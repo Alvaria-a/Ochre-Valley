@@ -164,6 +164,11 @@
 				else
 					recoil_mult = 0.05
 
+			// if armor broke, your toof dont broke, ya git
+			var/obj/item/clothing/armor = src.get_item_by_slot(def_zone)
+			if(armor?.obj_broken)
+				recoil_mult = 0.05
+
 			var/recoil = round(dam2do * recoil_mult)
 			user.apply_damage(recoil, BRUTE, BODY_ZONE_PRECISE_MOUTH)// cleaner, basically! this will recoil 25% damage to your mouth if you bite flesh, and 50% if you bite armor
 		if(prob(25)) // 1/4 of the time you'll overextend and be exposed, giving your opponent a room to strike back hard
@@ -197,9 +202,14 @@
 				if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED))
 					to_chat(user, span_warning("BLEH! [bite_victim] tastes of SILVER! My gift cannot take hold."))
 				else
-					caused_wound?.werewolf_infect_attempt()
-					if(prob(50))
-						user.werewolf_feed(bite_victim, 10)
+					if(user.mind.has_antag_datum(/datum/antagonist/werewolf/noinfect)) //they can't infect anyone
+						to_chat(user, span_warning("My curse is not strong enough to infect [bite_victim]."))
+						if(prob(50))
+							user.werewolf_feed(bite_victim, 10)
+					else
+						caused_wound?.werewolf_infect_attempt()
+						if(prob(50))
+							user.werewolf_feed(bite_victim, 10)
 			if(istype(user.dna.species, /datum/species/gnoll))
 				if(prob(30))
 					user.gnoll_feed(bite_victim, 10)
@@ -353,6 +363,11 @@
 			else
 				recoil_mult = 0.05
 
+		// if armor broke, your toof dont broke, ya git
+		var/obj/item/clothing/armor = C.get_item_by_slot(sublimb_grabbed)
+		if(armor?.obj_broken)
+			recoil_mult = 0.05
+
 		var/recoil = round(damage * recoil_mult)
 		user.apply_damage(recoil, BRUTE, BODY_ZONE_PRECISE_MOUTH) // cleaner, basically! this will recoil 25% damage to your mouth if you bite flesh, and 50% if you bite armor
 	if(prob(50)) // half the time you'll overextend and be exposed, giving your opponent a room to strike back hard
@@ -404,7 +419,9 @@
 					span_userdanger("[user] bites my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]"), span_hear("I hear a sickening sound of chewing!"), COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("I bite [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
-
+	//ov edit- taste them
+	to_chat(user, span_danger("They taste of [C.get_taste_message()]"))
+	//ov edit end
 	log_combat(user, C, "limb chewed [sublimb_grabbed] ")
 
 /obj/item/grabbing/bite/proc/drinklimb(mob/living/user)
@@ -421,19 +438,23 @@
 	sippy = TRUE
 	to_chat(user, span_warning("You tighten your lips and attempt to drink blood!"))
 
+
 	while(src && user && grabbed && sippy)
 		var/mob/living/carbon/C = grabbed
 		if(QDELETED(src) || !user || !grabbed || !sippy)
 			break
+
+		//ov edit- taste them
+		to_chat(user, span_danger("[C] tastes of [C.get_taste_message()]"))
+		//ov edit end
+
 		if(C.blood_volume <= 0)
 			to_chat(user, span_warning("--But there's no blood left to drink."))
 			break
-		//OV edit start. This proc is for hemovores- we check if the user has TRAIT_LYFE_DRINK, if the target location is unarmored, and if the target is not in combat mode. If so, drink, and apply drugs, without checking for bleeding
-		if(check_hemovore(user))
-			return
-		//OV edit end. if this returns false, the target is either actively fighting, or protected- check normally
 
-		if(!limb_grabbed.get_bleed_rate())
+		//OV edit start- adds Check_hemovore. This allows hemovores to penetrate armor and inject drugs, if the target isn't actively in combat mode
+		if(!limb_grabbed.get_bleed_rate() && !check_hemovore(user))
+		//OV edit end
 			to_chat(user, span_warning("--But they're not bleeding, I should chew."))
 			break
 		if(!user.Adjacent(grabbed))

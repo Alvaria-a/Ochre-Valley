@@ -197,7 +197,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 		ignored_mobs = list(ignored_mobs)
 	if(!isnum(vision_distance))
 		vision_distance = DEFAULT_MESSAGE_RANGE
-	var/list/hearers = get_hearers_in_view(vision_distance, src) //caches the hearers and then removes ignored mobs. // OV Edit: this must be get_hearers_in_view or vore breaks, remove when upstream fixes this
+	var/list/hearers = get_hearers_in_view(vision_distance, src) //caches the hearers and then removes ignored mobs.
 	add_remote_hearing_atom_listeners(hearers, src, vision_distance) //OV Add
 	hearers -= ignored_mobs
 	if(self_message)
@@ -241,7 +241,7 @@ GLOBAL_VAR_INIT(mobids, 1)
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  */
 /atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, runechat_message = null, log_seen = NONE, log_seen_msg = null, custom_spans = list("emote"), used_language = /datum/language/common)
-	var/list/hearers = get_hearers_in_view(hearing_distance, src) // OV Edit: this must be get_hearers_in_view or vore breaks, remove when upstream fixes this
+	var/list/hearers = get_hearers_in_view(hearing_distance, src)
 	add_remote_hearing_atom_listeners(hearers, src, hearing_distance) //OV Add
 	if(self_message)
 		hearers -= src
@@ -269,7 +269,7 @@ GLOBAL_VAR_INIT(mobids, 1)
  */
 
 /atom/proc/loud_message(message, hearing_distance = DEFAULT_MESSAGE_RANGE, directional = TRUE)
-	var/list/listening = get_hearers_in_view(hearing_distance, src) // OV Edit: this must be get_hearers_in_view or vore breaks, remove when upstream fixes this
+	var/list/listening = get_hearers_in_view(hearing_distance, src)
 	add_remote_hearing_atom_listeners(listening, src, hearing_distance) //OV Add
 	for(var/_M in GLOB.player_list)
 		var/mob/M = _M
@@ -1256,6 +1256,28 @@ GLOBAL_VAR_INIT(mobids, 1)
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
 
+///Show the sleep level up screen if available
+/mob/living/verb/open_sleep_adv_menu()
+	set name = "Open Dream Menu"
+	set category = "IC"
+	set hidden = FALSE
+
+	if(!mind || !mind.sleep_adv)
+		to_chat(src, span_warning("You have no dreams to contemplate."))
+		return
+
+	if(!IsSleeping())
+		to_chat(src, span_warning("You must be asleep to enter your dreams."))
+		return
+
+	var/datum/sleep_adv/SA = mind.sleep_adv
+
+	if(SA.sleep_adv_points <= 0)
+		to_chat(src, span_warning("You lack the inspiration granted by a proper rest in order to contemplate your dreams."))
+		return
+
+	SA.show_ui(src)
+
 /// Custom pose setting
 /mob/living/carbon/human/verb/set_pose()
 	set name = "Set Pose"
@@ -1393,7 +1415,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	SEND_SIGNAL(src, COMSIG_MOB_GET_STATUS_TAB_ITEMS, .)
 	if(client)
 		. += list(list("IC DATE: ", "[get_current_ic_date_as_string()] (CLICK FOR CALENDAR)", "src=[REF(client)];statbrowser_calendar=1"))
-		. += list(list("tod", GLOB.tod, "IC TIME: [get_current_ic_time_as_string()]"))
+		. += list(list("tod", get_current_ic_tod_as_string(), "IC TIME: [get_current_ic_time_as_string()]"))
 	return .
 
 /mob/proc/get_stats_tab_items()

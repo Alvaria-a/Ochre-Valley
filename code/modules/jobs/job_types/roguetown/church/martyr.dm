@@ -321,9 +321,6 @@
 				current_holder.STAPER += stat_bonus_martyr
 				current_holder.STALUC += stat_bonus_martyr
 				H.energy_add(9999)
-				// OV Edit Start
-				H.update_sight()
-				// OV Edit End
 
 //This is called regardless of the activated state (safe or not)
 /datum/component/martyrweapon/proc/deactivate()
@@ -446,9 +443,6 @@
 				current_holder.STAINT = 20
 				current_holder.STAPER = 20
 				current_holder.STALUC = 20
-				// OV Edit Start
-				current_holder.update_sight()
-				// OV Edit End
 
 				current_holder.energy = current_holder.max_energy
 				current_holder.stamina = 0
@@ -581,8 +575,9 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	pants = /obj/item/clothing/under/roguetown/platelegs/holysee
 	cloak = /obj/item/clothing/cloak/holysee
-	id = /obj/item/clothing/neck/roguetown/psicross/undivided
+	id = /obj/item/clothing/neck/roguetown/psicross/silver/undivided
 	backpack_contents = list(
+		/obj/item/rope/chain = 1,
 		/obj/item/rogueweapon/huntingknife/idagger/silver = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 		/obj/item/mini_flagpole/church,

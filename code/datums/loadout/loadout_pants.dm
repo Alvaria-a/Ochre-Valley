@@ -44,6 +44,11 @@
 	path = /obj/item/clothing/under/roguetown/skirt
 	sort_category = "Pants"
 
+/datum/loadout_item/shortskirt
+	name = "Short Skirt"
+	path = /obj/item/clothing/under/roguetown/skirt/short
+	sort_category = "Pants"
+
 /datum/loadout_item/desertskirt
 	name = "Desert Skirt"
 	path = /obj/item/clothing/under/roguetown/skirt/desert
@@ -69,3 +74,7 @@
 	path = /obj/item/clothing/under/roguetown/skirt/formal
 	sort_category = "Pants"
 
+/datum/loadout_item/shalwarpants
+	name = "Shalwar Pants"
+	path = /obj/item/clothing/under/roguetown/tights/shalwar
+	sort_category = "Pants"

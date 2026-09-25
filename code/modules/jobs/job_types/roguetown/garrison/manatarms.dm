@@ -202,12 +202,12 @@
 			if("Crossbow")
 				beltr = /obj/item/quiver/bolt/standard
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-			if("Bow") // They can head down to the armory to sideshift into one of the other bows.
+			if("Bow")
 				beltr = /obj/item/quiver/arrows
-				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/watchman
 			if("Sling")
 				beltr = /obj/item/quiver/sling/iron
-				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/sling // Both are belt slots and it's not worth setting where the cudgel goes for everyone else, sad.
+				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/sling
 
 		switch(armor_choice)
 			if("Leather Armor") //OG more or less RT guardsman archer
@@ -406,8 +406,8 @@
 		H.set_blindness(0)
 		switch(armor_choice)
 			if("Bailiff's Skin Armor")
-				armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/chest/barbarian //a leather armor.
-				shirt = /obj/item/clothing/suit/roguetown/armor/manual/pushups/barbarian //a fullbody leather armor.
+				armor = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/overskin/bailiff //a heavy gambeson.
+				shirt = /obj/item/clothing/suit/roguetown/armor/manual/resting/ochre/chestskin/bailiff //chest-only leather armor.
 			if("Light Brigandine Armor")
 				armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue //OV EDIT - Moved to Armor Choice
 				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson //OV Edit - Moved to Armor Choice
@@ -437,8 +437,8 @@
 	traits_applied = list(TRAIT_STANDARD_BEARER, TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
 		STATKEY_STR = 2, // Wielding the banner gives +3 fortune and +2 Perception, as seen in special.dm
-		STATKEY_CON = 2,
-		STATKEY_WIL = 3 // Flag must never fall.
+		STATKEY_CON = 3,
+		STATKEY_WIL = 2 // Flag must never fall.
 	)
 	subclass_skills = list(
 		/datum/skill/combat/polearms = SKILL_LEVEL_EXPERT, // SWING THAT THING.

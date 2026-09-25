@@ -5,6 +5,10 @@
 // Called from /mob/living/rmb_on, notably ignores arm grabs
 // Will interrupt rmb_on if you return TRUE
 /mob/living/proc/ov_try_dance_move(mob/living/carbon/partner)
+	// Dancing check
+	if(actively_dancing)
+		return
+
 	// We only care about right clicking on carbon mobs (since we have to target hand and animals have no hands)
 	if(!istype(partner))
 		return FALSE
@@ -172,6 +176,8 @@
 
 
 /mob/living/proc/ov_prepare_for_dance()
+	// Dance check
+	actively_dancing = TRUE
 	// Pixel shifts are definitely going to look wrong
 	unpixel_shift()
 	// Immobilize our dancer so they don't fuck up the animation
@@ -193,6 +199,8 @@
 // Callback after our animation is done, should undo everything in ov_prepare_for_dance
 // is_lead is TRUE for the mob that clicked, FALSE for the partner
 /mob/living/proc/ov_end_dance(is_lead, original_invis)
+	// Dance check
+	actively_dancing = FALSE
 	// Immobilization ends on it's own
 	// Unhide us
 	invisibility = original_invis

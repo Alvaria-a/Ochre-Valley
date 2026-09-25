@@ -142,9 +142,9 @@ SUBSYSTEM_DEF(nightshift)
 	if(triumphs_to_add)
 		adjust_triumphs(triumphs_to_add)
 	to_chat(src, span_notice("An another dae passes in Azuria...\nDays Survived: \Roman[allmig_reward]. \n"))
-	
+
 	var/int = mind.current.STAINT
-	
+
 	if(int < 10)
 		to_chat(src, span_boldwarning("I'm trying my best to learn, even if it is a little difficult..."))
 	else
@@ -160,6 +160,6 @@ SUBSYSTEM_DEF(nightshift)
 		if(!stat)
 			to_chat(src, span_warning("Staying alive in these uncertain times is it's own achievement. With the spark of my mind intact, and the embers of my heart and soul burning bright, at least at the moment, I feel slightly better about todae."))
 			mind.sleep_adv.retained_dust += 100	//Free skillpoint for you <3
-	
+
 
 

@@ -100,6 +100,8 @@
 
 	post_equip(H)
 
+	H.flag_gear_as_worn()
+
 	H.advjob = name
 
 	var/turf/TU = get_turf(H)
@@ -161,11 +163,6 @@
 		apply_character_post_equipment(H)
 	H.set_advsetup(FALSE)
 	H.mind?.refresh_spell_buttons()
-
-	// OV Edit Start
-	H.update_sight()
-	// OV Edit End
-
 //======== Massive shitcode, that works at least.
 /datum/advclass/proc/get_vice_limits(mob/living/carbon/human/H)
 	if(length(vice_limits))
@@ -203,8 +200,9 @@
 		limited_vices = vice_limits
 	if(!length(current_vices) || !length(limited_vices))
 		return
-	for(var/datum/charflaw/cf in current_vices)
-		if(is_vice_limited(cf, limited_vices))
+	for(var/cf_type in current_vices)
+		if(is_vice_limited(cf_type, limited_vices))
+			var/datum/charflaw/cf = GLOB.character_flaws_singletons[cf_type]
 			. += cf.name
 
 /datum/advclass/proc/get_prefs_restriction_names(client/player)

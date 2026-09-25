@@ -417,7 +417,7 @@
 	if(!container)
 		return
 	container.spill_heart_contents()
-	qdel(container)
+	QDEL_IN(container, 1)
 	return TRUE
 
 /obj/effect/decal/cleanable/heart_blood
@@ -464,7 +464,11 @@
 		if(rot)
 			target.apply_status_effect(/datum/status_effect/buff/rot_cleansing, 67, 1)
 		target.apply_status_effect(/datum/status_effect/buff/invigoration, 10 SECONDS, 25, 15)
-		qdel(src)
+		//ov edit: hemovore gains nutrition
+		target.check_hemovore_nutrition(100, goodmeal = TRUE)
+		//ov edit end
+		// Delayed deletion to let the attack() proc finish up safely.
+		QDEL_IN(src, 1)
 		return TRUE
 	return ..()
 
@@ -480,6 +484,10 @@
 		if(rot)
 			target.apply_status_effect(/datum/status_effect/buff/rot_cleansing, 34, 1)
 		target.apply_status_effect(/datum/status_effect/buff/invigoration, 20 SECONDS, 25, 15)
+		//ov edit: hemovore gains nutrition
+		target.check_hemovore_nutrition(50)
+		//ov edit end
 		qdel(src)
+		QDEL_IN(src, 1)
 		return TRUE
 	return ..()

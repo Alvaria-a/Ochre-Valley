@@ -728,6 +728,10 @@ world
 				} \
 				current_layer = base_layer + appearance.layer + current_layer / 1000; \
 			} \
+			/* If we are using topdown rendering, chop that part off so things layer together as expected */ \
+			if((current_layer >= TOPDOWN_LAYER && current_layer < EFFECTS_LAYER) || current_layer > TOPDOWN_LAYER + EFFECTS_LAYER) { \
+				current_layer -= TOPDOWN_LAYER; \
+			} \
 			for (var/index_to_compare_to in 1 to layers.len) { \
 				var/compare_to = layers[index_to_compare_to]; \
 				if (current_layer < layers[compare_to]) { \
@@ -739,9 +743,11 @@ world
 		}
 
 	var/static/icon/flat_template = icon('icons/effects/effects.dmi', "nothing")
+	var/icon/flat = icon(flat_template)
 
 	if(!appearance || appearance.alpha <= 0)
-		return icon(flat_template)
+		return flat
+
 	if(start)
 		if(!defdir)
 			defdir = appearance.dir
@@ -770,15 +776,22 @@ world
 
 	var/base_icon_dir //We'll use this to get the icon state to display if not null BUT NOT pass it to overlays as the dir we have
 
-	//Try to remove/optimize this section ASAP, CPU hog.
-	//Determines if there's directionals.
-	if(render_icon && curdir != SOUTH)
-		/* if (
-			!length(icon_states_fast(icon(curicon, curstate, NORTH))) \
-			&& !length(icon_states_fast(icon(curicon, curstate, EAST))) \
-			&& !length(icon_states_fast(icon(curicon, curstate, WEST))) \
-		) */
-		base_icon_dir = SOUTH
+	if(render_icon)
+		//Try to remove/optimize this section if you can, it's a CPU hog.
+		//Determines if there're directionals.
+		if (curdir != SOUTH)
+			if (
+				!length(icon_states(icon(curicon, curstate, NORTH))) \
+				&& !length(icon_states(icon(curicon, curstate, EAST))) \
+				&& !length(icon_states(icon(curicon, curstate, WEST)))
+			)
+				base_icon_dir = SOUTH
+
+		var/list/icon_dimensions = get_icon_dimensions(curicon)
+		var/icon_width = icon_dimensions["width"]
+		var/icon_height = icon_dimensions["height"]
+		if(icon_width != 32 || icon_height != 32)
+			flat.Scale(icon_width, icon_height)
 
 	if(!base_icon_dir)
 		base_icon_dir = curdir
@@ -786,7 +799,6 @@ world
 	var/curblend = appearance.blend_mode || defblend
 
 	if(appearance.overlays.len || appearance.underlays.len)
-		var/icon/flat = icon(flat_template)
 		// Layers will be a sorted list of icons/overlays, based on the order in which they are displayed
 		var/list/layers = list()
 		var/image/copy
@@ -843,9 +855,9 @@ world
 
 			if (
 				addX1 != flatX1 \
-				|| addX2 != flatX2 \
-				|| addY1 != flatY1 \
-				|| addY2 != flatY2 \
+				&& addX2 != flatX2 \
+				&& addY1 != flatY1 \
+				&& addY2 != flatY2 \
 			)
 				// Resize the flattened icon so the new icon fits
 				flat.Crop(
@@ -907,14 +919,6 @@ world
 		return final_icon
 
 	#undef PROCESS_OVERLAYS_OR_UNDERLAYS
-
-/* /proc/icon_states_fast(file) //OV Edit AP Merge 4.2.26 - Comments out because they removed so much icon stuff
-	if(isnull(file))
-		return null
-	if(isnull(GLOB.icon_states_cache[file]))
-		compile_icon_states_cache(file)
-	return GLOB.icon_states_cache[file] */
-//OV edit end
 
 /proc/getIconMask(atom/A)//By yours truly. Creates a dynamic mask for a mob/whatever. /N
 	var/icon/alpha_mask = new(A.icon,A.icon_state)//So we want the default icon and icon state of A.
@@ -1056,7 +1060,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 		var/mob/living/carbon/human/dummy/body = generate_or_wait_for_human_dummy(dummy_key)
 
 		if(prefs)
-			prefs.copy_to(body,TRUE,FALSE)
+			prefs.copy_to(body, TRUE, FALSE, character_setup = TRUE)
 		if(human_gear_override) //EVIL CODE!!
 			var/static/list/all_item_slots = ALL_ITEM_SLOTS
 			for(var/slot in all_item_slots)
@@ -1100,7 +1104,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 
 		if(icon_id)
 			humanoid_icon_cache[icon_id] = out_icon
-		dummy_key? unset_busy_human_dummy(dummy_key) : qdel(body)
+		dummy_key ? unset_busy_human_dummy(dummy_key) : qdel(body)
 		return out_icon
 	else
 		return humanoid_icon_cache[icon_id]
