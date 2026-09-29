@@ -219,6 +219,15 @@ export type ExamineData = {
 };
 
 // --------------- IdentityData ---------------
+export type CharToggle = {
+  flag: number;
+  name: string;
+  desc: string;
+  off: string;
+  on: string;
+  enabled: BooleanLike;
+};
+
 export type IdentityData = {
   species_base_name: string;
   species_sub_name: string;
@@ -236,7 +245,6 @@ export type IdentityData = {
   statpack_name: string;
   domhand: number;
   combat_music: string;
-  dnr_pref: BooleanLike;
 
   favorite_cuisine: number; // bitflag
   favorite_dish: number; // bitflag
@@ -267,6 +275,8 @@ export type IdentityData = {
   bark_variance: number;
   min_bark_variance: number;
   max_bark_variance: number;
+
+  char_toggles: CharToggle[];
 
   virtues: VirtueWithMetadata[];
 
