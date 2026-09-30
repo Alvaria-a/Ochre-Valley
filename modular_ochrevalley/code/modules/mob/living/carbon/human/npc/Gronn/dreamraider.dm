@@ -1,53 +1,16 @@
 // Basic Gronnic warrior, too poor for anything expensive, but they still know how to fight.
 
 /mob/living/carbon/human/species/human/northern/dreamraider
+	npc_archetype = /datum/npc_archetype/dreamraider
 	ai_controller = /datum/ai_controller/human_npc
 	faction = list(FACTION_GRONNMEN, FACTION_DREAM, FACTION_STATION)
 	ambushable = FALSE
 	cmode = 1
-	setparrytime = 30
+	setparrytime = 12 //These guys are all proper warriors and meant to be dangerous, so they all get player parry times.
 	a_intent = INTENT_HELP
 	d_intent = INTENT_PARRY
 	possible_mmb_intents = list(INTENT_BITE, INTENT_JUMP, INTENT_KICK, INTENT_SPECIAL)
 	blood_toll_bucket = STATS_KILLED_GRONNMEN
-	var/dreamraider_outfit = /datum/outfit/job/roguetown/human/species/human/northern/dreamraider
-
-/mob/living/carbon/human/species/human/northern/dreamraider/Initialize(mapload)
-	. = ..()
-	//Begin RANDOMISE here
-	gender = pick(MALE, FEMALE)
-	dna.species.random_character(src) //Now we just randomise here, MUST be called after both race + gender
-	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
-
-
-/mob/living/carbon/human/species/human/northern/dreamraider/after_creation()
-	..()
-	AddComponent(/datum/component/ai_aggro_system)
-	SEND_SIGNAL(src, COMSIG_MOB_MODIFY_AGGRO_LINES, GLOB.searaider_aggro, TRUE)
-	job = "Kraken Cult Levy"
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
-	ADD_TRAIT(src, TRAIT_BREADY, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NPC_EXAMINE, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_ABYSSOR_SWIM, TRAIT_GENERIC)
-	equipOutfit(new dreamraider_outfit)
-	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
-	head.sellprice = HEAD_BOUNTY_SEARAIDER
-	dna.species.handle_body(src)
-	random_voice_NPC()
-	random_hair_NPC()
-	random_eye_color_NPC()
-	correct_features_NPC()
-
-	if(gender == FEMALE)
-		real_name = pick(world.file2list("strings/rt/names/human/vikingf.txt"))
-	else
-		real_name = pick(world.file2list("strings/rt/names/human/vikingm.txt"))
-	update_hair()
-	update_body()
-	src.regenerate_icons() //Fixes the weird body but lets check performance first
 
 /datum/outfit/job/roguetown/human/species/human/northern/dreamraider/pre_equip(mob/living/carbon/human/H)
 	head = /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi/gronn
