@@ -1,98 +1,32 @@
-// Basic Gronnic warrior, too poor for anything expensive, but they still know how to fight.
-
 /mob/living/carbon/human/species/human/northern/dreamraider
 	npc_archetype = /datum/npc_archetype/dreamraider
 	ai_controller = /datum/ai_controller/human_npc
 	faction = list(FACTION_GRONNMEN, FACTION_DREAM, FACTION_STATION)
 	ambushable = FALSE
 	cmode = 1
-	setparrytime = 12 //These guys are all proper warriors and meant to be dangerous, so they all get player parry times.
+	setparrytime = 12 //These guys are all proper warriors and are meant to be dangerous, so they all get player parry times.
 	a_intent = INTENT_HELP
 	d_intent = INTENT_PARRY
 	possible_mmb_intents = list(INTENT_BITE, INTENT_JUMP, INTENT_KICK, INTENT_SPECIAL)
 	blood_toll_bucket = STATS_KILLED_GRONNMEN
 
-/datum/outfit/job/roguetown/human/species/human/northern/dreamraider/pre_equip(mob/living/carbon/human/H)
-	head = /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi/gronn
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	cloak = /obj/item/clothing/cloak/raincloak/blue
-	armor = /obj/item/clothing/suit/roguetown/shirt/tunic/blue
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord/light //They're meant to have weak body armor, 200 integ chest is bad, but it should be bad
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	gloves = /obj/item/clothing/gloves/roguetown/angle/atgervi
-	id = /obj/item/clothing/neck/roguetown/psicross/abyssor/gronn
-	belt = /obj/item/storage/belt/rogue/leather
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	switch(rand(1, 4))
-		if(1)
-			r_hand = /obj/item/rogueweapon/sword/short
-			l_hand = /obj/item/rogueweapon/shield/wood
-			beltl = /obj/item/rogueweapon/scabbard/sword
-		if(2)
-			r_hand = /obj/item/rogueweapon/stoneaxe/handaxe
-			l_hand = /obj/item/rogueweapon/shield/wood
-		if(3)
-			r_hand = /obj/item/rogueweapon/spear
-		if(4)
-			r_hand = /obj/item/rogueweapon/huntingknife/combat
-			l_hand = /obj/item/rogueweapon/shield/wood
-			beltl = /obj/item/rogueweapon/scabbard/sheath
-
-	H.STASPD = 14 //They are wearing very light armor, thus, high speed to help them chase down kiting players.
-	H.STACON = 9
-	H.STAWIL = 12
-	H.STAPER = 11
-	H.STAINT = 10
-	H.STASTR = 12
-	H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/maces, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/axes, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/shields, SKILL_LEVEL_EXPERT, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/unarmed, SKILL_LEVEL_JOURNEYMAN, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/combat/wrestling, SKILL_LEVEL_JOURNEYMAN, TRUE)
-	H.adjust_skillrank_up_to(/datum/skill/misc/swimming, SKILL_LEVEL_LEGENDARY, TRUE) // Abyssorites, don't fight these guys in the water
-	H.adjust_skillrank_up_to(/datum/skill/misc/climbing, SKILL_LEVEL_APPRENTICE, TRUE)
-
-	H.dna.species.soundpack_m = GLOB.voice_packs[/datum/voicepack/male/warrior]
-	H.dna.species.soundpack_f = GLOB.voice_packs[/datum/voicepack/female/warrior]
-
-// Gronnic archers, given entirely unique equipment focused on protection against enemy archers.
+/mob/living/carbon/human/species/human/northern/dreamraider/after_creation()
+	..()
+	src.grant_language(/datum/language/gronnic)
 
 /mob/living/carbon/human/species/human/northern/dreamraider/archer
-	ai_controller = /datum/ai_controller/human_npc/archer
-	d_intent = INTENT_DODGE //This might be too evil, but they're not parrying shit with their seax.
-	dreamraider_outfit = /datum/outfit/job/roguetown/human/species/human/northern/dreamraider/archer
+	npc_archetype = /datum/npc_archetype/dreamraider/archer
+	d_intent = INTENT_DODGE
 
-/mob/living/carbon/human/species/human/northern/dreamraider/archer/after_creation()
-	..()
-	job = "Kraken Cult Archer"
+/mob/living/carbon/human/species/human/northern/dreamraider/armored
+	npc_archetype = /datum/npc_archetype/dreamraider/armored
 
-/datum/outfit/job/roguetown/human/species/human/northern/dreamraider/archer/pre_equip(mob/living/carbon/human/H)
-	..()
-	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding/black
-	cloak = /obj/item/clothing/cloak/raincloak/blue
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/black
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	gloves = null
-	id = /obj/item/clothing/neck/roguetown/psicross/abyssor/gronn
-	belt = /obj/item/storage/belt/rogue/leather
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	r_hand = /obj/item/rogueweapon/huntingknife/combat
-	l_hand = null
-	beltl = /obj/item/rogueweapon/scabbard/sheath
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
-	backl = /obj/item/quiver/bodkin //This is probably a bad idea, but I must know.
+/mob/living/carbon/human/species/human/northern/dreamraider/champion
+	npc_archetype = /datum/npc_archetype/dreamraider/champion
 
-	H.STAPER = 14 //This also might be a bad idea.
-	H.STASPD = 10
-	H.STACON = 6
-	H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_EXPERT, TRUE)
+/mob/living/carbon/human/species/human/northern/dreamraider/walker
+	npc_archetype = /datum/npc_archetype/dreamraider/walker
+/*
 
 // A well armored Gronnic warrior. Meant to be a bit stronger than your typical better gear bogman.
 
@@ -318,3 +252,4 @@
 	H.adjust_skillrank_up_to(/datum/skill/combat/shields, SKILL_LEVEL_LEGENDARY, TRUE)
 	H.adjust_skillrank_up_to(/datum/skill/combat/unarmed, SKILL_LEVEL_LEGENDARY, TRUE)
 	H.adjust_skillrank_up_to(/datum/skill/combat/wrestling, SKILL_LEVEL_LEGENDARY, TRUE)
+*/
