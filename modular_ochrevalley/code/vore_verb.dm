@@ -402,7 +402,7 @@
 		to_chat(src, span_warningbig("YOU ARE BANNED FROM THIS TOOL"))
 		return
 
-	var/list/choices = list("Belly", "Belly Color", "Butt", "Breasts", "Penis", "Testicles", "Vagina")
+	var/list/choices = list("Belly", "Belly Color", "Breasts", "Butt", "Penis", "Testicles", "Vagina")
 	var/chosen = tgui_input_list(src, "Reveal what part? (DO NOT VIOLATE BYSTANDER CONSENT)", "PRIVATE SCENE TOOL ONLY", choices)
 	if(!chosen)
 		return
@@ -437,15 +437,6 @@
 					src.dna.features["belly_color"] = colors[1]
 					src.update_body_parts(TRUE)
 				return
-		if("Butt")
-			var/obj/item/organ/butt/ass = src.internal_organs_slot[ORGAN_SLOT_BUTT]
-			if(ass)
-				ass.always_show = !ass.always_show
-				to_chat(src, span_notice("You are now [ass.always_show ? "revealing" : "hiding"] your butt."))
-				src.update_body_parts(TRUE)
-			else
-				to_chat(src, span_notice("You don't have a butt!"))
-			return
 		if("Breasts")
 			var/obj/item/organ/breasts/booba = src.internal_organs_slot[ORGAN_SLOT_BREASTS]
 			if(booba)
@@ -454,6 +445,15 @@
 				src.update_body_parts(TRUE)
 			else
 				to_chat(src, span_notice("You don't have breasts!"))
+			return
+		if("Butt")
+			var/obj/item/organ/butt/ass = src.internal_organs_slot[ORGAN_SLOT_BUTT]
+			if(ass)
+				ass.always_show = !ass.always_show
+				to_chat(src, span_notice("You are now [ass.always_show ? "revealing" : "hiding"] your butt."))
+				src.update_body_parts(TRUE)
+			else
+				to_chat(src, span_notice("You don't have a butt!"))
 			return
 		if("Penis")
 			var/obj/item/organ/penis/dong = src.internal_organs_slot[ORGAN_SLOT_PENIS]
