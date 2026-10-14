@@ -420,7 +420,7 @@
 		if("Belly Color")
 			var/obj/item/organ/belly/belly = src.getorganslot(ORGAN_SLOT_BELLY)
 			if(belly)
-				var/new_color = color_pick_sanitized(src, "Choose primary belly color", "Belly Color", "#FFFFFF")
+				var/new_color = color_pick_sanitized(src, "Choose new belly color", "Belly Color", "#FFFFFF")
 				if(new_color)
 					belly.Remove(src)
 					var/list/colors = list()
