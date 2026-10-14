@@ -395,8 +395,15 @@
 	set desc = "PRIVATE SCENE TOOL: Toggles between always showing or hiding your chosen bodypart, regardless of clothing worn."
 	set category = "Vore.Misc"
 
+	var/list/ckeyblacklist
+	ckeyblacklist = list()
+
+	if(src.client && (src.client.ckey in ckeyblacklist))
+		to_chat(src, span_warningbig("YOU ARE BANNED FROM THIS TOOL"))
+		return
+
 	var/list/choices = list("Belly", "Belly Color", "Butt", "Breasts", "Penis", "Testicles", "Vagina")
-	var/chosen = tgui_input_list(src, "Reveal what part? (DO NOT VIOLATE BYSTANDER CONSENT)", "PRIVATE SCENE TOOL", choices)
+	var/chosen = tgui_input_list(src, "Reveal what part? (DO NOT VIOLATE BYSTANDER CONSENT)", "PRIVATE SCENE TOOL ONLY", choices)
 	if(!chosen)
 		return
 
