@@ -407,6 +407,9 @@
 	if(!chosen)
 		return
 
+	if(tgui_alert(src, "Are you sure you want to reveal this bodypart?  Abuse of this to violate bystander consent may result in you being banned from using this tool.", "PRIVATE SCENE TOOL ONLY", list("No","Yes")) != "Yes")
+		return
+
 	switch(chosen)
 		if("Belly")
 			var/obj/item/organ/belly/tum = src.internal_organs_slot[ORGAN_SLOT_BELLY]
