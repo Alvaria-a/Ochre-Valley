@@ -47,11 +47,7 @@ GLOBAL_LIST_INIT(named_belly_sizes, list(
 /datum/sprite_accessory/belly/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	//OV EDIT START - Based on Caustic Cove Reveal Organ Work
 	if(organ.visible_organ && organ.always_show)
-		var/obj/item/organ/belly/tum = organ
-		if(tum.belly_size < 3)
-			return TRUE
-		else
-			return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
+		return TRUE
 	//OV EDIT END
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
 
