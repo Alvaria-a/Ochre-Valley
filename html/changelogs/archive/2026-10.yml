@@ -682,3 +682,6 @@
   - rscadd: Added weekly AP Sync 10.6.26 to 10.13.26
   WeNeedMorePhoron:
   - balance: Adjusted blockade surcharge waiver from 40 / 80 to 30 / 60
+2026-10-17:
+  zeskorion:
+  - code_imp: remove deprecated wrench demolition code
