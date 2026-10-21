@@ -391,7 +391,7 @@
 	return TRUE
 
 /mob/living/carbon/verb/reveal_bodypart()
-	set name = "Reveal Bodypart"
+	set name = "Toggle Bodypart Visibility"
 	set desc = "PRIVATE SCENE TOOL: Toggles between always showing or hiding your chosen bodypart, regardless of clothing worn."
 	set category = "Vore.Misc"
 
@@ -403,11 +403,11 @@
 		return
 
 	var/list/choices = list("Belly", "Belly Color", "Breasts", "Butt", "Penis", "Testicles", "Vagina")
-	var/chosen = tgui_input_list(src, "Reveal what part? (DO NOT VIOLATE BYSTANDER CONSENT)", "PRIVATE SCENE TOOL ONLY", choices)
+	var/chosen = tgui_input_list(src, "Toggle what part? (DO NOT VIOLATE BYSTANDER CONSENT)", "PRIVATE SCENE TOOL ONLY", choices)
 	if(!chosen)
 		return
 
-	if(tgui_alert(src, "Are you sure you want to reveal this bodypart?  Abuse of this to violate bystander consent may result in you being banned from using this tool.", "PRIVATE SCENE TOOL ONLY", list("No","Yes")) != "Yes")
+	if(tgui_alert(src, "Are you sure you want to toggle this bodypart?  Abuse of this to violate bystander consent may result in you being banned from using this tool.", "PRIVATE SCENE TOOL ONLY", list("No","Yes")) != "Yes")
 		return
 
 	switch(chosen)
