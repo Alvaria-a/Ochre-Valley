@@ -47,7 +47,9 @@
 	tutorial = "A hopeful for the next generation of knightly mounted lancers and infantry pike specialists, \
 	your training with polearms sets you apart from other squires."
 	outfit = /datum/outfit/job/roguetown/squire/lancer
-
+	// OV test: REMOVE ME IF I'M A DUMMY WHO FORGOT TO
+	min_pq = 2 //find all the places we get to bypass this and eliminate it
+	// OV end
 	category_tags = list(CTAG_SQUIRE)
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
