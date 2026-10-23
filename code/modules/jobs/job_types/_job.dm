@@ -592,7 +592,14 @@
 			sclass_count++
 			var/datum/advclass/adv = sclass
 			var/datum/advclass/adv_ref = SSrole_class_handler.get_advclass_by_name(initial(adv.name))
-			dat += "<details><summary><b><font color ='#ece9e9'>[adv_ref.name]</font></b></summary>"
+			//OV add: if player doesn't meet PQ, flag it accordingly so they understand why they can't play it
+			if(!isnull(sclass.min_pq) && get_playerquality(user.ckey) < sclass.min_pq)
+				dat += "<details><summary><b><font color ='#ff0000'>[adv_ref.name]</font> (PQ REQ: "
+				dat += sclass.min_pq + ")"
+				dat +="</b></summary>"
+			else
+				dat += "<details><summary><b><font color ='#ece9e9'>[adv_ref.name]</font></b></summary>"
+			//OV end
 			dat += "<table align='center'; width='100%'; height='100%';border: 1px solid white;border-collapse: collapse>"
 			dat += "<tr style='vertical-align:top'>"
 			dat += "<td width = 70%><i><font color ='#ece9e9'>[adv_ref.tutorial]</font></i></td>"
@@ -808,8 +815,11 @@
 		var/list/class_sel = list()
 		for(var/ctag in advclass_cat_rolls)
 			var/list/subsystem_ctag_list = SSrole_class_handler.sorted_class_categories[ctag]
-			for(var/datum/advclass/advdatum in subsystem_ctag_list)
+			for(var/datum/advclass/advdatum in subsystem_ctag_list) //OV edit - organize this so we eliminate subclasses the player can't pick. PQ only for now.
+			{
+				if(!isnull(advdatum.min_pq) && (get_playerquality(usr.ckey) < advdatum.min_pq))
 				class_sel[advdatum.name] = advdatum.type
+			}
 		var/input = class_sel[tgui_input_list(usr, "What path do your talents follow?", "Subclass Select", class_sel)]
 		if(input)
 			roleprefs["favorite_advclass"] = input
