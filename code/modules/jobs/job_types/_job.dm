@@ -593,10 +593,11 @@
 			var/datum/advclass/adv = sclass
 			var/datum/advclass/adv_ref = SSrole_class_handler.get_advclass_by_name(initial(adv.name))
 			//OV add: if player doesn't meet PQ, flag it accordingly so they understand why they can't play it
-			if(!isnull(sclass.min_pq) && get_playerquality(user.ckey) < sclass.min_pq)
-				dat += "<details><summary><b><font color ='#ff0000'>[adv_ref.name]</font> (PQ REQ: "
-				dat += sclass.min_pq + ")"
-				dat +="</b></summary>"
+			if(!isnull(adv.min_pq) && get_playerquality(usr.ckey) < adv.min_pq)
+				dat += "<details><summary><b><font color ='#ff0000'>[adv_ref.name] (PQ REQ: [adv.min_pq])</font></b></summary>"
+				//dat += "<details><summary><b><font color ='#ff0000'>[adv_ref.name]</font> (PQ REQ: "
+				//dat += adv.min_pq + ")"
+				//dat +="</b></summary>"
 			else
 				dat += "<details><summary><b><font color ='#ece9e9'>[adv_ref.name]</font></b></summary>"
 			//OV end
@@ -818,8 +819,11 @@
 			for(var/datum/advclass/advdatum in subsystem_ctag_list) //OV edit - organize this so we eliminate subclasses the player can't pick. PQ only for now.
 			{
 				if(!isnull(advdatum.min_pq) && (get_playerquality(usr.ckey) < advdatum.min_pq))
-				class_sel[advdatum.name] = advdatum.type
+					continue
+				else
+					class_sel[advdatum.name] = advdatum.type
 			}
+			//OV end
 		var/input = class_sel[tgui_input_list(usr, "What path do your talents follow?", "Subclass Select", class_sel)]
 		if(input)
 			roleprefs["favorite_advclass"] = input
