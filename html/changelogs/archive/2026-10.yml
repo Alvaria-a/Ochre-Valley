@@ -855,3 +855,11 @@
   - rscadd: darkness adapted quirk
   - rscadd: Hemovores can now ping as a vampire when an inquisitor's indexer makes
       a mistake
+2026-10-25:
+  SomeDeviant:
+  - rscadd: Added Organ Reveal Mechanic
+  Voidastra:
+  - rscadd: structure for future players to do the same in the form of "donator_modkit_ochre.dm",
+      "loadout_donators_ochre.dm", and "ochre_modular_custom_weapons_64.dmi" all within
+      the modular_ochrevalley folder while following structure of normal folder structure
+  - rscadd: Lirvas firestaff
