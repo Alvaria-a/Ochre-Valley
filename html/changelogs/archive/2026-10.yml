@@ -863,3 +863,7 @@
       "loadout_donators_ochre.dm", and "ochre_modular_custom_weapons_64.dmi" all within
       the modular_ochrevalley folder while following structure of normal folder structure
   - rscadd: Lirvas firestaff
+2026-10-26:
+  Zeno:
+  - rscadd: Allow Constructs, Dullahans, and Ooze's to take Unlanded Nobility greater
+      quirk
