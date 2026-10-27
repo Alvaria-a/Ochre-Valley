@@ -867,3 +867,6 @@
   Zeno:
   - rscadd: Allow Constructs, Dullahans, and Ooze's to take Unlanded Nobility greater
       quirk
+2026-10-27:
+  NickBelmont:
+  - refactor: Change OV's Mirror Transform to a datum instead of the old spell system.
